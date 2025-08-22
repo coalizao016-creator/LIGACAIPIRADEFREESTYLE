@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coalizão 016</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #111;
+      color: #fff;
+      text-align: center;
+    }
+
+    /* Cabeçalho com imagem */
+    header {
+      position: relative;
+      background: url('batalha.jpg') no-repeat center center/cover;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(to bottom, rgba(17,17,17,0.4), #111);
+    }
+    header img {
+      max-height: 120px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Menu */
+    nav {
+      background: #222;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #d35400; /* Laranja enferrujado */
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    /* Títulos acima das imagens */
+    .section-title {
+      color: #d35400; /* Laranja enferrujado */
+      font-family: 'Bungee', cursive;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    /* Imagens */
+    .section-image {
+      max-width: 90%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #000;
+    }
+
+    /* Mapa iframe */
+    .map-container iframe {
+      width: 100%;
+      height: 500px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #000;
+      padding: 15px;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 2px solid #d35400; /* detalhe laranja */
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      header {
+        height: 200px;
+      }
+      header img {
+        max-height: 90px;
+      }
+      nav a {
+        margin: 0 5px;
+        font-size: 14px;
+      }
+      .section-title {
+        font-size: 24px;
+      }
+      .map-container iframe {
+        height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <img src="logo.png" alt="Logo Coalizão 016">
+  </header>
+
+  <!-- Menu -->
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#ranking">Ranking</a>
+    <a href="https://coalizao016-creator.github.io/TESTEMAPA/" target="_blank">Mapa</a>
+    <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a>
+    <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a>
+    <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a>
+    <a href="https://linktr.ee/coalizao016" target="_blank">FOTOS</a>
+  </nav>
+
+  <!-- Seção Início -->
+  <section id="inicio">
+    <h2 class="section-title">Bem-vindo à Coalizão 016</h2>
+    <p>Uma nova fase para o freestyle caipira.</p>
+  </section>
+
+  <!-- Seção Agenda -->
+  <section id="agenda">
+    <h2 class="section-title">Agenda da Semana</h2>
+    <img class="section-image" src="agenda.png" alt="Agenda da Semana">
+  </section>
+
+  <!-- Seção Mapa -->
+  <section id="mapa">
+    <h2 class="section-title">Mapa das Batalhas</h2>
+    <div class="map-container">
+      <iframe 
+        src="https://coalizao016-creator.github.io/TESTEMAPA/" 
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Seção Ranking -->
+  <section id="ranking">
+    <h2 class="section-title">Ranking</h2>
+    <img class="section-image" src="ranking.png" alt="Ranking">
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    © 2025 Coalizão 016 - Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
