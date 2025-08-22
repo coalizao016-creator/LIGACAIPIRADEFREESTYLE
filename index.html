@@ -4,7 +4,6 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coalizão 016</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <style>
     body {
       margin: 0;
@@ -36,24 +35,9 @@
     section {
       padding: 20px;
     }
-    #filtros {
-      padding: 10px;
-      background: #222;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-    #filtros label {
-      font-weight: bold;
-    }
-    #filtros select {
-      padding: 5px;
-      font-size: 14px;
-    }
-    #map {
-      height: 80vh;
-      width: 100%;
+    .agenda img, #ranking img {
+      max-width: 90%;
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -68,7 +52,7 @@
   <nav>
     <a href="#inicio">Início</a>
     <a href="#agenda">Agenda</a>
-    <a href="#mapa">Mapa</a>
+    <a href="https://coalizao016-creator.github.io/NOVOMAPA/" target="_blank">Mapa</a>
     <a href="#ranking">Ranking</a>
     <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a>
     <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a>
@@ -85,34 +69,13 @@
   <!-- Agenda -->
   <section id="agenda" class="agenda">
     <h2 style="color:#ff7f00;">Agenda da Semana</h2>
-    <img src="agenda.png" alt="Agenda da Semana" style="max-width:90%; border-radius:10px;">
-  </section>
-
-  <!-- Mapa -->
-  <section id="mapa">
-    <h2 style="color:#ff7f00;">Mapa de Batalhas</h2>
-    <div id="filtros">
-      <label for="filtroDia">Filtrar por Dia:</label>
-      <select id="filtroDia">
-        <option value="">Todos</option>
-        <option value="Segunda-feira">Segunda-feira</option>
-        <option value="Sexta-feira">Sexta-feira</option>
-        <option value="Sábado">Sábado</option>
-        <option value="Domingo">Domingo</option>
-      </select>
-
-      <label for="filtroCidade">Filtrar por Cidade:</label>
-      <select id="filtroCidade">
-        <option value="">Todas</option>
-      </select>
-    </div>
-    <div id="map"></div>
+    <img src="agenda.png" alt="Agenda da Semana">
   </section>
 
   <!-- Ranking -->
   <section id="ranking">
     <h2 style="color:#ff7f00;">Ranking</h2>
-    <img src="ranking.png" alt="Ranking" style="max-width:90%; border-radius:10px;">
+    <img src="ranking.png" alt="Ranking">
   </section>
 
   <!-- Rodapé -->
@@ -120,73 +83,5 @@
     © 2025 Coalizão 016 - Todos os direitos reservados.
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="batalhas.js"></script>
-  <script>
-    // Inicializa o mapa com a nova versão
-    const map = L.map("map").setView([-21.17, -47.81], 9);
-    L.tileLayer("https://coalizao016-creator.github.io/NOVOMAPA/{z}/{x}/{y}.png", {
-      attribution: "© OpenStreetMap contributors"
-    }).addTo(map);
-
-    let markers = [];
-
-    function renderMarkers(filtroDia = "", filtroCidade = "") {
-      markers.forEach(m => map.removeLayer(m));
-      markers = [];
-
-      batalhas.forEach(b => {
-        if ((filtroDia === "" || b.dia === filtroDia) &&
-            (filtroCidade === "" || b.cidade === filtroCidade)) {
-
-          const marker = L.marker(b.coords).addTo(map);
-          markers.push(marker);
-
-          const mapsLink = `https://www.google.com/maps?q=${b.coords[0]},${b.coords[1]}`;
-          const popupContent = `
-            <div style="text-align:left; font-family:Arial,sans-serif;">
-              <img src="logos/${b.codigo.toLowerCase()}.png" alt="${b.nome}" style="width:100px; height:auto; margin-bottom:5px; border-radius:5px;">
-              <h3 style="margin:5px 0; font-size:16px;">${b.nome}</h3>
-              <p style="margin:2px 0;"><b>Cidade:</b> ${b.cidade}</p>
-              <p style="margin:2px 0;"><b>Dia:</b> ${b.dia}</p>
-              <p style="margin:2px 0;">
-                <b>Instagram:</b>
-                <a href="${b.rede}" target="_blank" style="color:#0077cc; text-decoration:none;">Abrir Perfil</a>
-              </p>
-              <p style="margin:2px 0;">
-                <b>Google Maps:</b>
-                <a href="${mapsLink}" target="_blank" style="color:#0077cc; text-decoration:none;">Ver Localização</a>
-              </p>
-            </div>
-          `;
-          marker.bindPopup(popupContent);
-        }
-      });
-
-      if (markers.length > 0) {
-        const bounds = L.latLngBounds(markers.map(m => m.getLatLng()));
-        map.fitBounds(bounds.pad(0.2));
-      }
-    }
-
-    const filtroCidade = document.getElementById("filtroCidade");
-    const cidadesUnicas = [...new Set(batalhas.map(b => b.cidade))].sort();
-    cidadesUnicas.forEach(cidade => {
-      const opt = document.createElement("option");
-      opt.value = cidade;
-      opt.textContent = cidade;
-      filtroCidade.appendChild(opt);
-    });
-
-    document.getElementById("filtroDia").addEventListener("change", e => {
-      renderMarkers(e.target.value, filtroCidade.value);
-    });
-    filtroCidade.addEventListener("change", e => {
-      renderMarkers(document.getElementById("filtroDia").value, e.target.value);
-    });
-
-    renderMarkers();
-  </script>
 </body>
 </html>
