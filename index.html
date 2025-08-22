@@ -1,114 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Coalizão 016</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <style>
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
+      font-family: Arial, sans-serif;
       background: #111;
       color: #fff;
       text-align: center;
     }
-
-    /* Cabeçalho com imagem */
     header {
-      position: relative;
-      background: url('batalha.jpg') no-repeat center center/cover;
-      height: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(to bottom, rgba(17,17,17,0.4), #111);
+      background: #000;
+      padding: 20px;
     }
     header img {
       max-height: 120px;
-      position: relative;
-      z-index: 2;
     }
-
-    /* Menu */
     nav {
       background: #222;
-      padding: 12px;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      padding: 10px;
     }
     nav a {
       color: #fff;
       margin: 0 10px;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
     }
     nav a:hover {
-      color: #d35400; /* Laranja enferrujado */
+      color: #ff7f00;
     }
-
     section {
-      padding: 40px 20px;
+      padding: 20px;
     }
-
-    /* Títulos acima das imagens */
-    .section-title {
-      color: #d35400; /* Laranja enferrujado */
-      font-family: 'Bungee', cursive;
-      font-size: 32px;
-      margin-bottom: 15px;
+    #filtros {
+      padding: 10px;
+      background: #222;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
-
-    /* Imagens */
-    .section-image {
-      max-width: 90%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 12px #000;
+    #filtros label {
+      font-weight: bold;
     }
-
-    /* Mapa iframe */
-    .map-container iframe {
-      width: 100%;
-      height: 500px;
-      border: 0;
-      border-radius: 10px;
-    }
-
-    footer {
-      background: #000;
-      padding: 15px;
-      margin-top: 40px;
+    #filtros select {
+      padding: 5px;
       font-size: 14px;
-      color: #aaa;
-      border-top: 2px solid #d35400; /* detalhe laranja */
     }
-
-    /* Responsividade */
-    @media (max-width: 768px) {
-      header {
-        height: 200px;
-      }
-      header img {
-        max-height: 90px;
-      }
-      nav a {
-        margin: 0 5px;
-        font-size: 14px;
-      }
-      .section-title {
-        font-size: 24px;
-      }
-      .map-container iframe {
-        height: 350px;
-      }
+    #map {
+      height: 80vh;
+      width: 100%;
     }
   </style>
 </head>
@@ -123,48 +68,125 @@
   <nav>
     <a href="#inicio">Início</a>
     <a href="#agenda">Agenda</a>
+    <a href="#mapa">Mapa</a>
     <a href="#ranking">Ranking</a>
-    <a href="https://coalizao016-creator.github.io/TESTEMAPA/" target="_blank">Mapa</a>
     <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a>
     <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a>
     <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a>
-    <a href="https://linktr.ee/coalizao016" target="_blank">FOTOS</a>
+    <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a>
   </nav>
 
-  <!-- Seção Início -->
+  <!-- Início -->
   <section id="inicio">
-    <h2 class="section-title">Bem-vindo à Coalizão 016</h2>
+    <h1>Bem-vindo à Coalizão 016</h1>
     <p>Uma nova fase para o freestyle caipira.</p>
   </section>
 
-  <!-- Seção Agenda -->
-  <section id="agenda">
-    <h2 class="section-title">Agenda da Semana</h2>
-    <img class="section-image" src="agenda.png" alt="Agenda da Semana">
+  <!-- Agenda -->
+  <section id="agenda" class="agenda">
+    <h2 style="color:#ff7f00;">Agenda da Semana</h2>
+    <img src="agenda.png" alt="Agenda da Semana" style="max-width:90%; border-radius:10px;">
   </section>
 
-  <!-- Seção Mapa -->
+  <!-- Mapa -->
   <section id="mapa">
-    <h2 class="section-title">Mapa das Batalhas</h2>
-    <div class="map-container">
-      <iframe 
-        src="https://coalizao016-creator.github.io/TESTEMAPA/" 
-        allowfullscreen
-        loading="lazy">
-      </iframe>
+    <h2 style="color:#ff7f00;">Mapa de Batalhas</h2>
+    <div id="filtros">
+      <label for="filtroDia">Filtrar por Dia:</label>
+      <select id="filtroDia">
+        <option value="">Todos</option>
+        <option value="Segunda-feira">Segunda-feira</option>
+        <option value="Sexta-feira">Sexta-feira</option>
+        <option value="Sábado">Sábado</option>
+        <option value="Domingo">Domingo</option>
+      </select>
+
+      <label for="filtroCidade">Filtrar por Cidade:</label>
+      <select id="filtroCidade">
+        <option value="">Todas</option>
+      </select>
     </div>
+    <div id="map"></div>
   </section>
 
-  <!-- Seção Ranking -->
+  <!-- Ranking -->
   <section id="ranking">
-    <h2 class="section-title">Ranking</h2>
-    <img class="section-image" src="ranking.png" alt="Ranking">
+    <h2 style="color:#ff7f00;">Ranking</h2>
+    <img src="ranking.png" alt="Ranking" style="max-width:90%; border-radius:10px;">
   </section>
 
   <!-- Rodapé -->
-  <footer>
+  <footer style="background:#000; padding:15px; color:#aaa;">
     © 2025 Coalizão 016 - Todos os direitos reservados.
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="batalhas.js"></script>
+  <script>
+    // Inicializa o mapa com a nova versão
+    const map = L.map("map").setView([-21.17, -47.81], 9);
+    L.tileLayer("https://coalizao016-creator.github.io/NOVOMAPA/{z}/{x}/{y}.png", {
+      attribution: "© OpenStreetMap contributors"
+    }).addTo(map);
+
+    let markers = [];
+
+    function renderMarkers(filtroDia = "", filtroCidade = "") {
+      markers.forEach(m => map.removeLayer(m));
+      markers = [];
+
+      batalhas.forEach(b => {
+        if ((filtroDia === "" || b.dia === filtroDia) &&
+            (filtroCidade === "" || b.cidade === filtroCidade)) {
+
+          const marker = L.marker(b.coords).addTo(map);
+          markers.push(marker);
+
+          const mapsLink = `https://www.google.com/maps?q=${b.coords[0]},${b.coords[1]}`;
+          const popupContent = `
+            <div style="text-align:left; font-family:Arial,sans-serif;">
+              <img src="logos/${b.codigo.toLowerCase()}.png" alt="${b.nome}" style="width:100px; height:auto; margin-bottom:5px; border-radius:5px;">
+              <h3 style="margin:5px 0; font-size:16px;">${b.nome}</h3>
+              <p style="margin:2px 0;"><b>Cidade:</b> ${b.cidade}</p>
+              <p style="margin:2px 0;"><b>Dia:</b> ${b.dia}</p>
+              <p style="margin:2px 0;">
+                <b>Instagram:</b>
+                <a href="${b.rede}" target="_blank" style="color:#0077cc; text-decoration:none;">Abrir Perfil</a>
+              </p>
+              <p style="margin:2px 0;">
+                <b>Google Maps:</b>
+                <a href="${mapsLink}" target="_blank" style="color:#0077cc; text-decoration:none;">Ver Localização</a>
+              </p>
+            </div>
+          `;
+          marker.bindPopup(popupContent);
+        }
+      });
+
+      if (markers.length > 0) {
+        const bounds = L.latLngBounds(markers.map(m => m.getLatLng()));
+        map.fitBounds(bounds.pad(0.2));
+      }
+    }
+
+    const filtroCidade = document.getElementById("filtroCidade");
+    const cidadesUnicas = [...new Set(batalhas.map(b => b.cidade))].sort();
+    cidadesUnicas.forEach(cidade => {
+      const opt = document.createElement("option");
+      opt.value = cidade;
+      opt.textContent = cidade;
+      filtroCidade.appendChild(opt);
+    });
+
+    document.getElementById("filtroDia").addEventListener("change", e => {
+      renderMarkers(e.target.value, filtroCidade.value);
+    });
+    filtroCidade.addEventListener("change", e => {
+      renderMarkers(document.getElementById("filtroDia").value, e.target.value);
+    });
+
+    renderMarkers();
+  </script>
 </body>
 </html>
