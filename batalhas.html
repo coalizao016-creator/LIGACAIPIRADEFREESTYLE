@@ -154,6 +154,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            cursor: pointer;
         }
         .batalha-card:hover {
             transform: translateY(-5px);
@@ -175,7 +176,7 @@
             color: #b0b0b0;
             text-align: center;
         }
-        .batalha-card a {
+        .batalha-card .card-rede {
             display: inline-block;
             margin-top: 15px;
             padding: 10px 15px;
@@ -187,8 +188,80 @@
             transition: background-color 0.3s ease;
             align-self: center;
         }
-        .batalha-card a:hover {
+        .batalha-card .card-rede:hover {
             background-color: #e67300;
+        }
+        
+        /* Estilos da Modal (Popup) */
+        .modal {
+            display: none; /* Escondido por padrão */
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8); /* Fundo escuro transparente */
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #282828;
+            margin: 5% auto;
+            padding: 30px;
+            border: 1px solid #444;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            position: relative;
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+        }
+        .modal-content h3 {
+            color: #ff8c00;
+            font-size: 2em;
+        }
+        .modal-content p {
+            color: #e0e0e0;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .modal-content .links-redes {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .modal-content .links-redes a {
+            padding: 8px 15px;
+            background-color: #ff8c00;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .modal-content .links-redes a:hover {
+            background-color: #e67300;
+        }
+        .modal-content .close-btn {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .modal-content .close-btn:hover {
+            color: #fff;
+        }
+        
+        /* Animação de entrada da modal */
+        @keyframes animatetop {
+            from {top:-300px; opacity:0} 
+            to {top:0; opacity:1}
         }
 
         footer {
@@ -229,7 +302,7 @@
     <div class="batalhas-container">
         <h1>Todas as Batalhas da Liga</h1>
         <p style="text-align: center; color: #b0b0b0;">
-            Confira a agenda e os locais das batalhas de freestyle da região 016.
+            Clique em um card para ver mais detalhes da batalha.
         </p>
 
         <div class="filters">
@@ -250,12 +323,23 @@
         © 2025 Coalizão 016 - Todos os direitos reservados.
     </footer>
 
+    <div id="batalha-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modal-body">
+                </div>
+        </div>
+    </div>
+
     <script src="batalhas.js"></script>
     <script>
         const batalhasGrid = document.getElementById('batalhas-grid');
         const filtroDia = document.getElementById('filtro-dia');
         const filtroCidade = document.getElementById('filtro-cidade');
         const limparFiltrosBtn = document.getElementById('limpar-filtros');
+        const batalhaModal = document.getElementById('batalha-modal');
+        const modalBody = document.getElementById('modal-body');
+        const closeBtn = document.querySelector('.close-btn');
 
         function renderizarBatalhas(batalhasParaRenderizar) {
             batalhasGrid.innerHTML = '';
@@ -263,6 +347,7 @@
                 batalhasParaRenderizar.forEach(batalha => {
                     const card = document.createElement('div');
                     card.className = 'batalha-card';
+                    card.setAttribute('data-codigo', batalha.codigo);
 
                     const logoPath = `images/${batalha.codigo}.png`;
                     const imgElement = `<img src="${logoPath}" alt="Logo ${batalha.nome}" onerror="this.style.display='none'">`;
@@ -272,7 +357,6 @@
                         <h3>${batalha.nome}</h3>
                         <p><strong>Cidade:</strong> ${batalha.cidade}</p>
                         <p><strong>Dia:</strong> ${batalha.dia}</p>
-                        <a href="${batalha.rede}" target="_blank">Ver mais</a>
                     `;
                     batalhasGrid.appendChild(card);
                 });
@@ -325,6 +409,52 @@
             if (typeof batalhas !== 'undefined') {
                 popularFiltros();
                 renderizarBatalhas(batalhas);
+
+                // Evento para abrir a modal
+                batalhasGrid.addEventListener('click', (e) => {
+                    const card = e.target.closest('.batalha-card');
+                    if (card) {
+                        const codigo = card.getAttribute('data-codigo');
+                        const batalhaSelecionada = batalhas.find(b => b.codigo === codigo);
+                        
+                        if (batalhaSelecionada) {
+                            let campeoesHistoricosHTML = '';
+                            if (batalhaSelecionada.campeoes_historicos && batalhaSelecionada.campeoes_historicos.length > 0) {
+                                campeoesHistoricosHTML = `<p><strong>Maiores Campeões:</strong> ${batalhaSelecionada.campeoes_historicos.join(', ')}</p>`;
+                            }
+
+                            let redesSociaisHTML = '';
+                            if (batalhaSelecionada.redes_sociais_links && batalhaSelecionada.redes_sociais_links.length > 0) {
+                                redesSociaisHTML = `<p><strong>Redes Sociais:</strong></p><div class="links-redes">`;
+                                batalhaSelecionada.redes_sociais_links.forEach(link => {
+                                    redesSociaisHTML += `<a href="${link.url}" target="_blank">${link.nome}</a>`;
+                                });
+                                redesSociaisHTML += `</div>`;
+                            }
+
+                            modalBody.innerHTML = `
+                                <h3>${batalhaSelecionada.nome}</h3>
+                                <p><strong>Cidade:</strong> ${batalhaSelecionada.cidade}</p>
+                                <p><strong>Dia:</strong> ${batalhaSelecionada.dia}</p>
+                                <p><strong>Descrição:</strong> ${batalhaSelecionada.descricao}</p>
+                                <p><strong>Último Campeão:</strong> ${batalhaSelecionada.ultimo_campeao || 'N/A'}</p>
+                                ${campeoesHistoricosHTML}
+                                ${redesSociaisHTML}
+                            `;
+                            batalhaModal.style.display = 'block';
+                        }
+                    }
+                });
+
+                // Eventos para fechar a modal
+                closeBtn.onclick = () => {
+                    batalhaModal.style.display = 'none';
+                };
+                window.onclick = (event) => {
+                    if (event.target === batalhaModal) {
+                        batalhaModal.style.display = 'none';
+                    }
+                };
             } else {
                 batalhasGrid.innerHTML = '<p style="color: #b0b0b0;">Não foi possível carregar os dados das batalhas.</p>';
             }
