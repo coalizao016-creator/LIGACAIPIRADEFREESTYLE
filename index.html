@@ -1,101 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Coalizão 016</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      text-align: center;
-    }
-    nav {
-      background: #222;
-      padding: 10px;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #ff7f00;
-    }
-    section {
-      padding: 20px;
-    }
-    .agenda img, #ranking img {
-      max-width: 90%;
-      border-radius: 10px;
-    }
-  </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Coalizão 016</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: #fff;
+            text-align: center;
+        }
+        nav {
+            background: #222;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ff7f00;
+        }
+        section {
+            padding: 20px;
+        }
+        .agenda img, #ranking img {
+            max-width: 90%;
+            border-radius: 10px;
+        }
+
+        /* Estilos do menu suspenso de redes sociais */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #222;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
+            z-index: 1;
+            border-radius: 5px;
+            padding: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .dropdown-content a:hover {
+            background-color: #333;
+            border-radius: 3px;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-label {
+            cursor: pointer;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .dropdown-label:hover {
+            color: #ff7f00;
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Cabeçalho -->
-  <header style="position: relative; height: 250px; overflow: hidden;">
-    <!-- Imagem de fundo da batalha -->
-    <img src="batalha.jpg" alt="Batalha" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; z-index:1;">
-    
-    <!-- Degradê sobre a imagem -->
-    <div style="
-      position:absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%);
-      z-index:2;
-    "></div>
-    
-    <!-- Logo -->
-    <img src="logo.png" alt="Logo Coalizão 016" style="
-      position: relative;
-      z-index:3;
-      max-height:120px;
-      margin-top: 60px;
-    ">
-  </header>
+    <header style="position: relative; height: 250px; overflow: hidden;">
+        <img src="batalha.jpg" alt="Batalha" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; z-index:1;">
+        
+        <div style="
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%);
+            z-index:2;
+        "></div>
+        
+        <img src="logo.png" alt="Logo Coalizão 016" style="
+            position: relative;
+            z-index:3;
+            max-height:120px;
+            margin-top: 60px;
+        ">
+    </header>
 
-  <!-- Menu -->
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#agenda">Agenda</a>
-    <a href="https://coalizao016-creator.github.io/NOVOMAPA/" target="_blank">Mapa</a>
-    <a href="#ranking">Ranking</a>
-    <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a>
-    <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a>
-    <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a>
-  <a href="mcs.html" target="_blank">MC's</a>
-  </nav>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#ranking">Ranking</a>
+        <a href="https://coalizao016-creator.github.io/NOVOMAPA/" target="_blank">Mapa</a>
+        <a href="batalhas.html">Batalhas</a>
+        <a href="mcs.html">MC's</a>
+        
+        <div class="dropdown">
+            <a href="#" class="dropdown-label">Nossas Redes</a>
+            <div class="dropdown-content">
+                <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a>
+                <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a>
+                <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a>
+                <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Início -->
-  <section id="inicio">
-    <h1>Bem-vindo à Coalizão 016</h1>
-    <p>Uma nova fase para o freestyle caipira.</p>
-  </section>
+    <section id="inicio">
+        <h1>Bem-vindo à Coalizão 016</h1>
+        <p>Uma nova fase para o freestyle caipira.</p>
+    </section>
 
-  <!-- Agenda -->
-  <section id="agenda" class="agenda">
-    <h2 style="color:#ff7f00;">Agenda da Semana</h2>
-    <img src="agenda.png" alt="Agenda da Semana">
-  </section>
+    <section id="agenda" class="agenda">
+        <h2 style="color:#ff7f00;">Agenda da Semana</h2>
+        <img src="agenda.png" alt="Agenda da Semana">
+    </section>
 
-  <!-- Ranking -->
-  <section id="ranking">
-    <h2 style="color:#ff7f00;">Ranking</h2>
-    <img src="ranking.png" alt="Ranking">
-  </section>
+    <section id="ranking">
+        <h2 style="color:#ff7f00;">Ranking</h2>
+        <img src="ranking.png" alt="Ranking">
+    </section>
 
-  <!-- Rodapé -->
-  <footer style="background:#000; padding:15px; color:#aaa;">
-    © 2025 Coalizão 016 - Todos os direitos reservados.
-  </footer>
+    <footer style="background:#000; padding:15px; color:#aaa;">
+        © 2025 Coalizão 016 - Todos os direitos reservados.
+    </footer>
 
 </body>
 </html>
