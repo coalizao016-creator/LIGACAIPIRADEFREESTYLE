@@ -22,9 +22,9 @@ const batalhas = [
       dia: "Sábado",
       coords: [-20.721611782843603, -47.88532290506657],
       rede: "https://www.instagram.com/bdvinte_?igsh=ZnJmcjZha3IzeWhk",
-      descricao: "A batalha da Vinte é um evento vibrante que acontece em Orlândia, reunindo talentos locais e de cidades vizinhas para duelos épicos.",
-      ultimo_campeao: "Vitão",
-      campeoes_historicos: ["Puma", "Manel"],
+      descricao: "",
+      ultimo_campeao: "Segalla e Marcola",
+      campeoes_historicos: ["Segalla"],
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/bdvinte_" }
       ]
@@ -36,9 +36,9 @@ const batalhas = [
       dia: "Domingo",
       coords: [-20.76499406371021, -47.84621443273137],
       rede: "https://www.instagram.com/batalhas.o_/",
-      descricao: "Com o clima da praça, a Batalha da SO é conhecida por sua energia contagiante e por revelar grandes nomes do freestyle na região.",
-      ultimo_campeao: "Bubba",
-      campeoes_historicos: ["Jota"],
+      descricao: "",
+      ultimo_campeao: "Segalla",
+      campeoes_historicos: ["Segalla"],
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/batalhas.o_" }
       ]
@@ -50,9 +50,9 @@ const batalhas = [
       dia: "Sexta-feira",
       coords: [-20.58321181464485, -47.866423756887045],
       rede: "https://www.instagram.com/conexao_de_rima?igsh=YXZjZHR2NHN2Nzl5&utm_source=qr_/",
-      descricao: "A Conexão de Rimas é a voz do freestyle em São Joaquim da Barra, com rimas afiadas e uma comunidade de MCs cada vez maior.",
-      ultimo_campeao: "Guri",
-      campeoes_historicos: ["João", "Carlos"],
+      descricao: "",
+      ultimo_campeao: "JM",
+      campeoes_historicos: [""],
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/conexao_de_rima" }
       ]
@@ -63,11 +63,13 @@ const batalhas = [
       cidade: "Monte Alto - SP",
       dia: "Domingo",
       coords: [-21.26686480503218, -48.47604652470329],
-      rede: "https://www.instagram.com/batalhadomorro016?igsh=MTJoMXU3MmQ1dTdheQ==/",
-      descricao: "A Batalha do Um Porcento é um evento que celebra a criatividade e o talento dos MCs de Monte Alto e arredores.",
+      rede: "https://www.instagram.com/cacarecocla/",
+      descricao: "",
       ultimo_campeao: null,
       campeoes_historicos: [],
-      redes_sociais_links: []
+      redes_sociais_links: [ 
+        { nome: "Instagram", url: "https://www.instagram.com/batalhadomorro016?igsh=MTJoMXU3MmQ1dTdheQ==/" }
+      ]
     },
     {
       codigo: "BAT006",
@@ -76,10 +78,12 @@ const batalhas = [
       dia: "Sexta-feira",
       coords: [-21.130230825565388, -48.01320577580742],
       rede: "https://www.instagram.com/dueloda3/",
-      descricao: "O Duelo da 3 é um dos eventos mais tradicionais de Sertãozinho, promovendo encontros e batalhas de alto nível.",
+      descricao: "",
       ultimo_campeao: null,
       campeoes_historicos: [],
-      redes_sociais_links: []
+      redes_sociais_links: [ 
+        { nome: "Instagram", url: "https://www.instagram.com/dueloda3/" }
+      ]
     },
     {
       codigo: "BAT007",
@@ -88,10 +92,12 @@ const batalhas = [
       dia: "Domingo",
       coords: [-20.733057564143483, -48.058531122413456],
       rede: "https://www.instagram.com/batalhadomorro016?igsh=MTJoMXU3MmQ1dTdheQ==/",
-      descricao: "A Batalha do Morro é a representação do freestyle em Morro Agudo, com rimas que ecoam por toda a cidade.",
+      descricao: "",
       ultimo_campeao: null,
       campeoes_historicos: [],
-      redes_sociais_links: []
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/batalhadomorro016?igsh=MTJoMXU3MmQ1dTdheQ==/" }
+      ]
     },
     {
       codigo: "BAT008",
@@ -100,10 +106,12 @@ const batalhas = [
       dia: "Sábado",
       coords: [-21.999014650558898, -47.91178871045396],
       rede: "https://www.instagram.com/hiphopsalva016/",
-      descricao: "A Batalha H2S é um dos pilares do freestyle em São Carlos, oferecendo um palco para os talentos da cidade brilharem.",
+      descricao: "",
       ultimo_campeao: null,
       campeoes_historicos: [],
-      redes_sociais_links: []
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/hiphopsalva016/" }
+      ]
     },
     {
       codigo: "BAT009",
@@ -112,10 +120,12 @@ const batalhas = [
       dia: "Domingo",
       coords: [-21.7746657013495, -48.172065383661675],
       rede: "https://www.instagram.com/batalhafonte/",
-      descricao: "A Batalha da Fonte é um ponto de encontro para os amantes do rap e freestyle em Araraquara, com energia única e rimas inspiradoras.",
+      descricao: "",
       ultimo_campeao: null,
       campeoes_historicos: [],
-      redes_sociais_links: []
+      redes_sociais_links: [ 
+        { nome: "Instagram", url: "https://www.instagram.com/batalhafonte/" }
+      ]
     },
     {
       codigo: "BAT010",
@@ -124,10 +134,12 @@ const batalhas = [
       dia: "Domingo",
       coords: [-21.610132925044844, -48.36153237135948],
       rede: "https://www.instagram.com/rap.naalta/",
-      descricao: "O Rap Na Alta traz a cultura do hip hop para Matão, com batalhas de rima que valorizam a originalidade e o talento local.",
+      descricao: "",
       ultimo_campeao: null,
       campeoes_historicos: [],
-      redes_sociais_links: []
+      redes_sociais_links: [ 
+        { nome: "Instagram", url: "https://www.instagram.com/rap.naalta/" }
+      ]
     },
     {
       codigo: "BAT011",
@@ -136,10 +148,12 @@ const batalhas = [
       dia: "Domingo",
       coords: [-21.78291992749133, -48.17927539370365],
       rede: "https://www.instagram.com/batalhadoraio?igsh=MWQ1ejlkMzJpa243MQ%3D%3D&utm_source=qr",
-      descricao: "A Batalha do Raio em Araraquara é conhecida pela sua vibe eletrizante e por duelos que fazem a plateia ir à loucura.",
+      descricao: "",
       ultimo_campeao: null,
       campeoes_historicos: [],
-      redes_sociais_links: []
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/batalhadoraio?igsh=MWQ1ejlkMzJpa243MQ%3D%3D&utm_source=qr" }
+      ]
     },
     {
       codigo: "BAT012",
@@ -151,7 +165,9 @@ const batalhas = [
       descricao: "Uma batalha que acontece na segunda-feira, a Batalha do Bença é um ótimo lugar para começar a semana com muita rima e energia.",
       ultimo_campeao: null,
       campeoes_historicos: [],
-      redes_sociais_links: []
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/batalhadobenca?igsh=d2JkaDdyOGtjNnBj" }
+      ]
     },
     {
       codigo: "BAT013",
@@ -163,6 +179,22 @@ const batalhas = [
       descricao: "A Batalha do Pico é um dos pontos mais altos do freestyle em Ribeirão Preto, com uma vista incrível e rimas no mesmo nível.",
       ultimo_campeao: null,
       campeoes_historicos: [],
-      redes_sociais_links: []
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/batalhadopicorp/" }
+      ]
+    },
+    {
+      codigo: "BAT014",
+      nome: "Batalha dos Brodi",
+      cidade: "Taquaritinga - SP",
+      dia: "Sábado",
+      coords: [-21.4064, -48.5058], 
+      rede: "https://www.instagram.com/batalhadosbrodi?igsh=MWppNDVvMmNudTZpdg==",
+      descricao: ".",
+      ultimo_campeao: null,
+      campeoes_historicos: [],
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/batalhadosbrodi?igsh=MWppNDVvMmNudTZpdg==" }
+      ]
     }
 ];
