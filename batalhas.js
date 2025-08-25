@@ -6,12 +6,13 @@ const batalhas = [
       dia: "Sexta-feira",
       coords: [-21.171696237906733, -47.81330138110642],
       rede: "https://instagram.com/coalizao016",
-      descricao: "A casa da Coalizão 016, um dos palcos mais importantes do freestyle caipira. A batalha acontece toda sexta-feira, trazendo os melhores MCs da região.",
-      ultimo_campeao: "Ogro",
-      campeoes_historicos: ["Neo", "Biel"],
+      descricao: "Quinzenalmente as sextas-feiras a Praça Francisco Shimidt em Ribeirão Preto reune MC's de diversas cidades da região em guerra lírica e celebração da cultura hip.hop.",
+      ultimo_campeao: "Defzin",
+      campeoes_historicos: [""],
       redes_sociais_links: [
         { nome: "Instagram", url: "https://instagram.com/coalizao016" },
-        { nome: "YouTube", url: "https://www.youtube.com/@Coalizao016" }
+        { nome: "YouTube", url: "https://www.youtube.com/@Coalizao016" },
+        { nome: "TikTok", url: "https://www.tiktok.com/@Coalizao016" }
       ]
     },
     {

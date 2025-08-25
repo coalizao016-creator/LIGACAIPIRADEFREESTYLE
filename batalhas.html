@@ -327,7 +327,7 @@
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <div id="modal-body">
-                </div>
+            </div>
         </div>
     </div>
 
@@ -388,11 +388,15 @@
             const diaSelecionado = filtroDia.value;
             const cidadeSelecionada = filtroCidade.value;
 
-            const batalhasFiltradas = batalhas.filter(batalha => {
+            let batalhasFiltradas = batalhas.filter(batalha => {
                 const filtraPorDia = diaSelecionado === '' || batalha.dia === diaSelecionado;
                 const filtraPorCidade = cidadeSelecionada === '' || batalha.cidade === cidadeSelecionada;
                 return filtraPorDia && filtraPorCidade;
             });
+            
+            // Adicionado para manter a ordem alfabética mesmo nos resultados filtrados
+            batalhasFiltradas.sort((a, b) => a.nome.localeCompare(b.nome));
+
             renderizarBatalhas(batalhasFiltradas);
         }
 
@@ -407,8 +411,12 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof batalhas !== 'undefined') {
+                // ========== ALTERAÇÃO PRINCIPAL AQUI ==========
+                // Ordena a lista de batalhas por nome em ordem alfabética antes de exibir
+                batalhas.sort((a, b) => a.nome.localeCompare(b.nome));
+            
                 popularFiltros();
-                renderizarBatalhas(batalhas);
+                renderizarBatalhas(batalhas); // Agora renderiza a lista já ordenada
 
                 // Evento para abrir a modal
                 batalhasGrid.addEventListener('click', (e) => {
