@@ -53,6 +53,35 @@
             text-align: center; margin: 40px 0 20px; color: #ff8c00;
         }
         
+        /* ===== ESTILOS DO FORMULÁRIO REINSERIDOS ===== */
+        .form-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #282828;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+        .form-container p {
+            color: #e0e0e0;
+        }
+        .form-container a {
+            display: block;
+            width: 250px;
+            margin: 20px auto 0;
+            padding: 15px;
+            background-color: #ff8c00;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .form-container a:hover {
+            background-color: #e67300;
+        }
+
         /* Estilos para os Filtros */
         .filters-container {
             display: flex;
@@ -164,7 +193,7 @@
         <a href="index.html">Início</a>
         <a href="#agenda">Agenda</a>
         <a href="#ranking">Ranking</a>
-        <a href="https://coalizao016-creator.github.io/NOVOMAPA/" target="_blank">Mapa</a>
+        <a href="mapaindex.html">Mapa</a>
         <a href="batalhas.html">Batalhas</a>
         <a href="mcs.html"><strong>MC's</strong></a>
         <div class="dropdown">
@@ -180,6 +209,16 @@
 
     <h1>MCs da Liga Caipira</h1>
     
+    <div class="form-container">
+        <h2>Quer participar?</h2>
+        <p style="text-align: center; margin-bottom: 20px;">
+            Cadastre-se e ganhe um espaço de destaque no nosso site e redes sociais.
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-gtvnYQnlrlO_M7T_doEbd70B3ZHYR9v2p6G9N0S-vNoi1g/viewform?usp=header" target="_blank">
+            Cadastre-se Agora!
+        </a>
+    </div>
+
     <div class="filters-container">
         <input type="text" id="busca-nome" placeholder="Buscar MC pelo nome...">
         <select id="filtro-cidade">
@@ -209,7 +248,6 @@
             const modalBody = document.getElementById('modal-body-mc');
             const closeBtn = document.querySelector('.close-btn');
 
-            // Elementos dos filtros (sem o ranking)
             const buscaNomeInput = document.getElementById('busca-nome');
             const filtroCidadeSelect = document.getElementById('filtro-cidade');
             const limparFiltrosBtn = document.getElementById('limpar-filtros');
@@ -237,7 +275,6 @@
                     mcsFiltrados = mcsFiltrados.filter(mc => mc.cidade === cidadeSelecionada);
                 }
 
-                // Ordenação é sempre alfabética agora
                 mcsFiltrados.sort((a, b) => a.nome.localeCompare(b.nome));
 
                 renderizarMCs(mcsFiltrados);
@@ -262,7 +299,6 @@
                 }
             }
             
-            // Event Listeners para os filtros
             buscaNomeInput.addEventListener('keyup', filtrarEMostrarMCs);
             filtroCidadeSelect.addEventListener('change', filtrarEMostrarMCs);
             
@@ -272,7 +308,6 @@
                 filtrarEMostrarMCs();
             });
 
-            // Lógica da Modal
             mcsGrid.addEventListener('click', (e) => {
                 const card = e.target.closest('.mc-card');
                 if (card) {
@@ -300,7 +335,6 @@
             closeBtn.onclick = () => { mcModal.style.display = 'none'; };
             window.onclick = (event) => { if (event.target === mcModal) { mcModal.style.display = 'none'; } };
 
-            // Inicia o processo
             popularFiltroCidades();
             filtrarEMostrarMCs();
         });
