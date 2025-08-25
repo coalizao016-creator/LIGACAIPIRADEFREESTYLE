@@ -42,9 +42,13 @@
     <label for="filtroDia">Filtrar por Dia:</label>
     <select id="filtroDia">
       <option value="">Todos</option>
+      <option value="Domingo">Domingo</option>
+      <option value="Segunda-feira">Segunda-feira</option>
+      <option value="Terça-feira">Terça-feira</option>
+      <option value="Quarta-feira">Quarta-feira</option>
+      <option value="Quinta-feira">Quinta-feira</option>
       <option value="Sexta-feira">Sexta-feira</option>
       <option value="Sábado">Sábado</option>
-      <option value="Domingo">Domingo</option>
     </select>
 
     <label for="filtroCidade" style="margin-left:20px;">Filtrar por Cidade:</label>
@@ -55,7 +59,6 @@
 
   <div id="map"></div>
 
-  <!-- Scripts -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="batalhas.js"></script>
   <script>
@@ -81,7 +84,7 @@
           const marker = L.marker(b.coords).addTo(map);
           markers.push(marker);
 
-          const mapsLink = `https://www.google.com/maps?q=${b.coords[0]},${b.coords[1]}`;
+          const mapsLink = `https://maps.google.com/?q=${b.coords[0]},${b.coords[1]}`;
           const popupContent = `
             <div style="text-align: left; font-family: Arial, sans-serif;">
               <h3 style="margin: 5px 0; font-size: 16px;">${b.nome}</h3>
