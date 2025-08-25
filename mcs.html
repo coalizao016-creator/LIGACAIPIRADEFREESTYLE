@@ -40,23 +40,18 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%);
             z-index:2;
         }
-        header .logo-header {
-            position: relative;
-            z-index:3;
-            max-height:120px;
-            margin-top: 60px;
-        }
-
+        
         /* Estilos do menu */
         nav {
             background: #222;
             padding: 10px;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
         nav a {
             color: #fff;
-            margin: 0 10px;
+            margin: 5px 10px;
             text-decoration: none;
             font-weight: bold;
         }
@@ -64,7 +59,7 @@
             color: #ff7f00;
         }
 
-        /* Estilos do menu suspenso de redes sociais */
+        /* Estilos do menu suspenso */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -75,76 +70,49 @@
             background-color: #222;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-            z-index: 1;
+            z-index: 10;
             border-radius: 5px;
             padding: 12px;
             left: 50%;
             transform: translateX(-50%);
         }
         .dropdown-content a {
-            color: white;
-            padding: 8px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            white-space: nowrap;
+            color: white; padding: 8px 16px; text-decoration: none; display: block; text-align: left; white-space: nowrap;
         }
         .dropdown-content a:hover {
-            background-color: #333;
-            border-radius: 3px;
+            background-color: #333; border-radius: 3px;
         }
         .dropdown:hover .dropdown-content {
             display: block;
         }
         .dropdown-label {
-            cursor: pointer;
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
+            cursor: pointer; color: #fff; font-weight: bold; text-decoration: none;
         }
         .dropdown-label:hover {
             color: #ff7f00;
         }
 
-        /* Estilos dos cards dos MCs */
         h1, h2 {
-            text-align: center;
-            margin: 40px 0 20px;
-            color: #ff8c00;
+            text-align: center; margin: 40px 0 20px; color: #ff8c00;
         }
         .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #282828;
-            padding: 30px;
-            border-radius: 10px;
-            border: 1px solid #333;
+            max-width: 600px; margin: 0 auto; background: #282828; padding: 30px; border-radius: 10px; border: 1px solid #333;
         }
-        .form-container p {
-            color: #e0e0e0;
-        }
+        .form-container p { color: #e0e0e0; }
         .form-container a {
-            display: block;
-            width: 250px;
-            margin: 20px auto 0;
-            padding: 15px;
-            background-color: #ff8c00;
-            color: #fff;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            display: block; width: 250px; margin: 20px auto 0; padding: 15px; background-color: #ff8c00; color: #fff; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease;
         }
         .form-container a:hover {
-            background-color: #ff8c00;
+            background-color: #e67300;
         }
+        
+        /* Estilos dos cards dos MCs */
         .mcs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
             padding: 20px;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         .mc-card {
@@ -154,6 +122,7 @@
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         .mc-card:hover {
             transform: translateY(-5px);
@@ -171,24 +140,59 @@
             margin-bottom: 5px;
             font-size: 1.2em;
         }
-        .mc-card p {
-            color: #b0b0b0;
-            margin: 0;
+
+        /* Estilos da Modal */
+        .modal {
+            display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #282828; margin: 5% auto; padding: 30px; border: 1px solid #444; width: 80%; max-width: 600px; border-radius: 10px; position: relative; animation-name: animatetop; animation-duration: 0.4s;
+        }
+        .modal-content h3 {
+            color: #ff8c00; font-size: 2.2em; margin-top: 0; margin-bottom: 10px;
+        }
+        .modal-content p {
+            color: #e0e0e0; text-align: center; margin-bottom: 10px; font-size: 1.1em;
+        }
+        .modal-content .mc-modal-links {
+            margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+        }
+        .modal-content .mc-modal-links a {
+            padding: 8px 15px; background-color: #ff8c00; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s;
+        }
+        .modal-content .mc-modal-links a:hover {
+            background-color: #e67300;
+        }
+        .close-btn {
+            color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.3s;
+        }
+        .close-btn:hover {
+            color: #fff;
+        }
+        @keyframes animatetop {
+            from {top:-300px; opacity:0} 
+            to {top:0; opacity:1}
+        }
+        
+        /* ========== NOVOS ESTILOS PARA A FOTO E ESTATÍSTICAS NA MODAL ========== */
+        .modal-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #ff8c00;
+            margin-bottom: 20px;
+        }
+        .modal-stats {
+            color: #aaa;
+            font-style: italic;
+            margin-top: 25px;
             font-size: 0.9em;
         }
-        .mc-links a {
-            margin: 10px 8px;
-            color: #ff8c00;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9em;
-        }
+
+
         footer {
-            background:#000;
-            padding:15px;
-            color:#aaa;
-            text-align: center;
-            margin-top: 30px;
+            background:#000; padding:15px; color:#aaa; text-align: center; margin-top: 30px;
         }
     </style>
 </head>
@@ -197,7 +201,6 @@
     <header>
         <img src="batalha.jpg" alt="Batalha">
         <div class="degrade"></div>
-    
     </header>
 
     <nav>
@@ -207,7 +210,6 @@
         <a href="https://coalizao016-creator.github.io/NOVOMAPA/" target="_blank">Mapa</a>
         <a href="batalhas.html">Batalhas</a>
         <a href="mcs.html"><strong>MC's</strong></a>
-
         <div class="dropdown">
             <a href="#" class="dropdown-label">Nossas Redes</a>
             <div class="dropdown-content">
@@ -218,7 +220,6 @@
             </div>
         </div>
     </nav>
-
 
     <h1>MCs da Liga Caipira</h1>
     <p style="text-align:center; color: #b0b0b0;">Espaço para os artistas divulgarem sua arte e trajetória.</p>
@@ -234,43 +235,91 @@
     </div>
 
     <h2>MCs em destaque</h2>
-    <div class="mcs-grid">
-        <div class="mc-card" data-id="MC001">
-            <img src="images/MC001.png" alt="PUMA">
-            <h3>PUMA</h3>
-            <p>São Carlos - SP</p>
-            <p>🏆 Liga Caipira 2025</p>
-            <div class="mc-links">
-                <a href="https://www.instagram.com/pumaemici/" target="_blank">Instagram</a>
-            </div>
-        </div>
-        <div class="mc-card" data-id="MC002">
-            <img src="images/MC002.png" alt="Guri">
-            <h3>Guri</h3>
-            <p>Ribeirão Preto - SP</p>
-            <p>🔥 Destaque</p>
-            <div class="mc-links">
-                <a href="https://www.instagram.com/oi_guri/" target="_blank">Instagram</a>
-                <a href="https://www.youtube.com/@Gurimc" target="_blank">YouTube</a>
-                <a href="https://open.spotify.com/intl-pt/artist/5I3oLG0SOgiA12K1W0gE0s" target="_blank">Spotify</a>
-            </div>
-        </div>
-        <div class="mc-card" data-id="MC003">
-            <img src="images/MC003.png" alt="MC Bubba">
-            <h3>Bubba</h3>
-            <p>Ribeirão Preto - SP</p>
-            <p> 🏆 Ascensão dos Monstros</p>
-            <div class="mc-links">
-                <a href="https://www.instagram.com/bubbassalto/" target="_blank">Instagram</a>
-                <a href="https://www.youtube.com/@bubbassalto" target="_blank">YouTube</a>
-                <a href="https://open.spotify.com/intl-pt/artist/5FI9nwGy8otx6wZ8drZ1l8?si=YtjJJQYLRpK75Hga0bBa2w" target="_blank">Spotify</a>
-            </div>
-        </div>
-    </div>
+    <div class="mcs-grid" id="mcs-grid"></div>
 
     <footer>
         © 2025 Coalizão 016 - Todos os direitos reservados.
     </footer>
+
+    <div id="mc-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <div id="modal-body-mc">
+                </div>
+        </div>
+    </div>
+
+    <script src="mcs.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mcsGrid = document.getElementById('mcs-grid');
+            const mcModal = document.getElementById('mc-modal');
+            const modalBody = document.getElementById('modal-body-mc');
+            const closeBtn = document.querySelector('.close-btn');
+
+            function renderizarMCs() {
+                mcsGrid.innerHTML = '';
+                if (typeof mcs !== 'undefined' && mcs.length > 0) {
+                    mcs.forEach(mc => {
+                        const card = document.createElement('div');
+                        card.className = 'mc-card';
+                        card.setAttribute('data-id', mc.id);
+                        
+                        card.innerHTML = `
+                            <img src="${mc.imagem}" alt="${mc.nome}">
+                            <h3>${mc.nome}</h3>
+                        `;
+                        mcsGrid.appendChild(card);
+                    });
+                } else {
+                    mcsGrid.innerHTML = '<p>Não foi possível carregar os dados dos MCs.</p>';
+                }
+            }
+
+            mcsGrid.addEventListener('click', (e) => {
+                const card = e.target.closest('.mc-card');
+                if (card) {
+                    const mcId = card.getAttribute('data-id');
+                    const mcSelecionado = mcs.find(m => m.id === mcId);
+
+                    if (mcSelecionado) {
+                        let linksHTML = '';
+                        if (mcSelecionado.links && mcSelecionado.links.length > 0) {
+                            mcSelecionado.links.forEach(link => {
+                                linksHTML += `<a href="${link.url}" target="_blank">${link.nome}</a>`;
+                            });
+                        }
+
+                        // ========== CONTEÚDO DA MODAL ATUALIZADO AQUI ==========
+                        modalBody.innerHTML = `
+                            <img src="${mcSelecionado.imagem}" alt="${mcSelecionado.nome}" class="modal-img">
+                            <h3>${mcSelecionado.nome}</h3>
+                            <p>${mcSelecionado.cidade}</p>
+                            <p>${mcSelecionado.titulo}</p>
+                            <div class="mc-modal-links">
+                                ${linksHTML}
+                            </div>
+                            <p class="modal-stats">Estatísticas: EM BREVE (by TwolalaScore)</p>
+                        `;
+                        
+                        mcModal.style.display = 'block';
+                    }
+                }
+            });
+
+            closeBtn.onclick = () => {
+                mcModal.style.display = 'none';
+            };
+
+            window.onclick = (event) => {
+                if (event.target === mcModal) {
+                    mcModal.style.display = 'none';
+                }
+            };
+
+            renderizarMCs();
+        });
+    </script>
 
 </body>
 </html>
