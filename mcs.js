@@ -39,7 +39,7 @@ const mcs = [
     nome: "Dieguim",
     imagem: "images/MC004.png",
     cidade: "Batatais - SP",
-    titulo: "🎤 ",
+    titulo: "",
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/diego_rrxdrigues/" }
     ]
@@ -49,7 +49,7 @@ const mcs = [
     nome: "Last",
     imagem: "images/MC005.png",
     cidade: "Franca - SP",
-    titulo: "🔥",
+    titulo: "",
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/_last_mc/" },
       { nome: "Youtube", url: "https://www.youtube.com/@LastMc" }
@@ -60,9 +60,9 @@ const mcs = [
     nome: "Haiki",
     imagem: "images/MC006.png",
     cidade: "Ribeirão Preto - SP",
-    titulo: "🏆",
+    titulo: "",
     links: [
-      { nome: "Instagram", url: "#" },
+      { nome: "Instagram", url: "https://www.instagram.com/mc_haiki/" },
       { nome: "YouTube", url: "#" }
     ]
   },
@@ -71,9 +71,9 @@ const mcs = [
     nome: "Luh do click",
     imagem: "images/MC007.png",
     cidade: "Pradópolis - SP",
-    titulo: "🎶 ",
+    titulo: "campeã regional diver 016 ",
     links: [
-      { nome: "Instagram", url: "#" },
+      { nome: "Instagram", url: "https://www.instagram.com/luhdoclick/" },
       { nome: "Spotify", url: "#" }
     ]
   },
@@ -81,10 +81,12 @@ const mcs = [
     id: "MC008",
     nome: "Jovem Kata",
     imagem: "images/MC008.png",
-    cidade: "JRibeirão Preto - SP",
-    titulo: "✒️ Poesia de Rua",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "",
     links: [
-      { nome: "Instagram", url: "#" }
+      { nome: "Instagram", url: "https://www.instagram.com/jovemkata_/" }, // <-- VÍRGULA ADICIONADA
+      { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/0fSHyBl7abxUvS28TfaikC" }, // <-- VÍRGULA ADICIONADA
+      { nome: "Youtube", url: "https://www.youtube.com/@jovemkata" }
     ]
   },
   {
@@ -92,9 +94,9 @@ const mcs = [
     nome: "Jimmy",
     imagem: "images/MC009.png",
     cidade: "Ribeirão Preto - SP",
-    titulo: "🔥 Destaque Regional",
+    titulo: "",
     links: [
-      { nome: "Instagram", url: "#" },
+      { nome: "Instagram", url: "https://www.instagram.com/eojimmy_/" },
       { nome: "YouTube", url: "#" }
     ]
   },
@@ -103,9 +105,11 @@ const mcs = [
     nome: "Tyrano",
     imagem: "images/MC010.png",
     cidade: "Franca - SP",
-    titulo: "🤫 ",
+    titulo: "",
     links: [
-      { nome: "Instagram", url: "#" }
+      { nome: "Instagram", url: "https://www.instagram.com/tyranoofc/" }, // <-- VÍRGULA ADICIONADA
+      { nome: "Youtube", url: "https://www.youtube.com/@tyranoofc" }, // <-- VÍRGULA ADICIONADA
+      { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/6Bl1DUWF01Run0eT4mG5Iw" }
     ]
   },
   {
@@ -113,9 +117,9 @@ const mcs = [
     nome: "Shazzam",
     imagem: "images/MC011.png",
     cidade: "Araraquara - SP",
-    titulo: "🏆 Melodia e Protesto",
+    titulo: "",
     links: [
-      { nome: "Instagram", url: "#" },
+      { nome: "Instagram", url: "https://www.instagram.com/oshazzam_/" },
       { nome: "Spotify", url: "#" }
     ]
   },
@@ -124,9 +128,10 @@ const mcs = [
     nome: "Jhow",
     imagem: "images/MC012.png",
     cidade: "Araraquara - SP",
-    titulo: "⏳ ",
+    titulo: " ",
     links: [
-      { nome: "Instagram", url: "#" }
+      { nome: "Instagram", url: "https://www.instagram.com/jhowfidelis777/" }, // <-- VÍRGULA ADICIONADA
+      { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/5DF3n5UZ4CaQ38s4E0YQZV" }
     ]
   },
   {
@@ -134,9 +139,9 @@ const mcs = [
     nome: "MS",
     imagem: "images/MC013.png",
     cidade: "Bauru - SP",
-    titulo: "💡  ",
+    titulo: "  ",
     links: [
-      { nome: "Instagram", url: "#" },
+      { nome: "Instagram", url: "https://www.instagram.com/ms.ofc/" },
       { nome: "YouTube", url: "#" }
     ]
   },
@@ -145,9 +150,9 @@ const mcs = [
     nome: "Giroto",
     imagem: "images/MC014.png",
     cidade: "Ribeirão Preto - SP",
-    titulo: "🤠 ",
+    titulo: "",
     links: [
-      { nome: "Instagram", url: "#" }
+      { nome: "Instagram", url: "https://www.instagram.com/girotomc/" }
     ]
   },
   {
@@ -155,9 +160,9 @@ const mcs = [
     nome: "Zemaki",
     imagem: "images/MC015.png",
     cidade: "São Carlos - SP",
-    titulo: "🌱 ",
+    titulo: " ",
     links: [
-      { nome: "Instagram", url: "#" },
+      { nome: "Instagram", url: "https://www.instagram.com/_zemaki/" },
       { nome: "TikTok", url: "#" }
     ]
   },
@@ -166,9 +171,10 @@ const mcs = [
     nome: "Satsu",
     imagem: "images/MC016.png",
     cidade: "São Carlos - SP",
-    titulo: "👻",
+    titulo: "",
     links: [
-      { nome: "Instagram", url: "#" }
+      { nome: "Instagram", url: "https://www.instagram.com/satsumc/" }, // <-- VÍRGULA ADICIONADA
+      { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/3Av64XJ3EDhahcI36vBZ2A" }
     ]
   }
 ];
