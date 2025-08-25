@@ -2,7 +2,7 @@
 const mcs = [
   {
     id: "MC001",
-    nome: "PUMA",
+    nome: "Puma",
     imagem: "images/MC001.png",
     cidade: "São Carlos - SP",
     titulo: "🏆 Liga Caipira 2025",
@@ -59,8 +59,8 @@ const mcs = [
     id: "MC006",
     nome: "Haiki",
     imagem: "images/MC006.png",
-    cidade: "Batatais - SP",
-    titulo: "🏆 Campeão Batalha da Vinte",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "🏆",
     links: [
       { nome: "Instagram", url: "#" },
       { nome: "YouTube", url: "#" }
@@ -70,8 +70,8 @@ const mcs = [
     id: "MC007",
     nome: "Luh do click",
     imagem: "images/MC007.png",
-    cidade: "Araraquara - SP",
-    titulo: "🎶 Voz da Resistência",
+    cidade: "Pradópolis - SP",
+    titulo: "🎶 ",
     links: [
       { nome: "Instagram", url: "#" },
       { nome: "Spotify", url: "#" }
@@ -81,7 +81,7 @@ const mcs = [
     id: "MC008",
     nome: "Jovem Kata",
     imagem: "images/MC008.png",
-    cidade: "Jaboticabal - SP",
+    cidade: "JRibeirão Preto - SP",
     titulo: "✒️ Poesia de Rua",
     links: [
       { nome: "Instagram", url: "#" }
@@ -91,7 +91,7 @@ const mcs = [
     id: "MC009",
     nome: "Jimmy",
     imagem: "images/MC009.png",
-    cidade: "Barretos - SP",
+    cidade: "Ribeirão Preto - SP",
     titulo: "🔥 Destaque Regional",
     links: [
       { nome: "Instagram", url: "#" },
@@ -102,8 +102,8 @@ const mcs = [
     id: "MC010",
     nome: "Tyrano",
     imagem: "images/MC010.png",
-    cidade: "Matão - SP",
-    titulo: "🤫 Punchline Mortal",
+    cidade: "Franca - SP",
+    titulo: "🤫 ",
     links: [
       { nome: "Instagram", url: "#" }
     ]
@@ -112,7 +112,7 @@ const mcs = [
     id: "MC011",
     nome: "Shazzam",
     imagem: "images/MC011.png",
-    cidade: "Cravinhos - SP",
+    cidade: "Araraquara - SP",
     titulo: "🏆 Melodia e Protesto",
     links: [
       { nome: "Instagram", url: "#" },
@@ -123,8 +123,8 @@ const mcs = [
     id: "MC012",
     nome: "Jhow",
     imagem: "images/MC012.png",
-    cidade: "Brodowski - SP",
-    titulo: "⏳ Mestre do Tempo",
+    cidade: "Araraquara - SP",
+    titulo: "⏳ ",
     links: [
       { nome: "Instagram", url: "#" }
     ]
@@ -133,8 +133,8 @@ const mcs = [
     id: "MC013",
     nome: "MS",
     imagem: "images/MC013.png",
-    cidade: "Orlândia - SP",
-    titulo: "💡 Flow Consciente",
+    cidade: "Bauru - SP",
+    titulo: "💡  ",
     links: [
       { nome: "Instagram", url: "#" },
       { nome: "YouTube", url: "#" }
@@ -144,8 +144,8 @@ const mcs = [
     id: "MC014",
     nome: "Giroto",
     imagem: "images/MC014.png",
-    cidade: "Monte Alto - SP",
-    titulo: "🤠 O Caipira do Verso",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "🤠 ",
     links: [
       { nome: "Instagram", url: "#" }
     ]
@@ -154,8 +154,8 @@ const mcs = [
     id: "MC015",
     nome: "Zemaki",
     imagem: "images/MC015.png",
-    cidade: "Pontal - SP",
-    titulo: "🌱 Raiz do Interior",
+    cidade: "São Carlos - SP",
+    titulo: "🌱 ",
     links: [
       { nome: "Instagram", url: "#" },
       { nome: "TikTok", url: "#" }
@@ -165,8 +165,8 @@ const mcs = [
     id: "MC016",
     nome: "Satsu",
     imagem: "images/MC016.png",
-    cidade: "Serrana - SP",
-    titulo: "👻 Rima Fantasma",
+    cidade: "São Carlos - SP",
+    titulo: "👻",
     links: [
       { nome: "Instagram", url: "#" }
     ]
