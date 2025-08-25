@@ -162,7 +162,7 @@ const batalhas = [
       dia: "Segunda-feira",
       coords: [-21.212927282771425, -47.824989754917254],
       rede: "https://www.instagram.com/batalhadobenca?igsh=d2JkaDdyOGtjNnBj",
-      descricao: "Uma batalha que acontece na segunda-feira, a Batalha do Bença é um ótimo lugar para começar a semana com muita rima e energia.",
+      descricao: "",
       ultimo_campeao: null,
       campeoes_historicos: [],
       redes_sociais_links: [
@@ -176,8 +176,8 @@ const batalhas = [
       dia: "Domingo",
       coords: [-21.144083121343485, -47.854573834343995],
       rede: "https://www.instagram.com/batalhadopicorp/",
-      descricao: "A Batalha do Pico é um dos pontos mais altos do freestyle em Ribeirão Preto, com uma vista incrível e rimas no mesmo nível.",
-      ultimo_campeao: null,
+      descricao: "",
+      ultimo_campeao: "Diana",
       campeoes_historicos: [],
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/batalhadopicorp/" }
