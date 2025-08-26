@@ -189,9 +189,10 @@ const batalhas = [
       cidade: "Taquaritinga - SP",
       dia: "Sábado",
       coords: [-21.4064, -48.5058], 
-      rede: "https://www.instagram.com/batalhadosbrodi?igsh=MWppNDVvMmNudTZpdg==",
-      descricao: ".",
-      ultimo_campeao: null,
+      rede: "https://www.instagram.com/batalhadosbrodi?igs=MWppNDVvMmNudTZpdg==",
+      // ===== DESCRIÇÃO CORRIGIDA AQUI =====
+      descricao: "Quinzenalmente aos sábados na praça do balão em Taquaritinga-SP trazendo um formato mais descontraído onde o mc sorteado pode escolher desafiar ou sortear o outro mc que irá contra, ao final de toda batalha ocorrem rodas de conversa e festividade.",
+      ultimo_campeao: "Mancha",
       campeoes_historicos: [],
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/batalhadosbrodi?igsh=MWppNDVvMmNudTZpdg==" }
