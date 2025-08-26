@@ -1,4 +1,4 @@
-// mcs.js
+// mcs.js (VERSÃO COM O RANKING)
 const mcs = [
   {
     id: "MC001",
@@ -6,6 +6,7 @@ const mcs = [
     imagem: "images/MC001.png",
     cidade: "São Carlos - SP",
     titulo: "🏆 Liga Caipira 2025",
+    ranking: 1,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/pumaemici/" }
     ]
@@ -16,6 +17,7 @@ const mcs = [
     imagem: "images/MC002.png",
     cidade: "Ribeirão Preto - SP",
     titulo: "🔥 Destaque",
+    ranking: 2,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/oi_guri/" },
       { nome: "YouTube", url: "https://www.youtube.com/@Gurimc" },
@@ -28,6 +30,7 @@ const mcs = [
     imagem: "images/MC003.png",
     cidade: "Ribeirão Preto - SP",
     titulo: "🏆 Ascensão dos Monstros",
+    ranking: 3,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/bubbassalto/" },
       { nome: "YouTube", url: "https://www.youtube.com/@bubbassalto" },
@@ -40,6 +43,7 @@ const mcs = [
     imagem: "images/MC004.png",
     cidade: "Batatais - SP",
     titulo: "",
+    ranking: 16,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/diego_rrxdrigues/" }
     ]
@@ -50,6 +54,7 @@ const mcs = [
     imagem: "images/MC005.png",
     cidade: "Franca - SP",
     titulo: "",
+    ranking: 11,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/_last_mc/" },
       { nome: "Youtube", url: "https://www.youtube.com/@LastMc" }
@@ -61,6 +66,7 @@ const mcs = [
     imagem: "images/MC006.png",
     cidade: "Ribeirão Preto - SP",
     titulo: "",
+    ranking: 12,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/mc_haiki/" },
       { nome: "YouTube", url: "#" }
@@ -72,6 +78,7 @@ const mcs = [
     imagem: "images/MC007.png",
     cidade: "Pradópolis - SP",
     titulo: "campeã regional diver 016 ",
+    ranking: 6,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/luhdoclick/" },
       { nome: "Spotify", url: "#" }
@@ -83,9 +90,10 @@ const mcs = [
     imagem: "images/MC008.png",
     cidade: "Ribeirão Preto - SP",
     titulo: "",
+    ranking: 8,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/jovemkata_/" }, // <-- VÍRGULA ADICIONADA
-      { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/0fSHyBl7abxUvS28TfaikC" }, // <-- VÍRGULA ADICIONADA
+      { nome: "Instagram", url: "https://www.instagram.com/jovemkata_/" },
+      { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/0fSHyBl7abxUvS28TfaikC" },
       { nome: "Youtube", url: "https://www.youtube.com/@jovemkata" }
     ]
   },
@@ -95,6 +103,7 @@ const mcs = [
     imagem: "images/MC009.png",
     cidade: "Ribeirão Preto - SP",
     titulo: "",
+    ranking: 7,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/eojimmy_/" },
       { nome: "YouTube", url: "#" }
@@ -106,9 +115,10 @@ const mcs = [
     imagem: "images/MC010.png",
     cidade: "Franca - SP",
     titulo: "",
+    ranking: 5,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/tyranoofc/" }, // <-- VÍRGULA ADICIONADA
-      { nome: "Youtube", url: "https://www.youtube.com/@tyranoofc" }, // <-- VÍRGULA ADICIONADA
+      { nome: "Instagram", url: "https://www.instagram.com/tyranoofc/" },
+      { nome: "Youtube", url: "https://www.youtube.com/@tyranoofc" },
       { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/6Bl1DUWF01Run0eT4mG5Iw" }
     ]
   },
@@ -118,6 +128,7 @@ const mcs = [
     imagem: "images/MC011.png",
     cidade: "Araraquara - SP",
     titulo: "",
+    ranking: 14,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/oshazzam_/" },
       { nome: "Spotify", url: "#" }
@@ -129,8 +140,9 @@ const mcs = [
     imagem: "images/MC012.png",
     cidade: "Araraquara - SP",
     titulo: " ",
+    ranking: 9,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/jhowfidelis777/" }, // <-- VÍRGULA ADICIONADA
+      { nome: "Instagram", url: "https://www.instagram.com/jhowfidelis777/" },
       { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/5DF3n5UZ4CaQ38s4E0YQZV" }
     ]
   },
@@ -140,6 +152,7 @@ const mcs = [
     imagem: "images/MC013.png",
     cidade: "Bauru - SP",
     titulo: "  ",
+    ranking: 15,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/ms.ofc/" },
       { nome: "YouTube", url: "#" }
@@ -151,6 +164,7 @@ const mcs = [
     imagem: "images/MC014.png",
     cidade: "Ribeirão Preto - SP",
     titulo: "",
+    ranking: 13,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/girotomc/" }
     ]
@@ -161,6 +175,7 @@ const mcs = [
     imagem: "images/MC015.png",
     cidade: "São Carlos - SP",
     titulo: " ",
+    ranking: 10,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/_zemaki/" },
       { nome: "TikTok", url: "#" }
@@ -172,8 +187,9 @@ const mcs = [
     imagem: "images/MC016.png",
     cidade: "São Carlos - SP",
     titulo: "",
+    ranking: 4,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/satsumc/" }, // <-- VÍRGULA ADICIONADA
+      { nome: "Instagram", url: "https://www.instagram.com/satsumc/" },
       { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/3Av64XJ3EDhahcI36vBZ2A" }
     ]
   }

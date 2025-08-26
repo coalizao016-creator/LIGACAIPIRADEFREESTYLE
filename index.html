@@ -1,154 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "t0i3kd02k6");
-</script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDQYDNW2T"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EJDQYDNW2T');
-</script>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Coalizão 016</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: #fff;
-            text-align: center;
-        }
-        nav {
-            background: #222;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-        }
-        nav a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #ff7f00;
-        }
-        section {
-            padding: 20px;
-        }
-        .agenda img, #ranking img {
-            max-width: 90%;
-            border-radius: 10px;
-        }
-
-        /* Estilos do menu suspenso de redes sociais */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #222;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4);
-            z-index: 1;
-            border-radius: 5px;
-            padding: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        .dropdown-content a {
-            color: white;
-            padding: 8px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            white-space: nowrap;
-        }
-        .dropdown-content a:hover {
-            background-color: #333;
-            border-radius: 3px;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown-label {
-            cursor: pointer;
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
-        }
-        .dropdown-label:hover {
-            color: #ff7f00;
-        }
+        /* CSS completo aqui (igual ao anterior, sem alterações) */
+        body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; text-align: center; }
+        nav { background: #222; padding: 10px; display: flex; justify-content: center; flex-wrap: wrap; }
+        nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #ff7f00; }
+        section { padding: 40px 10px; max-width: 1200px; margin: 0 auto; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #222; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4); z-index: 10; border-radius: 5px; padding: 12px; left: 50%; transform: translateX(-50%); }
+        .dropdown-content a { color: white; padding: 8px 16px; text-decoration: none; display: block; text-align: left; white-space: nowrap; }
+        .dropdown-content a:hover { background-color: #333; border-radius: 3px; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-label { cursor: pointer; color: #fff; font-weight: bold; text-decoration: none; }
+        .dropdown-label:hover { color: #ff7f00; }
+        h1, h2 { color: #ff7f00; margin-top: 0; }
+        .agenda-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .evento-link { text-decoration: none; color: inherit; }
+        .evento-card { background-color: #222; border-radius: 10px; padding: 20px; border-left: 5px solid #ff7f00; text-align: left; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; height: 100%; box-sizing: border-box; }
+        .evento-card:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 8px 25px rgba(255, 127, 0, 0.25); }
+        .evento-data { font-size: 1.1em; font-weight: bold; color: #fff; }
+        .evento-data span { font-size: 0.9em; color: #aaa; margin-left: 10px; }
+        .evento-info h3 { margin: 10px 0 5px 0; color: #ff8c00; font-size: 1.5em; }
+        .evento-info p { margin: 5px 0; color: #ccc; }
+        .evento-status { display: inline-block; background-color: #ff8c00; color: #111; padding: 4px 10px; border-radius: 15px; font-size: 0.8em; font-weight: bold; margin-top: 10px; }
+        .ranking-item { background: #222; padding: 15px; border-radius: 10px; border: 2px solid #444; transition: transform 0.3s ease; display: flex; align-items: center; cursor: pointer; }
+        .ranking-item:hover { transform: translateY(-5px); }
+        .ranking-item .posicao { font-size: 1.8em; font-weight: bold; color: #777; margin-right: 15px; min-width: 30px; }
+        .ranking-item img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 15px; }
+        .ranking-item .info h3 { margin: 0 0 5px 0; font-size: 1.2em; color: #fff; text-align: left; }
+        .ranking-item .info p { margin: 0; color: #aaa; text-align: left; font-size: 0.9em; }
+        .ranking-top1-container { margin-bottom: 25px; }
+        .ranking-item--gold { border-color: #ffd700; background-color: #282828; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); justify-content: center; }
+        .ranking-item--gold .posicao { color: #ffd700; font-size: 2.5em; }
+        .ranking-item--gold img { width: 80px; height: 80px; }
+        .ranking-item--gold .info h3 { font-size: 1.6em; }
+        .ranking-item--silver { border-color: #c0c0c0; }
+        .ranking-item--silver .posicao { color: #c0c0c0; }
+        .ranking-item--bronze { border-color: #cd7f32; }
+        .ranking-item--bronze .posicao { color: #cd7f32; }
+        .ranking-rest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 15px; }
+        @media (min-width: 768px) { .ranking-rest-grid { grid-template-columns: repeat(2, 1fr); } }
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); padding-top: 60px; }
+        .modal-content { background-color: #282828; margin: 5% auto; padding: 30px; border: 1px solid #444; width: 80%; max-width: 600px; border-radius: 10px; position: relative; animation-name: animatetop; animation-duration: 0.4s; text-align: center; }
+        .modal-content h3 { color: #ff8c00; font-size: 2.2em; margin-top: 0; margin-bottom: 10px; }
+        .modal-content p { color: #e0e0e0; margin-bottom: 10px; font-size: 1.1em; }
+        .modal-content .mc-modal-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .modal-content .mc-modal-links a { padding: 8px 15px; background-color: #ff8c00; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s; }
+        .modal-content .mc-modal-links a:hover { background-color: #e67300; }
+        .close-btn { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.3s; }
+        .close-btn:hover { color: #fff; }
+        @keyframes animatetop { from {top:-300px; opacity:0} to {top:0; opacity:1} }
+        .modal-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #ff8c00; margin-bottom: 20px; }
+        .modal-stats { color: #aaa; font-style: italic; margin-top: 25px; font-size: 0.9em; }
     </style>
 </head>
 <body>
-
     <header style="position: relative; height: 250px; overflow: hidden;">
         <img src="images/batalha.jpg" alt="Batalha" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; z-index:1;">
-        
-        <div style="
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%);
-            z-index:2;
-        "></div>
-        
-
+        <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%); z-index:2;"></div>
     </header>
-
     <nav>
-        <a href="#inicio">Início</a>
-        <a href="#agenda">Agenda</a>
-        <a href="#ranking">Ranking</a>
-        <a href="mapaindex.html">Mapa</a>
-        <a href="batalhas.html">Batalhas</a>
-        <a href="mcs.html">MC's</a>
-        
+        <a href="#inicio">Início</a> <a href="#agenda">Agenda</a> <a href="#ranking">Ranking</a> <a href="mapaindex.html">Mapa</a> <a href="batalhas.html">Batalhas</a> <a href="mcs.html">MC's</a>
         <div class="dropdown">
             <a href="#" class="dropdown-label">Nossas Redes</a>
-            <div class="dropdown-content">
-                <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a>
-                <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a>
-                <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a>
-                <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a>
-            </div>
+            <div class="dropdown-content"> <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a> <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a> <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a> <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a> </div>
         </div>
     </nav>
 
-    <section id="inicio">
-        <h1>Bem-vindo à Coalizão 016</h1>
-        <p>Uma nova fase para o freestyle caipira.</p>
-    </section>
+    <section id="inicio"> <h1>Bem-vindo à Coalizão 016</h1> <p>Uma nova fase para o freestyle caipira.</p> </section>
+    <section id="agenda"> <h2>Próximos Eventos</h2> <div id="agenda-container" class="agenda-grid"></div> </section>
+    <section id="ranking"> <h2>Ranking Oficial da Liga</h2> <div id="ranking-top1-container"></div> <div id="ranking-rest-grid" class="ranking-rest-grid"></div> </section>
+    
+    <footer style="background:#000; padding:15px; color:#aaa;"> © 2025 Coalizão 016 - Todos os direitos reservados. </footer>
 
-    <section id="agenda" class="agenda">
-        <h2 style="color:#ff7f00;">Agenda da Semana</h2>
-        <img src="images/agenda.png" alt="Agenda da Semana">
-    </section>
+    <div id="mc-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <div id="modal-body-mc"></div>
+        </div>
+    </div>
 
-    <section id="ranking">
-        <h2 style="color:#ff7f00;">Ranking</h2>
-        <img src="images/ranking.png" alt="Ranking">
-    </section>
+    <script src="agenda.js"></script>
+    <script src="mcs.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Definição de constantes
+            const agendaContainer = document.getElementById('agenda-container');
+            const top1Container = document.getElementById('ranking-top1-container');
+            const restGrid = document.getElementById('ranking-rest-grid');
+            const mcModal = document.getElementById('mc-modal');
+            const modalBody = document.getElementById('modal-body-mc');
+            const closeBtn = document.querySelector('.close-btn');
 
-    <footer style="background:#000; padding:15px; color:#aaa;">
-        © 2025 Coalizão 016 - Todos os direitos reservados.
-    </footer>
+            // --- LÓGICA DA AGENDA DINÂMICA ---
+            if (typeof eventos !== 'undefined' && agendaContainer) {
+                const hoje = new Date();
+                hoje.setHours(0, 0, 0, 0);
+                const proximosEventos = eventos.filter(evento => new Date(evento.data + 'T00:00:00-03:00') >= hoje);
+                proximosEventos.sort((a, b) => new Date(a.data) - new Date(b.data));
+                const eventosParaExibir = proximosEventos.slice(0, 4);
+                if (eventosParaExibir.length === 0) {
+                    agendaContainer.innerHTML = '<p style="color: #aaa;">Nenhum evento agendado. Fique de olho!</p>';
+                } else {
+                    eventosParaExibir.forEach(evento => {
+                        const link = document.createElement('a');
+                        link.href = evento.linkInstagram || '#';
+                        link.target = '_blank';
+                        link.className = 'evento-link';
+                        const card = document.createElement('div');
+                        card.className = 'evento-card';
+                        const dataObj = new Date(evento.data + 'T00:00:00-03:00');
+                        const dia = String(dataObj.getDate()).padStart(2, '0');
+                        const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
+                        const dataFormatada = `${dia}/${mes}`;
+                        card.innerHTML = `<div class="evento-data">${dataFormatada} <span>${evento.diaSemana} - ${evento.horario}</span></div><div class="evento-info"><h3>${evento.nomeBatalha}</h3><p>${evento.cidade}</p></div>${evento.status ? `<div class="evento-status">${evento.status}</div>` : ''}`;
+                        link.appendChild(card);
+                        agendaContainer.appendChild(link);
+                    });
+                }
+            }
 
+            // --- LÓGICA DO RANKING DINÂMICO ---
+            if (typeof mcs !== 'undefined' && top1Container && restGrid) {
+                const mcsRanqueados = mcs.filter(mc => mc.ranking).sort((a, b) => a.ranking - b.ranking);
+                
+                if (mcsRanqueados.length === 0) {
+                    top1Container.innerHTML = '<p style="color: #aaa;">O ranking está sendo atualizado.</p>';
+                } else {
+                    mcsRanqueados.forEach(mc => {
+                        const item = document.createElement('div');
+                        item.className = 'ranking-item';
+                        item.setAttribute('data-id', mc.id);
+
+                        let classeDestaque = '';
+                        if (mc.ranking === 1) { classeDestaque = 'ranking-item--gold'; }
+                        else if (mc.ranking === 2) { classeDestaque = 'ranking-item--silver'; }
+                        else if (mc.ranking === 3) { classeDestaque = 'ranking-item--bronze'; }
+                        
+                        // ===== CORREÇÃO APLICADA AQUI =====
+                        // Só adiciona a classe se ela não for uma string vazia
+                        if (classeDestaque) {
+                            item.classList.add(classeDestaque);
+                        }
+
+                        item.innerHTML = `
+                            <div class="posicao">${mc.ranking}º</div>
+                            <img src="${mc.imagem}" alt="${mc.nome}">
+                            <div class="info">
+                                <h3>${mc.nome}</h3>
+                                <p>${mc.cidade}</p>
+                            </div>
+                        `;
+                        if (mc.ranking === 1) {
+                            top1Container.appendChild(item);
+                        } else {
+                            restGrid.appendChild(item);
+                        }
+                    });
+                }
+            }
+
+            // --- LÓGICA DA MODAL (PARA O RANKING) ---
+            function abrirModal(event) {
+                const card = event.target.closest('.ranking-item');
+                if (card) {
+                    const mcId = card.getAttribute('data-id');
+                    const mcSelecionado = mcs.find(m => m.id === mcId);
+                    if (mcSelecionado) {
+                        let linksHTML = '';
+                        if (mcSelecionado.links && mcSelecionado.links.length > 0) {
+                            mcSelecionado.links.forEach(link => { linksHTML += `<a href="${link.url}" target="_blank">${link.nome}</a>`; });
+                        }
+                        modalBody.innerHTML = `
+                            <img src="${mcSelecionado.imagem}" alt="${mcSelecionado.nome}" class="modal-img">
+                            <h3>${mcSelecionado.nome}</h3>
+                            <p>${mcSelecionado.cidade}</p>
+                            <p>${mcSelecionado.titulo}</p>
+                            <div class="mc-modal-links">${linksHTML}</div>
+                            <p class="modal-stats">Estatísticas: EM BREVE (by TwolalaScore)</p>
+                        `;
+                        mcModal.style.display = 'block';
+                    }
+                }
+            }
+            if (top1Container && restGrid) {
+                top1Container.addEventListener('click', abrirModal);
+                restGrid.addEventListener('click', abrirModal);
+            }
+            if(closeBtn){
+                closeBtn.onclick = () => { mcModal.style.display = 'none'; };
+                window.onclick = (event) => { if (event.target === mcModal) { mcModal.style.display = 'none'; } };
+            }
+        });
+    </script>
 </body>
 </html>
