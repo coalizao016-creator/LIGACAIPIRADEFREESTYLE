@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Coalizão 016</title>
     <style>
-        /* CSS completo aqui (igual ao anterior, sem alterações) */
+        /* CSS Básico, da Agenda e do Ranking (sem alterações) */
         body { margin: 0; font-family: Arial, sans-serif; background: #111; color: #fff; text-align: center; }
         nav { background: #222; padding: 10px; display: flex; justify-content: center; flex-wrap: wrap; }
         nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: bold; }
@@ -45,6 +45,8 @@
         .ranking-item--bronze .posicao { color: #cd7f32; }
         .ranking-rest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 15px; }
         @media (min-width: 768px) { .ranking-rest-grid { grid-template-columns: repeat(2, 1fr); } }
+        
+        /* Estilos da Modal e Estatísticas (idêntico ao da página de MCs) */
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); padding-top: 60px; }
         .modal-content { background-color: #282828; margin: 5% auto; padding: 30px; border: 1px solid #444; width: 80%; max-width: 600px; border-radius: 10px; position: relative; animation-name: animatetop; animation-duration: 0.4s; text-align: center; }
         .modal-content h3 { color: #ff8c00; font-size: 2.2em; margin-top: 0; margin-bottom: 10px; }
@@ -56,40 +58,27 @@
         .close-btn:hover { color: #fff; }
         @keyframes animatetop { from {top:-300px; opacity:0} to {top:0; opacity:1} }
         .modal-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #ff8c00; margin-bottom: 20px; }
-        .modal-stats { color: #aaa; font-style: italic; margin-top: 25px; font-size: 0.9em; }
+        .modal-stats-container { text-align: left; margin-top: 15px; }
+        .stats-group { margin: 10px 0; }
+        .stats-title { font-weight: bold; color: #ff8c00; font-size: 1.1em; margin: 0 0 8px 0; }
+        .stats-item { color: #ccc; margin: 4px 0 4px 15px; }
+        .stats-separator { border: 0; height: 1px; background-color: #444; margin: 15px 0; }
+        .modal-stats-footer { color: #aaa; font-style: italic; margin-top: 20px; text-align: center; font-size: 0.9em; }
     </style>
 </head>
 <body>
-    <header style="position: relative; height: 250px; overflow: hidden;">
-        <img src="images/batalha.jpg" alt="Batalha" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; z-index:1;">
-        <div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%); z-index:2;"></div>
-    </header>
-    <nav>
-        <a href="#inicio">Início</a> <a href="#agenda">Agenda</a> <a href="#ranking">Ranking</a> <a href="mapaindex.html">Mapa</a> <a href="batalhas.html">Batalhas</a> <a href="mcs.html">MC's</a>
-        <div class="dropdown">
-            <a href="#" class="dropdown-label">Nossas Redes</a>
-            <div class="dropdown-content"> <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a> <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a> <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a> <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a> </div>
-        </div>
-    </nav>
-
-    <section id="inicio"> <h1>Bem-vindo à Coalizão 016</h1> <p>Uma nova fase para o freestyle caipira.</p> </section>
-    <section id="agenda"> <h2>Próximos Eventos</h2> <div id="agenda-container" class="agenda-grid"></div> </section>
-    <section id="ranking"> <h2>Ranking Oficial da Liga</h2> <div id="ranking-top1-container"></div> <div id="ranking-rest-grid" class="ranking-rest-grid"></div> </section>
-    
-    <footer style="background:#000; padding:15px; color:#aaa;"> © 2025 Coalizão 016 - Todos os direitos reservados. </footer>
-
-    <div id="mc-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">×</span>
-            <div id="modal-body-mc"></div>
-        </div>
-    </div>
+    <header style="position: relative; height: 250px; overflow: hidden;"><img src="images/batalha.jpg" alt="Batalha" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; z-index:1;"><div style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%); z-index:2;"></div></header>
+    <nav><a href="#inicio">Início</a><a href="#agenda">Agenda</a><a href="#ranking">Ranking</a><a href="mapaindex.html">Mapa</a><a href="batalhas.html">Batalhas</a><a href="mcs.html">MC's</a><div class="dropdown"><a href="#" class="dropdown-label">Nossas Redes</a><div class="dropdown-content"><a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a><a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a><a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a><a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a></div></div></nav>
+    <section id="inicio"><h1>Bem-vindo à Coalizão 016</h1><p>Uma nova fase para o freestyle caipira.</p></section>
+    <section id="agenda"><h2>Próximos Eventos</h2><div id="agenda-container" class="agenda-grid"></div></section>
+    <section id="ranking"><h2>Ranking Oficial da Liga</h2><div id="ranking-top1-container"></div><div id="ranking-rest-grid" class="ranking-rest-grid"></div></section>
+    <footer style="background:#000; padding:15px; color:#aaa;">© 2025 Coalizão 016 - Todos os direitos reservados.</footer>
+    <div id="mc-modal" class="modal"><div class="modal-content"><span class="close-btn">×</span><div id="modal-body-mc"></div></div></div>
 
     <script src="agenda.js"></script>
     <script src="mcs.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Definição de constantes
             const agendaContainer = document.getElementById('agenda-container');
             const top1Container = document.getElementById('ranking-top1-container');
             const restGrid = document.getElementById('ranking-rest-grid');
@@ -97,75 +86,13 @@
             const modalBody = document.getElementById('modal-body-mc');
             const closeBtn = document.querySelector('.close-btn');
 
-            // --- LÓGICA DA AGENDA DINÂMICA ---
-            if (typeof eventos !== 'undefined' && agendaContainer) {
-                const hoje = new Date();
-                hoje.setHours(0, 0, 0, 0);
-                const proximosEventos = eventos.filter(evento => new Date(evento.data + 'T00:00:00-03:00') >= hoje);
-                proximosEventos.sort((a, b) => new Date(a.data) - new Date(b.data));
-                const eventosParaExibir = proximosEventos.slice(0, 4);
-                if (eventosParaExibir.length === 0) {
-                    agendaContainer.innerHTML = '<p style="color: #aaa;">Nenhum evento agendado. Fique de olho!</p>';
-                } else {
-                    eventosParaExibir.forEach(evento => {
-                        const link = document.createElement('a');
-                        link.href = evento.linkInstagram || '#';
-                        link.target = '_blank';
-                        link.className = 'evento-link';
-                        const card = document.createElement('div');
-                        card.className = 'evento-card';
-                        const dataObj = new Date(evento.data + 'T00:00:00-03:00');
-                        const dia = String(dataObj.getDate()).padStart(2, '0');
-                        const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
-                        const dataFormatada = `${dia}/${mes}`;
-                        card.innerHTML = `<div class="evento-data">${dataFormatada} <span>${evento.diaSemana} - ${evento.horario}</span></div><div class="evento-info"><h3>${evento.nomeBatalha}</h3><p>${evento.cidade}</p></div>${evento.status ? `<div class="evento-status">${evento.status}</div>` : ''}`;
-                        link.appendChild(card);
-                        agendaContainer.appendChild(link);
-                    });
-                }
-            }
+            // --- LÓGICA DA AGENDA DINÂMICA (sem alterações) ---
+            if (typeof eventos !== 'undefined' && agendaContainer) { /* ...código da agenda... */ }
 
-            // --- LÓGICA DO RANKING DINÂMICO ---
-            if (typeof mcs !== 'undefined' && top1Container && restGrid) {
-                const mcsRanqueados = mcs.filter(mc => mc.ranking).sort((a, b) => a.ranking - b.ranking);
-                
-                if (mcsRanqueados.length === 0) {
-                    top1Container.innerHTML = '<p style="color: #aaa;">O ranking está sendo atualizado.</p>';
-                } else {
-                    mcsRanqueados.forEach(mc => {
-                        const item = document.createElement('div');
-                        item.className = 'ranking-item';
-                        item.setAttribute('data-id', mc.id);
-
-                        let classeDestaque = '';
-                        if (mc.ranking === 1) { classeDestaque = 'ranking-item--gold'; }
-                        else if (mc.ranking === 2) { classeDestaque = 'ranking-item--silver'; }
-                        else if (mc.ranking === 3) { classeDestaque = 'ranking-item--bronze'; }
-                        
-                        // ===== CORREÇÃO APLICADA AQUI =====
-                        // Só adiciona a classe se ela não for uma string vazia
-                        if (classeDestaque) {
-                            item.classList.add(classeDestaque);
-                        }
-
-                        item.innerHTML = `
-                            <div class="posicao">${mc.ranking}º</div>
-                            <img src="${mc.imagem}" alt="${mc.nome}">
-                            <div class="info">
-                                <h3>${mc.nome}</h3>
-                                <p>${mc.cidade}</p>
-                            </div>
-                        `;
-                        if (mc.ranking === 1) {
-                            top1Container.appendChild(item);
-                        } else {
-                            restGrid.appendChild(item);
-                        }
-                    });
-                }
-            }
-
-            // --- LÓGICA DA MODAL (PARA O RANKING) ---
+            // --- LÓGICA DO RANKING DINÂMICO (sem alterações) ---
+            if (typeof mcs !== 'undefined' && top1Container && restGrid) { /* ...código do ranking... */ }
+            
+            // --- LÓGICA DA MODAL (atualizada para incluir a tabela) ---
             function abrirModal(event) {
                 const card = event.target.closest('.ranking-item');
                 if (card) {
@@ -176,26 +103,52 @@
                         if (mcSelecionado.links && mcSelecionado.links.length > 0) {
                             mcSelecionado.links.forEach(link => { linksHTML += `<a href="${link.url}" target="_blank">${link.nome}</a>`; });
                         }
+                        
+                        // ===== CONTEÚDO DA MODAL ATUALIZADO AQUI =====
                         modalBody.innerHTML = `
                             <img src="${mcSelecionado.imagem}" alt="${mcSelecionado.nome}" class="modal-img">
                             <h3>${mcSelecionado.nome}</h3>
                             <p>${mcSelecionado.cidade}</p>
                             <p>${mcSelecionado.titulo}</p>
+                            
                             <div class="mc-modal-links">${linksHTML}</div>
-                            <p class="modal-stats">Estatísticas: EM BREVE (by TwolalaScore)</p>
+
+                            <p class="modal-stats-footer">EM BREVE (by TwolalaScore)</p>
+                            
+                            <div class="modal-stats-container">
+                                <div class="stats-group">
+                                    <p class="stats-title">Edições</p>
+                                    <p class="stats-item">Títulos:</p>
+                                    <p class="stats-item">Vices:</p>
+                                </div>
+                                <hr class="stats-separator">
+                                <div class="stats-group">
+                                    <p class="stats-title">Batalhas</p>
+                                    <p class="stats-item">Vitórias:</p>
+                                    <p class="stats-item">Win Rate:</p>
+                                </div>
+                                <hr class="stats-separator">
+                                <div class="stats-group">
+                                    <p class="stats-title">Rounds</p>
+                                    <p class="stats-item">Vitórias:</p>
+                                    <p class="stats-item">Win Rate:</p>
+                                </div>
+                                <hr class="stats-separator">
+                                <div class="stats-group">
+                                    <p class="stats-title">Twolalas:</p>
+                                </div>
+                            </div>
                         `;
                         mcModal.style.display = 'block';
                     }
                 }
             }
-            if (top1Container && restGrid) {
-                top1Container.addEventListener('click', abrirModal);
-                restGrid.addEventListener('click', abrirModal);
-            }
-            if(closeBtn){
-                closeBtn.onclick = () => { mcModal.style.display = 'none'; };
-                window.onclick = (event) => { if (event.target === mcModal) { mcModal.style.display = 'none'; } };
-            }
+            
+            // Demais códigos (sem alteração para economizar espaço)
+            if(typeof eventos !== 'undefined' && agendaContainer){const hoje=new Date();hoje.setHours(0,0,0,0);const proximosEventos=eventos.filter(evento=>new Date(evento.data+'T00:00:00-03:00')>=hoje);proximosEventos.sort((a,b)=>new Date(a.data)-new Date(b.data));const eventosParaExibir=proximosEventos.slice(0,4);if(eventosParaExibir.length===0){agendaContainer.innerHTML='<p style="color: #aaa;">Nenhum evento agendado. Fique de olho!</p>'}else{eventosParaExibir.forEach(evento=>{const link=document.createElement('a');link.href=evento.linkInstagram||'#';link.target='_blank';link.className='evento-link';const card=document.createElement('div');card.className='evento-card';const dataObj=new Date(evento.data+'T00:00:00-03:00');const dia=String(dataObj.getDate()).padStart(2,'0');const mes=String(dataObj.getMonth()+1).padStart(2,'0');const dataFormatada=`${dia}/${mes}`;card.innerHTML=`<div class="evento-data">${dataFormatada} <span>${evento.diaSemana} - ${evento.horario}</span></div><div class="evento-info"><h3>${evento.nomeBatalha}</h3><p>${evento.cidade}</p></div>${evento.status?`<div class="evento-status">${evento.status}</div>`:''}`;link.appendChild(card);agendaContainer.appendChild(link)})}}
+            if(typeof mcs !== 'undefined' && top1Container && restGrid){const mcsRanqueados=mcs.filter(mc=>mc.ranking).sort((a,b)=>a.ranking-b.ranking);if(mcsRanqueados.length===0){top1Container.innerHTML='<p style="color: #aaa;">O ranking está sendo atualizado.</p>'}else{mcsRanqueados.forEach(mc=>{const item=document.createElement('div');item.className='ranking-item';item.setAttribute('data-id',mc.id);let classeDestaque='';if(mc.ranking===1){classeDestaque='ranking-item--gold'}else if(mc.ranking===2){classeDestaque='ranking-item--silver'}else if(mc.ranking===3){classeDestaque='ranking-item--bronze'}if(classeDestaque){item.classList.add(classeDestaque)}item.innerHTML=`<div class="posicao">${mc.ranking}º</div><img src="${mc.imagem}" alt="${mc.nome}"><div class="info"><h3>${mc.nome}</h3><p>${mc.cidade}</p></div>`;if(mc.ranking===1){top1Container.appendChild(item)}else{restGrid.appendChild(item)}})}}
+            if(top1Container && restGrid){top1Container.addEventListener('click',abrirModal);restGrid.addEventListener('click',abrirModal)}
+            if(closeBtn){closeBtn.onclick=()=>{mcModal.style.display='none'};window.onclick=event=>{if(event.target===mcModal){mcModal.style.display='none'}}}
         });
     </script>
 </body>
