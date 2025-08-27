@@ -25,6 +25,10 @@
     <style>
         /* Estilos específicos desta página */
         .batalhas-container { max-width: 1200px; margin: 0 auto; padding: 20px; text-align: center; }
+        .form-container { max-width: 600px; margin: 40px auto; background: #282828; padding: 30px; border-radius: 10px; border: 1px solid #333; }
+        .form-container p { color: #e0e0e0; }
+        .form-container a { display: block; width: 250px; margin: 20px auto 0; padding: 15px; background-color: #ff8c00; color: #fff; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; }
+        .form-container a:hover { background-color: #e67300; }
         .filters { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; background: #282828; padding: 20px; border-radius: 10px; max-width: 800px; margin: 30px auto; }
         .filters select, .filters button { padding: 10px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: #e0e0e0; font-size: 1em; cursor: pointer; }
         .filters button { background-color: #ff8c00; color: #fff; font-weight: bold; border: none; }
@@ -38,7 +42,7 @@
         /* Estilos da Modal */
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); padding-top: 60px; }
         .modal-content { background-color: #282828; margin: 5% auto; padding: 30px; border: 1px solid #444; width: 80%; max-width: 600px; border-radius: 10px; position: relative; animation-name: animatetop; animation-duration: 0.4s; }
-        .modal-content h3 { color: #ff8c00; font-size: 2em; text-align: center;}
+        .modal-content h3 { color: #ff8c00; font-size: 2em; text-align: center; }
         .modal-content p { color: #e0e0e0; text-align: left; margin-bottom: 10px; }
         .modal-content .links-redes { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
         .modal-content .links-redes a { padding: 8px 15px; background-color: #ff8c00; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s; }
@@ -80,6 +84,17 @@
 
     <div class="batalhas-container">
         <h1>Todas as Batalhas da Liga</h1>
+        
+        <div class="form-container">
+            <h2>Sua Batalha Não Está na Lista?</h2>
+            <p style="text-align: center; margin-bottom: 20px;">
+                Cadastre sua batalha e faça parte do mapa oficial do freestyle caipira.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxlEZfDGOCl8yNID77lheqs3rFGDeUTguGZbO2LtMEjMqdTQ/viewform?usp=header" target="_blank">
+                Cadastre sua Batalha!
+            </a>
+        </div>
+
         <p style="color: #b0b0b0;">Clique em um card para ver mais detalhes da batalha.</p>
         <div class="filters">
             <select id="filtro-dia">
@@ -104,64 +119,60 @@
 
     <script src="batalhas.js"></script>
     <script>
-        // Script principal da página (sem alteração)
-        const batalhasGrid = document.getElementById('batalhas-grid');
-        const filtroDia = document.getElementById('filtro-dia');
-        const filtroCidade = document.getElementById('filtro-cidade');
-        const limparFiltrosBtn = document.getElementById('limpar-filtros');
-        const batalhaModal = document.getElementById('batalha-modal');
-        const modalBody = document.getElementById('modal-body');
-        const closeBtn = document.querySelector('.close-btn');
-
-        function renderizarBatalhas(batalhasParaRenderizar) {
-            batalhasGrid.innerHTML = '';
-            if (batalhasParaRenderizar.length > 0) {
-                batalhasParaRenderizar.forEach(batalha => {
-                    const card = document.createElement('div');
-                    card.className = 'batalha-card';
-                    card.setAttribute('data-codigo', batalha.codigo);
-                    const logoPath = `images/${batalha.codigo}.png`;
-                    const imgElement = `<img src="${logoPath}" alt="Logo ${batalha.nome}" onerror="this.onerror=null; this.src='images/placeholder.png';">`;
-                    card.innerHTML = `${imgElement}<h3>${batalha.nome}</h3><p><strong>Cidade:</strong> ${batalha.cidade}</p><p><strong>Dia:</strong> ${batalha.dia}</p>`;
-                    batalhasGrid.appendChild(card);
-                });
-            } else {
-                batalhasGrid.innerHTML = '<p style="color: #b0b0b0;">Nenhuma batalha encontrada com os filtros selecionados.</p>';
-            }
-        }
-        function popularFiltros() {
-            const diasUnicos = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
-            const cidadesUnicas = [...new Set(batalhas.map(batalha => batalha.cidade))].sort();
-            diasUnicos.forEach(dia => {
-                const option = document.createElement('option');
-                option.value = dia; option.textContent = dia; filtroDia.appendChild(option);
-            });
-            cidadesUnicas.forEach(cidade => {
-                const option = document.createElement('option');
-                option.value = cidade; option.textContent = cidade; filtroCidade.appendChild(option);
-            });
-        }
-        function filtrarBatalhas() {
-            const diaSelecionado = filtroDia.value;
-            const cidadeSelecionada = filtroCidade.value;
-            let batalhasFiltradas = batalhas.filter(batalha => {
-                const filtraPorDia = diaSelecionado === '' || batalha.dia === diaSelecionado;
-                const filtraPorCidade = cidadeSelecionada === '' || batalha.cidade === cidadeSelecionada;
-                return filtraPorDia && filtraPorCidade;
-            });
-            batalhasFiltradas.sort((a, b) => a.nome.localeCompare(b.nome));
-            renderizarBatalhas(batalhasFiltradas);
-        }
-        limparFiltrosBtn.addEventListener('click', () => {
-            filtroDia.value = ''; filtroCidade.value = ''; filtrarBatalhas();
-        });
-        filtroDia.addEventListener('change', filtrarBatalhas);
-        filtroCidade.addEventListener('change', filtrarBatalhas);
+        // SCRIPT PRINCIPAL DA PÁGINA (COMPLETO E CORRIGIDO)
         document.addEventListener('DOMContentLoaded', () => {
+            const batalhasGrid = document.getElementById('batalhas-grid');
+            const filtroDia = document.getElementById('filtro-dia');
+            const filtroCidade = document.getElementById('filtro-cidade');
+            const limparFiltrosBtn = document.getElementById('limpar-filtros');
+            const batalhaModal = document.getElementById('batalha-modal');
+            const modalBody = document.getElementById('modal-body');
+            const closeBtn = document.querySelector('.close-btn');
+
+            function renderizarBatalhas(batalhasParaRenderizar) {
+                batalhasGrid.innerHTML = '';
+                if (batalhasParaRenderizar.length > 0) {
+                    batalhasParaRenderizar.forEach(batalha => {
+                        const card = document.createElement('div');
+                        card.className = 'batalha-card';
+                        card.setAttribute('data-codigo', batalha.codigo);
+                        const logoPath = `images/${batalha.codigo}.png`;
+                        const imgElement = `<img src="${logoPath}" alt="Logo ${batalha.nome}" onerror="this.onerror=null; this.src='images/placeholder.png';">`;
+                        card.innerHTML = `${imgElement}<h3>${batalha.nome}</h3><p><strong>Cidade:</strong> ${batalha.cidade}</p><p><strong>Dia:</strong> ${batalha.dia}</p>`;
+                        batalhasGrid.appendChild(card);
+                    });
+                } else {
+                    batalhasGrid.innerHTML = '<p style="color: #b0b0b0;">Nenhuma batalha encontrada com os filtros selecionados.</p>';
+                }
+            }
+            function popularFiltros() {
+                const diasUnicos = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+                const cidadesUnicas = [...new Set(batalhas.map(batalha => batalha.cidade))].sort();
+                diasUnicos.forEach(dia => {
+                    const option = document.createElement('option');
+                    option.value = dia; option.textContent = dia; filtroDia.appendChild(option);
+                });
+                cidadesUnicas.forEach(cidade => {
+                    const option = document.createElement('option');
+                    option.value = cidade; option.textContent = cidade; filtroCidade.appendChild(option);
+                });
+            }
+            function filtrarBatalhas() {
+                const diaSelecionado = filtroDia.value;
+                const cidadeSelecionada = filtroCidade.value;
+                let batalhasFiltradas = batalhas.filter(batalha => {
+                    const filtraPorDia = diaSelecionado === '' || batalha.dia === diaSelecionado;
+                    const filtraPorCidade = cidadeSelecionada === '' || batalha.cidade === cidadeSelecionada;
+                    return filtraPorDia && filtraPorCidade;
+                });
+                batalhasFiltradas.sort((a, b) => a.nome.localeCompare(b.nome));
+                renderizarBatalhas(batalhasFiltradas);
+            }
             if (typeof batalhas !== 'undefined') {
                 batalhas.sort((a, b) => a.nome.localeCompare(b.nome));
                 popularFiltros();
                 renderizarBatalhas(batalhas);
+
                 batalhasGrid.addEventListener('click', (e) => {
                     const card = e.target.closest('.batalha-card');
                     if (card) {
@@ -185,6 +196,11 @@
                         }
                     }
                 });
+                limparFiltrosBtn.addEventListener('click', () => {
+                    filtroDia.value = ''; filtroCidade.value = ''; filtrarBatalhas();
+                });
+                filtroDia.addEventListener('change', filtrarBatalhas);
+                filtroCidade.addEventListener('change', filtrarBatalhas);
                 closeBtn.onclick = () => { batalhaModal.style.display = 'none'; };
                 window.onclick = (event) => { if (event.target === batalhaModal) { batalhaModal.style.display = 'none'; } };
             } else {

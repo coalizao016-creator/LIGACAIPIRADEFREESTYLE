@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "t0i3kd02k6");
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDQYDNW2T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EJDQYDNW2T');
+    </script>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ranking - Coalizão 016</title>
+    
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* Estilos específicos para a mensagem "Em Breve" */
+        .em-breve-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 50vh; /* Ocupa uma boa parte da tela */
+            text-align: center;
+            padding: 20px;
+        }
+        .em-breve-titulo {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ff8c00;
+            margin: 0;
+        }
+        .em-breve-subtitulo {
+            font-size: 1.2em;
+            color: #aaa;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/batalha.jpg" alt="Batalha">
+        <div class="degrade"></div>
+    </header>
+
+    <nav>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="batalhas.html">Batalhas</a>
+            <a href="mcs.html">MC's</a>
+            <a href="mapaindex.html">Mapa</a>
+            <a href="ranking.html"><strong>Ranking</strong></a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-label">Nossas Redes</a>
+                <div class="dropdown-content">
+                    <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a>
+                    <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a>
+                    <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a>
+                    <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="em-breve-container">
+        <p class="em-breve-titulo">EM BREVE</p>
+        <p class="em-breve-subtitulo">by TwolalaScore</p>
+    </div>
+    
+    <footer>
+        © 2025 Coalizão 016 - Todos os direitos reservados.
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        const dropdownLabel = document.querySelector(".dropdown-label");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        }
+        if (window.innerWidth <= 850 && dropdownLabel && dropdownContent) {
+            dropdownLabel.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
