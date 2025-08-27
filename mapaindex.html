@@ -1,27 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "t0i3kd02k6");
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDQYDNW2T"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-EJDQYDNW2T');
-    </script>
-
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Mapa Caipira de Freestyle - Coalimapa</title>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* Estilos específicos desta página */
+        #map {
+            height: 65vh;
+            width: 100%;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .map-container {
+            text-align: center;
+        }
+        #filtros {
+            padding: 15px;
+            background: #282828;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        #filtros select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background-color: #333;
+            color: #e0e0e0;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        #filtros label {
+            font-weight: bold;
+            color: #ff8c00;
+        }
+        
+        /* ===== ESTILO DO POPUP DO MAPA ATUALIZADO ===== */
+        .leaflet-popup-content-wrapper {
+            background: #282828;
+            color: #e0e0e0;
+            border-radius: 10px;
+            width: 200px; /* Largura fixa para deixar o popup mais quadrado */
+        }
+        .leaflet-popup-content {
+            margin: 15px !important;
+            width: auto !important;
+        }
+        .leaflet-popup-tip {
+            background: #282828;
+        }
+        .map-popup-content {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .map-popup-content img.popup-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ff8c00;
+        }
+        .map-popup-content h3 {
+            margin: 5px 0;
+            font-size: 1.4em; /* Levemente ajustado para o novo tamanho */
+            color: #ff8c00;
+        }
+        .map-popup-content p {
+            margin: 5px 0;
+            font-size: 1em; /* Levemente ajustado */
+        }
+        .map-popup-content a {
+            color: #ffaf5f;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -98,7 +158,7 @@
                     const logoPath = `images/${b.codigo}.png`;
                     const popupContent = `
                         <div class="map-popup-content">
-                            <img src="${logoPath}" class="popup-logo" alt="Logo ${b.nome}" onerror="this.style.display='none'">
+                            <img src="${logoPath}" class="popup-logo" alt="Logo ${b.nome}" onerror="this.onerror=null; this.src='images/placeholder.png';">
                             <h3>${b.nome}</h3>
                             <p><b>Cidade:</b> ${b.cidade}</p>
                             <p><b>Dia:</b> ${b.dia}</p>
