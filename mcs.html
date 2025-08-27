@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "t0i3kd02k6");
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDQYDNW2T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EJDQYDNW2T');
+    </script>
+    
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MCs - Coalizão 016</title>
+    
     <link rel="stylesheet" href="styles.css" />
+
     <style>
-        /* CSS Básico (sem alterações) */
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #1a1a1a; color: #e0e0e0; text-align: center; }
-        header { position: relative; height: 250px; overflow: hidden; margin-bottom: 20px; }
-        header img { width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; z-index:1; }
-        header .degrade { position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%); z-index:2; }
-        nav { background: #222; padding: 10px; display: flex; justify-content: center; flex-wrap: wrap; }
-        nav a { color: #fff; margin: 5px 10px; text-decoration: none; font-weight: bold; }
-        nav a:hover { color: #ff7f00; }
-        .dropdown { position: relative; display: inline-block; }
-        .dropdown-content { display: none; position: absolute; background-color: #222; min-width: 160px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.4); z-index: 10; border-radius: 5px; padding: 12px; left: 50%; transform: translateX(-50%); }
-        .dropdown-content a { color: white; padding: 8px 16px; text-decoration: none; display: block; text-align: left; white-space: nowrap; }
-        .dropdown-content a:hover { background-color: #333; border-radius: 3px; }
-        .dropdown:hover .dropdown-content { display: block; }
-        .dropdown-label { cursor: pointer; color: #fff; font-weight: bold; text-decoration: none; }
-        .dropdown-label:hover { color: #ff7f00; }
-        h1, h2 { text-align: center; margin: 40px 0 20px; color: #ff8c00; }
+        /* Estilos específicos desta página */
         .form-container { max-width: 600px; margin: 40px auto; background: #282828; padding: 30px; border-radius: 10px; border: 1px solid #333; }
         .form-container p { color: #e0e0e0; }
         .form-container a { display: block; width: 250px; margin: 20px auto 0; padding: 15px; background-color: #ff8c00; color: #fff; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; }
@@ -37,9 +39,9 @@
         .mc-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #ff8c00; }
         .mc-card h3 { color: #ff8c00; margin-top: 15px; margin-bottom: 5px; font-size: 1.2em; }
         
-        /* Estilos da Modal */
+        /* Estilos da Modal e Estatísticas */
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); padding-top: 60px; }
-        .modal-content { background-color: #282828; margin: 5% auto; padding: 30px; border: 1px solid #444; width: 80%; max-width: 600px; border-radius: 10px; position: relative; animation-name: animatetop; animation-duration: 0.4s; }
+        .modal-content { background-color: #282828; margin: 5% auto; padding: 30px; border: 1px solid #444; width: 80%; max-width: 600px; border-radius: 10px; position: relative; animation-name: animatetop; animation-duration: 0.4s; text-align: center;}
         .modal-content h3 { color: #ff8c00; font-size: 2.2em; margin-top: 0; margin-bottom: 10px; }
         .modal-content p { color: #e0e0e0; text-align: center; margin-bottom: 10px; font-size: 1.1em; }
         .modal-content .mc-modal-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
@@ -49,35 +51,70 @@
         .close-btn:hover { color: #fff; }
         @keyframes animatetop { from {top:-300px; opacity:0} to {top:0; opacity:1} }
         .modal-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #ff8c00; margin-bottom: 20px; }
-        
-        /* ===== NOVOS ESTILOS PARA O BLOCO DE ESTATÍSTICAS ===== */
         .modal-stats-container { text-align: left; margin-top: 15px; }
         .stats-group { margin: 10px 0; }
         .stats-title { font-weight: bold; color: #ff8c00; font-size: 1.1em; margin: 0 0 8px 0; }
-        .stats-item { color: #ccc; margin: 4px 0 4px 15px; } /* Adiciona um recuo */
+        .stats-item { color: #ccc; margin: 4px 0 4px 15px; }
         .stats-separator { border: 0; height: 1px; background-color: #444; margin: 15px 0; }
         .modal-stats-footer { color: #aaa; font-style: italic; margin-top: 20px; text-align: center; font-size: 0.9em; }
-
-        footer { background:#000; padding:15px; color:#aaa; text-align: center; margin-top: 30px; }
     </style>
 </head>
 <body>
-    <header> <img src="images/batalha.jpg" alt="Batalha"> <div class="degrade"></div> </header>
-    <nav> <a href="index.html">Início</a> <a href="batalhas.html">Batalhas</a> <a href="mcs.html"><strong>MC's</strong></a> <a href="mapaindex.html">Mapa</a> <div class="dropdown"> <a href="#" class="dropdown-label">Nossas Redes</a> <div class="dropdown-content"> <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a> <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a> <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a> <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a> </div> </div> </nav>
+    <header>
+        <img src="images/batalha.jpg" alt="Batalha">
+        <div class="degrade"></div>
+    </header>
+    
+    <nav>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="batalhas.html">Batalhas</a>
+            <a href="mcs.html"><strong>MC's</strong></a>
+            <a href="mapaindex.html">Mapa</a>
+            <a href="ranking.html">Ranking</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-label">Nossas Redes</a>
+                <div class="dropdown-content">
+                    <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a>
+                    <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a>
+                    <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a>
+                    <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <h1>MCs da Liga Caipira</h1>
-    <div class="form-container"> <h2>Quer participar?</h2> <p style="text-align: center; margin-bottom: 20px;"> Cadastre-se e ganhe um espaço de destaque no nosso site e redes sociais. </p> <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-gtvnYQnlrlO_M7T_doEbd70B3ZHYR9v2p6G9N0S-vNoi1g/viewform?usp=header" target="_blank"> Cadastre-se Agora! </a> </div>
-    <div class="filters-container"> <input type="text" id="busca-nome" placeholder="Buscar MC pelo nome..."> <select id="filtro-cidade"> <option value="">Todas as Cidades</option> </select> <button id="limpar-filtros">Limpar</button> </div>
+    <div class="form-container">
+        <h2>Quer participar?</h2>
+        <p style="text-align: center; margin-bottom: 20px;">Cadastre-se e ganhe um espaço de destaque no nosso site e redes sociais.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-gtvnYQnlrlO_M7T_doEbd70B3ZHYR9v2p6G9N0S-vNoi1g/viewform?usp=header" target="_blank">Cadastre-se Agora!</a>
+    </div>
+    <div class="filters-container">
+        <input type="text" id="busca-nome" placeholder="Buscar MC pelo nome...">
+        <select id="filtro-cidade"><option value="">Todas as Cidades</option></select>
+        <button id="limpar-filtros">Limpar</button>
+    </div>
     <div class="mcs-grid" id="mcs-grid"></div>
 
-    <footer> © 2025 Coalizão 016 - Todos os direitos reservados. </footer>
+    <footer>© 2025 Coalizão 016 - Todos os direitos reservados.</footer>
 
-    <div id="mc-modal" class="modal"> <div class="modal-content"> <span class="close-btn">×</span> <div id="modal-body-mc"></div> </div> </div>
+    <div id="mc-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">×</span>
+            <div id="modal-body-mc"></div>
+        </div>
+    </div>
 
     <script src="mcs.js"></script>
     <script>
+        // Script principal da página de MCs (sem alteração)
         document.addEventListener('DOMContentLoaded', () => {
-            // Constantes e funções de filtro/renderização (sem alterações)
             const mcsGrid = document.getElementById('mcs-grid');
             const mcModal = document.getElementById('mc-modal');
             const modalBody = document.getElementById('modal-body-mc');
@@ -96,40 +133,21 @@
                         if (mcSelecionado.links && mcSelecionado.links.length > 0) {
                             mcSelecionado.links.forEach(link => { linksHTML += `<a href="${link.url}" target="_blank">${link.nome}</a>`; });
                         }
-                        
-                        // ===== CONTEÚDO DA MODAL ATUALIZADO AQUI =====
                         modalBody.innerHTML = `
                             <img src="${mcSelecionado.imagem}" alt="${mcSelecionado.nome}" class="modal-img">
                             <h3>${mcSelecionado.nome}</h3>
                             <p>${mcSelecionado.cidade}</p>
                             <p>${mcSelecionado.titulo}</p>
-                            
                             <div class="mc-modal-links">${linksHTML}</div>
-                            
-                            <p class="modal-stats-footer">Estatísticas EM BREVEEM BREVE (by TwolalaScore)</p>
-
+                            <p class="modal-stats-footer">Estatísticas EM BREVE (by TwolalaScore)</p>
                             <div class="modal-stats-container">
-                                <div class="stats-group">
-                                    <p class="stats-title">Edições</p>
-                                    <p class="stats-item">Títulos:</p>
-                                    <p class="stats-item">Vices:</p>
-                                </div>
+                                <div class="stats-group"><p class="stats-title">Edições</p><p class="stats-item">Títulos:</p><p class="stats-item">Vices:</p></div>
                                 <hr class="stats-separator">
-                                <div class="stats-group">
-                                    <p class="stats-title">Batalhas</p>
-                                    <p class="stats-item">Vitórias:</p>
-                                    <p class="stats-item">Win Rate:</p>
-                                </div>
+                                <div class="stats-group"><p class="stats-title">Batalhas</p><p class="stats-item">Vitórias:</p><p class="stats-item">Win Rate:</p></div>
                                 <hr class="stats-separator">
-                                <div class="stats-group">
-                                    <p class="stats-title">Rounds</p>
-                                    <p class="stats-item">Vitórias:</p>
-                                    <p class="stats-item">Win Rate:</p>
-                                </div>
+                                <div class="stats-group"><p class="stats-title">Rounds</p><p class="stats-item">Vitórias:</p><p class="stats-item">Win Rate:</p></div>
                                 <hr class="stats-separator">
-                                <div class="stats-group">
-                                    <p class="stats-title">Twolalas:</p>
-                                </div>
+                                <div class="stats-group"><p class="stats-title">Twolalas:</p></div>
                             </div>
                         `;
                         mcModal.style.display = 'block';
@@ -137,7 +155,6 @@
                 }
             });
 
-            // Demais códigos (sem alteração)
             function popularFiltroCidades(){const cidades=[...new Set(mcs.map(mc=>mc.cidade))].sort();cidades.forEach(cidade=>{const option=document.createElement('option');option.value=cidade;option.textContent=cidade;filtroCidadeSelect.appendChild(option)})}
             function filtrarEMostrarMCs(){let mcsFiltrados=[...mcs];const termoBusca=buscaNomeInput.value.toLowerCase();if(termoBusca){mcsFiltrados=mcsFiltrados.filter(mc=>mc.nome.toLowerCase().includes(termoBusca))}const cidadeSelecionada=filtroCidadeSelect.value;if(cidadeSelecionada){mcsFiltrados=mcsFiltrados.filter(mc=>mc.cidade===cidadeSelecionada)}mcsFiltrados.sort((a,b)=>a.nome.localeCompare(b.nome));renderizarMCs(mcsFiltrados)}
             function renderizarMCs(listaDeMcs){mcsGrid.innerHTML='';if(listaDeMcs.length>0){listaDeMcs.forEach(mc=>{const card=document.createElement('div');card.className='mc-card';card.setAttribute('data-id',mc.id);card.innerHTML=`<img src="${mc.imagem}" alt="${mc.nome}"><h3>${mc.nome}</h3>`;mcsGrid.appendChild(card)})}else{mcsGrid.innerHTML='<p style="color: #b0b0b0;">Nenhum MC encontrado com os filtros selecionados.</p>'}}
@@ -146,6 +163,30 @@
             closeBtn.onclick=()=>{mcModal.style.display='none'};window.onclick=event=>{if(event.target===mcModal){mcModal.style.display='none'}};
             popularFiltroCidades();filtrarEMostrarMCs();
         });
+    </script>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        const dropdownLabel = document.querySelector(".dropdown-label");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        }
+
+        if (window.innerWidth <= 850 && dropdownLabel && dropdownContent) {
+            dropdownLabel.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
     </script>
 </body>
 </html>

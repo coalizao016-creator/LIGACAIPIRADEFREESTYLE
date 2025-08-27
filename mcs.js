@@ -1,4 +1,4 @@
-// mcs.js (VERSÃO COM O RANKING)
+// mcs.js
 const mcs = [
   {
     id: "MC001",
@@ -192,5 +192,71 @@ const mcs = [
       { nome: "Instagram", url: "https://www.instagram.com/satsumc/" },
       { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/3Av64XJ3EDhahcI36vBZ2A" }
     ]
+  }/*,  // <--- INÍCIO DO COMENTÁRIO
+  // ===== NOVOS MCS ADICIONADOS AQUI =====
+  {
+    id: "MC017",
+    nome: "Marcola mc",
+    imagem: "images/MC017.png",
+    cidade: "Morro agudo",
+    titulo: "🔥 Destaque",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/marcolaa.st?igsh=MTcybHdjN3p5a3Nyag=="
+      }
+    ]
+  },
+  {
+    id: "MC018",
+    nome: "Mancha",
+    imagem: "images/MC018.png",
+    cidade: "Taquaritinga-SP",
+    titulo: "🏆 da Batalha dos Brodi",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/esqacmvms?igsh=MTJxYzkxZjBpZnJ5MQ=="
+      },
+      {
+        nome: "YouTube",
+        url: "https://youtube.com/@mancha016?si=y7QF5UzGI8mxqgfB"
+      }
+    ]
+  },
+  {
+    id: "MC019",
+    nome: "Marin",
+    imagem: "images/MC019.png",
+    cidade: "Sales Oliveira",
+    titulo: "🏆 Campeão da temporada da bdvinte",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/kaikymarin?igsh=cWplcmtqY2Y5NmVt&utm_source=qr"
+      }
+    ]
+  },
+  {
+    id: "MC020",
+    nome: "Ronaldy",
+    imagem: "images/MC020.png",
+    cidade: "São Joaquim da Barra",
+    titulo: "🏆 da Conexão de Rimas, fumo muito e rimo mais ainda",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/ronaldy.wav?igsh=NXIxaTZmMGV0eXpp&utm_source=qr"
+      },
+      {
+        nome: "YouTube",
+        url: "https://youtube.com/@kbz.ronaldy?si=o38It-ijAhCK7cjY"
+      }
+    ]
   }
+  */ // <--- FIM DO COMENTÁRIO
 ];
