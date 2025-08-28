@@ -1,48 +1,48 @@
 // agenda.js
 const eventos = [
   {
-    data: "2025-08-29",
-    diaSemana: "Sexta-feira",
-    horario: "20:00h",
-    nomeBatalha: "Coalizão - 016",
-    cidade: "Ribeirão Preto - SP",
-    status: "Edição Especial",
-    linkInstagram: "https://instagram.com/coalizao016"
+    data: "2025-09-06",
+    diaSemana: "Sábado",
+    horario: "18:00h",
+    nomeBatalha: "Batalha do Raio",
+    cidade: "Araraquara - SP",
+    status: "Inscrições das 18h às 19h30",
+    linkInstagram: "https://www.instagram.com/batalhadoraio"
   },
   {
-    data: "2025-08-30",
+    data: "2025-09-06",
     diaSemana: "Sábado",
-    horario: "19:00h",
-    nomeBatalha: "Batalha da Vinte",
+    horario: "20:00h",
+    nomeBatalha: "Batalha da Vinte - Seletiva Odisséia",
     cidade: "Orlândia - SP",
-    status: "",
+    status: "Seletiva Odisséia",
     linkInstagram: "https://www.instagram.com/bdvinte_"
   },
   {
-    data: "2025-08-30",
+    data: "2025-09-13",
+    diaSemana: "Sábado",
+    horario: "15:00h",
+    nomeBatalha: "Batalha da Vinte - Edição Collab",
+    cidade: "Orlândia - SP",
+    status: "Collab Sarau Não Se Acanhe",
+    linkInstagram: "https://www.instagram.com/bdvinte_"
+  },
+  {
+    data: "2025-09-26",
+    diaSemana: "Sexta-feira",
+    horario: "20:00h",
+    nomeBatalha: "Conexão de Rimas vs Batalha da Vinte",
+    cidade: "São Joaquim da Barra - SP",
+    status: "CONTRA",
+    linkInstagram: "https://www.instagram.com/conexao_de_rima"
+  },
+  {
+    data: "2025-09-27",
     diaSemana: "Sábado",
     horario: "20:00h",
-    nomeBatalha: "Batalha dos Brodi",
-    cidade: "Taquaritinga - SP",
-    status: "Inscrições Abertas",
-    linkInstagram: "https://www.instagram.com/batalhadosbrodi"
-  },
-  {
-    data: "2025-08-31",
-    diaSemana: "Domingo",
-    horario: "18:00h",
-    nomeBatalha: "BATALHA DA SO",
-    cidade: "Sales Oliveira - SP",
-    status: "",
-    linkInstagram: "https://www.instagram.com/batalhas.o_"
-  },
-  {
-    data: "2025-09-01",
-    diaSemana: "Segunda-feira",
-    horario: "19:30h",
-    nomeBatalha: "Batalha do Bença",
-    cidade: "Ribeirão Preto - SP",
-    status: "",
-    linkInstagram: "https://www.instagram.com/batalhadobenca"
+    nomeBatalha: "Batalha da Vinte vs Conexão de Rimas",
+    cidade: "Orlândia - SP",
+    status: "CONTRA",
+    linkInstagram: "https://www.instagram.com/bdvinte_"
   }
 ];
