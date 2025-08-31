@@ -25,63 +25,31 @@
            ESTILOS GERAIS (TUDO EM UM SÓ LUGAR)
            ================================= */
         body { margin: 0; font-family: Arial, sans-serif; background: #1a1a1a; color: #e0e0e0; text-align: center; }
-        
         header {
             position: relative;
             height: 50vh;
             min-height: 250px;
             max-height: 350px;
-            color: white; /* Cor para o texto se houver no header, mas agora não terá */
-            display: flex; /* Para centralizar conteúdo se houver, mas agora não terá */
+            color: white;
+            display: flex;
             flex-direction: column;
             justify-content: flex-end;
             align-items: center;
-            padding: 0; /* Removido padding para deixar a imagem ocupar tudo */
+            padding: 20px;
             box-sizing: border-box;
             background-color: #000;
             background-image: url('images/batalha.jpg');
             background-size: cover;
             background-position: center;
         }
-        /* A camada escura e os z-index para h1/slogan não são mais necessários no header */
-        header::before { 
-            content: ''; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: rgba(0, 0, 0, 0.3); /* Um pouco menos escuro, já que não tem texto em cima */
-            z-index: 1; 
-        }
-        /* Remover o h1 e slogan do header, então removemos os estilos de z-index */
-        
-        h2 { text-align: center; margin: 40px 0 20px; color: #ff8c00; }
+        header::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); }
+        h1, h2 { text-align: center; margin: 40px 0 20px; color: #ff8c00; }
+        .slogan { font-size: 1.6em; font-weight: bold; text-align: center; color: #e0e0e0; margin-top: -10px; }
         footer { background: #000; padding: 15px; color: #aaa; text-align: center; margin-top: 30px; }
         section { padding: 40px 10px; max-width: 1200px; margin: 0 auto; }
         
-        /* NOVA SEÇÃO DE BOAS-VINDAS */
-        #boas-vindas {
-            padding-top: 25px; 
-            padding-bottom: 25px;
-            text-align: center;
-            color: #e0e0e0; /* Cor do texto geral */
-            background-color: #222; /* Fundo escuro para a seção */
-        }
-        #boas-vindas h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: #ff8c00; /* Título com a cor de destaque */
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-        #boas-vindas .slogan {
-            font-size: 1.6em; 
-            font-weight: bold; 
-            margin-top: 0;
-            color: #fff; /* Slogan mais claro */
-        }
-
         /* AJUSTE DE ESPAÇAMENTO */
+        #boas-vindas { padding-top: 25px; padding-bottom: 25px; }
         #agenda, #ranking { padding-top: 15px; padding-bottom: 25px; }
 
         /* MENU RESPONSIVO */
@@ -105,7 +73,6 @@
             .nav-links.active { display: flex; }
             .nav-links a, .dropdown { width: 100%; text-align: center; margin: 10px 0; }
             .dropdown-content { position: static; display: none; box-shadow: none; background-color: #333; }
-            
             header {
                 background-image: url('images/batalha-mobile.jpg');
                 height: 40vh;
@@ -193,7 +160,7 @@
             </div>
         </div>
     </nav>
-
+    
     <section id="boas-vindas">
         <h1>Bem-vindo à Coalizão 016</h1>
         <p class="slogan">Uma nova fase para o freestyle caipira.</p>
@@ -235,10 +202,12 @@
             if (typeof eventos !== 'undefined' && agendaContainer) {
                 const hoje = new Date();
                 hoje.setHours(0, 0, 0, 0); 
-                const proximosEventos = eventos.filter(evento => new Date(evento.data + 'T00:00:00-03:00') >= hoje);
+                const proximosEventos = eventos.filter(evento => {
+                    const [ano, mes, dia] = evento.data.split('-');
+                    return new Date(ano, mes - 1, dia) >= hoje;
+                });
                 proximosEventos.sort((a, b) => new Date(a.data) - new Date(b.data));
                 const eventosParaExibir = proximosEventos.slice(0, 4);
-
                 if (eventosParaExibir.length === 0) {
                     agendaContainer.innerHTML = '<p style="color: #aaa;">Nenhum evento agendado. Fique de olho!</p>';
                 } else {
@@ -249,9 +218,7 @@
                         link.className = 'evento-link';
                         const card = document.createElement('div');
                         card.className = 'evento-card';
-                        const dataObj = new Date(evento.data + 'T00:00:00-03:00');
-                        const dia = String(dataObj.getDate()).padStart(2, '0');
-                        const mes = String(dataObj.getMonth() + 1).padStart(2, '0');
+                        const [ano, mes, dia] = evento.data.split('-');
                         const dataFormatada = `${dia}/${mes}`;
                         card.innerHTML = `<div class="evento-data">${dataFormatada} <span>${evento.diaSemana} - ${evento.horario}</span></div><div class="evento-info"><h3>${evento.nomeBatalha}</h3><p>${evento.cidade}</p></div>${evento.status ? `<div class="evento-status">${evento.status}</div>` : ''}`;
                         link.appendChild(card);
@@ -271,29 +238,14 @@
                         const item = document.createElement('div');
                         item.className = 'ranking-item';
                         item.setAttribute('data-id', mc.id);
-
                         let classeDestaque = '';
                         if (mc.ranking === 1) { classeDestaque = 'ranking-item--gold'; }
                         else if (mc.ranking === 2) { classeDestaque = 'ranking-item--silver'; }
                         else if (mc.ranking === 3) { classeDestaque = 'ranking-item--bronze'; }
-                        
-                        if (classeDestaque) {
-                            item.classList.add(classeDestaque);
-                        }
-
-                        item.innerHTML = `
-                            <div class="posicao">${mc.ranking}º</div>
-                            <img src="${mc.imagem}" alt="${mc.nome}">
-                            <div class="info">
-                                <h3>${mc.nome}</h3>
-                                <p>${mc.cidade}</p>
-                            </div>
-                        `;
-                        if (mc.ranking === 1) {
-                            top1Container.appendChild(item);
-                        } else {
-                            restGrid.appendChild(item);
-                        }
+                        if (classeDestaque) { item.classList.add(classeDestaque); }
+                        item.innerHTML = `<div class="posicao">${mc.ranking}º</div><img src="${mc.imagem}" alt="${mc.nome}"><div class="info"><h3>${mc.nome}</h3><p>${mc.cidade}</p></div>`;
+                        if (mc.ranking === 1) { top1Container.appendChild(item); }
+                        else { restGrid.appendChild(item); }
                     });
                 }
             }

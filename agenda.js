@@ -19,6 +19,15 @@ const eventos = [
     linkInstagram: "https://www.instagram.com/bdvinte_"
   },
   {
+    data: "2025-09-07",
+    diaSemana: "Domingo",
+    horario: "19:00h",
+    nomeBatalha: "Batalha do Morro - Edição 45s",
+    cidade: "Morro Agudo - SP",
+    status: "Edição 45s",
+    linkInstagram: "https://www.instagram.com/batalhadomorro016"
+  },
+  {
     data: "2025-09-13",
     diaSemana: "Sábado",
     horario: "15:00h",
@@ -28,12 +37,39 @@ const eventos = [
     linkInstagram: "https://www.instagram.com/bdvinte_"
   },
   {
+    data: "2025-09-14",
+    diaSemana: "Domingo",
+    horario: "A definir",
+    nomeBatalha: "Festival Odisseia",
+    cidade: "A definir",
+    status: "Evento Especial",
+    linkInstagram: "https://www.instagram.com/festivalodisseia/"
+  },
+  {
+    data: "2025-09-14",
+    diaSemana: "Domingo",
+    horario: "19:00h",
+    nomeBatalha: "Batalha do Morro",
+    cidade: "Morro Agudo - SP",
+    status: "Bate e Volta Clássico",
+    linkInstagram: "https://www.instagram.com/batalhadomorro016"
+  },
+  {
+    data: "2025-09-21",
+    diaSemana: "Domingo",
+    horario: "19:00h",
+    nomeBatalha: "Batalha do Morro",
+    cidade: "Morro Agudo - SP",
+    status: "Formato Misto",
+    linkInstagram: "https://www.instagram.com/batalhadomorro016"
+  },
+  {
     data: "2025-09-26",
     diaSemana: "Sexta-feira",
     horario: "20:00h",
     nomeBatalha: "Conexão de Rimas vs Batalha da Vinte",
     cidade: "São Joaquim da Barra - SP",
-    status: "CONTRA",
+    status: "Edição de Clássico",
     linkInstagram: "https://www.instagram.com/conexao_de_rima"
   },
   {
@@ -42,7 +78,16 @@ const eventos = [
     horario: "20:00h",
     nomeBatalha: "Batalha da Vinte vs Conexão de Rimas",
     cidade: "Orlândia - SP",
-    status: "CONTRA",
+    status: "Edição de Clássico",
     linkInstagram: "https://www.instagram.com/bdvinte_"
+  },
+  {
+    data: "2025-09-28",
+    diaSemana: "Domingo",
+    horario: "19:00h",
+    nomeBatalha: "Batalha do Morro",
+    cidade: "Morro Agudo - SP",
+    status: "Batalha de Referência",
+    linkInstagram: "https://www.instagram.com/batalhadomorro016"
   }
 ];
