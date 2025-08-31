@@ -26,7 +26,7 @@
         /* Estilos específicos desta página */
         .batalhas-container { max-width: 1200px; margin: 0 auto; padding: 20px; text-align: center; }
         .form-container { max-width: 600px; margin: 40px auto; background: #282828; padding: 30px; border-radius: 10px; border: 1px solid #333; }
-        .form-container p { color: #e0e0e0; }
+        .form-container p { color: #e0e0e0; text-align: center; }
         .form-container a { display: block; width: 250px; margin: 20px auto 0; padding: 15px; background-color: #ff8c00; color: #fff; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; }
         .form-container a:hover { background-color: #e67300; }
         .filters { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; background: #282828; padding: 20px; border-radius: 10px; max-width: 800px; margin: 30px auto; }
@@ -54,10 +54,8 @@
 </head>
 <body>
     <header>
-        <img src="images/batalha.jpg" alt="Batalha">
-        <div class="degrade"></div>
-    </header>
-
+        </header>
+    
     <nav>
         <div class="hamburger">
             <div class="bar"></div>
@@ -87,22 +85,14 @@
         
         <div class="form-container">
             <h2>Sua Batalha Não Está na Lista?</h2>
-            <p style="text-align: center; margin-bottom: 20px;">
-                Cadastre sua batalha e faça parte do mapa oficial do freestyle caipira.
-            </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxlEZfDGOCl8yNID77lheqs3rFGDeUTguGZbO2LtMEjMqdTQ/viewform?usp=header" target="_blank">
-                Cadastre sua Batalha!
-            </a>
+            <p>Cadastre seu evento e faça parte do mapa oficial do freestyle caipira.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfxlEZfDGOCl8yNID77lheqs3rFGDeUTguGZbO2LtMEjMqdTQ/viewform?usp=header" target="_blank">Cadastre sua Batalha!</a>
         </div>
 
         <p style="color: #b0b0b0;">Clique em um card para ver mais detalhes da batalha.</p>
         <div class="filters">
-            <select id="filtro-dia">
-                <option value="">Filtrar por Dia</option>
-            </select>
-            <select id="filtro-cidade">
-                <option value="">Filtrar por Cidade</option>
-            </select>
+            <select id="filtro-dia"><option value="">Filtrar por Dia</option></select>
+            <select id="filtro-cidade"><option value="">Filtrar por Cidade</option></select>
             <button id="limpar-filtros">Limpar Filtros</button>
         </div>
         <div class="batalhas-grid" id="batalhas-grid"></div>
@@ -119,7 +109,7 @@
 
     <script src="batalhas.js"></script>
     <script>
-        // SCRIPT PRINCIPAL DA PÁGINA (COMPLETO E CORRIGIDO)
+        // Script principal da página
         document.addEventListener('DOMContentLoaded', () => {
             const batalhasGrid = document.getElementById('batalhas-grid');
             const filtroDia = document.getElementById('filtro-dia');
@@ -145,6 +135,7 @@
                     batalhasGrid.innerHTML = '<p style="color: #b0b0b0;">Nenhuma batalha encontrada com os filtros selecionados.</p>';
                 }
             }
+
             function popularFiltros() {
                 const diasUnicos = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
                 const cidadesUnicas = [...new Set(batalhas.map(batalha => batalha.cidade))].sort();
@@ -157,6 +148,7 @@
                     option.value = cidade; option.textContent = cidade; filtroCidade.appendChild(option);
                 });
             }
+
             function filtrarBatalhas() {
                 const diaSelecionado = filtroDia.value;
                 const cidadeSelecionada = filtroCidade.value;
@@ -168,6 +160,7 @@
                 batalhasFiltradas.sort((a, b) => a.nome.localeCompare(b.nome));
                 renderizarBatalhas(batalhasFiltradas);
             }
+
             if (typeof batalhas !== 'undefined') {
                 batalhas.sort((a, b) => a.nome.localeCompare(b.nome));
                 popularFiltros();
@@ -196,9 +189,8 @@
                         }
                     }
                 });
-                limparFiltrosBtn.addEventListener('click', () => {
-                    filtroDia.value = ''; filtroCidade.value = ''; filtrarBatalhas();
-                });
+
+                limparFiltrosBtn.addEventListener('click', () => { filtroDia.value = ''; filtroCidade.value = ''; filtrarBatalhas(); });
                 filtroDia.addEventListener('change', filtrarBatalhas);
                 filtroCidade.addEventListener('change', filtrarBatalhas);
                 closeBtn.onclick = () => { batalhaModal.style.display = 'none'; };
@@ -220,7 +212,6 @@
                 navLinks.classList.toggle("active");
             });
         }
-
         if (window.innerWidth <= 850 && dropdownLabel && dropdownContent) {
             dropdownLabel.addEventListener("click", (e) => {
                 e.preventDefault();

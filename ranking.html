@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "t0i3kd02k6");
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDQYDNW2T"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-EJDQYDNW2T');
-    </script>
-
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Ranking - Coalizão 016</title>
@@ -24,69 +9,28 @@
 
     <style>
         /* Estilos para a página de Ranking */
-        .ranking-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .explicacao {
-            background-color: #222;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 40px;
-        }
+        .ranking-container { max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
+        .explicacao { background-color: #222; border-radius: 10px; padding: 30px; margin-bottom: 40px; }
+        .explicacao h2 { margin-top: 0; color: #ff8c00; }
+        .explicacao p { color: #ccc; line-height: 1.6; font-size: 1.1em; }
+        .countdown-container { background-color: #282828; padding: 20px; border-radius: 10px; }
+        #countdown { display: flex; justify-content: center; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
+        .countdown-item { background-color: #1a1a1a; padding: 10px; border-radius: 5px; min-width: 65px; }
+        .countdown-item span { display: block; font-size: 2em; font-weight: bold; color: #fff; }
+        .countdown-item .label { font-size: 0.9em; color: #ff8c00; }
 
-        .explicacao h2 {
-            margin-top: 0;
-            color: #ff8c00;
-        }
-
-        .explicacao p {
-            color: #ccc;
-            line-height: 1.6;
-            font-size: 1.1em;
-        }
-
-        .countdown-container {
-            background-color: #282828;
-            padding: 30px;
-            border-radius: 10px;
-        }
-
-        #countdown {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .countdown-item {
-            background-color: #1a1a1a;
-            padding: 15px;
-            border-radius: 5px;
-            min-width: 80px;
-        }
-
-        .countdown-item span {
-            display: block;
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .countdown-item .label {
-            font-size: 1em;
-            color: #ff8c00;
+        @media (min-width: 480px) {
+            .countdown-container { padding: 30px; }
+            #countdown { gap: 20px; }
+            .countdown-item { padding: 15px; min-width: 80px; }
+            .countdown-item span { font-size: 2.5em; }
+            .countdown-item .label { font-size: 1em; }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="images/batalha.jpg" alt="Batalha">
-        <div class="degrade"></div>
-    </header>
+        </header>
 
     <nav>
         <div class="hamburger">
@@ -113,8 +57,9 @@
     </nav>
     
     <div class="ranking-container">
+        <h1>Ranking Oficial</h1>
         <div class="explicacao">
-            <h2>O Ranking Oficial da Liga, com a Precisão do TwolalaScore</h2>
+            <h2>Uma Parceria de Peso: Coalizão 016 & TwolalaScore</h2>
             <p>
                 Para elevar o nível da cena, a Coalizão 016 firma uma parceria oficial com o TwolalaScore, a maior e mais conceituada plataforma de estatísticas de batalhas de rima. A partir de 1º de outubro, todos os dados de performance dos nossos MCs serão analisados e transformados no ranking mais preciso e justo do freestyle caipira. Prepare-se para uma nova era de profissionalismo e análise.
             </p>
@@ -158,8 +103,8 @@
             });
         }
 
-        // Lógica da Contagem Regressiva
-        const countDownDate = new Date("Oct 1, 2025 00:00:00").getTime();
+        // Lógica da Contagem Regressiva - COM DATA CORRIGIDA
+        const countDownDate = new Date("2025-10-01T00:00:00").getTime();
 
         const x = setInterval(function() {
             const now = new Date().getTime();
@@ -170,14 +115,21 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerText = String(days).padStart(2, '0');
-            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
-            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
-            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+            const daysEl = document.getElementById("days");
+            const hoursEl = document.getElementById("hours");
+            const minutesEl = document.getElementById("minutes");
+            const secondsEl = document.getElementById("seconds");
+            
+            if(daysEl && hoursEl && minutesEl && secondsEl) {
+                daysEl.innerText = String(days).padStart(2, '0');
+                hoursEl.innerText = String(hours).padStart(2, '0');
+                minutesEl.innerText = String(minutes).padStart(2, '0');
+                secondsEl.innerText = String(seconds).padStart(2, '0');
+            }
 
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById("countdown").innerHTML = "<h2>O RANKING ESTÁ NO AR!</h2>";
+                document.getElementById("countdown").innerHTML = "<h2 style='color: #fff;'>O RANKING ESTÁ NO AR!</h2>";
             }
         }, 1000);
     </script>

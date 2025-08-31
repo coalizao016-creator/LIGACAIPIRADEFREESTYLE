@@ -1,93 +1,100 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "t0i3kd02k6");
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDQYDNW2T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EJDQYDNW2T');
+    </script>
+
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Mapa Caipira de Freestyle - Coalimapa</title>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-    <link rel="stylesheet" href="styles.css" />
-
+    
     <style>
-        /* Estilos específicos desta página */
-        #map {
-            height: 65vh;
+        /* ESTILOS GERAIS */
+        body { margin: 0; font-family: Arial, sans-serif; background: #1a1a1a; color: #e0e0e0; text-align: center; }
+        header {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background-color: #000;
+            background-image: url('images/batalha.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            border-radius: 10px;
-            max-width: 1200px;
-            margin: 0 auto;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
         }
-        .map-container {
-            text-align: center;
-        }
-        #filtros {
-            padding: 15px;
-            background: #282828;
-            border-radius: 10px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        #filtros select {
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #444;
-            background-color: #333;
-            color: #e0e0e0;
-            font-size: 1em;
-            cursor: pointer;
-        }
-        #filtros label {
-            font-weight: bold;
-            color: #ff8c00;
-        }
+        h1, h2 { text-align: center; margin: 40px 0 20px; color: #ff8c00; }
+        footer { background: #000; padding: 15px; color: #aaa; text-align: center; margin-top: 30px; }
         
-        /* ===== ESTILO DO POPUP DO MAPA ATUALIZADO ===== */
-        .leaflet-popup-content-wrapper {
-            background: #282828;
-            color: #e0e0e0;
-            border-radius: 10px;
-            width: 200px; /* Largura fixa para deixar o popup mais quadrado */
-        }
-        .leaflet-popup-content {
-            margin: 15px !important;
-            width: auto !important;
-        }
-        .leaflet-popup-tip {
-            background: #282828;
-        }
-        .map-popup-content {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        .map-popup-content img.popup-logo {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            border: 2px solid #ff8c00;
-        }
-        .map-popup-content h3 {
-            margin: 5px 0;
-            font-size: 1.4em; /* Levemente ajustado para o novo tamanho */
-            color: #ff8c00;
-        }
-        .map-popup-content p {
-            margin: 5px 0;
-            font-size: 1em; /* Levemente ajustado */
-        }
-        .map-popup-content a {
-            color: #ffaf5f;
-            text-decoration: none;
-            font-weight: bold;
+        /* MENU RESPONSIVO */
+        nav { background: #222; padding: 10px; display: flex; justify-content: center; align-items: center; position: relative; }
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; padding: 5px 0; }
+        .nav-links a:hover { color: #ff7f00; }
+        .hamburger { display: none; cursor: pointer; padding: 10px; position: absolute; right: 15px; }
+        .hamburger .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: #fff; transition: all 0.3s ease-in-out; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #222; min-width: 160px; box-shadow: 0 8px 16px rgba(0,0,0,0.4); z-index: 10; border-radius: 5px; padding: 12px; left: 50%; transform: translateX(-50%); }
+        .dropdown-content a { color: white; padding: 8px 16px; text-decoration: none; display: block; text-align: left; }
+        .dropdown-content a:hover { background-color: #333; border-radius: 3px; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-label { cursor: pointer; }
+
+        /* Estilos específicos da página do Mapa */
+        .map-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        #map { height: 65vh; width: 100%; border-radius: 10px; }
+        #filtros { padding: 15px; background: #282828; border-radius: 10px; display: inline-block; margin: 20px 0; }
+        #filtros select { padding: 10px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: #e0e0e0; font-size: 1em; cursor: pointer; }
+        #filtros label { font-weight: bold; color: #ff8c00; }
+        
+        /* Popup do Mapa */
+        .leaflet-popup-content-wrapper { background: #282828; color: #e0e0e0; border-radius: 10px; width: 200px; }
+        .leaflet-popup-content { margin: 15px !important; width: auto !important; }
+        .leaflet-popup-tip { background: #282828; }
+        .map-popup-content { text-align: center; font-family: Arial, sans-serif; }
+        .map-popup-content img.popup-logo { width: 80px; height: 80px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; border: 2px solid #ff8c00; }
+        .map-popup-content h3 { margin: 5px 0; font-size: 1.4em; color: #ff8c00; }
+        .map-popup-content p { margin: 5px 0; font-size: 1em; }
+        .map-popup-content a { color: #ffaf5f; text-decoration: none; font-weight: bold; }
+        
+        @media (max-width: 850px) {
+            nav { justify-content: flex-end; }
+            .hamburger { display: block; }
+            .nav-links { display: none; flex-direction: column; width: 100%; background-color: #222; position: absolute; top: 60px; left: 0; padding: 20px 0; z-index: 100; }
+            .nav-links.active { display: flex; }
+            .nav-links a, .dropdown { width: 100%; text-align: center; margin: 10px 0; }
+            .dropdown-content { position: static; display: none; box-shadow: none; background-color: #333; }
+            header {
+                background-image: url('images/batalha-mobile.jpg');
+                height: 40vh;
+                min-height: 200px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="images/batalha.jpg" alt="Batalha">
-        <div class="degrade"></div>
-    </header>
+        </header>
 
     <nav>
         <div class="hamburger">
@@ -190,9 +197,8 @@
             renderMarkers(document.getElementById("filtroDia").value, e.target.value);
         });
         renderMarkers();
-    </script>
-    
-    <script>
+
+        // Lógica do Menu Hambúrguer
         const hamburger = document.querySelector(".hamburger");
         const navLinks = document.querySelector(".nav-links");
         const dropdownLabel = document.querySelector(".dropdown-label");

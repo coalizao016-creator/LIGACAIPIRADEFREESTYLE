@@ -25,16 +25,63 @@
            ESTILOS GERAIS (TUDO EM UM SÓ LUGAR)
            ================================= */
         body { margin: 0; font-family: Arial, sans-serif; background: #1a1a1a; color: #e0e0e0; text-align: center; }
-        header { position: relative; height: 250px; overflow: hidden; }
-        header img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; z-index: 1; }
-        header .degrade { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, rgba(0,0,0,0.85) 100%); z-index: 2; }
-        h1, h2 { text-align: center; margin: 40px 0 20px; color: #ff8c00; }
-        .slogan { font-size: 1.6em; font-weight: bold; text-align: center; color: #e0e0e0; margin-top: -10px; }
+        
+        header {
+            position: relative;
+            height: 50vh;
+            min-height: 250px;
+            max-height: 350px;
+            color: white; /* Cor para o texto se houver no header, mas agora não terá */
+            display: flex; /* Para centralizar conteúdo se houver, mas agora não terá */
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0; /* Removido padding para deixar a imagem ocupar tudo */
+            box-sizing: border-box;
+            background-color: #000;
+            background-image: url('images/batalha.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        /* A camada escura e os z-index para h1/slogan não são mais necessários no header */
+        header::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.3); /* Um pouco menos escuro, já que não tem texto em cima */
+            z-index: 1; 
+        }
+        /* Remover o h1 e slogan do header, então removemos os estilos de z-index */
+        
+        h2 { text-align: center; margin: 40px 0 20px; color: #ff8c00; }
         footer { background: #000; padding: 15px; color: #aaa; text-align: center; margin-top: 30px; }
         section { padding: 40px 10px; max-width: 1200px; margin: 0 auto; }
         
+        /* NOVA SEÇÃO DE BOAS-VINDAS */
+        #boas-vindas {
+            padding-top: 25px; 
+            padding-bottom: 25px;
+            text-align: center;
+            color: #e0e0e0; /* Cor do texto geral */
+            background-color: #222; /* Fundo escuro para a seção */
+        }
+        #boas-vindas h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #ff8c00; /* Título com a cor de destaque */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        #boas-vindas .slogan {
+            font-size: 1.6em; 
+            font-weight: bold; 
+            margin-top: 0;
+            color: #fff; /* Slogan mais claro */
+        }
+
         /* AJUSTE DE ESPAÇAMENTO */
-        #inicio { padding-top: 20px; padding-bottom: 20px; }
         #agenda, #ranking { padding-top: 15px; padding-bottom: 25px; }
 
         /* MENU RESPONSIVO */
@@ -50,6 +97,7 @@
         .dropdown-content a:hover { background-color: #333; border-radius: 3px; }
         .dropdown:hover .dropdown-content { display: block; }
         .dropdown-label { cursor: pointer; }
+        
         @media (max-width: 850px) {
             nav { justify-content: flex-end; }
             .hamburger { display: block; }
@@ -57,6 +105,14 @@
             .nav-links.active { display: flex; }
             .nav-links a, .dropdown { width: 100%; text-align: center; margin: 10px 0; }
             .dropdown-content { position: static; display: none; box-shadow: none; background-color: #333; }
+            
+            header {
+                background-image: url('images/batalha-mobile.jpg');
+                height: 40vh;
+                min-height: 200px;
+            }
+            #boas-vindas h1 { font-size: 2.2em; }
+            #boas-vindas .slogan { font-size: 1em; }
         }
 
         /* AGENDA */
@@ -112,9 +168,7 @@
 </head>
 <body>
     <header>
-        <img src="images/batalha.jpg" alt="Batalha">
-        <div class="degrade"></div>
-    </header>
+        </header>
 
     <nav>
         <div class="hamburger">
@@ -139,12 +193,12 @@
             </div>
         </div>
     </nav>
-    
-    <section id="inicio">
+
+    <section id="boas-vindas">
         <h1>Bem-vindo à Coalizão 016</h1>
         <p class="slogan">Uma nova fase para o freestyle caipira.</p>
     </section>
-
+    
     <section id="agenda">
         <h2>Próximos Eventos</h2>
         <div id="agenda-container" class="agenda-grid"></div>
@@ -263,15 +317,11 @@
                         <div class="mc-modal-links">${linksHTML}</div>
                         <p class="modal-stats-footer">EM BREVE (by TwolalaScore)</p>
                         <div class="modal-stats-container">
-                            <div class="stats-group"><p class="stats-title">Edições</p><p class="stats-item">Títulos:</p><p class="stats-item">Vices:</p></div>
-                            <hr class="stats-separator">
-                            <div class="stats-group"><p class="stats-title">Batalhas</p><p class="stats-item">Vitórias:</p><p class="stats-item">Win Rate:</p></div>
-                            <hr class="stats-separator">
-                            <div class="stats-group"><p class="stats-title">Rounds</p><p class="stats-item">Vitórias:</p><p class="stats-item">Win Rate:</p></div>
-                            <hr class="stats-separator">
+                            <div class="stats-group"><p class="stats-title">Edições</p><p class="stats-item">Títulos:</p><p class="stats-item">Vices:</p></div><hr class="stats-separator">
+                            <div class="stats-group"><p class="stats-title">Batalhas</p><p class="stats-item">Vitórias:</p><p class="stats-item">Win Rate:</p></div><hr class="stats-separator">
+                            <div class="stats-group"><p class="stats-title">Rounds</p><p class="stats-item">Vitórias:</p><p class="stats-item">Win Rate:</p></div><hr class="stats-separator">
                             <div class="stats-group"><p class="stats-title">Twolalas:</p></div>
-                        </div>
-                    `;
+                        </div>`;
                     mcModal.style.display = 'block';
                 }
             }
@@ -286,18 +336,12 @@
 
             // === LÓGICA DO MENU HAMBÚRGUER ===
             if (hamburger && navLinks) {
-                hamburger.addEventListener("click", () => {
-                    navLinks.classList.toggle("active");
-                });
+                hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
             }
             if (window.innerWidth <= 850 && dropdownLabel && dropdownContent) {
                 dropdownLabel.addEventListener("click", (e) => {
                     e.preventDefault();
-                    if (dropdownContent.style.display === "block") {
-                        dropdownContent.style.display = "none";
-                    } else {
-                        dropdownContent.style.display = "block";
-                    }
+                    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
                 });
             }
         });
