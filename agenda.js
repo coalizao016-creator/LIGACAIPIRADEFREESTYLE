@@ -1,6 +1,15 @@
 // agenda.js
 const eventos = [
   {
+    data: "2025-09-01",
+    diaSemana: "Segunda-feira",
+    horario: "19:00h",
+    nomeBatalha: "Batalha do Bença",
+    cidade: "Ribeirão Preto - SP",
+    status: "Seletiva Festival Rueda",
+    linkInstagram: "https://www.instagram.com/batalhadobenca"
+  },
+  {
     data: "2025-09-06",
     diaSemana: "Sábado",
     horario: "18:00h",
