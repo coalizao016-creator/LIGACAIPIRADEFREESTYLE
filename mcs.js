@@ -285,11 +285,25 @@ const mcs = [
       },
       {
         nome: "YouTube",
-        url: "https://youtube.com/@ngk_ofc?si=G7PS1PlhL2FpGYuv"
+        url: "#"
       },
       {
         nome: "Spotify",
-        url: "https://open.spotify.com/user/31g27ruhezfdbkwv2or6ux3dm2qa?si=yYhHlhjJTmq6HpV_Km9ftg"
+        url: "https://youtube.com/@ngk_ofc?si=G7PS1PlhL2FpGYuvhttps://open.spotify.com/user/31g27ruhezfdbkwv2or6ux3dm2qa?si=yYhHlhjJTmq6HpV_Km9ftg"
+      }
+    ]
+  },
+  {
+    id: "MC023",
+    nome: "F.D",
+    imagem: "images/MC023.png",
+    cidade: "Ribeirão Preto",
+    titulo: "🏆 Campeão em 3 cidades",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/felipebrandaoporto/"
       }
     ]
   }
