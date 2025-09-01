@@ -210,5 +210,34 @@ const batalhas = [
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/batalhasn7" }
       ]
+    },
+    // ===== NOVAS BATALHAS ADICIONADAS AQUI =====
+    {
+      codigo: "BAT016",
+      nome: "Batalha Do Diamante",
+      cidade: "Patrocínio Paulista - SP",
+      dia: "Domingo",
+      coords: [-20.645917496579113, -47.27533096806432],
+      rede: "https://www.instagram.com/batalha_do_diamante_?igsh=bHV6NmRwcWc0Znho&utm_source=qr",
+      descricao: "Batalha especializada em garimpo de artistas, as joias raras da cena interiorana! Já vai para sua 3ª edição e sempre traz o hip-hop vivo e seus 4 elementos. Da cidade do garimpo pro mundo !",
+      ultimo_campeao: null,
+      campeoes_historicos: ["Tyrano", "Doctor L"],
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/batalha_do_diamante_?igsh=bHV6NmRwcWc0Znho&utm_source=qr" }
+      ]
+    },
+    {
+      codigo: "BAT017",
+      nome: "Batalha Leal",
+      cidade: "Franca - SP",
+      dia: "Domingo",
+      coords: [-20.479452, -47.397541],
+      rede: "https://www.instagram.com/batalha.leal",
+      descricao: "A Batalha Leal é a unica batalha que ocorre na zona norte de Franca com o objetivo de mostrar o poder dos artistas locais e quebrar a ideia que essa zona é a mais 'favelada' da cidade trazendo eventos fodas.",
+      ultimo_campeao: null,
+      campeoes_historicos: ["Nevas", "Biné"],
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/batalha.leal" }
+      ]
     }
 ];
