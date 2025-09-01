@@ -306,8 +306,8 @@ const mcs = [
         url: "https://www.instagram.com/felipebrandaoporto/"
       }
     ]
-  }
- {
+  }, // <--- VÍRGULA CORRIGIDA AQUI
+  {
     id: "MC024",
     nome: "Gomez",
     imagem: "images/MC024.png",
@@ -343,4 +343,4 @@ const mcs = [
       }
     ]
   }
-];];
+];
