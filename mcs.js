@@ -192,8 +192,7 @@ const mcs = [
       { nome: "Instagram", url: "https://www.instagram.com/satsumc/" },
       { nome: "Spotify", url: "https://open.spotify.com/intl-pt/artist/3Av64XJ3EDhahcI36vBZ2A" }
     ]
-  }/*,  // <--- INÍCIO DO COMENTÁRIO
-  // ===== NOVOS MCS ADICIONADOS AQUI =====
+  },
   {
     id: "MC017",
     nome: "Marcola mc",
@@ -257,6 +256,41 @@ const mcs = [
         url: "https://youtube.com/@kbz.ronaldy?si=o38It-ijAhCK7cjY"
       }
     ]
+  },
+  {
+    id: "MC021",
+    nome: "Nikito MC",
+    imagem: "images/MC021.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "🏆 Campeão da batalha sangue na 7",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/nikito_mc00"
+      }
+    ]
+  },
+  {
+    id: "MC022",
+    nome: "NGK",
+    imagem: "images/MC022.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "🎤 BATALHA DO BENÇA",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/ngkmc_ofc?igsh=MWcxaDU4MmlvcTljeQ=="
+      },
+      {
+        nome: "YouTube",
+        url: "https://youtube.com/@ngk_ofc?si=G7PS1PlhL2FpGYuv"
+      },
+      {
+        nome: "Spotify",
+        url: "https://open.spotify.com/user/31g27ruhezfdbkwv2or6ux3dm2qa?si=yYhHlhjJTmq6HpV_Km9ftg"
+      }
+    ]
   }
-  */ // <--- FIM DO COMENTÁRIO
 ];
