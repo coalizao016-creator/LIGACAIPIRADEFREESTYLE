@@ -297,7 +297,7 @@ const mcs = [
     id: "MC023",
     nome: "F.D",
     imagem: "images/MC023.png",
-    cidade: "Ribeirão Preto",
+    cidade: "Ribeirão Preto - SP",
     titulo: "🏆 Campeão em 3 cidades",
     ranking: null,
     links: [
@@ -306,7 +306,7 @@ const mcs = [
         url: "https://www.instagram.com/felipebrandaoporto/"
       }
     ]
-  }, // <--- VÍRGULA CORRIGIDA AQUI
+  },
   {
     id: "MC024",
     nome: "Gomez",
@@ -340,6 +340,93 @@ const mcs = [
       {
         nome: "Spotify",
         url: "https://open.spotify.com/artist/7bMwJ2OmaTmIs9rFFZQlq2?si=Kr2ogEk3TF6Ad6ZStveDqw"
+      }
+    ]
+  },
+  // ===== NOVOS MCS ADICIONADOS AQUI =====
+  {
+    id: "MC026",
+    nome: "Luna",
+    imagem: "images/MC026.png",
+    cidade: "Patrocínio Paulista - SP",
+    titulo: "🏆 9x Campeã da Batalha das Minas",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/luna_pimenta?igsh=MTVuaDRhcGwwbjRkbA=="
+      },
+      {
+        nome: "YouTube",
+        url: "https://youtube.com/@lunapimenta1697?si=a3lso0Yf52DwstiE"
+      },
+      {
+        nome: "Spotify",
+        url: "https://open.spotify.com/artist/7wElFgvFPPSXmvLQu2Cjl2?si=RET0fd5UQTaBRUqOnC4TMA"
+      }
+    ]
+  },
+  {
+    id: "MC027",
+    nome: "Markito",
+    imagem: "images/MC027.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "🚛 Caminhão da agressividade 🔥🔥🔥",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/vmarkito_?igsh=anFqZTJvYmt4c200"
+      }
+    ]
+  },
+  {
+    id: "MC028",
+    nome: "Félix",
+    imagem: "images/MC028.png",
+    cidade: "Pontal - SP",
+    titulo: "A Fênix Das Batalhas 🔥",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/oi_fellix"
+      }
+    ]
+  },
+  {
+    id: "MC029",
+    nome: "Stevan",
+    imagem: "images/MC029.png",
+    cidade: "São Carlos - SP",
+    titulo: "Incontestável 👑",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/stevanxt/"
+      },
+      {
+        nome: "YouTube",
+        url: "https://www.youtube.com/@stevan_xt"
+      },
+      {
+        nome: "Spotify",
+        url: "https://open.spotify.com/intl-pt/artist/3gJGfQQsEdGrBJozEb2y0i"
+      }
+    ]
+  },
+  {
+    id: "MC030",
+    nome: "Rezende",
+    imagem: "images/MC030.png",
+    cidade: "Franca - SP",
+    titulo: "🏆 Campeão em 3 cidades diferentes",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/rezendeemici?igsh=dWV1Mmtha2xhdjFo"
       }
     ]
   }
