@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "t0i3kd02k6");
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDQYDNW2T"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-EJDQYDNW2T');
-    </script>
-    
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>MCs - Coalizão 016</title>
@@ -24,6 +9,7 @@
 
     <style>
         /* Estilos específicos desta página */
+        h1, h2 { text-align: center; margin: 40px 0 20px; color: #ff8c00; }
         .form-container { max-width: 600px; margin: 40px auto; background: #282828; padding: 30px; border-radius: 10px; border: 1px solid #333; }
         .form-container p { color: #e0e0e0; text-align: center; }
         .form-container a { display: block; width: 250px; margin: 20px auto 0; padding: 15px; background-color: #ff8c00; color: #fff; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; }
@@ -33,13 +19,18 @@
         .filters-container input::placeholder { color: #aaa; }
         .filters-container button { padding: 10px 20px; border-radius: 5px; border: none; background-color: #ff8c00; color: #fff; cursor: pointer; font-weight: bold; transition: background-color 0.3s; }
         .filters-container button:hover { background-color: #e67300; }
-        .mcs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+        .mcs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto; min-height: 400px; }
         .mc-card { background: #282828; border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); transition: transform 0.3s ease; cursor: pointer; }
         .mc-card:hover { transform: translateY(-5px); }
         .mc-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #ff8c00; }
         .mc-card h3 { color: #ff8c00; margin-top: 15px; margin-bottom: 5px; font-size: 1.2em; }
         
-        /* Estilos da Modal e Estatísticas (já estão no styles.css, mas mantidos aqui por segurança) */
+        .pagination-container { padding: 20px 0; text-align: center; }
+        .page-link { display: inline-block; padding: 8px 14px; margin: 0 4px; border-radius: 5px; background-color: #282828; color: #e0e0e0; cursor: pointer; border: 1px solid #444; transition: background-color 0.3s; font-weight: bold; }
+        .page-link:hover { background-color: #444; }
+        .page-link.active { background-color: #ff8c00; color: #111; border-color: #ff8c00; cursor: default; }
+        
+        /* Estilos da Modal (sem alterações) */
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); padding-top: 60px; }
         .modal-content { background-color: #282828; margin: 5% auto; padding: 30px; border: 1px solid #444; width: 80%; max-width: 600px; border-radius: 10px; position: relative; animation-name: animatetop; animation-duration: 0.4s; text-align: center;}
         .modal-content h3 { color: #ff8c00; font-size: 2.2em; margin-top: 0; margin-bottom: 10px; }
@@ -100,18 +91,14 @@
     </div>
     <div class="mcs-grid" id="mcs-grid"></div>
 
+    <div class="pagination-container" id="pagination-container"></div>
+
     <footer>© 2025 Coalizão 016 - Todos os direitos reservados.</footer>
 
-    <div id="mc-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">×</span>
-            <div id="modal-body-mc"></div>
-        </div>
-    </div>
+    <div id="mc-modal" class="modal"><div class="modal-content"><span class="close-btn">×</span><div id="modal-body-mc"></div></div></div>
 
     <script src="mcs.js"></script>
     <script>
-        // Script principal da página de MCs
         document.addEventListener('DOMContentLoaded', () => {
             const mcsGrid = document.getElementById('mcs-grid');
             const mcModal = document.getElementById('mc-modal');
@@ -120,6 +107,60 @@
             const buscaNomeInput = document.getElementById('busca-nome');
             const filtroCidadeSelect = document.getElementById('filtro-cidade');
             const limparFiltrosBtn = document.getElementById('limpar-filtros');
+            const paginationContainer = document.getElementById('pagination-container');
+
+            let currentPage = 1;
+            const mcsPerPage = 15; // ===== ALTERADO DE 16 PARA 15 =====
+            let mcsFiltrados = [];
+
+            function displayPage(page, mcsList) {
+                currentPage = page;
+                mcsGrid.innerHTML = '';
+                const startIndex = (page - 1) * mcsPerPage;
+                const endIndex = startIndex + mcsPerPage;
+                const paginatedMcs = mcsList.slice(startIndex, endIndex);
+                if (paginatedMcs.length > 0) {
+                    paginatedMcs.forEach(mc => {
+                        const card = document.createElement('div');
+                        card.className = 'mc-card';
+                        card.setAttribute('data-id', mc.id);
+                        card.innerHTML = `<img src="${mc.imagem}" alt="${mc.nome}" onerror="this.onerror=null; this.src='images/placeholder.png';"><h3>${mc.nome}</h3>`;
+                        mcsGrid.appendChild(card);
+                    });
+                } else if (page === 1) {
+                    mcsGrid.innerHTML = '<p style="color: #b0b0b0;">Nenhum MC encontrado com os filtros selecionados.</p>';
+                }
+            }
+
+            function setupPagination(mcsList) {
+                paginationContainer.innerHTML = '';
+                const pageCount = Math.ceil(mcsList.length / mcsPerPage);
+                if (pageCount <= 1) return;
+                for (let i = 1; i <= pageCount; i++) {
+                    const btn = document.createElement('div');
+                    btn.className = 'page-link';
+                    btn.innerText = i;
+                    if (i === currentPage) { btn.classList.add('active'); }
+                    btn.addEventListener('click', () => {
+                        displayPage(i, mcsFiltrados);
+                        document.querySelectorAll('.page-link.active').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                    });
+                    paginationContainer.appendChild(btn);
+                }
+            }
+            
+            function filtrarEMostrarMCs() {
+                const termoBusca = buscaNomeInput.value.toLowerCase();
+                const cidadeSelecionada = filtroCidadeSelect.value;
+                let mcsAtuais = [...mcs];
+                if (termoBusca) { mcsAtuais = mcsAtuais.filter(mc => mc.nome.toLowerCase().includes(termoBusca)); }
+                if (cidadeSelecionada) { mcsAtuais = mcsAtuais.filter(mc => mc.cidade === cidadeSelecionada); }
+                mcsAtuais.sort((a, b) => a.nome.localeCompare(b.nome));
+                mcsFiltrados = mcsAtuais;
+                displayPage(1, mcsFiltrados);
+                setupPagination(mcsFiltrados);
+            }
 
             mcsGrid.addEventListener('click', (e) => {
                 const card = e.target.closest('.mc-card');
@@ -133,55 +174,36 @@
                         }
                         modalBody.innerHTML = `
                             <img src="${mcSelecionado.imagem}" alt="${mcSelecionado.nome}" class="modal-img">
-                            <h3>${mcSelecionado.nome}</h3>
-                            <p>${mcSelecionado.cidade}</p>
-                            <p>${mcSelecionado.titulo}</p>
+                            <h3>${mcSelecionado.nome}</h3><p>${mcSelecionado.cidade}</p><p>${mcSelecionado.titulo}</p>
                             <div class="mc-modal-links">${linksHTML}</div>
                             <p class="modal-stats-footer">Estatísticas EM BREVE (by TwolalaScore)</p>
                             <div class="modal-stats-container">
-                                <div class="stats-group"><p class="stats-title">Edições</p><p class="stats-item">Títulos:</p><p class="stats-item">Vices:</p></div>
-                                <hr class="stats-separator">
-                                <div class="stats-group"><p class="stats-title">Batalhas</p><p class="stats-item">Vitórias:</p><p class="stats-item">Win Rate:</p></div>
-                                <hr class="stats-separator">
-                                <div class="stats-group"><p class="stats-title">Rounds</p><p class="stats-item">Vitórias:</p><p class="stats-item">Win Rate:</p></div>
-                                <hr class="stats-separator">
+                                <div class="stats-group"><p class="stats-title">Edições</p><p class="stats-item">Títulos:</p><p class="stats-item">Vices:</p></div><hr class="stats-separator">
+                                <div class="stats-group"><p class="stats-title">Batalhas</p><p class="stats-item">Vitórias:</p><p class="stats-item">Win Rate:</p></div><hr class="stats-separator">
+                                <div class="stats-group"><p class="stats-title">Rounds</p><p class="stats-item">Vitórias:</p><p class="stats-item">Win Rate:</p></div><hr class="stats-separator">
                                 <div class="stats-group"><p class="stats-title">Twolalas:</p></div>
-                            </div>
-                        `;
+                            </div>`;
                         mcModal.style.display = 'block';
                     }
                 }
             });
 
             function popularFiltroCidades(){const cidades=[...new Set(mcs.map(mc=>mc.cidade))].sort();cidades.forEach(cidade=>{const option=document.createElement('option');option.value=cidade;option.textContent=cidade;filtroCidadeSelect.appendChild(option)})}
-            function filtrarEMostrarMCs(){let mcsFiltrados=[...mcs];const termoBusca=buscaNomeInput.value.toLowerCase();if(termoBusca){mcsFiltrados=mcsFiltrados.filter(mc=>mc.nome.toLowerCase().includes(termoBusca))}const cidadeSelecionada=filtroCidadeSelect.value;if(cidadeSelecionada){mcsFiltrados=mcsFiltrados.filter(mc=>mc.cidade===cidadeSelecionada)}mcsFiltrados.sort((a,b)=>a.nome.localeCompare(b.nome));renderizarMCs(mcsFiltrados)}
-            function renderizarMCs(listaDeMcs){mcsGrid.innerHTML='';if(listaDeMcs.length>0){listaDeMcs.forEach(mc=>{const card=document.createElement('div');card.className='mc-card';card.setAttribute('data-id',mc.id);card.innerHTML=`<img src="${mc.imagem}" alt="${mc.nome}"><h3>${mc.nome}</h3>`;mcsGrid.appendChild(card)})}else{mcsGrid.innerHTML='<p style="color: #b0b0b0;">Nenhum MC encontrado com os filtros selecionados.</p>'}}
-            buscaNomeInput.addEventListener('keyup',filtrarEMostrarMCs);filtroCidadeSelect.addEventListener('change',filtrarEMostrarMCs);
+            buscaNomeInput.addEventListener('keyup',filtrarEMostrarMCs);
+            filtroCidadeSelect.addEventListener('change',filtrarEMostrarMCs);
             limparFiltrosBtn.addEventListener('click',()=>{buscaNomeInput.value='';filtroCidadeSelect.value='';filtrarEMostrarMCs()});
-            closeBtn.onclick=()=>{mcModal.style.display='none'};window.onclick=event=>{if(event.target===mcModal){mcModal.style.display='none'}};
-            popularFiltroCidades();filtrarEMostrarMCs();
-
-            // Lógica do Menu Hambúrguer
+            closeBtn.onclick=()=>{mcModal.style.display='none'};
+            window.onclick=event=>{if(event.target===mcModal){mcModal.style.display='none'}};
+            
             const hamburger = document.querySelector(".hamburger");
             const navLinks = document.querySelector(".nav-links");
             const dropdownLabel = document.querySelector(".dropdown-label");
             const dropdownContent = document.querySelector(".dropdown-content");
-
-            if (hamburger && navLinks) {
-                hamburger.addEventListener("click", () => {
-                    navLinks.classList.toggle("active");
-                });
-            }
-            if (window.innerWidth <= 850 && dropdownLabel && dropdownContent) {
-                dropdownLabel.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    if (dropdownContent.style.display === "block") {
-                        dropdownContent.style.display = "none";
-                    } else {
-                        dropdownContent.style.display = "block";
-                    }
-                });
-            }
+            if (hamburger && navLinks) { hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); }); }
+            if (window.innerWidth <= 850 && dropdownLabel && dropdownContent) { dropdownLabel.addEventListener("click", (e) => { e.preventDefault(); dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block"; }); }
+            
+            popularFiltroCidades();
+            filtrarEMostrarMCs();
         });
     </script>
 </body>
