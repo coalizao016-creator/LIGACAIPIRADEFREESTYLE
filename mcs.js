@@ -343,7 +343,6 @@ const mcs = [
       }
     ]
   },
-  // ===== NOVOS MCS ADICIONADOS AQUI =====
   {
     id: "MC026",
     nome: "Luna",
@@ -427,6 +426,34 @@ const mcs = [
       {
         nome: "Instagram",
         url: "https://www.instagram.com/rezendeemici?igsh=dWV1Mmtha2xhdjFo"
+      }
+    ]
+  },
+  {
+    id: "MC031",
+    nome: "Alex Gaita",
+    imagem: "images/MC031.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "20 anos de cultura Hip Hop",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/alex.gaita?igsh=aTZnMHp3MDQ3bjB2"
+      }
+    ]
+  },
+  {
+    id: "MC032",
+    nome: "King Confusão",
+    imagem: "images/MC032.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "\"Todo esforço tem sua Recompensa\"..",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/kingconfusao"
       }
     ]
   }
