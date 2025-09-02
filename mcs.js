@@ -370,7 +370,7 @@ const mcs = [
     nome: "Markito",
     imagem: "images/MC027.png",
     cidade: "Ribeirão Preto - SP",
-    titulo: "🚛 Caminhão da agressividade 🔥🔥🔥",
+    titulo: "🚛 caminhão da agressividade🔥🔥🔥",
     ranking: null,
     links: [
       {
@@ -454,6 +454,49 @@ const mcs = [
       {
         nome: "Instagram",
         url: "https://www.instagram.com/kingconfusao"
+      }
+    ]
+  },
+  // ===== NOVOS MCS ADICIONADOS AQUI =====
+  {
+    id: "MC033",
+    nome: "Junio mc",
+    imagem: "images/MC033.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "Em busca da primeira premiação de campeão",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/piloto_junio016"
+      }
+    ]
+  },
+  {
+    id: "MC034",
+    nome: "Guigorna",
+    imagem: "images/MC034.png",
+    cidade: "Sales Oliveira - SP",
+    titulo: "🩸",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/guigorna?igsh=MW10dnNheW82YzllYg=="
+      }
+    ]
+  },
+  {
+    id: "MC035",
+    nome: "GS",
+    imagem: "images/MC035.png",
+    cidade: "Barretos - SP",
+    titulo: "🏆 Maior campeão da Batalha do Primavera",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/gsmc_oficial017/?next=%2F"
       }
     ]
   }
