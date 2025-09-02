@@ -239,19 +239,33 @@ const batalhas = [
         { nome: "Instagram", url: "https://www.instagram.com/batalha.leal" }
       ]
     },
-    // ===== NOVA BATALHA ADICIONADA AQUI =====
     {
       codigo: "BAT018",
       nome: "Batalha Nova Era",
       cidade: "Ribeirão Preto - SP",
       dia: "Quarta-feira",
-      coords: [-21.1783, -47.8105], // Coordenadas da Praça XV de Novembro
+      coords: [-21.1783, -47.8105],
       rede: "https://www.instagram.com/batalhanovaerarp",
       descricao: "A Batalha Nova Era é um evento de batalhas de rima freestyle que acontece toda quarta-feira na Praça XV de Novembro, no centro de Ribeirão Preto (SP). É um ponto de encontro importante para a cultura hip-hop local.",
       ultimo_campeao: null,
       campeoes_historicos: ["Jimmy", "Bubba"],
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/batalhanovaerarp" }
+      ]
+    },
+    // ===== NOVA BATALHA ADICIONADA AQUI =====
+    {
+      codigo: "BAT019",
+      nome: "Batalha dos Nômades",
+      cidade: "Franca - SP",
+      dia: "Quinta-feira",
+      coords: [-20.55361567618268, -47.3594906898017],
+      rede: "https://www.instagram.com/batalhadosnomades016/",
+      descricao: "Desde 2018, a Batalha dos Nômades vem ocupando espaços e fazendo história na cena do freestyle francano. Nascida com o espírito livre e resistência na essência, a Nômades não é só uma roda de rima — é movimento, é cultura, é vivência trocada verso a verso.",
+      ultimo_campeao: null,
+      campeoes_historicos: ["Tyrano", "Vinicin", "Doctor L"],
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/batalhadosnomades016/" }
       ]
     }
 ];
