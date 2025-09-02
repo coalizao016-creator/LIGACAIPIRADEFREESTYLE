@@ -229,7 +229,7 @@ const mcs = [
     id: "MC019",
     nome: "Marin",
     imagem: "images/MC019.png",
-    cidade: "Sales Oliveira - SP",
+    cidade: "Sales Oliveira",
     titulo: "🏆 Campeão da temporada da bdvinte",
     ranking: null,
     links: [
@@ -243,7 +243,7 @@ const mcs = [
     id: "MC020",
     nome: "Ronaldy",
     imagem: "images/MC020.png",
-    cidade: "São Joaquim da Barra - SP",
+    cidade: "São Joaquim da Barra",
     titulo: "🏆 da Conexão de Rimas, fumo muito e rimo mais ainda",
     ranking: null,
     links: [
@@ -497,6 +497,24 @@ const mcs = [
       {
         nome: "Instagram",
         url: "https://www.instagram.com/gsmc_oficial017/?next=%2F"
+      }
+    ]
+  },
+  {
+    id: "MC036",
+    nome: "Duke mc",
+    imagem: "images/MC036.png",
+    cidade: "Ibate - SP",
+    titulo: "Terror das batalhas 🔥",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/duke_mc_?igsh=NTQ3ZDA1MHcza3hk"
+      },
+      {
+        nome: "YouTube",
+        url: "https://youtube.com/@dukemc5700?si=k1iHm_FBufntRZOf"
       }
     ]
   }
