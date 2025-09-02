@@ -253,7 +253,6 @@ const batalhas = [
         { nome: "Instagram", url: "https://www.instagram.com/batalhanovaerarp" }
       ]
     },
-    // ===== NOVA BATALHA ADICIONADA AQUI =====
     {
       codigo: "BAT019",
       nome: "Batalha dos Nômades",
@@ -266,6 +265,21 @@ const batalhas = [
       campeoes_historicos: ["Tyrano", "Vinicin", "Doctor L"],
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/batalhadosnomades016/" }
+      ]
+    },
+    // ===== NOVA BATALHA ADICIONADA AQUI =====
+    {
+      codigo: "BAT020",
+      nome: "Batalha do Município",
+      cidade: "Ibaté - SP",
+      dia: "Quarta-feira",
+      coords: [-21.955, -47.9969],
+      rede: "https://www.instagram.com/batalhadomp016?igsh=MXU0anFzb3JmaGNtZA==",
+      descricao: "A primeira e única batalha de Ibaté 🔥🔥🔥",
+      ultimo_campeao: null,
+      campeoes_historicos: ["Duke mc", "Ph mc", "Puma mc"],
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/batalhadomp016?igsh=MXU0anFzb3JmaGNtZA==" }
       ]
     }
 ];
