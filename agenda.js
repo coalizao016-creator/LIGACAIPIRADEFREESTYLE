@@ -1,6 +1,15 @@
 // agenda.js
 const eventos = [
   {
+    data: "2025-09-03",
+    diaSemana: "Quarta-feira",
+    horario: "19:30h",
+    nomeBatalha: "Batalha Nova Era",
+    cidade: "Ribeirão Preto - SP",
+    status: "Bate e volta",
+    linkInstagram: "https://www.instagram.com/batalhanovaerarp"
+  },
+  {
     data: "2025-09-04",
     diaSemana: "Quinta-feira",
     horario: "19:00h",
@@ -22,7 +31,7 @@ const eventos = [
     data: "2025-09-06",
     diaSemana: "Sábado",
     horario: "20:00h",
-    nomeBatalha: "Batalha da Vinte - Seletiva Odisséia",
+    nomeBatalha: "Batalha da Vinte",
     cidade: "Orlândia - SP",
     status: "Seletiva Odisséia",
     linkInstagram: "https://www.instagram.com/bdvinte_"

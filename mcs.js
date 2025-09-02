@@ -229,7 +229,7 @@ const mcs = [
     id: "MC019",
     nome: "Marin",
     imagem: "images/MC019.png",
-    cidade: "Sales Oliveira",
+    cidade: "Sales Oliveira - SP",
     titulo: "🏆 Campeão da temporada da bdvinte",
     ranking: null,
     links: [
@@ -243,7 +243,7 @@ const mcs = [
     id: "MC020",
     nome: "Ronaldy",
     imagem: "images/MC020.png",
-    cidade: "São Joaquim da Barra",
+    cidade: "São Joaquim da Barra - SP",
     titulo: "🏆 da Conexão de Rimas, fumo muito e rimo mais ainda",
     ranking: null,
     links: [
