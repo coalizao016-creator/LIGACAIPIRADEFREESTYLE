@@ -106,7 +106,7 @@ const batalhas = [
       dia: "Sábado",
       coords: [-21.999014650558898, -47.91178871045396],
       rede: "https://www.instagram.com/hiphopsalva016/",
-      descricao: "O Hip Hop Salva é um coletivo atuante desde 2018 em São Carlos (SP), que utiliza a cultura como resposta à violência contra a juventude preta e periférica. Promove os cinco elementos do Hip Hop por meio de oficinas formativas, ocupações culturais em áreas de alta vulnerabilidade, festivais, shows, mostras e batalhas de rima. Os eventos são gratuitos, acessíveis e realizados em espaços públicos, com prioridade para artistas negros e LGBTQIA+, além de parcerias com produtores locais e política “Lixo Zero”. Já formou mais de 450 pessoas, gerou trabalho e renda para diversos artistas e é reconhecido por editais nacionais, consolidando-se como importante articulador cultural da região.",
+      descricao: "",
       ultimo_campeao: null,
       campeoes_historicos: [],
       redes_sociais_links: [
@@ -211,7 +211,6 @@ const batalhas = [
         { nome: "Instagram", url: "https://www.instagram.com/batalhasn7" }
       ]
     },
-    // ===== NOVAS BATALHAS ADICIONADAS AQUI =====
     {
       codigo: "BAT016",
       nome: "Batalha Do Diamante",
@@ -238,6 +237,21 @@ const batalhas = [
       campeoes_historicos: ["Nevas", "Biné"],
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/batalha.leal" }
+      ]
+    },
+    // ===== NOVA BATALHA ADICIONADA AQUI =====
+    {
+      codigo: "BAT018",
+      nome: "Batalha Nova Era",
+      cidade: "Ribeirão Preto - SP",
+      dia: "Quarta-feira",
+      coords: [-21.1783, -47.8105], // Coordenadas da Praça XV de Novembro
+      rede: "https://www.instagram.com/batalhanovaerarp",
+      descricao: "A Batalha Nova Era é um evento de batalhas de rima freestyle que acontece toda quarta-feira na Praça XV de Novembro, no centro de Ribeirão Preto (SP). É um ponto de encontro importante para a cultura hip-hop local.",
+      ultimo_campeao: null,
+      campeoes_historicos: ["Jimmy", "Bubba"],
+      redes_sociais_links: [
+        { nome: "Instagram", url: "https://www.instagram.com/batalhanovaerarp" }
       ]
     }
 ];
