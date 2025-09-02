@@ -1,13 +1,13 @@
 // agenda.js
 const eventos = [
   {
-    data: "2025-09-01",
-    diaSemana: "Segunda-feira",
+    data: "2025-09-04",
+    diaSemana: "Quinta-feira",
     horario: "19:00h",
-    nomeBatalha: "Batalha do Bença",
+    nomeBatalha: "Batalha Sangue na 7",
     cidade: "Ribeirão Preto - SP",
-    status: "Seletiva Festival Rueda",
-    linkInstagram: "https://www.instagram.com/batalhadobenca"
+    status: "Seletiva Festival Odisseia",
+    linkInstagram: "https://www.instagram.com/batalhasn7"
   },
   {
     data: "2025-09-06",
