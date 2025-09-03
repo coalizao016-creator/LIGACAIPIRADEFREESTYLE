@@ -457,7 +457,6 @@ const mcs = [
       }
     ]
   },
-  // ===== NOVOS MCS ADICIONADOS AQUI =====
   {
     id: "MC033",
     nome: "Junio mc",
@@ -515,6 +514,20 @@ const mcs = [
       {
         nome: "YouTube",
         url: "https://youtube.com/@dukemc5700?si=k1iHm_FBufntRZOf"
+      }
+    ]
+  },
+  {
+    id: "MC037",
+    nome: "Pixxe",
+    imagem: "images/MC037.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "O mais perto do asfalto possivel👾",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/eopixxe?igsh=MWc3OGtwNWJsZDYwcQ=="
       }
     ]
   }
