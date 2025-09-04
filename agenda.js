@@ -1,15 +1,6 @@
 // agenda.js
 const eventos = [
   {
-    data: "2025-09-03",
-    diaSemana: "Quarta-feira",
-    horario: "19:30h",
-    nomeBatalha: "Batalha Nova Era",
-    cidade: "Ribeirão Preto - SP",
-    status: "Bate e volta",
-    linkInstagram: "https://www.instagram.com/batalhanovaerarp"
-  },
-  {
     data: "2025-09-04",
     diaSemana: "Quinta-feira",
     horario: "19:00h",
@@ -17,6 +8,15 @@ const eventos = [
     cidade: "Ribeirão Preto - SP",
     status: "Seletiva Festival Odisseia",
     linkInstagram: "https://www.instagram.com/batalhasn7"
+  },
+  {
+    data: "2025-09-05",
+    diaSemana: "Sexta-feira",
+    horario: "19:30h",
+    nomeBatalha: "Coalizão 016 - Pré-Temporada",
+    cidade: "Ribeirão Preto - SP",
+    status: "R$200 em Premiação",
+    linkInstagram: "https://instagram.com/coalizao016"
   },
   {
     data: "2025-09-06",
