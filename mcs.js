@@ -469,5 +469,20 @@ const mcs = [
       { nome: "YouTube", url: "https://youtube.com/@_offakira?si=yZSBFUmPRIzZwG5S" },
       { nome: "Spotify", url: "https://open.spotify.com/artist/1Gj20B3DqgDXaR3jBfVwLw" }
     ]
+  },
+  // ===== NOVOS MCS ADICIONADOS AQUI =====
+  {
+    id: "MC041",
+    nome: "JM",
+    imagem: "images/MC041.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "Joia da Vila Virginia💎",
+    ranking: null,
+    links: [
+      {
+        nome: "Instagram",
+        url: "https://www.instagram.com/jm.almeida016?igsh=ZHBvbDNvZGxzMmY5&utm_source=qr"
+      }
+    ]
   }
 ];
