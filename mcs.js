@@ -470,7 +470,6 @@ const mcs = [
       { nome: "Spotify", url: "https://open.spotify.com/artist/1Gj20B3DqgDXaR3jBfVwLw" }
     ]
   },
-  // ===== NOVOS MCS ADICIONADOS AQUI =====
   {
     id: "MC041",
     nome: "JM",
@@ -483,6 +482,30 @@ const mcs = [
         nome: "Instagram",
         url: "https://www.instagram.com/jm.almeida016?igsh=ZHBvbDNvZGxzMmY5&utm_source=qr"
       }
+    ]
+  },
+  // ===== NOVOS MCS ADICIONADOS AQUI =====
+  {
+    id: "MC042",
+    nome: "Vetav",
+    imagem: "images/MC042.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/vinytav?igsh=dTNmYnNwbjkyZ2xx" }
+    ]
+  },
+  {
+    id: "MC043",
+    nome: "Segalla",
+    imagem: "images/MC043.png",
+    cidade: "Orlândia - SP",
+    titulo: "🏆 Maior Campeão da Batalha da Vinte",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/segalladr_?igsh=YWkwaHh0Mm5pYTdr" },
+      { nome: "YouTube", url: "https://youtube.com/@segallarss?si=_t3MFV6IqWBH2i-4" }
     ]
   }
 ];
