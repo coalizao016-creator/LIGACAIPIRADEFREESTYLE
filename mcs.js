@@ -507,5 +507,17 @@ const mcs = [
       { nome: "Instagram", url: "https://www.instagram.com/segalladr_?igsh=YWkwaHh0Mm5pYTdr" },
       { nome: "YouTube", url: "https://youtube.com/@segallarss?si=_t3MFV6IqWBH2i-4" }
     ]
-  }
+  },
+  {
+  id: "MC044",
+  nome: "N3TO OG",
+  imagem: "images/MC044.png",
+  cidade: "Ribeirão Preto - SP",
+  titulo: "Criador da Sangue Na 7, a batalha mais antiga do interior paulista! Produção Cultural / Arte Educação / FREESTYLE.",
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/n3to.og" },
+    { nome: "YouTube", url: "https://www.youtube.com/@n3to-og" }
+  ]
+}
 ];
