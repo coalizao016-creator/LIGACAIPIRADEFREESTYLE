@@ -5,9 +5,9 @@ const eventos = [
     diaSemana: "Quarta-feira",
     horario: "19:30h",
     nomeBatalha: "Batalha Nova Era",
-    cidade: "Guariba - SP",
+    cidade: "Ribeirão Preto - SP",
     status: "Edição Desafio",
-    linkInstagram: "https://www.instagram.com/batalha_da_nova_era"
+    linkInstagram: "https://www.instagram.com/batalhanovaerarp?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
   },
   {
     data: "2025-09-11",
