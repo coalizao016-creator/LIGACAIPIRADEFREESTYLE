@@ -1,49 +1,31 @@
 // agenda.js
 const eventos = [
   {
-    data: "2025-09-04",
+    data: "2025-09-10",
+    diaSemana: "Quarta-feira",
+    horario: "19:30h",
+    nomeBatalha: "Batalha Nova Era",
+    cidade: "Guariba - SP",
+    status: "Edição Desafio",
+    linkInstagram: "https://www.instagram.com/batalha_da_nova_era"
+  },
+  {
+    data: "2025-09-11",
     diaSemana: "Quinta-feira",
     horario: "19:00h",
     nomeBatalha: "Batalha Sangue na 7",
     cidade: "Ribeirão Preto - SP",
-    status: "Seletiva Festival Odisseia",
+    status: "Duplas Estilo Norte",
     linkInstagram: "https://www.instagram.com/batalhasn7"
   },
   {
-    data: "2025-09-05",
+    data: "2025-09-12",
     diaSemana: "Sexta-feira",
-    horario: "19:30h",
-    nomeBatalha: "Coalizão 016 - Pré-Temporada",
-    cidade: "Ribeirão Preto - SP",
-    status: "R$200 em Premiação",
-    linkInstagram: "https://instagram.com/coalizao016"
-  },
-  {
-    data: "2025-09-06",
-    diaSemana: "Sábado",
-    horario: "18:00h",
-    nomeBatalha: "Batalha do Raio",
-    cidade: "Araraquara - SP",
-    status: "Inscrições das 18h às 19h30",
-    linkInstagram: "https://www.instagram.com/batalhadoraio"
-  },
-  {
-    data: "2025-09-06",
-    diaSemana: "Sábado",
     horario: "20:00h",
-    nomeBatalha: "Batalha da Vinte",
-    cidade: "Orlândia - SP",
-    status: "Seletiva Odisséia",
-    linkInstagram: "https://www.instagram.com/bdvinte_"
-  },
-  {
-    data: "2025-09-07",
-    diaSemana: "Domingo",
-    horario: "19:00h",
-    nomeBatalha: "Batalha do Morro - Edição 45s",
-    cidade: "Morro Agudo - SP",
-    status: "Edição 45s",
-    linkInstagram: "https://www.instagram.com/batalhadomorro016"
+    nomeBatalha: "Conexão de Rimas 17ª EDT",
+    cidade: "São Joaquim da Barra - SP",
+    status: "Trap",
+    linkInstagram: "https://www.instagram.com/conexao_de_rima"
   },
   {
     data: "2025-09-13",
@@ -80,6 +62,15 @@ const eventos = [
     cidade: "Morro Agudo - SP",
     status: "Bate e Volta Clássico",
     linkInstagram: "https://www.instagram.com/batalhadomorro016"
+  },
+  {
+    data: "2025-09-19",
+    diaSemana: "Sexta-feira",
+    horario: "20:00h",
+    nomeBatalha: "Conexão de Rimas 18ª EDT",
+    cidade: "São Joaquim da Barra - SP",
+    status: "Grime",
+    linkInstagram: "https://www.instagram.com/conexao_de_rima"
   },
   {
     data: "2025-09-21",
