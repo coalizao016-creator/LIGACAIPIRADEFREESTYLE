@@ -519,5 +519,29 @@ const mcs = [
     { nome: "Instagram", url: "https://www.instagram.com/n3to.og" },
     { nome: "YouTube", url: "https://www.youtube.com/@n3to-og" }
   ]
+},
+{
+  id: "MC045",
+  nome: "Gomex",
+  imagem: "images/MC045.png",
+  cidade: "Araraquara - SP",
+  titulo: "🏅MC DE BATALHA / Artista da auroom / O puro ódio 🤬",
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/eogomexx_" },
+    { nome: "YouTube", url: "https://youtube.com/@eogomex" },
+    { nome: "Spotify", url: "https://open.spotify.com/artist/416L3fmk6eK9HaTzyIEPyz?si=MASMgVebSBOimuwa44V8DQ" }
+  ]
+},
+{
+  id: "MC046",
+  nome: "Aninha MC",
+  imagem: "images/MC046.png",
+  cidade: "Ribeirão Preto - SP",
+  titulo: "🎀🎙",
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/aninhamcofc" }
+  ]
 }
 ];

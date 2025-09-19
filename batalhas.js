@@ -281,5 +281,19 @@ const batalhas = [
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/batalhadomp016?igsh=MXU0anFzb3JmaGNtZA==" }
       ]
-    }
+    },
+{
+  codigo: "BAT021",
+  nome: "Batalha Das Estações",
+  cidade: "Araraquara - SP",
+  dia: "Segunda-feira",
+  coords: [-21.7588, -48.1764],
+  rede: "https://www.instagram.com/batalha_das_estacoes",
+  descricao: "Batalha underground que promove eventos semanais com gravação e criação de conteúdo para artistas.",
+  ultimo_campeao: null,
+  campeoes_historicos: ["Jhow", "Gomex", "Akira"],
+  redes_sociais_links: [
+    { nome: "Instagram", url: "https://www.instagram.com/batalha_das_estacoes" }
+  ]
+}
 ];
