@@ -543,5 +543,28 @@ const mcs = [
   links: [
     { nome: "Instagram", url: "https://www.instagram.com/aninhamcofc" }
   ]
+},
+// ===== NOVOS MCS ADICIONADOS AQUI =====
+{
+  id: "MC047",
+  nome: "El Dragon",
+  imagem: "images/MC047.png",
+  cidade: "Ribeirão Preto - SP",
+  titulo: "🐉",
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/eldragon.freestyle/" }
+  ]
+},
+{
+  id: "MC048",
+  nome: "Sonic",
+  imagem: "images/MC048.png",
+  cidade: "São Carlos - SP",
+  titulo: "🏆 Maior campeão da Batalha da Alcateia / 🥉 3º lugar regional CPBM 2022",
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/kainan.fiori" }
+  ]
 }
 ];
