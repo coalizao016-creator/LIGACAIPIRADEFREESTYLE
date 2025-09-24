@@ -151,7 +151,7 @@ const mcs = [
     nome: "MS",
     imagem: "images/MC013.png",
     cidade: "Bauru - SP",
-    titulo: "  ",
+    titulo: " ",
     ranking: 15,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/ms.ofc/" },
@@ -201,7 +201,7 @@ const mcs = [
     titulo: "🔥 Destaque",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/marcolaa.st?igsh=MTcybHdjN3p5a3Nyag==" }
+      { nome: "Instagram", url: "https://www.instagram.com/marcolaa.st" }
     ]
   },
   {
@@ -212,8 +212,8 @@ const mcs = [
     titulo: "🏆 da Batalha dos Brodi",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/esqacmvms?igsh=MTJxYzkxZjBpZnJ5MQ==" },
-      { nome: "YouTube", url: "https://youtube.com/@mancha016?si=y7QF5UzGI8mxqgfB" }
+      { nome: "Instagram", url: "https://www.instagram.com/esqacmvms" },
+      { nome: "YouTube", url: "https://youtube.com/@mancha016" }
     ]
   },
   {
@@ -224,7 +224,7 @@ const mcs = [
     titulo: "🏆 Campeão da temporada da bdvinte",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/kaikymarin?igsh=cWplcmtqY2Y5NmVt&utm_source=qr" }
+      { nome: "Instagram", url: "https://www.instagram.com/kaikymarin" }
     ]
   },
   {
@@ -235,8 +235,8 @@ const mcs = [
     titulo: "🏆 da Conexão de Rimas, fumo muito e rimo mais ainda",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/ronaldy.wav?igsh=NXIxaTZmMGV0eXpp&utm_source=qr" },
-      { nome: "YouTube", url: "https://youtube.com/@kbz.ronaldy?si=o38It-ijAhCK7cjY" }
+      { nome: "Instagram", url: "https://www.instagram.com/ronaldy.wav" },
+      { nome: "YouTube", url: "https://youtube.com/@kbz.ronaldy" }
     ]
   },
   {
@@ -258,7 +258,7 @@ const mcs = [
     titulo: "🎤 BATALHA DO BENÇA",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/ngkmc_ofc?igsh=MWcxaDU4MmlvcTljeQ==" },
+      { nome: "Instagram", url: "https://www.instagram.com/ngkmc_ofc" },
       { nome: "YouTube", url: "#" },
       { nome: "Spotify", url: "https://open.spotify.com/artist/1p7n021GMG3rQiI2s74Vkl" }
     ]
@@ -279,10 +279,10 @@ const mcs = [
     nome: "Gomez",
     imagem: "images/MC024.png",
     cidade: "Araraquara - SP",
-    titulo: "Aquele lá do \"eu começo\" 🦅",
+    titulo: 'Aquele lá do "eu começo" 🦅',
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/itsmegomezs?igsh=c3VoN2RoeDE0aWE0" }
+      { nome: "Instagram", url: "https://www.instagram.com/itsmegomezs" }
     ]
   },
   {
@@ -293,8 +293,8 @@ const mcs = [
     titulo: "🏆 Múltiplo campeão em Ribeirão Preto",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/arteqmarco?igsh=MWs3eXFvOTQ0dGx1NA==" },
-      { nome: "YouTube", url: "https://youtube.com/@arteqoficial8551?si=U_FJzwCXgXn1OSz2" },
+      { nome: "Instagram", url: "https://www.instagram.com/arteqmarco" },
+      { nome: "YouTube", url: "https://youtube.com/@arteqoficial8551" },
       { nome: "Spotify", url: "https://open.spotify.com/artist/5L2A8STcp2p0I5iL8i7Ffa" }
     ]
   },
@@ -306,8 +306,8 @@ const mcs = [
     titulo: "🏆 9x Campeã da Batalha das Minas",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/luna_pimenta?igsh=MTVuaDRhcGwwbjRkbA==" },
-      { nome: "YouTube", url: "https://youtube.com/@lunapimenta1697?si=a3lso0Yf52DwstiE" },
+      { nome: "Instagram", url: "https://www.instagram.com/luna_pimenta" },
+      { nome: "YouTube", url: "https://youtube.com/@lunapimenta1697" },
       { nome: "Spotify", url: "https://open.spotify.com/artist/413g95b21P743n9iG82CFs" }
     ]
   },
@@ -319,7 +319,7 @@ const mcs = [
     titulo: "🚛 caminhão da agressividade🔥🔥🔥",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/vmarkito_?igsh=anFqZTJvYmt4c200" }
+      { nome: "Instagram", url: "https://www.instagram.com/vmarkito_" }
     ]
   },
   {
@@ -354,7 +354,7 @@ const mcs = [
     titulo: "🏆 Campeão em 3 cidades diferentes",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/rezendeemici?igsh=dWV1Mmtha2xhdjFo" }
+      { nome: "Instagram", url: "https://www.instagram.com/rezendeemici" }
     ]
   },
   {
@@ -365,7 +365,7 @@ const mcs = [
     titulo: "20 anos de cultura Hip Hop",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/alex.gaita?igsh=aTZnMHp3MDQ3bjB2" }
+      { nome: "Instagram", url: "https://www.instagram.com/alex.gaita" }
     ]
   },
   {
@@ -373,7 +373,7 @@ const mcs = [
     nome: "King Confusão",
     imagem: "images/MC032.png",
     cidade: "Ribeirão Preto - SP",
-    titulo: "\"Todo esforço tem sua Recompensa\"..",
+    titulo: '"Todo esforço tem sua Recompensa"..',
     ranking: null,
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/kingconfusao" }
@@ -398,7 +398,7 @@ const mcs = [
     titulo: "🩸",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/guigorna?igsh=MW10dnNheW82YzllYg==" }
+      { nome: "Instagram", url: "https://www.instagram.com/guigorna" }
     ]
   },
   {
@@ -409,7 +409,7 @@ const mcs = [
     titulo: "🏆 Maior campeão da Batalha do Primavera",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/gsmc_oficial017/?next=%2F" }
+      { nome: "Instagram", url: "https://www.instagram.com/gsmc_oficial017/" }
     ]
   },
   {
@@ -420,8 +420,8 @@ const mcs = [
     titulo: "Terror das batalhas 🔥",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/duke_mc_?igsh=NTQ3ZDA1MHcza3hk" },
-      { nome: "YouTube", url: "https://youtube.com/@dukemc5700?si=k1iHm_FBufntRZOf" }
+      { nome: "Instagram", url: "https://www.instagram.com/duke_mc_" },
+      { nome: "YouTube", url: "https://youtube.com/@dukemc5700" }
     ]
   },
   {
@@ -432,7 +432,7 @@ const mcs = [
     titulo: "O mais perto do asfalto possivel👾",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/eopixxe?igsh=MWc3OGtwNWJsZDYwcQ==" }
+      { nome: "Instagram", url: "https://www.instagram.com/eopixxe" }
     ]
   },
   {
@@ -454,7 +454,7 @@ const mcs = [
     titulo: "Predestinado.",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/pedrooriginal__?igsh=MTVtMjF2M2g4cGc1dA==" }
+      { nome: "Instagram", url: "https://www.instagram.com/pedrooriginal__" }
     ]
   },
   {
@@ -465,8 +465,8 @@ const mcs = [
     titulo: "Que Deus nos abençoe de poesia Marginal!🩸",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/_offakira?igsh=NGF4NnNzanExOGM1" },
-      { nome: "YouTube", url: "https://youtube.com/@_offakira?si=yZSBFUmPRIzZwG5S" },
+      { nome: "Instagram", url: "https://www.instagram.com/_offakira" },
+      { nome: "YouTube", url: "https://youtube.com/@_offakira" },
       { nome: "Spotify", url: "https://open.spotify.com/artist/1Gj20B3DqgDXaR3jBfVwLw" }
     ]
   },
@@ -478,13 +478,9 @@ const mcs = [
     titulo: "Joia da Vila Virginia💎",
     ranking: null,
     links: [
-      {
-        nome: "Instagram",
-        url: "https://www.instagram.com/jm.almeida016?igsh=ZHBvbDNvZGxzMmY5&utm_source=qr"
-      }
+      { nome: "Instagram", url: "https://www.instagram.com/jm.almeida016" }
     ]
   },
-  // ===== NOVOS MCS ADICIONADOS AQUI =====
   {
     id: "MC042",
     nome: "Vetav",
@@ -493,7 +489,7 @@ const mcs = [
     titulo: "",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/vinytav?igsh=dTNmYnNwbjkyZ2xx" }
+      { nome: "Instagram", url: "https://www.instagram.com/vinytav" }
     ]
   },
   {
@@ -504,67 +500,78 @@ const mcs = [
     titulo: "🏆 Maior Campeão da Batalha da Vinte",
     ranking: null,
     links: [
-      { nome: "Instagram", url: "https://www.instagram.com/segalladr_?igsh=YWkwaHh0Mm5pYTdr" },
-      { nome: "YouTube", url: "https://youtube.com/@segallarss?si=_t3MFV6IqWBH2i-4" }
+      { nome: "Instagram", url: "https://www.instagram.com/segalladr_" },
+      { nome: "YouTube", url: "https://youtube.com/@segallarss" }
     ]
   },
   {
-  id: "MC044",
-  nome: "N3TO OG",
-  imagem: "images/MC044.png",
-  cidade: "Ribeirão Preto - SP",
-  titulo: "Criador da Sangue Na 7, a batalha mais antiga do interior paulista! Produção Cultural / Arte Educação / FREESTYLE.",
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/n3to.og" },
-    { nome: "YouTube", url: "https://www.youtube.com/@n3to-og" }
-  ]
-},
-{
-  id: "MC045",
-  nome: "Gomex",
-  imagem: "images/MC045.png",
-  cidade: "Araraquara - SP",
-  titulo: "🏅MC DE BATALHA / Artista da auroom / O puro ódio 🤬",
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/eogomexx_" },
-    { nome: "YouTube", url: "https://youtube.com/@eogomex" },
-    { nome: "Spotify", url: "https://open.spotify.com/artist/416L3fmk6eK9HaTzyIEPyz?si=MASMgVebSBOimuwa44V8DQ" }
-  ]
-},
-{
-  id: "MC046",
-  nome: "Aninha MC",
-  imagem: "images/MC046.png",
-  cidade: "Ribeirão Preto - SP",
-  titulo: "🎀🎙",
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/aninhamcofc" }
-  ]
-},
-// ===== NOVOS MCS ADICIONADOS AQUI =====
-{
-  id: "MC047",
-  nome: "El Dragon",
-  imagem: "images/MC047.png",
-  cidade: "Ribeirão Preto - SP",
-  titulo: "🐉",
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/eldragon.freestyle/" }
-  ]
-},
-{
-  id: "MC048",
-  nome: "Sonic",
-  imagem: "images/MC048.png",
-  cidade: "São Carlos - SP",
-  titulo: "🏆 Maior campeão da Batalha da Alcateia / 🥉 3º lugar regional CPBM 2022",
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/kainan.fiori" }
-  ]
-}
+    id: "MC044",
+    nome: "N3TO OG",
+    imagem: "images/MC044.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "Criador da Sangue Na 7, a batalha mais antiga do interior paulista! Produção Cultural / Arte Educação / FREESTYLE.",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/n3to.og" },
+      { nome: "YouTube", url: "https://www.youtube.com/@n3to-og" }
+    ]
+  },
+  {
+    id: "MC045",
+    nome: "Gomex",
+    imagem: "images/MC045.png",
+    cidade: "Araraquara - SP",
+    titulo: "🏅MC DE BATALHA / Artista da auroom / O puro ódio 🤬",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/eogomexx_" },
+      { nome: "YouTube", url: "https://youtube.com/@eogomex" },
+      { nome: "Spotify", url: "https://open.spotify.com/artist/416L3fmk6eK9HaTzyIEPyz?si=MASMgVebSBOimuwa44V8DQ" }
+    ]
+  },
+  {
+    id: "MC046",
+    nome: "Aninha MC",
+    imagem: "images/MC046.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "🎀🎙️",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/aninhamcofc" }
+    ]
+  },
+  {
+    id: "MC047",
+    nome: "El Dragon",
+    imagem: "images/MC047.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "🐉",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/eldragon.freestyle/" }
+    ]
+  },
+  {
+    id: "MC048",
+    nome: "Sonic",
+    imagem: "images/MC048.png",
+    cidade: "São Carlos - SP",
+    titulo: "🏆 Maior campeão da Batalha da Alcateia / 🥉 3º lugar regional CPBM 2022",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/kainan.fiori" }
+    ]
+  },
+  {
+    id: "MC049",
+    nome: "Gudy",
+    imagem: "images/MC049.png",
+    cidade: "Araraquara - SP",
+    titulo: "Gordinho do Perigo | É o Caos",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/gudyboooy" },
+      { nome: "YouTube", url: "https://www.youtube.com/@gudyboooy" }
+    ]
+  }
 ];
