@@ -93,18 +93,20 @@ const batalhas = [
       ]
     },
     {
-      codigo: "BAT008",
-      nome: "Batalha H2S",
-      cidade: "São Carlos - SP",
-      dia: "Sábado",
-      coords: [-21.999014650558898, -47.91178871045396],
-      rede: "https://www.instagram.com/hiphopsalva016/",
-      descricao: "",
-      campeoes_historicos: [],
-      redes_sociais_links: [
-        { nome: "Instagram", url: "https://www.instagram.com/hiphopsalva016/" }
-      ]
-    },
+  codigo: "BAT008",
+  nome: "Batalha H2S",
+  cidade: "São Carlos - SP",
+  dia: "Sábado",
+  coords: [-21.999014650558898, -47.91178871045396],
+  rede: "https://www.instagram.com/hiphopsalva016/",
+  descricao: "O Hip Hop Salva é um coletivo atuante desde 2018 em São Carlos (SP), que utiliza a cultura como resposta à violência contra a juventude preta e periférica. Promove os cinco elementos do Hip Hop por meio de oficinas formativas, ocupações culturais em áreas de alta vulnerabilidade, festivais, shows, mostras e batalhas de rima. Os eventos são gratuitos, acessíveis e realizados em espaços públicos, com prioridade para artistas negros e LGBTQIA+, além de parcerias com produtores locais e política “Lixo Zero”. Já formou mais de 450 pessoas, gerou trabalho e renda para diversos artistas e é reconhecido por editais nacionais, consolidando-se como importante articulador cultural da região.",
+  campeoes_historicos: [],
+  redes_sociais_links: [
+    { nome: "Instagram", url: "https://www.instagram.com/hiphopsalva016" },
+    { nome: "YouTube", url: "https://youtube.com/@hiphopsalva" },
+    { nome: "TikTok", url: "https://www.tiktok.com/@hiphopsalva016" }
+  ]
+},
     {
       codigo: "BAT009",
       nome: "BATALHA DA FONTE",
