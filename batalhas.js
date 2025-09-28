@@ -252,7 +252,7 @@ const batalhas = [
     },
     {
       codigo: "BAT020",
-      nome: "Batalha do Município",
+      nome: "Batalha dos Chavões",
       cidade: "Ibaté - SP",
       dia: "Quarta-feira",
       coords: [-21.955, -47.9969],
@@ -313,6 +313,32 @@ const batalhas = [
       campeoes_historicos: ["Tyrano"],
       redes_sociais_links: [
         { nome: "Instagram", url: "https://www.instagram.com/bdkfreestyle_" }
-      ]
-    }
+  ]
+},
+{
+  codigo: "BAT025",
+  nome: "Batalha da Ressaca",
+  cidade: "Araraquara - SP",
+  dia: "Terça-feira",
+  coords: [-21.7588, -48.1764],
+  rede: "https://www.instagram.com/batalhadaressaca",
+  descricao: "Batalha de rimas que acontece às terças-feiras na Praça Santa Cruz.",
+  campeoes_historicos: [],
+  redes_sociais_links: [
+    { nome: "Instagram", url: "https://www.instagram.com/batalhadaressaca" }
+  ]
+},
+{
+  codigo: "BAT026",
+  nome: "Batalha dos Forasteiros",
+  cidade: "Araraquara - SP",
+  dia: "Sexta-feira",
+  coords: [-21.8015, -48.1775],
+  rede: "https://www.instagram.com/batalha_dos_forasteir0s_of",
+  descricao: "Batalha de rimas que acontece às sextas-feiras na Praça do Faveral.",
+  campeoes_historicos: [],
+  redes_sociais_links: [
+    { nome: "Instagram", url: "https://www.instagram.com/batalha_dos_forasteir0s_of" }
+  ]
+}
 ];

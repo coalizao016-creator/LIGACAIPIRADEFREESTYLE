@@ -572,6 +572,28 @@ const mcs = [
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/gudyboooy" },
       { nome: "YouTube", url: "https://www.youtube.com/@gudyboooy" }
-    ]
-  }
-];
+  ]
+},
+{
+  id: "MC050",
+  nome: "Emici",
+  imagem: "images/MC050.png",
+  cidade: "Ribeirão Preto - SP",
+  titulo: "De herói a vilão todo mundo tem um pouco.",
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/emici____" }
+  ]
+},
+{
+  id: "MC051",
+  nome: "Dias_mc",
+  imagem: "images/MC051.png",
+  cidade: "Ribeirão Preto - SP",
+  titulo: "",
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/_dias_mc" }
+  ]
+}
+]
