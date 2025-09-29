@@ -51,7 +51,7 @@ const eventos = [
     horario: "20:00h",
     nomeBatalha: "Batalha Das Estações #32",
     cidade: "Araraquara - SP",
-    status: "Edição Bate-Volta - Praça Santa Cruz",
+    status: "Edição 30 Segundos - Praça Santa Cruz",
     linkInstagram: "https://www.instagram.com/batalha_das_estacoes"
   },
   {
