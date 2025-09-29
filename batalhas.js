@@ -340,5 +340,16 @@ const batalhas = [
   redes_sociais_links: [
     { nome: "Instagram", url: "https://www.instagram.com/batalha_dos_forasteir0s_of" }
   ]
+},
+{
+  codigo: "BAT027",
+  nome: "Batalha da UBS",
+  cidade: "Ribeirão Preto - SP",
+  dia: "Terça-feira",
+  coords: [-21.1923, -47.8285],
+  rede: "",
+  descricao: "Batalha de rimas que acontece às terças-feiras na Praça do Japão, na Vila Virgínia.",
+  campeoes_historicos: ["Bubba", "Guri", "Killua"],
+  redes_sociais_links: []
 }
 ];
