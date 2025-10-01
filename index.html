@@ -22,8 +22,8 @@
     
     <style>
         /* =================================
-           ESTILOS GERAIS (TUDO EM UM SÓ LUGAR)
-           ================================= */
+            ESTILOS GERAIS (TUDO EM UM SÓ LUGAR)
+            ================================= */
         body { margin: 0; font-family: Arial, sans-serif; background: #1a1a1a; color: #e0e0e0; text-align: center; }
         header {
             position: relative;
@@ -93,7 +93,7 @@
         .evento-info p { margin: 5px 0; color: #ccc; }
         .evento-status { display: inline-block; background-color: #ff8c00; color: #111; padding: 4px 10px; border-radius: 15px; font-size: 0.8em; font-weight: bold; margin-top: 10px; }
         
-        /* ===== NOVOS ESTILOS PARA A SEÇÃO DA LOJA ===== */
+        /* SEÇÃO DA LOJA */
         #loja {
             background-color: #282828;
             padding: 40px 20px;
@@ -106,17 +106,39 @@
             align-items: center;
             gap: 20px;
         }
-        .loja-container img {
-            max-width: 300px;
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-        }
         .loja-texto p {
             font-size: 1.2em;
             color: #ccc;
             margin: 10px 0;
             max-width: 500px;
+        }
+        
+        /* ESTILOS PARA PRODUTO ESGOTADO */
+        .loja-imagem-container {
+            position: relative;
+            display: inline-block;
+        }
+        .loja-imagem-container img {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+        .esgotado-banner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            background-color: rgba(220, 20, 60, 0.9);
+            color: white;
+            padding: 10px 40px;
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: 2px solid white;
+            border-radius: 5px;
+            z-index: 5;
+            text-shadow: 2px 2px 4px #000;
         }
         .loja-button {
             display: inline-block;
@@ -132,6 +154,15 @@
         .loja-button:hover {
             background-color: #ffa500;
             transform: scale(1.05);
+        }
+        .loja-button--disabled {
+            background-color: #555;
+            color: #999;
+            cursor: not-allowed;
+        }
+        .loja-button--disabled:hover {
+            background-color: #555;
+            transform: scale(1);
         }
         
         /* RANKING */
@@ -177,27 +208,11 @@
             .loja-texto { text-align: left; }
             .ranking-rest-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        
-        @media (max-width: 850px) {
-            nav { justify-content: flex-end; }
-            .hamburger { display: block; }
-            .nav-links { display: none; flex-direction: column; width: 100%; background-color: #222; position: absolute; top: 60px; left: 0; padding: 20px 0; z-index: 100; }
-            .nav-links.active { display: flex; }
-            .nav-links a, .dropdown { width: 100%; text-align: center; margin: 10px 0; }
-            .dropdown-content { position: static; display: none; box-shadow: none; background-color: #333; }
-            header {
-                background-image: url('images/batalha-mobile.jpg');
-                height: 40vh;
-                min-height: 200px;
-            }
-            #boas-vindas h1 { font-size: 2.2em; }
-            #boas-vindas .slogan { font-size: 1em; }
-        }
     </style>
 </head>
 <body>
     <header>
-        </header>
+    </header>
 
     <nav>
         <div class="hamburger">
@@ -235,11 +250,14 @@
 
     <section id="loja">
         <div class="loja-container">
-            <img src="images/coalipeita.png" alt="Camisetas da Liga Caipira de Freestyle">
+            <div class="loja-imagem-container">
+                <div class="esgotado-banner">Esgotado</div>
+                <img src="images/coalipeita.png" alt="Camisetas da Liga Caipira de Freestyle">
+            </div>
             <div class="loja-texto">
                 <h2>ELAS VOLTARAM!</h2>
                 <p>O manto oficial da Liga está de volta em um lote final e limitado. Garanta a sua e represente a força do freestyle caipira.</p>
-                <a href="https://loja.infinitepay.io/emporiobogota" target="_blank" class="loja-button">GARANTA A SUA</a>
+                <a class="loja-button loja-button--disabled">EM BREVE</a>
             </div>
         </div>
     </section>
@@ -250,7 +268,7 @@
         <div id="ranking-rest-grid" class="ranking-rest-grid"></div>
     </section>
     
-    <footer style="background:#000; padding:15px; color:#aaa;">© 2025 Coalizão 016 - Todos os direitos reservados.</footer>
+    <footer>© 2025 Coalizão 016 - Todos os direitos reservados.</footer>
 
     <div id="mc-modal" class="modal"><div class="modal-content"><span class="close-btn">×</span><div id="modal-body-mc"></div></div></div>
 
@@ -268,8 +286,6 @@
             const closeBtn = document.querySelector('.close-btn');
             const hamburger = document.querySelector(".hamburger");
             const navLinks = document.querySelector(".nav-links");
-            const dropdownLabel = document.querySelector(".dropdown-label");
-            const dropdownContent = document.querySelector(".dropdown-content");
 
             // === LÓGICA DA AGENDA ===
             if (typeof eventos !== 'undefined' && agendaContainer) {
@@ -280,7 +296,9 @@
                     return new Date(ano, mes - 1, dia) >= hoje;
                 });
                 proximosEventos.sort((a, b) => new Date(a.data) - new Date(b.data));
-                const eventosParaExibir = proximosEventos.slice(0, 4);
+                
+                const eventosParaExibir = proximosEventos.slice(0, 8); // ALTERADO PARA 8 EVENTOS
+
                 if (eventosParaExibir.length === 0) {
                     agendaContainer.innerHTML = '<p style="color: #aaa;">Nenhum evento agendado. Fique de olho!</p>';
                 } else {
@@ -300,12 +318,12 @@
                 }
             }
 
-            // === LÓGICA DO RANKING ===
+            // === LÓGICA DO RANKING (SIMPLIFICADA PARA HOME) ===
             if (typeof mcs !== 'undefined' && top1Container && restGrid) {
-                const mcsRanqueados = mcs.filter(mc => mc.ranking).sort((a, b) => a.ranking - b.ranking);
+                const mcsRanqueados = mcs.filter(mc => mc.ranking && mc.ranking <= 10).sort((a, b) => a.ranking - b.ranking);
                 
                 if (mcsRanqueados.length === 0) {
-                    top1Container.innerHTML = '<p style="color: #aaa;">O ranking está sendo atualizado.</p>';
+                    top1Container.innerHTML = '<p style="color: #aaa;">O ranking da temporada será lançado em breve!</p>';
                 } else {
                     mcsRanqueados.forEach(mc => {
                         const item = document.createElement('div');
@@ -316,7 +334,7 @@
                         else if (mc.ranking === 2) { classeDestaque = 'ranking-item--silver'; }
                         else if (mc.ranking === 3) { classeDestaque = 'ranking-item--bronze'; }
                         if (classeDestaque) { item.classList.add(classeDestaque); }
-                        item.innerHTML = `<div class="posicao">${mc.ranking}º</div><img src="${mc.imagem}" alt="${mc.nome}"><div class="info"><h3>${mc.nome}</h3><p>${mc.cidade}</p></div>`;
+                        item.innerHTML = `<div class="posicao">${mc.ranking}º</div><img src="${mc.imagem}" alt="${mc.nome}" onerror="this.onerror=null; this.src='images/placeholder.png';"><div class="info"><h3>${mc.nome}</h3><p>${mc.cidade}</p></div>`;
                         if (mc.ranking === 1) { top1Container.appendChild(item); }
                         else { restGrid.appendChild(item); }
                     });
@@ -335,7 +353,7 @@
                         mcSelecionado.links.forEach(link => { linksHTML += `<a href="${link.url}" target="_blank">${link.nome}</a>`; });
                     }
                     modalBody.innerHTML = `
-                        <img src="${mcSelecionado.imagem}" alt="${mcSelecionado.nome}" class="modal-img">
+                        <img src="${mcSelecionado.imagem}" alt="${mcSelecionado.nome}" class="modal-img" onerror="this.onerror=null; this.src='images/placeholder.png';">
                         <h3>${mcSelecionado.nome}</h3>
                         <p>${mcSelecionado.cidade}</p>
                         <p>${mcSelecionado.titulo}</p>
@@ -362,12 +380,6 @@
             // === LÓGICA DO MENU HAMBÚRGUER ===
             if (hamburger && navLinks) {
                 hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); });
-            }
-            if (window.innerWidth <= 850 && dropdownLabel && dropdownContent) {
-                dropdownLabel.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-                });
             }
         });
     </script>
