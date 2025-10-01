@@ -1,60 +1,6 @@
 // agenda.js
 const eventos = [
   {
-    data: "2025-09-26",
-    diaSemana: "Sexta-feira",
-    horario: "20:00h",
-    nomeBatalha: "Batalha DD3 - Setembro",
-    cidade: "Sertãozinho-SP",
-    status: "Av. Hideo Takada - Pista de Skate da COHAB 3",
-    linkInstagram: "https://www.instagram.com/dueloda3/"
-  },
-  {
-    data: "2025-09-26",
-    diaSemana: "Sexta-feira",
-    horario: "20:00h",
-    nomeBatalha: "Conexão de Rimas vs Batalha da Vinte",
-    cidade: "São Joaquim da Barra - SP",
-    status: "Contra",
-    linkInstagram: "https://www.instagram.com/conexao_de_rima"
-  },
-  {
-    data: "2025-09-27",
-    diaSemana: "Sábado",
-    horario: "19:00h",
-    nomeBatalha: "Batalha H2S #22",
-    cidade: "São Carlos - SP",
-    status: "Edição: Conhecimento",
-    linkInstagram: "https://www.instagram.com/hiphopsalva016/"
-  },
-  {
-    data: "2025-09-27",
-    diaSemana: "Sábado",
-    horario: "20:00h",
-    nomeBatalha: "Batalha da Vinte vs Conexão de Rimas",
-    cidade: "Orlândia - SP",
-    status: "Contra",
-    linkInstagram: "https://www.instagram.com/bdvinte_"
-  },
-  {
-    data: "2025-09-28",
-    diaSemana: "Domingo",
-    horario: "19:00h",
-    nomeBatalha: "Batalha do Morro",
-    cidade: "Morro Agudo - SP",
-    status: "Batalha de Referência",
-    linkInstagram: "https://www.instagram.com/batalhadomorro016"
-  },
-  {
-    data: "2025-09-29",
-    diaSemana: "Segunda-feira",
-    horario: "20:00h",
-    nomeBatalha: "Batalha Das Estações #32",
-    cidade: "Araraquara - SP",
-    status: "Edição 30 Segundos - Praça Santa Cruz",
-    linkInstagram: "https://www.instagram.com/batalha_das_estacoes"
-  },
-  {
     data: "2025-10-01",
     diaSemana: "Quarta-feira",
     horario: "19:00h",
@@ -100,6 +46,24 @@ const eventos = [
     linkInstagram: "https://www.instagram.com/conexao_de_rima"
   },
   {
+    data: "2025-10-05",
+    diaSemana: "Domingo",
+    horario: "16:00h",
+    nomeBatalha: "BDK Freestyle",
+    cidade: "Brodowski - SP",
+    status: "Edição de Trio",
+    linkInstagram: "https://www.instagram.com/bdkfreestyle_"
+  },
+  {
+    data: "2025-10-07",
+    diaSemana: "Terça-feira",
+    horario: "20:00h",
+    nomeBatalha: "Batalha da Ressaca",
+    cidade: "Araraquara - SP",
+    status: "Edição de Duplas",
+    linkInstagram: "https://www.instagram.com/batalhadaressaca"
+  },
+  {
     data: "2025-10-08",
     diaSemana: "Quarta-feira",
     horario: "19:30h",
@@ -107,6 +71,15 @@ const eventos = [
     cidade: "Ribeirão Preto - SP",
     status: "Bate e Volta",
     linkInstagram: "https://www.instagram.com/batalhanovaerarp"
+  },
+  {
+    data: "2025-10-10",
+    diaSemana: "Sexta-feira",
+    horario: "19:30h",
+    nomeBatalha: "Coalizão 016 - Edição Quinzenal #1",
+    cidade: "Ribeirão Preto - SP",
+    status: "Edição de Duplas",
+    linkInstagram: "https://instagram.com/coalizao016"
   },
   {
     data: "2025-10-10",
