@@ -351,5 +351,57 @@ const batalhas = [
   descricao: "Batalha de rimas que acontece às terças-feiras na Praça do Japão, na Vila Virgínia.",
   campeoes_historicos: ["Bubba", "Guri", "Killua"],
   redes_sociais_links: []
+},
+{
+  codigo: "BAT028",
+  nome: "Boom Battle",
+  cidade: "Araraquara - SP",
+  dia: "Sábado",
+  coords: [-21.7588, -48.1764],
+  rede: "https://www.instagram.com/boombattle016",
+  descricao: "Com 8 anos de história e mais de 170 edições, é uma das batalhas mais antigas de Araraquara, promovendo cultura em ruas, escolas e universidades. Acontece mensalmente na Praça Santa Cruz.",
+  campeoes_historicos: ["Jhow", "Willião", "Tvz"],
+  redes_sociais_links: [
+    { nome: "Instagram", url: "https://www.instagram.com/boombattle016" }
+  ]
+},
+{
+  codigo: "BAT029",
+  nome: "Batalha da CAOS",
+  cidade: "Araraquara - SP",
+  dia: "Sábado",
+  coords: [-21.7588, -48.1764],
+  rede: "https://www.instagram.com/batalhadacaos",
+  descricao: "A CAOS é um coletivo que organiza o movimento pela cidade com foco em conhecimento, diversidade e eventos sócio-educativos ao lado da roda cultural na Praça Santa Cruz.",
+  campeoes_historicos: ["Jhow"],
+  redes_sociais_links: [
+    { nome: "Instagram", url: "https://www.instagram.com/batalhadacaos" }
+  ]
+},
+{
+  codigo: "BAT030",
+  nome: "Batalha do Educa",
+  cidade: "Ribeirão Preto - SP",
+  dia: "Domingo",
+  coords: [-21.1635, -47.8035],
+  rede: "https://www.instagram.com/batalhadoeduca",
+  descricao: "Batalha do Educa, onde o foco da rima é a educação!!",
+  campeoes_historicos: ["Tyrano"],
+  redes_sociais_links: [
+    { nome: "Instagram", url: "https://www.instagram.com/batalhadoeduca" }
+  ]
+},
+{
+  codigo: "BAT031",
+  nome: "Batalha na Arena",
+  cidade: "Batatais - SP",
+  dia: "Domingo",
+  coords: [-20.885593, -47.584511],
+  rede: "https://www.instagram.com/batalha.na.arena/",
+  descricao: "Movimento Hip Hop, artístico e cultural em Batatais-SP.",
+  campeoes_historicos: [],
+  redes_sociais_links: [
+    { nome: "Instagram", url: "https://www.instagram.com/batalha.na.arena/" }
+  ]
 }
 ];
