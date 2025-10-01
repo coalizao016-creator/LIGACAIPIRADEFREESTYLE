@@ -11,7 +11,7 @@
         /* Estilos específicos desta página */
         h1, h2 { text-align: center; margin: 40px 0 20px; color: #ff8c00; }
         .form-container { max-width: 600px; margin: 40px auto; background: #282828; padding: 30px; border-radius: 10px; border: 1px solid #333; }
-        .form-container p { color: #e0e0e0; text-align: center; }
+        .form-container p { color: #e0e0e0; text-align: center; line-height: 1.6; }
         .form-container a { display: block; width: 250px; margin: 20px auto 0; padding: 15px; background-color: #ff8c00; color: #fff; text-align: center; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s ease; }
         .form-container a:hover { background-color: #e67300; }
         .filters-container { display: flex; justify-content: center; gap: 15px; margin: 30px auto; padding: 20px; max-width: 800px; background-color: #282828; border-radius: 10px; flex-wrap: wrap; }
@@ -30,7 +30,7 @@
         .page-link:hover { background-color: #444; }
         .page-link.active { background-color: #ff8c00; color: #111; border-color: #ff8c00; cursor: default; }
         
-        /* Estilos da Modal (sem alterações) */
+        /* Estilos da Modal */
         .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); padding-top: 60px; }
         .modal-content { background-color: #282828; margin: 5% auto; padding: 30px; border: 1px solid #444; width: 80%; max-width: 600px; border-radius: 10px; position: relative; animation-name: animatetop; animation-duration: 0.4s; text-align: center;}
         .modal-content h3 { color: #ff8c00; font-size: 2.2em; margin-top: 0; margin-bottom: 10px; }
@@ -52,7 +52,7 @@
 </head>
 <body>
     <header>
-        </header>
+    </header>
     
     <nav>
         <div class="hamburger">
@@ -80,9 +80,9 @@
 
     <h1 style="text-align: center;">MCs da Liga Caipira</h1>
     <div class="form-container">
-        <h2>Quer participar?</h2>
-        <p>Cadastre-se e ganhe um espaço de destaque no nosso site e redes sociais.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-gtvnYQnlrlO_M7T_doEbd70B3ZHYR9v2p6G9N0S-vNoi1g/viewform?usp=header" target="_blank">Cadastre-se Agora!</a>
+        <h2>Faça Parte da Liga</h2>
+        <p>Use o formulário para se cadastrar em nossa base de dados ou para solicitar a alteração de alguma informação do seu perfil já existente.</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf-gtvnYQnlrlO_M7T_doEbd70B3ZHYR9v2p6G9N0S-vNoi1g/viewform?usp=header" target="_blank">Cadastrar / Alterar Perfil</a>
     </div>
     <div class="filters-container">
         <input type="text" id="busca-nome" placeholder="Buscar MC pelo nome...">
@@ -110,7 +110,7 @@
             const paginationContainer = document.getElementById('pagination-container');
 
             let currentPage = 1;
-            const mcsPerPage = 15; // ===== ALTERADO DE 16 PARA 15 =====
+            const mcsPerPage = 15;
             let mcsFiltrados = [];
 
             function displayPage(page, mcsList) {
@@ -197,10 +197,7 @@
             
             const hamburger = document.querySelector(".hamburger");
             const navLinks = document.querySelector(".nav-links");
-            const dropdownLabel = document.querySelector(".dropdown-label");
-            const dropdownContent = document.querySelector(".dropdown-content");
             if (hamburger && navLinks) { hamburger.addEventListener("click", () => { navLinks.classList.toggle("active"); }); }
-            if (window.innerWidth <= 850 && dropdownLabel && dropdownContent) { dropdownLabel.addEventListener("click", (e) => { e.preventDefault(); dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block"; }); }
             
             popularFiltroCidades();
             filtrarEMostrarMCs();
