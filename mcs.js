@@ -572,28 +572,84 @@ const mcs = [
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/gudyboooy" },
       { nome: "YouTube", url: "https://www.youtube.com/@gudyboooy" }
-  ]
-},
-{
-  id: "MC050",
-  nome: "Emici",
-  imagem: "images/MC050.png",
-  cidade: "Ribeirão Preto - SP",
-  titulo: "De herói a vilão todo mundo tem um pouco.",
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/emici____" }
-  ]
-},
-{
-  id: "MC051",
-  nome: "Dias_mc",
-  imagem: "images/MC051.png",
-  cidade: "Ribeirão Preto - SP",
-  titulo: "",
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/_dias_mc" }
-  ]
-}
-]
+    ]
+  },
+  {
+    id: "MC050",
+    nome: "Emici",
+    imagem: "images/MC050.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "De herói a vilão todo mundo tem um pouco.",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/emici____" }
+    ]
+  },
+  {
+    id: "MC051",
+    nome: "Dias_mc",
+    imagem: "images/MC051.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/_dias_mc" }
+    ]
+  },
+  {
+    id: "MC052",
+    nome: "Danran",
+    imagem: "images/MC052.png",
+    cidade: "São Carlos - SP",
+    titulo: "Relógios marcam horas não destinos",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/danran_ofc" }
+    ]
+  },
+  {
+    id: "MC053",
+    nome: "Corey",
+    imagem: "images/MC053.png",
+    cidade: "São Carlos - SP",
+    titulo: "Um mc em constante evolução 🎤",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/prod.corey" }
+    ]
+  },
+  {
+    id: "MC054",
+    nome: "Noisy MC",
+    imagem: "images/MC054.png",
+    cidade: "São Carlos - SP",
+    titulo: "O Tal do NoisyZilla",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/noisyemici" },
+      { nome: "YouTube", url: "https://youtube.com/@n_isy" }
+    ]
+  },
+  {
+    id: "MC055",
+    nome: "TVZ",
+    imagem: "images/MC055.png",
+    cidade: "Araraquara - SP",
+    titulo: "11 anos de batalhas, +100 títulos.",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/tvzrap" }
+    ]
+  },
+  {
+    id: "MC056",
+    nome: "MRD",
+    imagem: "images/MC056.png",
+    cidade: "Araraquara - SP",
+    titulo: "Procurando a melhoria sempre",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/_mrd018" }
+    ]
+  }
+];
