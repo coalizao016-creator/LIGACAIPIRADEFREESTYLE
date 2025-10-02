@@ -220,7 +220,7 @@ const mcs = [
     id: "MC019",
     nome: "Marin",
     imagem: "images/MC019.png",
-    cidade: "Sales Oliveira",
+    cidade: "Sales Oliveira - SP",
     titulo: "🏆 Campeão da temporada da bdvinte",
     ranking: null,
     links: [
@@ -416,7 +416,7 @@ const mcs = [
     id: "MC036",
     nome: "Duke mc",
     imagem: "images/MC036.png",
-    cidade: "Ibate - SP",
+    cidade: "Ibaté - SP",
     titulo: "Terror das batalhas 🔥",
     ranking: null,
     links: [
@@ -651,5 +651,190 @@ const mcs = [
     links: [
       { nome: "Instagram", url: "https://www.instagram.com/_mrd018" }
     ]
+  },
+ 
+  // --- NOVOS MCS DA BATALHA DOS CHAVÕES (IBATÉ - SP) ---
+  {
+    id: "MC057", // Último ID anterior. Mantido.
+    nome: "Suart",
+    imagem: "images/mc_default.png", 
+    cidade: "Ibaté - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC058",
+    nome: "Ismael",
+    imagem: "images/mc_default.png", 
+    cidade: "Ibaté - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC059",
+    nome: "Jotace",
+    imagem: "images/mc_default.png", 
+    cidade: "Ibaté - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC060",
+    nome: "Ph",
+    imagem: "images/mc_default.png", 
+    cidade: "Ibaté - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC061",
+    nome: "Thzin",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC062",
+    nome: "Davila",
+    imagem: "images/mc_default.png", 
+    cidade: "Ibaté - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC063", 
+    nome: "Plin",
+    imagem: "images/mc_default.png", 
+    cidade: "Ibaté - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+ 
+  // --- NOVOS MCS DA BATALHA DA ALCATÉIA (SÃO CARLOS - SP) ---
+  // O próximo ID correto é MC064.
+  {
+    id: "MC064",
+    nome: "Surfista",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC065",
+    nome: "Naiski",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC066",
+    nome: "Shangai",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC067",
+    nome: "Jazz",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC068",
+    nome: "Kenny",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC069",
+    nome: "Ariel",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC070",
+    nome: "Nardex",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC071",
+    nome: "HS",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC072",
+    nome: "Zence",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC073",
+    nome: "WP",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC074",
+    nome: "Doan",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC075",
+    nome: "Guh",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC076", // Novo último ID
+    nome: "VNI", 
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP",
+    titulo: "MC SEM CADASTRO", 
+    ranking: null,
+    links: []
   }
-];
+]; // Este colchete final deve permanecer no seu arquivo.
