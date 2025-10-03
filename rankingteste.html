@@ -33,20 +33,6 @@
         .regulamento-container .regulamento-content { margin-top: 20px; line-height: 1.7; color: #e0e0e0; }
         .regulamento-container .regulamento-content h3 { color: #fff; border-bottom: 1px solid #444; padding-bottom: 5px; margin-top: 30px; }
         .regulamento-container .regulamento-content ul, .regulamento-container .regulamento-content ol { padding-left: 20px; }
-        .regulamento-container .regulamento-content table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-        }
-        .regulamento-container .regulamento-content th, .regulamento-container .regulamento-content td {
-            border: 1px solid #444;
-            padding: 8px;
-            text-align: left;
-        }
-        .regulamento-container .regulamento-content th {
-            background-color: #1a1a1a;
-            color: #ff8c00;
-        }
 
         /* Estilos da Tabela de Ranking */
         .ranking-table-container { background-color: #282828; padding: 20px; border-radius: 10px; }
@@ -104,116 +90,19 @@
             <details>
                 <summary>Clique para ver o Regulamento Completo (v1.2)</summary>
                 <div class="regulamento-content">
-                    <h3>1) Objetivo</h3>
-                    <p>Criar um sistema de ranking contínuo e justo para os MCs do interior paulista, que gere um calendário competitivo, integre batalhas parceiras, equilibre a disputa entre cidades e garanta total transparência. O sistema busca consolidar a Liga Caipira como referência regional em freestyle.</p>
-
-                    <h3>2) Abrangência & Temporada</h3>
-                    <ul>
-                        <li><strong>Abrangência:</strong> Batalhas realizadas prioritariamente na região do DDD 016.</li>
-                        <li><strong>Temporada:</strong> Outubro/2025 a Dezembro/2025, culminando na Grande Final da Liga.</li>
-                    </ul>
-
-                    <h3>3) Calendário Oficial da Temporada</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Janela</th>
-                                <th>Período de Batalhas Válidas</th>
-                                <th>Edição da Coalizão016 Classificatória</th>
-                                <th>Data da Edição</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>-</td>
-                                <td>(Edição de Abertura)</td>
-                                <td>Edição Quinzenal #1</td>
-                                <td>10/10/2025</td>
-                            </tr>
-                            <tr>
-                                <td>Janela 1</td>
-                                <td>01/10 a 15/10</td>
-                                <td>Edição Quinzenal #2</td>
-                                <td>24/10/2025</td>
-                            </tr>
-                            <tr>
-                                <td>Janela 2</td>
-                                <td>16/10 a 31/10</td>
-                                <td>Edição Quinzenal #3</td>
-                                <td>07/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>Janela 3</td>
-                                <td>01/11 a 15/11</td>
-                                <td>Edição Quinzenal #4</td>
-                                <td>21/11/2025</td>
-                            </tr>
-                            <tr>
-                                <td>Janela 4</td>
-                                <td>16/11 a 30/11</td>
-                                <td>Edição Quinzenal #5</td>
-                                <td>05/12/2025</td>
-                            </tr>
-                            <tr>
-                                <td>Janela 5</td>
-                                <td>01/12 a 11/12</td>
-                                <td>Encerramento / M.D.A</td>
-                                <td>12/12/2025</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <h3>4) Elegibilidade de MCs</h3>
-                    <ul>
-                        <li><strong>Idade Mínima:</strong> 10 anos (menores com autorização).</li>
-                        <li><strong>Cadastro:</strong> Cadastro único por temporada.</li>
-                    </ul>
-
-                    <h3>5) Requisitos Mínimos para uma Etapa ser Válida</h3>
-                    <ul>
-                        <li><strong>Chave Mínima:</strong> 8 MCs.</li>
-                        <li><strong>Formato:</strong> 1x1, 2x2, etc., divulgado previamente.</li>
-                        <li><strong>Julgamento:</strong> Mínimo de 2 jurados ou voto transparente.</li>
-                        <li><strong>Registro:</strong> Foto do campeão com folhinha.</li>
-                        <li><strong>Envio dos Resultados:</strong> Em até 24h.</li>
-                        <li><strong>Conduta:</strong> Ambiente livre de incitação a violência e preconceito.</li>
-                    </ul>
-
                     <h3>6) Sistema de Pontuação</h3>
                     <p><strong>a) Pontuação Base por Colocação</strong></p>
                     <ul>
-                        <li>🥇 Campeão: <strong>10 pontos</strong></li>
-                        <li>🥈 Vice-Campeão: <strong>7 pontos</strong></li>
-                        <li>🏅 Semifinalistas (3º e 4º): <strong>5 pontos</strong></li>
-                        <li>🥊 Participação (entrou na chave): <strong>2 pontos</strong></li>
+                        <li>🥇 Campeão: **10 pontos**</li>
+                        <li>🥈 Vice-Campeão: **7 pontos**</li>
+                        <li>🏅 Semifinalistas (3º e 4º): **5 pontos**</li>
+                        <li>🥊 Participação (entrou na chave): **2 pontos**</li>
                     </ul>
                     <p><strong>b) Pontos Bônus</strong></p>
                     <ul>
-                        <li>✈️ Bônus de Viagem: <strong>+1 ponto</strong> para o MC que competir fora da sua cidade. **(Ainda não implementado, pois a regra exige a cidade do MC, que deve ser buscada na tabela `mcs`).**</li>
-                        <li>⭐ Bônus de Twolala: <strong>+1 ponto</strong> para o MC que vencer qualquer confronto por 2x0.</li>
+                        <li>✈️ Bônus de Viagem: **+1 ponto** para o MC que competir fora da sua cidade.</li>
+                        <li>⭐ Bônus de Twolala: **+1 ponto** para o MC que vencer qualquer confronto por 2x0.</li>
                     </ul>
-                    
-                    <h3>7) Limite por Janela (Sistema de Equilíbrio)</h3>
-                    <p>A cada janela de 15 dias, serão considerados apenas os <strong>3 melhores resultados</strong> de cada MC. Isso equilibra as oportunidades e valoriza o alto desempenho. **(Ainda não implementado, pois a regra exige a data de cada confronto).**</p>
-
-                    <h3>8) Acesso à Edição Quinzenal da Coalizão016</h3>
-                    <p>Ao final de cada janela, os <strong>10 MCs mais bem colocados</strong> ganham vaga garantida na edição seguinte da Batalha Coalizão016, mediante confirmação.</p>
-
-                    <h3>9) Critérios de Desempate</h3>
-                    <ol>
-                        <li>Maior quantidade de twolalas aplicados.</li>
-                        <li>Maior nº de títulos na temporada.</li>
-                        <li>Melhor média de pontos na janela vigente.</li>
-                        <li>Maior nº de janelas em que pontuou.</li>
-                        <li>Confronto direto na janela (se houver).</li>
-                        <li>Sorteio.</li>
-                    </ol>
-
-                    <h3>10) Conduta & Penalidades</h3>
-                    <p>Agressão física, ameaças ou condutas discriminatórias (racismo, LGBTfobia, misoginia) resultarão em suspensão imediata ou banimento da temporada.</p>
-                    
-                    <h3>11) Transparência & Comunicação</h3>
-                    <p>Serão divulgados dois rankings: o <strong>Ranking da Janela</strong> (desempenho quinzenal) e o <strong>Ranking Geral</strong> (acumulado da temporada). As batalhas parceiras devem informar a realização de suas etapas até a sexta-feira anterior à semana do evento.</p>
                 </div>
             </details>
         </div>
@@ -240,31 +129,32 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        // 2. Configura a conexão com suas chaves (AGORA COM SUA CHAVE INSERIDA)
-        const SUPABASE_URL = 'https://rxensjzxoouyczhpftdp.supabase.co';
+        // 1. Configura a conexão
+        const SUPABASE_URL = 'https://rxensjzxouyczhpftdpb.supabase.co';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4ZW5zanp4b3V5Y3pocGZ0ZHBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkzNTI5MDUsImV4cCI6MjA3NDkyODkwNX0.__J26I9DvvFiJY63EnOgP5DHbKoxQrFYou1TKh1ualk';
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        // -------------------------------------------------------------
+        // Lógica do Ranking (Apenas Leitura e Cálculo)
+        // -------------------------------------------------------------
 
-        // Lógica principal da página
         document.addEventListener('DOMContentLoaded', async () => {
             
-            // Lógica do Menu Hamburger
+            // Lógica do Menu Hamburger (Mantida)
             const hamburger = document.querySelector(".hamburger");
             const navLinks = document.querySelector(".nav-links");
             if (hamburger && navLinks) {
                 hamburger.addEventListener("click", () => navLinks.classList.toggle("active"));
             }
 
-            // Lógica do Ranking
             const rankingContainer = document.getElementById('ranking-container-id');
             const loader = document.getElementById('loader');
             const table = document.getElementById('ranking-table');
             const rankingBody = document.getElementById('ranking-body');
 
-            // 3. Busca os dados de duas tabelas ao mesmo tempo
-            const { data: mcs, error: mcsError } = await supabase.from('mcs').select('*');
-            const { data: logBatalhas, error: logError } = await supabase.from('log_batalhas').select('*');
+            // 3. Busca os dados
+            const { data: mcs, error: mcsError } = await supabaseClient.from('mcs').select('*');
+            const { data: logBatalhas, error: logError } = await supabaseClient.from('log_batalhas').select('*');
 
             if (mcsError || logError) {
                 loader.style.display = 'none';
@@ -273,49 +163,79 @@
                 return;
             }
 
+            // Mensagem caso a tabela de log esteja vazia
             if (logBatalhas.length === 0) {
                 loader.style.display = 'none';
-                // Mensagem de "Em Breve" adaptada para a Supabase
-                rankingContainer.innerHTML = '<h2>Ranking Geral (Temporada)</h2><p style="color: #ccc; padding: 30px 0;">O ranking será exibido aqui após o cadastro dos primeiros resultados na Supabase. Cadastre-os na tabela `log_batalhas` e recarregue!</p>';
+                rankingContainer.innerHTML = '<h2>Ranking Geral (Temporada)</h2><p style="color: #ccc; padding: 30px 0;">O ranking será exibido aqui após o cadastro dos primeiros resultados na Supabase.</p>';
                 return;
             }
 
             // 4. CALCULA AS ESTATÍSTICAS PARA CADA MC
-            // NOTA: Os MCs que não estão na tabela 'mcs' não aparecerão, o que é o comportamento desejado.
+            const mcMap = new Map();
             mcs.forEach(mc => {
-                mc.estatisticas = { pontos: 0 }; 
-                logBatalhas.forEach(confronto => {
-                    // Verifica se o MC participou do confronto
-                    if (confronto.mc1_id === mc.id || confronto.mc2_id === mc.id) {
-                        let pontosGanhos = 2; // Participação (2 pontos)
-                        
-                        // Pontos por colocação
-                        if (confronto.fase.toLowerCase().includes('semi')) {
-                            pontosGanhos = 5; // Semifinalista (5 pontos)
-                        } else if (confronto.fase.toLowerCase().includes('final')) {
-                            // Campeão (10 pontos) ou Vice (7 pontos)
-                            pontosGanhos = (confronto.vencedor_id === mc.id) ? 10 : 7;
-                        }
-                        mc.estatisticas.pontos += pontosGanhos;
-                        
-                        // Bônus de Twolala (+1 ponto para vitória 2x0)
-                        if (confronto.vencedor_id === mc.id && confronto.placar === '2x0') {
-                            mc.estatisticas.pontos += 1; // Twolala (+1 ponto)
+                if (!mc.id.startsWith('TEMP')) {
+                     mcMap.set(mc.id, { ...mc, estatisticas: { pontos: 0 } });
+                }
+            });
+
+            logBatalhas.forEach(confronto => {
+                // Garante que todos os MCs envolvidos existam no mapa
+                [confronto.mc1_id, confronto.mc2_id].forEach(mcId => {
+                    if (!mcMap.has(mcId)) {
+                        mcMap.set(mcId, { id: mcId, nome: `MC Temporário (${mcId})`, estatisticas: { pontos: 0 } });
+                    }
+                });
+
+                // Lógica de pontuação
+                [confronto.mc1_id, confronto.mc2_id].forEach(mcId => {
+                    const mc = mcMap.get(mcId);
+                    if (!mc || mcId.startsWith('TEMP')) return; // Ignora IDs temporários
+
+                    let pontosGanhos = 0;
+                    let fase = confronto.fase.toLowerCase();
+                    let pontuacaoColocacao = 0;
+
+                    if (fase.includes('final')) {
+                        pontuacaoColocacao = (confronto.vencedor_id === mcId) ? 10 : 7;
+                    } else if (fase.includes('semi')) {
+                        pontuacaoColocacao = 5;
+                    } else if (fase.includes('quartas') || fase.includes('oitavas')) {
+                        pontuacaoColocacao = 2; // Pontuação de participação
+                    }
+                    
+                    // 1. Soma a pontuação de colocação máxima (10, 7, 5 ou 2)
+                    if (pontuacaoColocacao > 0) {
+                        pontosGanhos += pontuacaoColocacao;
+                    }
+
+                    // 2. Soma o ponto de bônus (+1)
+                    if (confronto.placar === '2x0' && confronto.vencedor_id === mcId && (fase.includes('oitavas') || fase.includes('quartas'))) {
+                        // A lógica de inserção pressupõe que os bônus (+1) são inseridos como Oitavas 2x0.
+                        // Se o ponto de colocação for 2, pode ser uma participação OU um bônus.
+                        // Como a inserção é separada, basta somar o +1, mas vamos usar a checagem:
+                        if (pontuacaoColocacao === 2) { 
+                            pontosGanhos += 1; // +1 ponto Twolala ou Viagem
                         }
                     }
+                    
+                    // Acumula os pontos
+                    mc.estatisticas.pontos += pontosGanhos;
                 });
             });
 
             // 5. Ordena e exibe a tabela
-            // Filtra os MCs que pontuaram para evitar mostrar quem nunca participou
-            const mcsOrdenados = mcs
+            const mcsOrdenados = Array.from(mcMap.values())
                 .filter(mc => mc.estatisticas.pontos > 0)
                 .sort((a, b) => b.estatisticas.pontos - a.estatisticas.pontos);
             
             rankingBody.innerHTML = '';
             
             if (mcsOrdenados.length > 0) {
-                mcsOrdenados.forEach((mc, index) => {
+                const rankingFinal = mcsOrdenados.filter(mc => !mc.id.startsWith('TEMP') || mc.estatisticas.pontos > 0);
+                
+                rankingFinal.forEach((mc, index) => {
+                    if (mc.id.startsWith('TEMP') && mc.estatisticas.pontos <= 0) return;
+                    
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td class="posicao">${index + 1}</td>
@@ -326,12 +246,11 @@
                 });
                 table.style.display = 'table';
             } else {
-                // Caso a log_batalhas tenha dados, mas os MCs não foram encontrados na tabela mcs
-                rankingContainer.innerHTML = '<h2>Ranking Geral (Temporada)</h2><p style="color: #ccc; padding: 30px 0;">Não foi possível vincular os resultados da batalha. Certifique-se de que os MCs na tabela `log_batalhas` estão cadastrados na tabela `mcs`.</p>';
+                rankingContainer.innerHTML = '<h2>Ranking Geral (Temporada)</h2><p style="color: #ccc; padding: 30px 0;">Não há resultados válidos para exibição.</p>';
             }
 
             loader.style.display = 'none';
         });
     </script>
 </body>
-</html>     
+</html>
