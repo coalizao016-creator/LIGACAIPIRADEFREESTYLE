@@ -231,7 +231,7 @@ const mcs = [
     id: "MC020",
     nome: "Ronaldy",
     imagem: "images/MC020.png",
-    cidade: "São Joaquim da Barra",
+    cidade: "São Joaquim da Barra - SP",
     titulo: "🏆 da Conexão de Rimas, fumo muito e rimo mais ainda",
     ranking: null,
     links: [
@@ -834,7 +834,227 @@ const mcs = [
     imagem: "images/mc_default.png", 
     cidade: "São Carlos - SP",
     titulo: "MC SEM CADASTRO", 
-    ranking: null,
-    links: []
-  }
+    ranking: null,
+    links: []
+  },
+  
+  // --- MCs DA BATALHA NOVA ERA (01/10) ---
+  {
+    id: "MC077",
+    nome: "Mano Jota",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC078",
+    nome: "Shura",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC079",
+    nome: "Menor",
+    imagem: "images/mc_default.png",
+    cidade: "Goiás",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC080",
+    nome: "Mael",
+    imagem: "images/mc_default.png",
+    cidade: "Goiás",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC081",
+    nome: "Neto",
+    imagem: "images/mc_default.png",
+    cidade: "Serrana - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC082",
+    nome: "KM",
+    imagem: "images/mc_default.png",
+    cidade: "Serrana - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC083",
+    nome: "10r",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC084",
+    nome: "Xottic",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC085",
+    nome: "Black",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC086",
+    nome: "7Flecha",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC087",
+    nome: "Koyot",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC088",
+    nome: "Raiki",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC089",
+    nome: "JayJay",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC090",
+    nome: "Kamila",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC091",
+    nome: "Defzin",
+    imagem: "images/mc_default.png",
+    cidade: "Guaxupé - MG",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC092",
+    nome: "Valim",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC093",
+    nome: "Batiz",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC094",
+    nome: "Nick",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC095",
+    nome: "Babybala",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+
+  // --- NOVOS MCs DA CONEXÃO DE RIMAS (03/10) ---
+  {
+    id: "MC096",
+    nome: "Dread",
+    imagem: "images/mc_default.png",
+    cidade: "São Joaquim da Barra - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC097",
+    nome: "Leozin",
+    imagem: "images/mc_default.png",
+    cidade: "São Joaquim da Barra - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC098",
+    nome: "Ruan",
+    imagem: "images/mc_default.png",
+    cidade: "Orlândia - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC099",
+    nome: "Kleytinho Balla",
+    imagem: "images/mc_default.png",
+    cidade: "Sales Oliveira - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC100",
+    nome: "Miguel",
+    imagem: "images/mc_default.png",
+    cidade: "Sales Oliveira - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  }
 ]; // Este colchete final deve permanecer no seu arquivo.

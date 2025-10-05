@@ -3,55 +3,71 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Ranking - Coalizão 016</title>
+    <title>Ranking (TESTE) - Coalizão 016</title>
     
     <link rel="stylesheet" href="styles.css" />
 
     <style>
-        /* Estilos para a página de Ranking */
-        .ranking-container { max-width: 900px; margin: 0 auto; padding: 20px; text-align: center; }
-        .explicacao { background-color: #222; border-radius: 10px; padding: 30px; margin-bottom: 40px; }
-        .explicacao h2 { margin-top: 0; color: #ff8c00; }
-        .explicacao p { color: #ccc; line-height: 1.6; font-size: 1.1em; }
-        
-        /* Estilos do Regulamento Expansível */
-        .regulamento-container {
-            background-color: #282828;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 40px;
-            text-align: left;
+        /* Estilos específicos da página de Ranking */
+        .ranking-container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            text-align: center; 
         }
-        .regulamento-container details { border: 1px solid #444; border-radius: 5px; padding: 15px; }
-        .regulamento-container summary {
-            font-weight: bold;
-            color: #ff8c00;
-            font-size: 1.2em;
-            cursor: pointer;
-            outline: none;
+        .ranking-table-container { 
+            background-color: #282828; 
+            padding: 20px; 
+            border-radius: 10px; 
+            margin-top: 30px;
         }
-        .regulamento-container .regulamento-content { margin-top: 20px; line-height: 1.7; color: #e0e0e0; }
-        .regulamento-container .regulamento-content h3 { color: #fff; border-bottom: 1px solid #444; padding-bottom: 5px; margin-top: 30px; }
-        .regulamento-container .regulamento-content ul, .regulamento-container .regulamento-content ol { padding-left: 20px; }
-
-        /* Estilos da Tabela de Ranking */
-        .ranking-table-container { background-color: #282828; padding: 20px; border-radius: 10px; }
-        .ranking-table-container h2 { color: #fff; }
-        #ranking-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        #ranking-table thead { background-color: #1a1a1a; }
-        #ranking-table th { padding: 15px; color: #ff8c00; text-align: left; }
-        #ranking-table td { padding: 15px; color: #e0e0e0; text-align: left; border-top: 1px solid #333; }
-        #ranking-table tbody tr:nth-child(even) { background-color: #222; }
-        #ranking-table tbody tr:hover { background-color: #383838; }
-        #ranking-table .posicao { font-weight: bold; font-size: 1.2em; text-align: center; width: 60px; }
-        #ranking-table .mc-nome { font-weight: bold; color: #fff; }
-        #ranking-table .mc-pontos { font-weight: bold; color: #ff8c00; text-align: right; }
+        .ranking-table-container h2 { 
+            color: #fff; 
+        }
+        #ranking-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 20px; 
+        }
+        #ranking-table thead { 
+            background-color: #1a1a1a; 
+        }
+        /* ATENÇÃO: Novas colunas adicionadas */
+        #ranking-table th { 
+            padding: 15px; 
+            color: #ff8c00; 
+            text-align: left; 
+        }
+        #ranking-table td { 
+            padding: 15px; 
+            color: #e0e0e0; 
+            text-align: left; 
+            border-top: 1px solid #333; 
+        }
+        #ranking-table tbody tr:nth-child(even) { 
+            background-color: #222; 
+        }
+        #ranking-table .posicao { 
+            font-weight: bold; 
+            font-size: 1.2em; 
+            text-align: center; 
+            width: 60px; 
+        }
+        #ranking-table .mc-nome { 
+            font-weight: bold; 
+            color: #fff; 
+        }
+        #ranking-table .mc-pontos { 
+            font-weight: bold; 
+            color: #ff8c00; 
+            text-align: right; 
+        }
     </style>
 </head>
 <body>
     <header>
     </header>
-
+    
     <nav>
         <div class="hamburger">
             <div class="bar"></div>
@@ -63,7 +79,7 @@
             <a href="batalhas.html">Batalhas</a>
             <a href="mcs.html">MC's</a>
             <a href="mapaindex.html">Mapa</a>
-            <a href="ranking.html"><strong>Ranking</strong></a>
+            <a href="ranking.html">Ranking</a>
             <div class="dropdown">
                 <a href="#" class="dropdown-label">Nossas Redes</a>
                 <div class="dropdown-content">
@@ -77,35 +93,8 @@
     </nav>
     
     <div class="ranking-container">
-        <h1>Ranking Oficial da Liga</h1>
-        
-        <div class="explicacao">
-            <h2>A Liga Começou!</h2>
-            <p>
-                A Liga Caipira de Freestyle está no ar! A partir de agora, esta página será atualizada regularmente com a pontuação e as estatísticas de todos os MCs, com a precisão do <strong>TwolalaScore</strong>. Fique de olho para acompanhar a nova fase do Freestyle do interior!
-            </p>
-        </div>
-
-        <div class="regulamento-container">
-            <details>
-                <summary>Clique para ver o Regulamento Completo (v1.2)</summary>
-                <div class="regulamento-content">
-                    <h3>6) Sistema de Pontuação</h3>
-                    <p><strong>a) Pontuação Base por Colocação</strong></p>
-                    <ul>
-                        <li>🥇 Campeão: **10 pontos**</li>
-                        <li>🥈 Vice-Campeão: **7 pontos**</li>
-                        <li>🏅 Semifinalistas (3º e 4º): **5 pontos**</li>
-                        <li>🥊 Participação (entrou na chave): **2 pontos**</li>
-                    </ul>
-                    <p><strong>b) Pontos Bônus</strong></p>
-                    <ul>
-                        <li>✈️ Bônus de Viagem: **+1 ponto** para o MC que competir fora da sua cidade.</li>
-                        <li>⭐ Bônus de Twolala: **+1 ponto** para o MC que vencer qualquer confronto por 2x0.</li>
-                    </ul>
-                </div>
-            </details>
-        </div>
+        <h1>Página de Teste do Ranking</h1>
+        <p style="color: #ccc;">Esta página conecta-se diretamente ao seu banco de dados Supabase para testes.</p>
 
         <div class="ranking-table-container" id="ranking-container-id">
             <h2>Ranking Geral (Temporada)</h2>
@@ -115,7 +104,9 @@
                     <tr>
                         <th class="posicao">#</th>
                         <th>MC</th>
-                        <th class="mc-pontos">Pontos</th>
+                        <th class="mc-pontos">Total Pontos</th>
+                        <th class="mc-pontos">Bônus 2x0</th>
+                        <th class="mc-pontos">Viagens</th>
                     </tr>
                 </thead>
                 <tbody id="ranking-body"></tbody>
@@ -129,18 +120,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        // 1. Configura a conexão
-        const SUPABASE_URL = 'https://rxensjzxouyczhpftdpb.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4ZW5zanp4b3V5Y3pocGZ0ZHBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkzNTI5MDUsImV4cCI6MjA3NDkyODkwNX0.__J26I9DvvFiJY63EnOgP5DHbKoxQrFYou1TKh1ualk';
-        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        // 1. CONFIGURAÇÃO SUPABASE
+        const SUPABASE_URL = 'https://rxensjzxouyczhpftdpb.supabase.co'; 
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4ZW5zanp4b3V5Y3pocGZ0ZHBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkzNTI5MDUsImV4cCI6MjA3NDkyODkwNX0.__J26I9DvvFiJY63EnOgP5DHbKoxQrFYou1TKh1ualk'; 
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); 
 
-        // -------------------------------------------------------------
-        // Lógica do Ranking (Apenas Leitura e Cálculo)
-        // -------------------------------------------------------------
-
+        // Lógica principal da página
         document.addEventListener('DOMContentLoaded', async () => {
             
-            // Lógica do Menu Hamburger (Mantida)
+            // Lógica do Menu Hamburger
             const hamburger = document.querySelector(".hamburger");
             const navLinks = document.querySelector(".nav-links");
             if (hamburger && navLinks) {
@@ -152,104 +140,130 @@
             const table = document.getElementById('ranking-table');
             const rankingBody = document.getElementById('ranking-body');
 
-            // 3. Busca os dados
+            // Busca os MCs e os Logs (Confrontos e Viagens)
             const { data: mcs, error: mcsError } = await supabaseClient.from('mcs').select('*');
-            const { data: logBatalhas, error: logError } = await supabaseClient.from('log_batalhas').select('*');
+            const { data: logBatalhas, error: logError } = await supabaseClient.from('log_batalhas').select('*'); 
+            const { data: logViagens, error: viagemError } = await supabaseClient.from('log_viagens').select('*');
 
-            if (mcsError || logError) {
-                loader.style.display = 'none';
-                rankingContainer.innerHTML = '<h2>Erro ao carregar dados. Verifique o console (F12).</h2>';
-                console.error(mcsError || logError);
+
+            if (mcsError || logError || viagemError) {
+                rankingContainer.innerHTML = '<h2>Erro ao carregar dados. Verifique o console (F12) e as políticas RLS.</h2>';
+                console.error("Erro ao carregar MCs:", mcsError);
+                console.error("Erro ao carregar Logs de Batalha:", logError);
+                console.error("Erro ao carregar Logs de Viagem:", viagemError);
                 return;
             }
 
-            // Mensagem caso a tabela de log esteja vazia
-            if (logBatalhas.length === 0) {
+            if (logBatalhas.length === 0 && logViagens.length === 0) {
                 loader.style.display = 'none';
-                rankingContainer.innerHTML = '<h2>Ranking Geral (Temporada)</h2><p style="color: #ccc; padding: 30px 0;">O ranking será exibido aqui após o cadastro dos primeiros resultados na Supabase.</p>';
+                rankingContainer.innerHTML = '<h2>Ranking Geral (Temporada)</h2><p style="color: #ccc; padding: 30px 0;">Nenhum resultado cadastrado. Cadastre o primeiro resultado e recarregue a página.</p>';
                 return;
             }
 
-            // 4. CALCULA AS ESTATÍSTICAS PARA CADA MC
-            const mcMap = new Map();
+            // Estrutura para calcular a pontuação máxima e bônus
+            const mcScores = {}; 
             mcs.forEach(mc => {
-                if (!mc.id.startsWith('TEMP')) {
-                     mcMap.set(mc.id, { ...mc, estatisticas: { pontos: 0 } });
-                }
+                const mcIdString = String(mc.id);
+                mcScores[mcIdString] = { 
+                    max_points: 0, 
+                    total_bonus_2x0: 0, 
+                    total_viagem: 0 
+                }; 
             });
 
+            // 1. CÁLCULO DE PONTOS DE BATALHA: Encontra a Pontuação Máxima e Soma os Bônus
             logBatalhas.forEach(confronto => {
-                // Garante que todos os MCs envolvidos existam no mapa
-                [confronto.mc1_id, confronto.mc2_id].forEach(mcId => {
-                    if (!mcMap.has(mcId)) {
-                        mcMap.set(mcId, { id: mcId, nome: `MC Temporário (${mcId})`, estatisticas: { pontos: 0 } });
-                    }
-                });
+                
+                // 1A. Determina a lista de IDs de VENCEDORES (Prioriza o novo campo, mas cai de volta para o antigo)
+                const vencedorIds = (confronto.vencedor_ids && confronto.vencedor_ids.length > 0) 
+                                   ? confronto.vencedor_ids.map(String) // Novo log de equipe
+                                   : (confronto.vencedor_id ? [String(confronto.vencedor_id)] : []); // Log antigo 1x1
 
-                // Lógica de pontuação
-                [confronto.mc1_id, confronto.mc2_id].forEach(mcId => {
-                    const mc = mcMap.get(mcId);
-                    if (!mc || mcId.startsWith('TEMP')) return; // Ignora IDs temporários
+                // 1B. Determina a lista de IDs de TODOS os PARTICIPANTES (Prioriza o novo campo, mas cai de volta para os antigos mc1/mc2)
+                let participantesIds = [];
+                if (confronto.participantes_ids && confronto.participantes_ids.length > 0) {
+                    participantesIds = confronto.participantes_ids.map(String); // Novo log de equipe
+                } else {
+                    // Log antigo 1x1 (inclui somente MC1 e MC2, filtrando nulos)
+                    if (confronto.mc1_id) participantesIds.push(String(confronto.mc1_id));
+                    if (confronto.mc2_id) participantesIds.push(String(confronto.mc2_id));
+                }
 
-                    let pontosGanhos = 0;
-                    let fase = confronto.fase.toLowerCase();
-                    let pontuacaoColocacao = 0;
-
-                    if (fase.includes('final')) {
-                        pontuacaoColocacao = (confronto.vencedor_id === mcId) ? 10 : 7;
-                    } else if (fase.includes('semi')) {
-                        pontuacaoColocacao = 5;
-                    } else if (fase.includes('quartas') || fase.includes('oitavas')) {
-                        pontuacaoColocacao = 2; // Pontuação de participação
-                    }
+                // Itera sobre todos os participantes encontrados para atribuir pontos
+                participantesIds.forEach(mcIdString => {
                     
-                    // 1. Soma a pontuação de colocação máxima (10, 7, 5 ou 2)
-                    if (pontuacaoColocacao > 0) {
-                        pontosGanhos += pontuacaoColocacao;
-                    }
+                    if (mcScores[mcIdString]) { // Garante que o MC existe
+                        let currentMatchScore = 0;
+                        
+                        // Verifica se o MC está na lista de vencedores
+                        let isWinner = vencedorIds.includes(mcIdString);
 
-                    // 2. Soma o ponto de bônus (+1)
-                    if (confronto.placar === '2x0' && confronto.vencedor_id === mcId && (fase.includes('oitavas') || fase.includes('quartas'))) {
-                        // A lógica de inserção pressupõe que os bônus (+1) são inseridos como Oitavas 2x0.
-                        // Se o ponto de colocação for 2, pode ser uma participação OU um bônus.
-                        // Como a inserção é separada, basta somar o +1, mas vamos usar a checagem:
-                        if (pontuacaoColocacao === 2) { 
-                            pontosGanhos += 1; // +1 ponto Twolala ou Viagem
+                        // Determina a pontuação BASE do confronto
+                        if (confronto.fase.toLowerCase().includes('final')) {
+                            // Se o MC está na lista de vencedores da final
+                            currentMatchScore = isWinner ? 10 : 7; // Campeão: 10, Vice: 7
+                        } else if (confronto.fase.toLowerCase().includes('semi')) {
+                            currentMatchScore = 5; // Semifinalista
+                        } else {
+                            currentMatchScore = 2; // Participação/Rodada
+                        }
+
+                        // A pontuação final de batalha é o MÁXIMO alcançado.
+                        mcScores[mcIdString].max_points = Math.max(mcScores[mcIdString].max_points, currentMatchScore);
+
+                        // O bônus 2x0 é somado para cada partida em que o MC vencedor participa (cumulativo)
+                        if (isWinner && confronto.placar && confronto.placar.includes('x0')) {
+                            mcScores[mcIdString].total_bonus_2x0 += 1;
                         }
                     }
-                    
-                    // Acumula os pontos
-                    mc.estatisticas.pontos += pontosGanhos;
                 });
             });
 
-            // 5. Ordena e exibe a tabela
-            const mcsOrdenados = Array.from(mcMap.values())
-                .filter(mc => mc.estatisticas.pontos > 0)
-                .sort((a, b) => b.estatisticas.pontos - a.estatisticas.pontos);
+            // 2. CÁLCULO DE PONTOS DE VIAGEM (Cumulativo)
+            logViagens.forEach(logViagem => {
+                const mcIdString = String(logViagem.mc_id);
+                if (mcScores[mcIdString]) {
+                    mcScores[mcIdString].total_viagem += logViagem.pontos_viagem; 
+                }
+            });
+            
+            // 3. FINALIZAÇÃO E ATRIBUIÇÃO DOS PONTOS (Armazenando detalhes do bônus)
+            const mcsComPontos = mcs.map(mc => {
+                const mcIdString = String(mc.id);
+                const stats = mcScores[mcIdString] || { max_points: 0, total_bonus_2x0: 0, total_viagem: 0 };
+                
+                const totalPontos = stats.max_points + stats.total_bonus_2x0 + stats.total_viagem;
+
+                mc.estatisticas = {
+                    pontos: totalPontos, 
+                    bonus_2x0: stats.total_bonus_2x0, // NOVO: Bônus 2x0
+                    viagem: stats.total_viagem // NOVO: Pontos de Viagem
+                };
+                return mc;
+            });
+
+            // Ordena a lista
+            const mcsOrdenados = mcsComPontos.sort((a, b) => b.estatisticas.pontos - a.estatisticas.pontos);
             
             rankingBody.innerHTML = '';
-            
-            if (mcsOrdenados.length > 0) {
-                const rankingFinal = mcsOrdenados.filter(mc => !mc.id.startsWith('TEMP') || mc.estatisticas.pontos > 0);
-                
-                rankingFinal.forEach((mc, index) => {
-                    if (mc.id.startsWith('TEMP') && mc.estatisticas.pontos <= 0) return;
-                    
+            mcsOrdenados.forEach((mc, index) => {
+                // Só mostra MCs que pontuaram
+                if (mc.estatisticas.pontos > 0) {
                     const row = document.createElement('tr');
+                    // ALTERAÇÃO AQUI: NOVOS CAMPOS NA LINHA
                     row.innerHTML = `
                         <td class="posicao">${index + 1}</td>
                         <td class="mc-nome">${mc.nome}</td>
                         <td class="mc-pontos">${mc.estatisticas.pontos}</td>
+                        <td class="mc-pontos">${mc.estatisticas.bonus_2x0}</td>
+                        <td class="mc-pontos">${mc.estatisticas.viagem}</td>
                     `;
                     rankingBody.appendChild(row);
-                });
-                table.style.display = 'table';
-            } else {
-                rankingContainer.innerHTML = '<h2>Ranking Geral (Temporada)</h2><p style="color: #ccc; padding: 30px 0;">Não há resultados válidos para exibição.</p>';
-            }
+                }
+            });
 
             loader.style.display = 'none';
+            table.style.display = 'table';
         });
     </script>
 </body>
