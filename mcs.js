@@ -691,14 +691,16 @@ const mcs = [
     links: []
   },
   {
-    id: "MC061",
-    nome: "Thzin",
-    imagem: "images/mc_default.png", 
-    cidade: "São Carlos - SP",
-    titulo: "MC SEM CADASTRO", 
-    ranking: null,
-    links: []
-  },
+  id: "MC061",
+  nome: "THzin",
+  imagem: "images/MC061.png", 
+  cidade: "São Carlos - SP", 
+  titulo: "Crescendo e se destacando... Um dia chego lá!",
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/thzin_slv.016?igsh=MWx0ajg3dGF2cGJ1cw==" }
+  ]
+},
   {
     id: "MC062",
     nome: "Davila",
@@ -774,15 +776,18 @@ const mcs = [
     ranking: null,
     links: []
   },
-  {
-    id: "MC070",
-    nome: "Nardex",
-    imagem: "images/mc_default.png", 
-    cidade: "São Carlos - SP",
-    titulo: "MC SEM CADASTRO", 
-    ranking: null,
-    links: []
-  },
+// Localize e substitua o bloco para id: "MC070"
+{
+  id: "MC070",
+  nome: "Nardex",
+  imagem: "images/MC070.png", 
+  cidade: "São Carlos - SP", 
+  titulo: "", // Sem frase de destaque, deixando vazio
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/nardexmc" }
+  ]
+},
   {
     id: "MC071",
     nome: "HS",
@@ -810,24 +815,30 @@ const mcs = [
     ranking: null,
     links: []
   },
-  {
-    id: "MC074",
-    nome: "Doan",
-    imagem: "images/mc_default.png", 
-    cidade: "São Carlos - SP",
-    titulo: "MC SEM CADASTRO", 
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC075",
-    nome: "Guh",
-    imagem: "images/mc_default.png", 
-    cidade: "São Carlos - SP",
-    titulo: "MC SEM CADASTRO", 
-    ranking: null,
-    links: []
-  },
+  // Localize e substitua o bloco para id: "MC074"
+{
+  id: "MC074",
+  nome: "Doan mc",
+  imagem: "images/MC074.png", 
+  cidade: "São Carlos - SP", 
+  titulo: "Forasteiro do universo",
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/Doanzinho_ofc_21" }
+  ]
+},
+  // Localize e substitua o bloco para id: "MC075"
+{
+  id: "MC075",
+  nome: "Guh",
+  imagem: "images/MC075.png", 
+  cidade: "São Carlos - SP", 
+  titulo: "🔥 Fica de Boa 🎱",
+  ranking: null,
+  links: [
+    { nome: "Instagram", url: "https://www.instagram.com/MC.Guh" }
+  ]
+},
   {
     id: "MC076", // Novo último ID
     nome: "VNI", 
