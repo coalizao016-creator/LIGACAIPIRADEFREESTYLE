@@ -693,7 +693,7 @@ const mcs = [
   {
   id: "MC061",
   nome: "THzin",
-  imagem: "images/MC061.png", 
+  imagem: "images/mc_default.png", 
   cidade: "São Carlos - SP", 
   titulo: "Crescendo e se destacando... Um dia chego lá!",
   ranking: null,
