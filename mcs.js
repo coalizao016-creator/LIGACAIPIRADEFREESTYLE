@@ -632,19 +632,8 @@ const mcs = [
   },
   {
     id: "MC055",
-    nome: "TVZ",
+    nome: "MRD", // CORRIGIDO: Este é o MRD
     imagem: "images/MC055.png",
-    cidade: "Araraquara - SP",
-    titulo: "11 anos de batalhas, +100 títulos.",
-    ranking: null,
-    links: [
-      { nome: "Instagram", url: "https://www.instagram.com/tvzrap" }
-    ]
-  },
-  {
-    id: "MC056",
-    nome: "MRD",
-    imagem: "images/MC056.png",
     cidade: "Araraquara - SP",
     titulo: "Procurando a melhoria sempre",
     ranking: null,
@@ -652,10 +641,21 @@ const mcs = [
       { nome: "Instagram", url: "https://www.instagram.com/_mrd018" }
     ]
   },
- 
+  {
+    id: "MC056",
+    nome: "TVZ", // CORRIGIDO: Este é o TVZ
+    imagem: "images/MC056.png",
+    cidade: "Araraquara - SP",
+    titulo: "11 anos de batalhas, +100 títulos.",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/tvzrap" }
+    ]
+  },
+  
   // --- NOVOS MCS DA BATALHA DOS CHAVÕES (IBATÉ - SP) ---
   {
-    id: "MC057", // Último ID anterior. Mantido.
+    id: "MC057", 
     nome: "Suart",
     imagem: "images/mc_default.png", 
     cidade: "Ibaté - SP",
@@ -691,16 +691,16 @@ const mcs = [
     links: []
   },
   {
-  id: "MC061",
-  nome: "THzin",
-  imagem: "images/mc_default.png", 
-  cidade: "São Carlos - SP", 
-  titulo: "Crescendo e se destacando... Um dia chego lá!",
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/thzin_slv.016?igsh=MWx0ajg3dGF2cGJ1cw==" }
-  ]
-},
+    id: "MC061",
+    nome: "THzin",
+    imagem: "images/mc_default.png", 
+    cidade: "São Carlos - SP", 
+    titulo: "Crescendo e se destacando... Um dia chego lá!",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/thzin_slv.016?igsh=MWx0ajg3dGF2cGJ1cw==" }
+    ]
+  },
   {
     id: "MC062",
     nome: "Davila",
@@ -719,9 +719,8 @@ const mcs = [
     ranking: null,
     links: []
   },
- 
+  
   // --- NOVOS MCS DA BATALHA DA ALCATÉIA (SÃO CARLOS - SP) ---
-  // O próximo ID correto é MC064.
   {
     id: "MC064",
     nome: "Surfista",
@@ -776,18 +775,17 @@ const mcs = [
     ranking: null,
     links: []
   },
-// Localize e substitua o bloco para id: "MC070"
-{
-  id: "MC070",
-  nome: "Nardex",
-  imagem: "images/MC070.png", 
-  cidade: "São Carlos - SP", 
-  titulo: "", // Sem frase de destaque, deixando vazio
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/nardexmc" }
-  ]
-},
+  {
+    id: "MC070",
+    nome: "Nardex",
+    imagem: "images/MC070.png", 
+    cidade: "São Carlos - SP", 
+    titulo: "", // Sem frase de destaque, deixando vazio
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/nardexmc" }
+    ]
+  },
   {
     id: "MC071",
     nome: "HS",
@@ -815,257 +813,358 @@ const mcs = [
     ranking: null,
     links: []
   },
-  // Localize e substitua o bloco para id: "MC074"
-{
-  id: "MC074",
-  nome: "Doan mc",
-  imagem: "images/MC074.png", 
-  cidade: "São Carlos - SP", 
-  titulo: "Forasteiro do universo",
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/Doanzinho_ofc_21" }
-  ]
-},
-  // Localize e substitua o bloco para id: "MC075"
-{
-  id: "MC075",
-  nome: "Guh",
-  imagem: "images/MC075.png", 
-  cidade: "São Carlos - SP", 
-  titulo: "🔥 Fica de Boa 🎱",
-  ranking: null,
-  links: [
-    { nome: "Instagram", url: "https://www.instagram.com/MC.Guh" }
-  ]
-},
   {
-    id: "MC076", // Novo último ID
+    id: "MC074",
+    nome: "Doan mc",
+    imagem: "images/MC074.png", 
+    cidade: "São Carlos - SP", 
+    titulo: "Forasteiro do universo",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/Doanzinho_ofc_21" }
+    ]
+  },
+  {
+    id: "MC075",
+    nome: "Guh",
+    imagem: "images/MC075.png", 
+    cidade: "São Carlos - SP", 
+    titulo: "🔥 Fica de Boa 🎱",
+    ranking: null,
+    links: [
+      { nome: "Instagram", url: "https://www.instagram.com/MC.Guh" }
+    ]
+  },
+  {
+    id: "MC076", 
     nome: "VNI", 
     imagem: "images/mc_default.png", 
     cidade: "São Carlos - SP",
     titulo: "MC SEM CADASTRO", 
-    ranking: null,
-    links: []
-  },
-  
-  // --- MCs DA BATALHA NOVA ERA (01/10) ---
-  {
-    id: "MC077",
-    nome: "Mano Jota",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC078",
-    nome: "Shura",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC079",
-    nome: "Menor",
-    imagem: "images/mc_default.png",
-    cidade: "Goiás",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC080",
-    nome: "Mael",
-    imagem: "images/mc_default.png",
-    cidade: "Goiás",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC081",
-    nome: "Neto",
-    imagem: "images/mc_default.png",
-    cidade: "Serrana - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC082",
-    nome: "KM",
-    imagem: "images/mc_default.png",
-    cidade: "Serrana - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC083",
-    nome: "10r",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC084",
-    nome: "Xottic",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC085",
-    nome: "Black",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC086",
-    nome: "7Flecha",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC087",
-    nome: "Koyot",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC088",
-    nome: "Raiki",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC089",
-    nome: "JayJay",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC090",
-    nome: "Kamila",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC091",
-    nome: "Defzin",
-    imagem: "images/mc_default.png",
-    cidade: "Guaxupé - MG",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC092",
-    nome: "Valim",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC093",
-    nome: "Batiz",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC094",
-    nome: "Nick",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC095",
-    nome: "Babybala",
-    imagem: "images/mc_default.png",
-    cidade: "Ribeirão Preto - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
+    ranking: null,
+    links: []
+  },
+  
+  // --- MCs DA BATALHA NOVA ERA (01/10) ---
+  {
+    id: "MC077",
+    nome: "Mano Jota",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC078",
+    nome: "Shura",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC079",
+    nome: "Menor",
+    imagem: "images/mc_default.png",
+    cidade: "Goiás",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC080",
+    nome: "Mael",
+    imagem: "images/mc_default.png",
+    cidade: "Goiás",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC081",
+    nome: "Neto",
+    imagem: "images/mc_default.png",
+    cidade: "Serrana - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC082",
+    nome: "KM",
+    imagem: "images/mc_default.png",
+    cidade: "Serrana - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC083",
+    nome: "10r",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC084",
+    nome: "Xottic",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC085",
+    nome: "Black",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC086",
+    nome: "7Flecha",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC087",
+    nome: "Koyot",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC088",
+    nome: "Raiki",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC089",
+    nome: "JayJay",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC090",
+    nome: "Kamila",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC091",
+    nome: "Defzin",
+    imagem: "images/mc_default.png",
+    cidade: "Guaxupé - MG",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC092",
+    nome: "Valim",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC093",
+    nome: "Batiz",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC094",
+    nome: "Nick",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC095",
+    nome: "Babybala",
+    imagem: "images/mc_default.png",
+    cidade: "Ribeirão Preto - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
 
-  // --- NOVOS MCs DA CONEXÃO DE RIMAS (03/10) ---
-  {
-    id: "MC096",
-    nome: "Dread",
-    imagem: "images/mc_default.png",
-    cidade: "São Joaquim da Barra - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC097",
-    nome: "Leozin",
-    imagem: "images/mc_default.png",
-    cidade: "São Joaquim da Barra - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC098",
-    nome: "Ruan",
-    imagem: "images/mc_default.png",
-    cidade: "Orlândia - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC099",
-    nome: "Kleytinho Balla",
-    imagem: "images/mc_default.png",
-    cidade: "Sales Oliveira - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  },
-  {
-    id: "MC100",
-    nome: "Miguel",
-    imagem: "images/mc_default.png",
-    cidade: "Sales Oliveira - SP",
-    titulo: "MC SEM CADASTRO",
-    ranking: null,
-    links: []
-  }
-]; // Este colchete final deve permanecer no seu arquivo.
+  // --- NOVOS MCs DA CONEXÃO DE RIMAS (03/10) ---
+  {
+    id: "MC096",
+    nome: "Dread",
+    imagem: "images/mc_default.png",
+    cidade: "São Joaquim da Barra - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC097",
+    nome: "Leozin",
+    imagem: "images/mc_default.png",
+    cidade: "São Joaquim da Barra - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC098",
+    nome: "Ruan",
+    imagem: "images/mc_default.png",
+    cidade: "Orlândia - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC099",
+    nome: "Kleytinho Balla",
+    imagem: "images/mc_default.png",
+    cidade: "Sales Oliveira - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC100",
+    nome: "Miguel",
+    imagem: "images/mc_default.png",
+    cidade: "Sales Oliveira - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  
+  // --- NOVOS MCs DA BATALHA DA FONTE (05/10) ---
+  {
+    id: "MC101",
+    nome: "PALÁCIO",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC102",
+    nome: "JAPA",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC103",
+    nome: "2JOTTA",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC104",
+    nome: "FUZIL",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC105",
+    nome: "PSDNAN",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC106",
+    nome: "VIRTO",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC107",
+    nome: "WGT",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  
+  // --- NOVOS MCs DA BOOM BATTLE 180ª (04/10) ---
+  {
+    id: "MC108",
+    nome: "DIED",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC109",
+    nome: "BELATRIZ",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC110",
+    nome: "SAYAJIN",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  },
+  {
+    id: "MC111",
+    nome: "MARCHESAN",
+    imagem: "images/mc_default.png",
+    cidade: "Araraquara - SP",
+    titulo: "MC SEM CADASTRO",
+    ranking: null,
+    links: []
+  }
+];

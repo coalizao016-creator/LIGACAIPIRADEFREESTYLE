@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="styles.css" />
 
     <style>
-        /* Estilos específicos da página de Ranking */
+        /* ESTILOS CSS VINDOS DA NOSSA CONVERSA ANTERIOR */
+        /* Recomendado: Mantenha todos os seus estilos aqui ou no styles.css */
+        
+        /* Estilos gerais do container */
         .ranking-container { 
             max-width: 900px; 
             margin: 0 auto; 
@@ -19,54 +22,200 @@
             background-color: #282828; 
             padding: 20px; 
             border-radius: 10px; 
-            margin-top: 30px;
+            margin-top: 30px; 
+            margin-bottom: 30px;
         }
         .ranking-table-container h2 { 
             color: #fff; 
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ff8c00; 
+            padding-bottom: 10px;
         }
-        #ranking-table { 
+
+        /* Estilos das Tabelas */
+        #ranking-table, #janela-table { 
             width: 100%; 
             border-collapse: collapse; 
             margin-top: 20px; 
         }
-        #ranking-table thead { 
+        #ranking-table thead, #janela-table thead { 
             background-color: #1a1a1a; 
         }
-        /* ATENÇÃO: Novas colunas adicionadas */
-        #ranking-table th { 
+        
+        /* Estilo para cabeçalhos (TH) */
+        #ranking-table th, #janela-table th { 
             padding: 15px; 
             color: #ff8c00; 
             text-align: left; 
+            white-space: nowrap; 
         }
-        #ranking-table td { 
-            padding: 15px; 
+        
+        /* Estilo para células (TD) */
+        #ranking-table td, #janela-table td { 
+            padding: 12px 15px; 
             color: #e0e0e0; 
-            text-align: left; 
             border-top: 1px solid #333; 
         }
-        #ranking-table tbody tr:nth-child(even) { 
+        
+        /* Linhas zebradas */
+        #ranking-table tbody tr:nth-child(even), #janela-table tbody tr:nth-child(even) { 
             background-color: #222; 
         }
-        #ranking-table .posicao { 
+        
+        /* Estilo para Posição (#) */
+        .posicao { 
             font-weight: bold; 
             font-size: 1.2em; 
-            text-align: center; 
+            text-align: center !important; 
             width: 60px; 
+            color: #ff8c00; 
         }
-        #ranking-table .mc-nome { 
+        
+        /* Estilo para a Célula da Foto */
+        .mc-foto {
+            width: 60px; 
+            padding: 5px 10px !important; 
+            text-align: center !important;
+        }
+        /* Estilo para a Imagem de Avatar */
+        .mc-avatar {
+            width: 40px; 
+            height: 40px;
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 2px solid #ff8c00; 
+        }
+        
+        /* Estilo para Nome do MC (Tornando-o Clicável) */
+        .mc-nome { 
             font-weight: bold; 
             color: #fff; 
+            text-align: left !important; 
+            cursor: pointer; 
         }
-        #ranking-table .mc-pontos { 
+
+        /* Estilo para o elemento que dispara o card */
+        .mc-card-trigger {
+            display: inline-block; 
+            padding: 5px 0;
+            transition: color 0.2s;
+        }
+        .mc-card-trigger:hover {
+            color: #ffc04c; 
+        }
+        
+        /* Estilo para Pontuações */
+        .mc-pontos { 
             font-weight: bold; 
             color: #ff8c00; 
-            text-align: right; 
+            text-align: right !important; 
+        }
+        
+        /* ALINHAMENTO DOS CABEÇALHOS NUMÉRICOS */
+        #ranking-table th:nth-child(4), 
+        #ranking-table th:nth-child(5),
+        #ranking-table th:nth-child(6),
+        #janela-table th:nth-child(4) { 
+            text-align: right;
+        }
+
+        /* ---------------------- ESTILOS DO MODAL ---------------------- */
+        #mc-modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.85); 
+        }
+        #mc-modal-content {
+            background-color: #1a1a1a; 
+            margin: 10% auto; 
+            padding: 30px; 
+            border: 1px solid #ff8c00; 
+            width: 90%; 
+            max-width: 450px; 
+            border-radius: 10px; 
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        #close-modal {
+            color: #aaa; 
+            float: right; 
+            font-size: 36px; 
+            font-weight: bold; 
+            cursor: pointer;
+            line-height: 1;
+        }
+        #close-modal:hover, #close-modal:focus {
+            color: #ff8c00;
+            text-decoration: none;
+        }
+        #mc-details-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #mc-details-header img {
+            width: 80px; 
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        #mc-details-header h3 {
+            color: #ff8c00;
+            margin: 0;
+            font-size: 1.8em;
+        }
+        #mc-details-header p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        /* Estilos dos Links */
+        .mc-links {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+        .mc-links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #444;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.8em;
+            transition: background-color 0.2s;
+        }
+        .mc-links a:hover {
+            background-color: #ff8c00;
+            color: #1a1a1a;
+        }
+
+        /* Estilo para o botão de Detalhes Completos */
+        .btn-detalhes {
+            display: block !important;
+            margin-top: 15px !important;
+            padding: 10px 20px !important; 
+            background-color: #ff8c00 !important; 
+            color: #1a1a1a !important; 
+            text-decoration: none !important; 
+            border-radius: 5px !important; 
+            font-weight: bold !important; 
+            transition: background-color 0.2s;
+        }
+        .btn-detalhes:hover {
+            background-color: #ffc04c !important;
         }
     </style>
 </head>
 <body>
-    <header>
-    </header>
+    <header></header>
     
     <nav>
         <div class="hamburger">
@@ -93,23 +242,40 @@
     </nav>
     
     <div class="ranking-container">
-        <h1>Página de Teste do Ranking</h1>
-        <p style="color: #ccc;">Esta página conecta-se diretamente ao seu banco de dados Supabase para testes.</p>
+        <h1>Página de Teste dos Rankings</h1>
+        <p style="color: #ccc;">Exibindo Ranking Geral (Total) e Ranking da Janela (Top 3 Pontuações).</p>
 
-        <div class="ranking-table-container" id="ranking-container-id">
-            <h2>Ranking Geral (Temporada)</h2>
-            <div id="loader" style="color: #ccc; padding: 30px 0;">Carregando ranking...</div>
+        <div class="ranking-table-container">
+            <h2>🏆 Ranking Geral (Top 10 Total Acumulado)</h2>
+            <div id="loader-geral" style="color: #ccc; padding: 30px 0;">Carregando Ranking Geral...</div>
             <table id="ranking-table" style="display:none;">
                 <thead>
                     <tr>
                         <th class="posicao">#</th>
+                        <th>Foto</th> 
                         <th>MC</th>
                         <th class="mc-pontos">Total Pontos</th>
-                        <th class="mc-pontos">Bônus 2x0</th>
-                        <th class="mc-pontos">Viagens</th>
+                        <th class="mc-pontos">Total Twolala</th> 
+                        <th class="mc-pontos">Total Viagens</th>
                     </tr>
                 </thead>
-                <tbody id="ranking-body"></tbody>
+                <tbody id="ranking-body-geral"></tbody>
+            </table>
+        </div>
+
+        <div class="ranking-table-container">
+            <h2>📈 Ranking da Janela (Top 10 da Soma das 3 Melhores Pontuações)</h2>
+            <div id="loader-janela" style="color: #ccc; padding: 30px 0;">Carregando Ranking da Janela...</div>
+            <table id="janela-table" style="display:none;">
+                <thead>
+                    <tr>
+                        <th class="posicao">#</th>
+                        <th>Foto</th> 
+                        <th>MC</th>
+                        <th class="mc-pontos">Total Top 3</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body-janela"></tbody>
             </table>
         </div>
     </div>
@@ -118,152 +284,236 @@
         © 2025 Coalizão 016 - Todos os direitos reservados.
     </footer>
 
+    <div id="mc-modal">
+        <div id="mc-modal-content">
+            <span id="close-modal">&times;</span>
+            <div id="mc-card-content">
+                </div>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="mcs.js"></script>
+    
     <script>
         // 1. CONFIGURAÇÃO SUPABASE
         const SUPABASE_URL = 'https://rxensjzxouyczhpftdpb.supabase.co'; 
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4ZW5zanp4b3V5Y3pocGZ0ZHBiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkzNTI5MDUsImV4cCI6MjA3NDkyODkwNX0.__J26I9DvvFiJY63EnOgP5DHbKoxQrFYou1TKh1ualk'; 
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); 
 
-        // Lógica principal da página
-        document.addEventListener('DOMContentLoaded', async () => {
+        // -------------------------------------------------------------------
+        // FUNÇÕES DE CARREGAMENTO DO RANKING 
+        // -------------------------------------------------------------------
+
+        function adicionarListenersCard() {
+            const triggers = document.querySelectorAll('.mc-card-trigger');
+            triggers.forEach(trigger => {
+                trigger.addEventListener('click', (event) => {
+                    const mcId = event.target.getAttribute('data-mc-id');
+                    if (mcId) {
+                        abrirCardMc(mcId); 
+                    }
+                });
+            });
+        }
+
+        async function carregarRankingGeral() {
+            const loader = document.getElementById('loader-geral');
+            const table = document.getElementById('ranking-table');
+            const rankingBody = document.getElementById('ranking-body-geral');
+            const rankingContainer = table.closest('.ranking-table-container');
+
+            const { data: rankingData, error } = await supabaseClient
+                .from('log_pontuacao') 
+                .select(`
+                    mc_id,
+                    nome,
+                    total_ranking,
+                    pontos_twolala,
+                    pontos_viagens
+                `) 
+                .order('total_ranking', { ascending: false })
+                .limit(10); 
+
+            if (error) {
+                loader.style.display = 'none';
+                rankingContainer.innerHTML += '<h3 style="color:red;">Erro ao carregar Ranking Geral. Verifique RLS.</h3>';
+                console.error("Erro ao buscar o Ranking Geral:", error);
+                return;
+            }
+
+            // RENDERIZAÇÃO NA TABELA GERAL
+            rankingBody.innerHTML = '';
+            rankingData.forEach((item, index) => {
+                // Tenta carregar MCXXX.PNG, se falhar, usa mc_default.png (onerror)
+                const fotoPath = `images/${item.mc_id}.PNG`; 
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="posicao">${index + 1}</td>
+                    <td class="mc-foto">
+                        <img 
+                            src="${fotoPath}" 
+                            alt="${item.nome}" 
+                            class="mc-avatar"
+                            onerror="this.onerror=null; this.src='images/mc_default.png';" 
+                        >
+                    </td>
+                    <td class="mc-nome">
+                        <div class="mc-card-trigger" data-mc-id="${item.mc_id}">${item.nome}</div>
+                    </td>
+                    <td class="mc-pontos">${item.total_ranking}</td>
+                    <td class="mc-pontos">${item.pontos_twolala}</td>
+                    <td class="mc-pontos">${item.pontos_viagens}</td>
+                `;
+                rankingBody.appendChild(row);
+            });
+
+            // FINALIZAÇÃO
+            loader.style.display = 'none';
+            table.style.display = 'table';
+            adicionarListenersCard();
+        }
+
+        async function carregarRankingJanela() {
+            const loader = document.getElementById('loader-janela');
+            const table = document.getElementById('janela-table');
+            const rankingBody = document.getElementById('ranking-body-janela');
+            const rankingContainer = table.closest('.ranking-table-container');
+
+            const { data: rankingData, error } = await supabaseClient
+                .from('log_pontuacao_top3') 
+                .select(`
+                    id, 
+                    nome,
+                    total_janela_top3
+                `) 
+                .order('total_janela_top3', { ascending: false })
+                .limit(10); 
+
+            if (error) {
+                loader.style.display = 'none';
+                rankingContainer.innerHTML += '<h3 style="color:red;">Erro ao carregar Ranking da Janela. Verifique RLS.</h3>';
+                console.error("Erro ao buscar o Ranking da Janela:", error);
+                return;
+            }
+
+            // RENDERIZAÇÃO NA TABELA DA JANELA
+            rankingBody.innerHTML = '';
+            rankingData.forEach((item, index) => {
+                // Tenta carregar MCXXX.PNG, se falhar, usa mc_default.png (onerror)
+                const fotoPath = `images/${item.id}.PNG`; 
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="posicao">${index + 1}</td>
+                    <td class="mc-foto">
+                        <img 
+                            src="${fotoPath}" 
+                            alt="${item.nome}" 
+                            class="mc-avatar"
+                            onerror="this.onerror=null; this.src='images/mc_default.png';" 
+                        >
+                    </td>
+                    <td class="mc-nome">
+                        <div class="mc-card-trigger" data-mc-id="${item.id}">${item.nome}</div>
+                    </td>
+                    <td class="mc-pontos">${item.total_janela_top3}</td>
+                `;
+                rankingBody.appendChild(row);
+            });
+
+            // FINALIZAÇÃO
+            loader.style.display = 'none';
+            table.style.display = 'table';
+            adicionarListenersCard();
+        }
+
+        // -------------------------------------------------------------------
+        // FUNÇÕES DO CARD DE DETALHES (MODAL) - USANDO DADOS DO mcs.js
+        // -------------------------------------------------------------------
+
+        const mcModal = document.getElementById('mc-modal');
+        const closeModal = document.getElementById('close-modal');
+        const mcCardContent = document.getElementById('mc-card-content');
+
+        // Fecha o modal ao clicar no 'x'
+        closeModal.onclick = function() {
+            mcModal.style.display = "none";
+        }
+
+        // Fecha o modal ao clicar fora dele
+        window.onclick = function(event) {
+            if (event.target == mcModal) {
+                mcModal.style.display = "none";
+            }
+        }
+
+        function abrirCardMc(mcId) {
+            mcCardContent.innerHTML = '<h2>Buscando detalhes do MC...</h2>';
+            mcModal.style.display = "block";
+
+            // 1. Busca os detalhes no array 'mcs' (do mcs.js)
+            const mcDetails = mcs.find(mc => mc.id === mcId);
+
+            if (!mcDetails) {
+                mcCardContent.innerHTML = `<h2>Erro: MC com ID ${mcId} não encontrado no mcs.js.</h2>`;
+                return;
+            }
+
+            // 2. Prepara o conteúdo
+            // Usa a imagem do mcs.js (mc_default.png se não houver específica)
+            const fotoUrl = mcDetails.imagem || `images/mc_default.png`; 
+            const cidade = mcDetails.cidade || 'Não informada';
+            const titulo = mcDetails.titulo && mcDetails.titulo.trim() !== '' ? mcDetails.titulo : 'Sem título de destaque.';
             
-            // Lógica do Menu Hamburger
+            // Renderiza os links de redes sociais
+            const linksHtml = mcDetails.links.length > 0
+                ? mcDetails.links.map(link => 
+                    `<a href="${link.url}" target="_blank">${link.nome}</a>`
+                  ).join('')
+                : '<span style="color: #888;">Nenhum link cadastrado.</span>';
+
+            // 3. Renderiza o conteúdo final do card
+            mcCardContent.innerHTML = `
+                <div id="mc-details-header">
+                    <img 
+                        src="${fotoUrl}" 
+                        alt="${mcDetails.nome}" 
+                        class="mc-avatar"
+                        onerror="this.onerror=null; this.src='images/mc_default.png';"
+                    >
+                    <h3>${mcDetails.nome}</h3>
+                    <p>${cidade}</p>
+                    <p style="color: #ff8c00; font-size: 1em; font-style: italic;">${titulo}</p>
+                </div>
+                
+                <div class="mc-links">
+                    <h4>Redes Sociais:</h4>
+                    ${linksHtml}
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="mcs.html?id=${mcId}" 
+                        class="btn-detalhes">
+                        Ver Detalhes Completos (Página MCs)
+                    </a>
+                </div>
+            `;
+        }
+
+        // -------------------------------------------------------------------
+        // Lógica principal da página
+        // -------------------------------------------------------------------
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Lógica do Menu Hamburger (mantida, mas precisa de estilos)
             const hamburger = document.querySelector(".hamburger");
             const navLinks = document.querySelector(".nav-links");
             if (hamburger && navLinks) {
                 hamburger.addEventListener("click", () => navLinks.classList.toggle("active"));
             }
 
-            const rankingContainer = document.getElementById('ranking-container-id');
-            const loader = document.getElementById('loader');
-            const table = document.getElementById('ranking-table');
-            const rankingBody = document.getElementById('ranking-body');
-
-            // Busca os MCs e os Logs (Confrontos e Viagens)
-            const { data: mcs, error: mcsError } = await supabaseClient.from('mcs').select('*');
-            const { data: logBatalhas, error: logError } = await supabaseClient.from('log_batalhas').select('*'); 
-            const { data: logViagens, error: viagemError } = await supabaseClient.from('log_viagens').select('*');
-
-
-            if (mcsError || logError || viagemError) {
-                rankingContainer.innerHTML = '<h2>Erro ao carregar dados. Verifique o console (F12) e as políticas RLS.</h2>';
-                console.error("Erro ao carregar MCs:", mcsError);
-                console.error("Erro ao carregar Logs de Batalha:", logError);
-                console.error("Erro ao carregar Logs de Viagem:", viagemError);
-                return;
-            }
-
-            if (logBatalhas.length === 0 && logViagens.length === 0) {
-                loader.style.display = 'none';
-                rankingContainer.innerHTML = '<h2>Ranking Geral (Temporada)</h2><p style="color: #ccc; padding: 30px 0;">Nenhum resultado cadastrado. Cadastre o primeiro resultado e recarregue a página.</p>';
-                return;
-            }
-
-            // Estrutura para calcular a pontuação máxima e bônus
-            const mcScores = {}; 
-            mcs.forEach(mc => {
-                const mcIdString = String(mc.id);
-                mcScores[mcIdString] = { 
-                    max_points: 0, 
-                    total_bonus_2x0: 0, 
-                    total_viagem: 0 
-                }; 
-            });
-
-            // 1. CÁLCULO DE PONTOS DE BATALHA: Encontra a Pontuação Máxima e Soma os Bônus
-            logBatalhas.forEach(confronto => {
-                
-                // 1A. Determina a lista de IDs de VENCEDORES (Prioriza o novo campo, mas cai de volta para o antigo)
-                const vencedorIds = (confronto.vencedor_ids && confronto.vencedor_ids.length > 0) 
-                                   ? confronto.vencedor_ids.map(String) // Novo log de equipe
-                                   : (confronto.vencedor_id ? [String(confronto.vencedor_id)] : []); // Log antigo 1x1
-
-                // 1B. Determina a lista de IDs de TODOS os PARTICIPANTES (Prioriza o novo campo, mas cai de volta para os antigos mc1/mc2)
-                let participantesIds = [];
-                if (confronto.participantes_ids && confronto.participantes_ids.length > 0) {
-                    participantesIds = confronto.participantes_ids.map(String); // Novo log de equipe
-                } else {
-                    // Log antigo 1x1 (inclui somente MC1 e MC2, filtrando nulos)
-                    if (confronto.mc1_id) participantesIds.push(String(confronto.mc1_id));
-                    if (confronto.mc2_id) participantesIds.push(String(confronto.mc2_id));
-                }
-
-                // Itera sobre todos os participantes encontrados para atribuir pontos
-                participantesIds.forEach(mcIdString => {
-                    
-                    if (mcScores[mcIdString]) { // Garante que o MC existe
-                        let currentMatchScore = 0;
-                        
-                        // Verifica se o MC está na lista de vencedores
-                        let isWinner = vencedorIds.includes(mcIdString);
-
-                        // Determina a pontuação BASE do confronto
-                        if (confronto.fase.toLowerCase().includes('final')) {
-                            // Se o MC está na lista de vencedores da final
-                            currentMatchScore = isWinner ? 10 : 7; // Campeão: 10, Vice: 7
-                        } else if (confronto.fase.toLowerCase().includes('semi')) {
-                            currentMatchScore = 5; // Semifinalista
-                        } else {
-                            currentMatchScore = 2; // Participação/Rodada
-                        }
-
-                        // A pontuação final de batalha é o MÁXIMO alcançado.
-                        mcScores[mcIdString].max_points = Math.max(mcScores[mcIdString].max_points, currentMatchScore);
-
-                        // O bônus 2x0 é somado para cada partida em que o MC vencedor participa (cumulativo)
-                        if (isWinner && confronto.placar && confronto.placar.includes('x0')) {
-                            mcScores[mcIdString].total_bonus_2x0 += 1;
-                        }
-                    }
-                });
-            });
-
-            // 2. CÁLCULO DE PONTOS DE VIAGEM (Cumulativo)
-            logViagens.forEach(logViagem => {
-                const mcIdString = String(logViagem.mc_id);
-                if (mcScores[mcIdString]) {
-                    mcScores[mcIdString].total_viagem += logViagem.pontos_viagem; 
-                }
-            });
-            
-            // 3. FINALIZAÇÃO E ATRIBUIÇÃO DOS PONTOS (Armazenando detalhes do bônus)
-            const mcsComPontos = mcs.map(mc => {
-                const mcIdString = String(mc.id);
-                const stats = mcScores[mcIdString] || { max_points: 0, total_bonus_2x0: 0, total_viagem: 0 };
-                
-                const totalPontos = stats.max_points + stats.total_bonus_2x0 + stats.total_viagem;
-
-                mc.estatisticas = {
-                    pontos: totalPontos, 
-                    bonus_2x0: stats.total_bonus_2x0, // NOVO: Bônus 2x0
-                    viagem: stats.total_viagem // NOVO: Pontos de Viagem
-                };
-                return mc;
-            });
-
-            // Ordena a lista
-            const mcsOrdenados = mcsComPontos.sort((a, b) => b.estatisticas.pontos - a.estatisticas.pontos);
-            
-            rankingBody.innerHTML = '';
-            mcsOrdenados.forEach((mc, index) => {
-                // Só mostra MCs que pontuaram
-                if (mc.estatisticas.pontos > 0) {
-                    const row = document.createElement('tr');
-                    // ALTERAÇÃO AQUI: NOVOS CAMPOS NA LINHA
-                    row.innerHTML = `
-                        <td class="posicao">${index + 1}</td>
-                        <td class="mc-nome">${mc.nome}</td>
-                        <td class="mc-pontos">${mc.estatisticas.pontos}</td>
-                        <td class="mc-pontos">${mc.estatisticas.bonus_2x0}</td>
-                        <td class="mc-pontos">${mc.estatisticas.viagem}</td>
-                    `;
-                    rankingBody.appendChild(row);
-                }
-            });
-
-            loader.style.display = 'none';
-            table.style.display = 'table';
+            // Chama as duas funções de ranking
+            carregarRankingGeral();
+            carregarRankingJanela();
         });
     </script>
 </body>
