@@ -1,74 +1,6 @@
 // agenda.js
 const eventos = [
-  // ** EVENTOS DE 03/10 (Sexta-feira) - EM CURSO OU PRÓXIMOS **
-  {
-    data: "2025-10-03",
-    diaSemana: "Sexta-feira",
-    horario: "19:55h",
-    nomeBatalha: "Batalha dos Forasteiros Ed. 8°",
-    cidade: "Araraquara - SP",
-    status: "Formato 45 segundos | Praça Santa Cruz",
-    linkInstagram: null
-  },
-  {
-    data: "2025-10-03",
-    diaSemana: "Sexta-feira",
-    horario: "20:00h",
-    nomeBatalha: "Conexão de Rimas 20ª EDT",
-    cidade: "São Joaquim da Barra - SP",
-    status: "Edição Funk - Pista de Skate SJB",
-    linkInstagram: "https://www.instagram.com/conexao_de_rima"
-  },
-  // ** NOVOS EVENTOS DE 04/10 (Sábado) **
-  {
-    data: "2025-10-04",
-    diaSemana: "Sábado",
-    horario: "18:00h",
-    nomeBatalha: "Batalha do Educa 🧠 (2ª Edição)",
-    cidade: "Ribeirão Preto - SP",
-    status: "Semana da Educação - Bate e Volta - R. Camilo de Mattos, 88",
-    linkInstagram: null
-  },
-  // ** EVENTOS DE 05/10 (Domingo) **
-  {
-    data: "2025-10-05",
-    diaSemana: "Domingo",
-    horario: "16:00h",
-    nomeBatalha: "BDK Freestyle",
-    cidade: "Brodowski - SP",
-    status: "Edição de Trio",
-    linkInstagram: "https://www.instagram.com/bdkfreestyle_"
-  },
-  // ** NOVOS EVENTOS DE 06/10 (Segunda-feira) **
-  {
-    data: "2025-10-06",
-    diaSemana: "Segunda-feira",
-    horario: "20:00h",
-    nomeBatalha: "Batalha Das Estações #33",
-    cidade: "Araraquara - SP",
-    status: "Edição Bate-Volta | Praça Santa Cruz",
-    linkInstagram: null
-  },
-  // ** EVENTOS DE 07/10 (Terça-feira) **
-  {
-    data: "2025-10-07",
-    diaSemana: "Terça-feira",
-    horario: "19:00h",
-    nomeBatalha: "Batalha da UBS",
-    cidade: "Ribeirão Preto - SP",
-    status: "Edição de Duplas - Street Fighter | Praça do Japão",
-    linkInstagram: null
-  },
-  {
-    data: "2025-10-07",
-    diaSemana: "Terça-feira",
-    horario: "19:00h",
-    nomeBatalha: "Batalha da Ressaca",
-    cidade: "Araraquara - SP",
-    status: "Edição de Dupla Estilo Norte | Praça Santa Cruz",
-    linkInstagram: "https://www.instagram.com/batalhadaressaca"
-  },
-  // ** NOVOS E ATUALIZADOS EVENTOS DE 08/10 (Quarta-feira) **
+  // ** EVENTOS DE 08/10 (Quarta-feira) - EM CURSO OU PRÓXIMOS **
   {
     data: "2025-10-08",
     diaSemana: "Quarta-feira",
@@ -96,14 +28,33 @@ const eventos = [
     status: "Bate e Volta",
     linkInstagram: "https://www.instagram.com/batalhanovaerarp"
   },
+  // ** EVENTOS DE 09/10 (Quinta-feira) **
+  {
+    data: "2025-10-09",
+    diaSemana: "Quinta-feira",
+    horario: "19:00h",
+    nomeBatalha: "Sangue na 7",
+    cidade: "Ribeirão Preto - SP",
+    status: "Colab Batalha dos Vendados | Local GOA",
+    linkInstagram: null
+  },
+  {
+    data: "2025-10-09",
+    diaSemana: "Quinta-feira",
+    horario: "19:30h",
+    nomeBatalha: "Batalha dos Nômades 172ª Edição",
+    cidade: "Franca - SP",
+    status: "Formato Bate e Volta | Praça de Esportes - Residencial Ana Dorothea",
+    linkInstagram: null
+  },
   // ** EVENTOS DE 10/10 (Sexta-feira) **
   {
     data: "2025-10-10",
     diaSemana: "Sexta-feira",
     horario: "19:30h",
-    nomeBatalha: "Coalizão 016 - Edição Quinzenal #1",
+    nomeBatalha: "Coalizão 016 - #7",
     cidade: "Ribeirão Preto - SP",
-    status: "Edição de Duplas",
+    status: "Edição de Duplas Estilo Norte",
     linkInstagram: "https://instagram.com/coalizao016"
   },
   {
@@ -143,6 +94,25 @@ const eventos = [
     status: "BoomBap - Praça Mário Furtado",
     linkInstagram: "https://www.instagram.com/bdvinte_"
   },
+  // ** EVENTOS DE 12/10 (Domingo) - NOVOS **
+  {
+    data: "2025-10-12",
+    diaSemana: "Domingo",
+    horario: "16:00h",
+    nomeBatalha: "Batalha do Bença",
+    cidade: "Ribeirão Preto - SP",
+    status: "Bate e Volta | Local a confirmar",
+    linkInstagram: null
+  },
+  {
+    data: "2025-10-12",
+    diaSemana: "Domingo",
+    horario: "19:00h",
+    nomeBatalha: "Batalha da S.O",
+    cidade: "Sales Oliveira - SP",
+    status: "Edição Individual - 45 Segundos | Praça Santa Rita",
+    linkInstagram: null
+  },
   // ** EVENTOS DE 15/10 (Quarta-feira) **
   {
     data: "2025-10-15",
@@ -153,6 +123,16 @@ const eventos = [
     status: "Batalha de Tema",
     linkInstagram: "https://www.instagram.com/batalhanovaerarp"
   },
+  // ** EVENTO DE 16/10 (Quinta-feira) **
+  {
+    data: "2025-10-16",
+    diaSemana: "Quinta-feira",
+    horario: "19:00h",
+    nomeBatalha: "Sangue na 7",
+    cidade: "Ribeirão Preto - SP",
+    status: "Edição Bate e Volta | Praça Sete de Setembro",
+    linkInstagram: null
+  },
   // ** EVENTOS DE 17/10 (Sexta-feira) **
   {
     data: "2025-10-17",
@@ -160,7 +140,7 @@ const eventos = [
     horario: "19:00h",
     nomeBatalha: "Batalha dos Pombos",
     cidade: "São Carlos - SP",
-    status: "Edição Halloween (Duplas) - Praça Coronel Salles",
+    status: "Edição Halloween (Duplas) | Praça Coronel Salles",
     linkInstagram: "https://www.instagram.com/batalha_dospombos"
   },
   {
@@ -229,6 +209,25 @@ const eventos = [
     cidade: "Taquaritinga - SP",
     status: "Especial Halloween (Duplas - Street Fighter) - Praça do Balão",
     linkInstagram: "https://www.instagram.com/batalhadosbrodi"
+  },
+  // ** EVENTOS DE 26/10 (Domingo) - NOVOS E CORRIGIDOS **
+  {
+    data: "2025-10-26",
+    diaSemana: "Domingo",
+    horario: "18:00h",
+    nomeBatalha: "Batalha do Diamante 💎",
+    cidade: "Patrocínio Paulista - SP",
+    status: "Batalha de Dupla | Quadra bairro Jardim Glória",
+    linkInstagram: null
+  },
+  {
+    data: "2025-10-26",
+    diaSemana: "Domingo",
+    horario: "19:00h",
+    nomeBatalha: "BATALHA SO HALLOWEEN",
+    cidade: "Sales Oliveira - SP",
+    status: "Edição Individual Desafio - Bate e volta | Praça Santa Rita",
+    linkInstagram: null
   },
   // ** EVENTOS DE 31/10 (Sexta-feira) **
   {
