@@ -975,11 +975,12 @@ const mcs = [
   {
     id: "MC091",
     nome: "Defzin",
-    imagem: "images/mc_default.png",
+    imagem: "images/MC091.PNG",
     cidade: "Guaxupé - MG",
-    titulo: "MC SEM CADASTRO",
+    titulo: "BI CAMPEÃO REGIONAL 🏆🏆",
     ranking: null,
-    links: []
+    links: [{ nome: "Instagram", url: "https://www.instagram.com/oficial.defzin?igsh=MTdjdzZocXh5c2l1YQ%3D%3D&utm_source=qr" }
+]
   },
   {
     id: "MC092",
