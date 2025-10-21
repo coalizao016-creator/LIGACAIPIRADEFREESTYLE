@@ -157,8 +157,8 @@ const eventos = [
     diaSemana: "Domingo",
     horario: "16:00h",
     nomeBatalha: "Batalha do Educa 3ª Edição - Halloween",
-    cidade: "Local não informado - SP",
-    status: "Temática (4/4) | R. Camilo de Mattos,88 (próx. Ao Bosque)",
+    cidade: "R. Camilo de Mattos,88 (próx. Ao Bosque)",
+    status: "Temática (4/4)",
     linkInstagram: null
   },
   {
