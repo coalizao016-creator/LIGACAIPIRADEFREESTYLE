@@ -1199,11 +1199,13 @@ const mcs = [
 {
     id: "MC115",
     nome: "Doctor L",
-    imagem: "images/mc_default.png",
+    imagem: "images/mc115.PNG",
     cidade: "Franca - SP",
     titulo: "MC SEM CADASTRO",
     ranking: null,
-    links: []
+    links: [    { nome: "Instagram", url: "https://www.instagram.com/doctorl01?igsh=MTdhODE0a3llZjZ1Yw%3D%3D&utm_source=qr" },
+      { nome: "YouTube", url: "https://youtube.com/@doctorl01unico?si=Lav-oTFDZFC5B9Hs" },
+      { nome: "Spotify", url: "https://open.spotify.com/artist/0AHqjvb6Np1mMYYD9nNn65?si=wGybx957R2CI88UE1b4RYQ" }]
 },
 {
     id: "MC116",
