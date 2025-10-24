@@ -633,7 +633,7 @@ const mcs = [
   {
     id: "MC055", // CORRIGIDO: Este é o MRD
     nome: "MRD", 
-    imagem: "images/MC055.png",
+    imagem: "images/MC056.png",
     cidade: "Araraquara - SP",
     titulo: "Procurando a melhoria sempre",
     ranking: null,
@@ -644,7 +644,7 @@ const mcs = [
   {
     id: "MC056", // CORRIGIDO: Este é o TVZ
     nome: "TVZ", 
-    imagem: "images/MC056.png",
+    imagem: "images/MC055.png",
     cidade: "Araraquara - SP",
     titulo: "11 anos de batalhas, +100 títulos.",
     ranking: null,
