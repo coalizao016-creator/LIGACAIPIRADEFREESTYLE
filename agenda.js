@@ -209,5 +209,51 @@ const eventos = [
     cidade: "São Joaquim da Barra - SP",
     status: "Especial Halloween - Pista de Skate SJB",
     linkInstagram: "https://www.instagram.com/conexao_de_rima"
+  },
+
+  // ** NOVOS EVENTOS ADICIONADOS **
+  
+  // ** EVENTOS DE 05/11 (Quarta-feira) **
+  {
+    data: "2025-11-05",
+    diaSemana: "Quarta-feira", // Dia da semana de 05/11/2025 é Quarta-feira
+    horario: "19:00h",
+    nomeBatalha: "BATALHA DO CHAVÃO 24ª EDIÇÃO",
+    cidade: "Ibaté - SP",
+    status: "Batalha de Sangue X 1 | R. Dr. Teixeira de Barros, 604 - Vila Santa Terezinha",
+    linkInstagram: null // Informação não fornecida
+  },
+  
+  // ** EVENTOS DE 07/11 (Sexta-feira) **
+  {
+    data: "2025-11-07",
+    diaSemana: "Sexta-feira", // Dia da semana de 07/11/2025 é Sexta-feira
+    horario: "19:00h",
+    nomeBatalha: "Coalizão 016",
+    cidade: "Ribeirão Preto - SP",
+    status: "Formato FMS | Praça Francisco Schmidt",
+    linkInstagram: "https://instagram.com/coalizao016" // Usando o link já existente
+  },
+
+  // ** EVENTOS DE 09/11 (Domingo) **
+  {
+    data: "2025-11-09",
+    diaSemana: "Domingo", // Dia da semana de 09/11/2025 é Domingo
+    horario: "17:30h",
+    nomeBatalha: "BATALHA DD3 - Edição Evento 3R's",
+    cidade: "Sertãozinho - SP",
+    status: "Pista de Skate da C3",
+    linkInstagram: null
+  },
+
+  // ** EVENTOS DE 16/11 (Domingo) **
+  {
+    data: "2025-11-16",
+    diaSemana: "Domingo", // Dia da semana de 16/11/2025 é Domingo
+    horario: "17:00h",
+    nomeBatalha: "RAP NA ALTA",
+    cidade: "Matão - SP",
+    status: "CASA PIPA",
+    linkInstagram: null // Informação não fornecida
   }
 ];
