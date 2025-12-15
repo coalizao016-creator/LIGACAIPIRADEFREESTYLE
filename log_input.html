@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Admin - Login e Log de Pontuação</title>
+    <title>Painel de Inserção de Log - Coalizão 016</title>
     
     <link rel="stylesheet" href="styles.css" />
 
@@ -40,9 +40,7 @@
         }
         .form-group input[type="number"],
         .form-group select,
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="password"] {
+        .form-group input[type="text"] {
             width: 100%;
             padding: 10px;
             border: 1px solid #444;
@@ -73,7 +71,7 @@
         .submit-btn:hover {
             background-color: #e67300;
         }
-        #message, #login-message {
+        #message {
             margin-top: 20px;
             padding: 10px;
             border-radius: 5px;
@@ -83,46 +81,12 @@
         .success { background-color: #38c172; color: #1a1a1a; }
         .error { background-color: #e3342f; color: #fff; }
         .info { background-color: #4dc0b5; color: #1a1a1a; }
-
-        /* Estilos específicos do Login/Logout */
-        #login-container {
-            max-width: 400px;
-            margin: 50px auto;
-            background-color: #282828;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-        .logout-btn {
-            background-color: #e3342f;
-            margin-top: 10px;
-        }
-        .logout-btn:hover {
-            background-color: #cc2a26;
-        }
     </style>
 </head>
 <body>
 
-    <div id="login-container" style="display: none;">
-        <h2>Acesso Restrito</h2>
-        <form id="login-form">
-            <div class="form-group">
-                <label for="email-input">E-mail:</label>
-                <input type="email" id="email-input" required>
-            </div>
-            <div class="form-group">
-                <label for="password-input">Senha:</label>
-                <input type="password" id="password-input" required>
-            </div>
-            <button type="submit" class="submit-btn">Entrar</button>
-        </form>
-        <div id="login-message" class="info"></div>
-    </div>
-
-    <div id="log-container" class="input-container" style="display: none;">
-        <h2 id="welcome-message">Painel de Inserção de Log</h2>
-        <button id="logout-btn" class="submit-btn logout-btn">Sair</button>
+    <div class="input-container">
+        <h2>Adicionar Pontuação Rápida</h2>
 
         <form id="log-form">
             
@@ -130,7 +94,7 @@
                 <label for="mc-select">MC:</label>
                 <select id="mc-select" required>
                     <option value="">-- Selecione o MC --</option>
-                </select>
+                    </select>
             </div>
 
             <div class="form-group">
@@ -165,49 +129,17 @@
     <script src="mcs.js"></script>
 
     <script>
-        // CONFIGURAÇÃO SUPABASE - CHAVES INSERIDAS!
-        const SUPABASE_URL = 'https://fexlwjkiwlwgagrqexpe.supabase.co'; 
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZleGx3amtpd2x3Z2FncnFleHBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk4NzM1NjksImV4cCI6MjA3NTQ0OTU2OX0.ta5GK_q9Pihtoys6y2UCLim44G6H5nw_BPZ2-g9-MNk'; 
+        // CONFIGURAÇÃO SUPABASE
+        const SUPABASE_URL = 'https://fexlwjkiwlwgagrqexpe.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZleGx3amtpd2x3Z2FncnFleHBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk4NzM1NjksImV4cCI6MjA3NTQ0OTU2OX0.ta5GK_q9Pihtoys6y2UCLim44G6H5nw_BPZ2-g9-MNk';
         const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         
-        // Elementos DOM
-        const logContainer = document.getElementById('log-container');
-        const loginContainer = document.getElementById('login-container');
-        const logForm = document.getElementById('log-form');
-        const loginForm = document.getElementById('login-form');
+        const form = document.getElementById('log-form');
         const mcSelect = document.getElementById('mc-select');
         const messageDiv = document.getElementById('message');
-        const loginMessageDiv = document.getElementById('login-message');
-        const logoutBtn = document.getElementById('logout-btn');
-        const welcomeMessage = document.getElementById('welcome-message');
 
         /**
-         * Exibe uma mensagem de status.
-         */
-        function displayMessage(text, type, target = messageDiv) {
-            target.textContent = text;
-            target.className = '';
-            target.classList.add(type);
-        }
-
-        /**
-         * Alterna a visualização entre login e log.
-         */
-        function updateUI(session) {
-            if (session) {
-                // Usuário logado
-                loginContainer.style.display = 'none';
-                logContainer.style.display = 'block';
-                welcomeMessage.textContent = `Bem-vindo(a), Admin!`; 
-            } else {
-                // Usuário deslogado
-                loginContainer.style.display = 'block';
-                logContainer.style.display = 'none';
-            }
-        }
-
-        /**
-         * Carrega a lista de MCs do arquivo mcs.js.
+         * Carrega a lista de MCs do arquivo mcs.js para a caixa de seleção.
          */
         function loadMcsToSelect() {
             if (typeof mcs !== 'undefined' && Array.isArray(mcs)) {
@@ -223,54 +155,31 @@
                 mcSelect.innerHTML = '<option value="">Erro: Lista de MCs não carregada. Verifique o mcs.js.</option>';
             }
         }
-        
-        // --- EVENT LISTENERS E LÓGICA DE AUTENTICAÇÃO ---
 
         /**
-         * Lida com o processo de login.
+         * Exibe uma mensagem de status.
          */
-        loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            displayMessage('Autenticando...', 'info', loginMessageDiv);
-
-            const email = document.getElementById('email-input').value;
-            const password = document.getElementById('password-input').value;
-
-            const { data: { session }, error } = await supabase.auth.signInWithPassword({
-                email: email,
-                password: password,
-            });
-
-            if (error) {
-                displayMessage(`Erro de login: ${error.message}`, 'error', loginMessageDiv);
-            } else if (session) {
-                displayMessage('Login realizado com sucesso!', 'success', loginMessageDiv);
-                updateUI(session);
-            }
-        });
+        function displayMessage(text, type) {
+            messageDiv.textContent = text;
+            messageDiv.className = '';
+            messageDiv.classList.add(type);
+        }
 
         /**
-         * Lida com o logout.
+         * Lida com o envio do formulário.
          */
-        logoutBtn.addEventListener('click', async () => {
-            await supabase.auth.signOut();
-            updateUI(null);
-            displayMessage('Você saiu com segurança.', 'info', loginMessageDiv);
-        });
-
-        /**
-         * Lida com o envio do formulário de log.
-         */
-        logForm.addEventListener('submit', async (e) => {
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
             displayMessage('Enviando log...', 'info');
 
             const selectedMcName = mcSelect.value;
+            // Garantindo que todos os valores sejam números (e 0 se vazios)
             const pontosBase = parseInt(document.getElementById('points-input').value) || 0;
             const twolalaBonus = parseInt(document.getElementById('twolala-input').value) || 0;
             const viagemBonus = parseInt(document.getElementById('viagem-input').value) || 0;
-            const origem = document.getElementById('origem-input').value.trim() || 'Ajuste Manual'; 
+            const origem = document.getElementById('origem-input').value.trim() || 'Ajuste Manual'; // Valor padrão se estiver vazio
             
+            // O valor de 'pontos_alterados' é apenas a pontuação base da rodada
             const pontosParaLog = pontosBase; 
 
             if (!selectedMcName) {
@@ -286,44 +195,27 @@
                 origem: origem
             };
 
-            // Esta inserção só será permitida se o usuário estiver logado devido ao RLS!
-            const { error } = await supabase
+            // Envia o Log para o Supabase
+            const { data, error } = await supabase
                 .from('log_pontuacao') 
                 .insert([logData]);
 
             if (error) {
-                if (error.status === 401 || error.message.includes('not authorized')) {
-                    displayMessage('Sessão expirada. Por favor, faça login novamente.', 'error');
-                    updateUI(null);
-                } else {
-                    displayMessage(`Erro ao registrar: ${error.message}.`, 'error');
-                }
+                console.error('Erro ao inserir log no Supabase:', error);
+                displayMessage(`Erro ao registrar: ${error.message}.`, 'error');
             } else {
                 displayMessage(`Pontuação registrada para ${selectedMcName}! O ranking será atualizado em instantes.`, 'success');
-                // Limpa inputs
+                
+                // Limpa o formulário, mantendo o MC selecionado se necessário
+                // mcSelect.value = '';
                 document.getElementById('points-input').value = 0;
                 document.getElementById('twolala-input').value = 0;
                 document.getElementById('viagem-input').value = 0;
+                // document.getElementById('origem-input').value = ''; // Mantém para logs sequenciais, mas pode limpar se preferir
             }
         });
 
-        /**
-         * Checa o status de login ao carregar a página.
-         */
-        async function checkLoginStatus() {
-            // Remove qualquer hash de URL que possa estar interferindo
-            if (window.location.hash) {
-                window.history.replaceState('', document.title, window.location.pathname);
-            }
-
-            const { data: { session } } = await supabase.auth.getSession();
-            updateUI(session);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            loadMcsToSelect();
-            checkLoginStatus();
-        });
+        document.addEventListener('DOMContentLoaded', loadMcsToSelect);
 
     </script>
 </body>

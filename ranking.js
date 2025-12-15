@@ -1,5 +1,6 @@
 // =================================================================
-// CHAVES DE ACESSO DO SUPABASE (Suas chaves válidas)
+// ARQUIVO: ranking.js (Versão HÍBRIDA: Ranking Supabase, Detalhes MCs Locais)
+// LIMITADO AGORA A 20 MCs PARA MELHOR EXIBIÇÃO EM TELA CHEIA
 // =================================================================
 const SUPABASE_URL = 'https://fexlwjkiwlwgagrqexpe.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZleGx3amtpd2x3Z2FncnFleHBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk4NzM1NjksImV4cCI6MjA3NTQ0OTU2OX0.ta5GK_q9Pihtoys6y2UCLim44G6H5nw_BPZ2-g9-MNk';
@@ -18,9 +19,9 @@ async function carregarRanking(client, tabela, bodyId) {
     
     if (!rankingBody) return;
 
-    rankingBody.innerHTML = `<tr><td colspan="${colspanCount}" style="text-align: center; color: #ccc;">Carregando dados do ranking...</td></tr>`;
+    rankingBody.innerHTML = `<tr><td colspan="${colspanCount}" style="text-align: center; color: #ccc;">Carregando dados do ranking de ${tabela}...</td></tr>`;
 
-    // 2. Busca os dados no Supabase. QUERY TOTALMENTE LIMPA AGORA!
+    // 1. Busca os dados no Supabase.
     const { data: rankingData, error: rankingError } = await client
         .from(tabela)
         .select(`
@@ -31,33 +32,32 @@ async function carregarRanking(client, tabela, bodyId) {
             posicao
         `)
         .order('posicao', { ascending: true })
-        .limit(10);
+        // *** MUDANÇA AQUI: LIMITADO A 20 REGISTROS ***
+        .limit(20); 
 
     if (rankingError) {
         console.error(`Erro ao buscar o ranking da tabela ${tabela}:`, rankingError);
-        // Tenta exibir a mensagem de erro de forma mais segura, caso seja um objeto sem a propriedade 'message'
         const errorMessage = rankingError.message || JSON.stringify(rankingError);
         rankingBody.innerHTML = `<tr><td colspan="${colspanCount}" style="text-align: center; color: red; font-weight: bold;">ERRO AO CARREGAR RANKING. Verifique as permissões: ${errorMessage}</td></tr>`;
         return;
     }
 
     if (rankingData.length === 0) {
-        rankingBody.innerHTML = `<tr><td colspan="${colspanCount}" style="text-align: center; color: #ccc;">O ranking será exibido aqui após o início da liga.</td></tr>`;
+        rankingBody.innerHTML = `<tr><td colspan="${colspanCount}" style="text-align: center; color: #ccc;">O ranking da ${tabela} será exibido aqui após o início da liga.</td></tr>`;
         return;
     }
 
     rankingBody.innerHTML = '';
     
-    // Certifica-se de que a lista de MCs está disponível
-    // IMPORTANTE: A variável 'mcs' é definida pelo seu 'mcs.js'.
+    // 2. Usa a variável global 'mcs' do arquivo mcs.js
     const mcsList = typeof mcs !== 'undefined' ? mcs : [];
 
     rankingData.forEach(rankItem => {
         // Encontra o MC completo na lista global usando o nome (Assumindo que o nome é único)
         const mcDetalhe = mcsList.find(m => m.nome === rankItem.nome_mc);
         
-        // Pega ID e Imagem da tabela completa de MCs
-        const mcId = mcDetalhe ? mcDetalhe.id : 'unknown'; // Fallback para um ID genérico
+        // Pega ID e Imagem da lista de MCs local
+        const mcId = mcDetalhe ? mcDetalhe.id : 'unknown'; // Fallback para um ID genérica
         const imagemUrl = mcDetalhe ? mcDetalhe.imagem : 'images/placeholder.png'; // Fallback para placeholder
         
         const totalPontos = rankItem.pontos; 
@@ -81,9 +81,10 @@ async function carregarRanking(client, tabela, bodyId) {
 
 
 // =================================================================
-// LÓGICA DO MODAL
+// LÓGICA DO MODAL (Adaptada para usar a variável 'mcs' global)
 // =================================================================
 function setupModalListeners() {
+    // Checa a variável global 'mcs'
     if (typeof mcs === 'undefined' || !document.getElementById('mc-modal')) {
         console.warn("Variável 'mcs' (do mcs.js) não encontrada ou Modal não existe. O clique no MC não funcionará.");
         return;
@@ -143,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof window.supabase !== 'undefined') {
         supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
         
-        carregarRanking(supabase, 'ranking_janela_manual', 'janela-ranking-body');
         carregarRanking(supabase, 'ranking_geral_manual', 'geral-ranking-body');
 
         setupModalListeners();
