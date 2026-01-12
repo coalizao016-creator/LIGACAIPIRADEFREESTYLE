@@ -28,7 +28,6 @@
             box-sizing: border-box; 
         }
 
-        /* Colunas Laterais */
         .teams-column { 
             display: flex; 
             flex-direction: column; 
@@ -37,13 +36,12 @@
             justify-content: space-between;
         }
 
-        /* Cada Box de Capitão ocupa exatamente 1/4 da coluna */
         .team-box { 
             background: rgba(255, 255, 255, 0.03); 
             border: 1px solid rgba(138, 43, 226, 0.3); 
             border-left: 4px solid var(--purple); 
             padding: 6px; 
-            height: calc(25% - 6px); /* Cálculo para evitar estouro */
+            height: calc(25% - 6px); 
             display: flex; 
             flex-direction: column; 
             box-sizing: border-box;
@@ -66,17 +64,23 @@
             border-radius: 50%; 
             border: 2px solid var(--pink); 
             object-fit: cover; 
+            box-shadow: 0 0 10px var(--pink); /* Brilho na foto também */
         }
 
+        /* EFEITO NEON ROSA NOS CAPITÃES */
         .cap-header h3 { 
             margin: 0; 
-            font-size: 1.2rem; 
-            color: var(--pink); 
+            font-size: 1.3rem; 
+            color: #fff; /* Base branca para o neon brilhar mais */
             text-transform: uppercase; 
-            letter-spacing: 1px; 
+            letter-spacing: 2px; 
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px var(--pink),
+                0 0 20px var(--pink),
+                0 0 40px var(--pink);
         }
 
-        /* Grid dos Escolhidos ajustado para não cortar */
         .picks-grid { 
             display: grid; 
             grid-template-columns: repeat(3, 1fr); 
@@ -85,7 +89,7 @@
             align-items: start;
         }
 
-        .mini-card-pick { text-align: center; display: flex; flex-direction: column; }
+        .mini-card-pick { text-align: center; }
         .mini-card-pick img { 
             width: 100%; 
             aspect-ratio: 1/1; 
@@ -102,7 +106,6 @@
             line-height: 1;
         }
 
-        /* Área Central */
         .pool-area { 
             background: rgba(0, 0, 0, 0.2); 
             border: 2px solid var(--purple); 
