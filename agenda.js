@@ -2,7 +2,7 @@
 const eventos = [
   {
     data: "2026-01-18",
-    diaSemana: "Sábado",
+    diaSemana: "Domingo",
     horario: "15:00h",
     nomeBatalha: "COALIDRAFT",
     cidade: "Live no TikTok",
