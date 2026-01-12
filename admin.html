@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ADM - COALIZÃO 016</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            background: #0b0214; color: white; font-family: 'Oswald', sans-serif; 
+            padding: 10px; margin: 0; touch-action: manipulation;
+        }
+        h1 { text-align: center; font-size: 1.5rem; letter-spacing: 2px; color: #8a2be2; }
+        
+        .grid-mobile { display: flex; flex-direction: column; gap: 15px; }
+        .section { border: 1px solid #8a2be2; padding: 10px; border-radius: 8px; background: rgba(255,255,255,0.05); }
+        
+        /* Grid de MCs: 3 colunas no celular */
+        .mcs-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 8px; 
+        }
+        
+        button { 
+            padding: 15px 5px; cursor: pointer; background: #1a1a1a; color: white; 
+            border: 1px solid #444; border-radius: 6px; text-transform: uppercase; 
+            font-weight: bold; font-size: 0.8rem;
+        }
+        
+        .selected-mc { background: #00ffff !important; color: black !important; border-color: white !important; }
+        .selected-cap { background: #ff0055 !important; color: white !important; border-color: white !important; }
+        
+        /* Lista de Capitães: botões maiores para o polegar */
+        .cap-btn { width: 100%; margin-bottom: 6px; text-align: left; padding: 12px; font-size: 1rem; }
+        
+        #btn-confirmar { 
+            background: #28a745; width: 100%; font-size: 1.3rem; margin-top: 10px; 
+            padding: 18px; border: none; opacity: 0.3; pointer-events: none; color: white;
+            position: sticky; bottom: 10px; box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+        }
+        #btn-confirmar.ready { opacity: 1; pointer-events: auto; }
+        
+        h2 { font-size: 1.1rem; color: #8a2be2; margin: 0 0 10px 0; border-bottom: 1px solid #444; }
+    </style>
+</head>
+<body>
+    <h1>CONTROLE DRAFT</h1>
+    
+    <div class="grid-mobile">
+        <div class="section">
+            <h2>1. SELECIONE O MC</h2>
+            <div id="lista-mcs" class="mcs-grid">Carregando...</div>
+        </div>
+
+        <div class="section">
+            <h2>2. CAPITÃO</h2>
+            <div id="lista-capitaes"></div>
+            <button id="btn-confirmar" onclick="confirmarEscolha()">CONFIRMAR SELEÇÃO</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

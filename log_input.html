@@ -3,328 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Admin - Login e Log de Pontuação</title>
+    <title>Painel Admin - Coalizão 016</title>
     
     <link rel="stylesheet" href="styles.css" />
 
     <style>
-        body {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        .input-container {
-            max-width: 600px;
-            margin: 50px auto;
-            background-color: #282828;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-        .input-container h2 {
-            text-align: center;
-            color: #ff8c00;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #ccc;
-        }
-        .form-group input[type="number"],
-        .form-group select,
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #444;
-            border-radius: 5px;
-            background-color: #333;
-            color: #e0e0e0;
-            box-sizing: border-box;
-            font-size: 1em;
-        }
-        .bonus-group {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .submit-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            background-color: #ff8c00;
-            color: #1a1a1a;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .submit-btn:hover {
-            background-color: #e67300;
-        }
-        #message, #login-message {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-        }
+        body { background-color: #1a1a1a; color: #e0e0e0; font-family: Arial, sans-serif; padding: 20px; }
+        .input-container { max-width: 600px; margin: 50px auto; background-color: #282828; padding: 30px; border-radius: 10px; box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); }
+        .input-container h2 { text-align: center; color: #ff8c00; margin-bottom: 30px; border-bottom: 2px solid #333; padding-bottom: 10px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #ccc; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #444; border-radius: 5px; background-color: #333; color: #e0e0e0; box-sizing: border-box; font-size: 1em; }
+        .bonus-group { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .submit-btn { display: block; width: 100%; padding: 12px; background-color: #ff8c00; color: #1a1a1a; border: none; border-radius: 5px; font-size: 1.1em; font-weight: bold; cursor: pointer; transition: background-color 0.3s; }
+        .submit-btn:hover { background-color: #e67300; }
+        #message, #login-message { margin-top: 20px; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; min-height: 20px; }
         .success { background-color: #38c172; color: #1a1a1a; }
         .error { background-color: #e3342f; color: #fff; }
         .info { background-color: #4dc0b5; color: #1a1a1a; }
-
-        /* Estilos específicos do Login/Logout */
-        #login-container {
-            max-width: 400px;
-            margin: 50px auto;
-            background-color: #282828;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-        .logout-btn {
-            background-color: #e3342f;
-            margin-top: 10px;
-        }
-        .logout-btn:hover {
-            background-color: #cc2a26;
-        }
+        #login-container { max-width: 400px; margin: 50px auto; background-color: #282828; padding: 30px; border-radius: 10px; }
+        .logout-btn { background-color: #e3342f; margin-top: 10px; margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
-    <div id="login-container" style="display: none;">
+    <div id="login-container">
         <h2>Acesso Restrito</h2>
         <form id="login-form">
             <div class="form-group">
-                <label for="email-input">E-mail:</label>
+                <label>E-mail:</label>
                 <input type="email" id="email-input" required>
             </div>
             <div class="form-group">
-                <label for="password-input">Senha:</label>
+                <label>Senha:</label>
                 <input type="password" id="password-input" required>
             </div>
             <button type="submit" class="submit-btn">Entrar</button>
         </form>
-        <div id="login-message" class="info"></div>
+        <div id="login-message"></div>
     </div>
 
     <div id="log-container" class="input-container" style="display: none;">
-        <h2 id="welcome-message">Painel de Inserção de Log</h2>
-        <button id="logout-btn" class="submit-btn logout-btn">Sair</button>
+        <h2 id="welcome-message">Painel de Pontuação</h2>
+        <button id="logout-btn" class="submit-btn logout-btn">Sair do Painel</button>
 
         <form id="log-form">
-            
             <div class="form-group">
-                <label for="mc-select">MC:</label>
+                <label>Selecionar MC:</label>
                 <select id="mc-select" required>
-                    <option value="">-- Selecione o MC --</option>
+                    <option value="">-- Escolha o MC --</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="points-input">Pontos Base (Ex: 10, 7, 5 ou -10 para punição):</label>
+                <label>Pontos Base (Vitórias/Rounds):</label>
                 <input type="number" id="points-input" required value="0">
             </div>
 
             <div class="form-group bonus-group">
                 <div>
-                    <label for="twolala-input">Twolala (Geralmente 1 ponto por twolala):</label>
+                    <label>Bônus Twolala:</label>
                     <input type="number" id="twolala-input" value="0" min="0">
                 </div>
                 <div>
-                    <label for="viagem-input">Bônus Viagem (Geralmente 1 ponto):</label>
+                    <label>Bônus Viagem:</label>
                     <input type="number" id="viagem-input" value="0" min="0">
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="origem-input">Origem/Batalha (Opcional):</label>
-                <input type="text" id="origem-input" placeholder="Ex: Batalha do Museu (16/12)">
+                <label>Origem (Ex: Batalha do Museu):</label>
+                <input type="text" id="origem-input" placeholder="Opcional">
             </div>
 
-            <button type="submit" class="submit-btn">Registrar Log e Atualizar Ranking</button>
+            <button type="submit" class="submit-btn">Salvar Pontuação</button>
         </form>
 
         <div id="message"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
     <script src="mcs.js"></script>
 
     <script>
-        // CONFIGURAÇÃO SUPABASE - CHAVES INSERIDAS!
-        const SUPABASE_URL = 'https://fexlwjkiwlwgagrqexpe.supabase.co'; 
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZleGx3amtpd2x3Z2FncnFleHBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk4NzM1NjksImV4cCI6MjA3NTQ0OTU2OX0.ta5GK_q9Pihtoys6y2UCLim44G6H5nw_BPZ2-g9-MNk'; 
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        // Usei nomes diferentes para evitar o erro de "já declarado"
+        const ADMIN_URL = 'https://fexlwjkiwlwgagrqexpe.supabase.co'; 
+        const ADMIN_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZleGx3amtpd2x3Z2FncnFleHBlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk4NzM1NjksImV4cCI6MjA3NTQ0OTU2OX0.ta5GK_q9Pihtoys6y2UCLim44G6H5nw_BPZ2-g9-MNk'; 
         
-        // Elementos DOM
+        // Criando a instância com nome único
+        const adminClient = window.supabase.createClient(ADMIN_URL, ADMIN_KEY);
+        
         const logContainer = document.getElementById('log-container');
         const loginContainer = document.getElementById('login-container');
-        const logForm = document.getElementById('log-form');
-        const loginForm = document.getElementById('login-form');
         const mcSelect = document.getElementById('mc-select');
-        const messageDiv = document.getElementById('message');
-        const loginMessageDiv = document.getElementById('login-message');
-        const logoutBtn = document.getElementById('logout-btn');
-        const welcomeMessage = document.getElementById('welcome-message');
 
-        /**
-         * Exibe uma mensagem de status.
-         */
-        function displayMessage(text, type, target = messageDiv) {
+        function showStatus(text, type, targetId) {
+            const target = document.getElementById(targetId);
             target.textContent = text;
-            target.className = '';
-            target.classList.add(type);
+            target.className = type;
+            setTimeout(() => { target.textContent = ''; target.className = ''; }, 5000);
         }
 
-        /**
-         * Alterna a visualização entre login e log.
-         */
         function updateUI(session) {
             if (session) {
-                // Usuário logado
                 loginContainer.style.display = 'none';
                 logContainer.style.display = 'block';
-                welcomeMessage.textContent = `Bem-vindo(a), Admin!`; 
             } else {
-                // Usuário deslogado
                 loginContainer.style.display = 'block';
                 logContainer.style.display = 'none';
             }
         }
 
-        /**
-         * Carrega a lista de MCs do arquivo mcs.js.
-         */
-        function loadMcsToSelect() {
-            if (typeof mcs !== 'undefined' && Array.isArray(mcs)) {
-                mcs.sort((a, b) => a.nome.localeCompare(b.nome));
-
-                mcs.forEach(mc => {
-                    const option = document.createElement('option');
-                    option.value = mc.nome;
-                    option.textContent = mc.nome;
-                    mcSelect.appendChild(option);
+        // Carrega MCs do arquivo mcs.js
+        function populateMcs() {
+            if (typeof mcs !== 'undefined') {
+                mcs.sort((a, b) => a.nome.localeCompare(b.nome)).forEach(mc => {
+                    const opt = document.createElement('option');
+                    opt.value = mc.nome;
+                    opt.textContent = mc.nome;
+                    mcSelect.appendChild(opt);
                 });
-            } else {
-                mcSelect.innerHTML = '<option value="">Erro: Lista de MCs não carregada. Verifique o mcs.js.</option>';
             }
         }
-        
-        // --- EVENT LISTENERS E LÓGICA DE AUTENTICAÇÃO ---
 
-        /**
-         * Lida com o processo de login.
-         */
-        loginForm.addEventListener('submit', async (e) => {
+        // Lógica de Login
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            displayMessage('Autenticando...', 'info', loginMessageDiv);
-
             const email = document.getElementById('email-input').value;
             const password = document.getElementById('password-input').value;
 
-            const { data: { session }, error } = await supabase.auth.signInWithPassword({
-                email: email,
-                password: password,
-            });
+            const { data, error } = await adminClient.auth.signInWithPassword({ email, password });
 
             if (error) {
-                displayMessage(`Erro de login: ${error.message}`, 'error', loginMessageDiv);
-            } else if (session) {
-                displayMessage('Login realizado com sucesso!', 'success', loginMessageDiv);
-                updateUI(session);
+                showStatus("Erro: " + error.message, 'error', 'login-message');
+            } else {
+                updateUI(data.session);
             }
         });
 
-        /**
-         * Lida com o logout.
-         */
-        logoutBtn.addEventListener('click', async () => {
-            await supabase.auth.signOut();
+        // Lógica de Logout
+        document.getElementById('logout-btn').addEventListener('click', async () => {
+            await adminClient.auth.signOut();
             updateUI(null);
-            displayMessage('Você saiu com segurança.', 'info', loginMessageDiv);
         });
 
-        /**
-         * Lida com o envio do formulário de log.
-         */
-        logForm.addEventListener('submit', async (e) => {
+        // Lógica de Envio de Pontos
+        document.getElementById('log-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            displayMessage('Enviando log...', 'info');
-
-            const selectedMcName = mcSelect.value;
-            const pontosBase = parseInt(document.getElementById('points-input').value) || 0;
-            const twolalaBonus = parseInt(document.getElementById('twolala-input').value) || 0;
-            const viagemBonus = parseInt(document.getElementById('viagem-input').value) || 0;
-            const origem = document.getElementById('origem-input').value.trim() || 'Ajuste Manual'; 
             
-            const pontosParaLog = pontosBase; 
-
-            if (!selectedMcName) {
-                displayMessage('Por favor, selecione um MC.', 'error');
-                return;
-            }
-
             const logData = {
-                mc_nome: selectedMcName,
-                pontos_alterados: pontosParaLog, 
-                twolala: twolalaBonus,
-                viagem: viagemBonus,
-                origem: origem
+                mc_nome: mcSelect.value,
+                pontos_alterados: parseInt(document.getElementById('points-input').value) || 0,
+                twolala: parseInt(document.getElementById('twolala-input').value) || 0,
+                viagem: parseInt(document.getElementById('viagem-input').value) || 0,
+                origem: document.getElementById('origem-input').value || 'Ajuste Manual'
             };
 
-            // Esta inserção só será permitida se o usuário estiver logado devido ao RLS!
-            const { error } = await supabase
-                .from('log_pontuacao') 
-                .insert([logData]);
+            const { error } = await adminClient.from('log_pontuacao').insert([logData]);
 
             if (error) {
-                if (error.status === 401 || error.message.includes('not authorized')) {
-                    displayMessage('Sessão expirada. Por favor, faça login novamente.', 'error');
-                    updateUI(null);
-                } else {
-                    displayMessage(`Erro ao registrar: ${error.message}.`, 'error');
-                }
+                showStatus("Erro ao salvar: " + error.message, 'error', 'message');
             } else {
-                displayMessage(`Pontuação registrada para ${selectedMcName}! O ranking será atualizado em instantes.`, 'success');
-                // Limpa inputs
-                document.getElementById('points-input').value = 0;
-                document.getElementById('twolala-input').value = 0;
-                document.getElementById('viagem-input').value = 0;
+                showStatus("Pontuação salva com sucesso!", "success", "message");
+                document.getElementById('log-form').reset();
             }
         });
 
-        /**
-         * Checa o status de login ao carregar a página.
-         */
-        async function checkLoginStatus() {
-            // Remove qualquer hash de URL que possa estar interferindo
-            if (window.location.hash) {
-                window.history.replaceState('', document.title, window.location.pathname);
-            }
-
-            const { data: { session } } = await supabase.auth.getSession();
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', async () => {
+            populateMcs();
+            const { data: { session } } = await adminClient.auth.getSession();
             updateUI(session);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            loadMcsToSelect();
-            checkLoginStatus();
         });
-
     </script>
 </body>
 </html>

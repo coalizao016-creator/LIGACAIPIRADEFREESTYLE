@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAFT - COALIZÃO 016</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --purple: #8a2be2; 
+            --dark: #0b0214; 
+            --pink: #ff0055; 
+            --cyan: #00ffff; 
+        }
+        
+        body, html { 
+            margin: 0; padding: 0; width: 100vw; height: 100vh; 
+            overflow: hidden; background: var(--dark); font-family: 'Oswald', sans-serif;
+            background: radial-gradient(circle, #1a0235 0%, #0b0214 100%);
+        }
+
+        .container { 
+            display: grid; 
+            grid-template-columns: 320px 1fr 320px; 
+            gap: 10px; 
+            height: 100vh; 
+            padding: 10px; 
+            box-sizing: border-box; 
+        }
+
+        /* Colunas Laterais */
+        .teams-column { 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%; 
+            gap: 8px;
+            justify-content: space-between;
+        }
+
+        /* Cada Box de Capitão ocupa exatamente 1/4 da coluna */
+        .team-box { 
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid rgba(138, 43, 226, 0.3); 
+            border-left: 4px solid var(--purple); 
+            padding: 6px; 
+            height: calc(25% - 6px); /* Cálculo para evitar estouro */
+            display: flex; 
+            flex-direction: column; 
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .cap-header { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            border-bottom: 1px solid rgba(255,255,255,0.1); 
+            margin-bottom: 4px; 
+            padding-bottom: 4px;
+            flex-shrink: 0;
+        }
+
+        .cap-header img { 
+            width: 42px; 
+            height: 42px; 
+            border-radius: 50%; 
+            border: 2px solid var(--pink); 
+            object-fit: cover; 
+        }
+
+        .cap-header h3 { 
+            margin: 0; 
+            font-size: 1.2rem; 
+            color: var(--pink); 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+        }
+
+        /* Grid dos Escolhidos ajustado para não cortar */
+        .picks-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 6px; 
+            flex-grow: 1;
+            align-items: start;
+        }
+
+        .mini-card-pick { text-align: center; display: flex; flex-direction: column; }
+        .mini-card-pick img { 
+            width: 100%; 
+            aspect-ratio: 1/1; 
+            object-fit: cover; 
+            border: 1px solid var(--cyan); 
+            border-radius: 2px;
+        }
+        .mini-card-pick p { 
+            margin: 2px 0 0 0; 
+            font-size: 0.65rem; 
+            color: var(--cyan); 
+            text-transform: uppercase; 
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        /* Área Central */
+        .pool-area { 
+            background: rgba(0, 0, 0, 0.2); 
+            border: 2px solid var(--purple); 
+            border-radius: 8px; 
+            padding: 15px; 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .main-title { 
+            text-align: center; 
+            margin: 0 0 15px 0; 
+            letter-spacing: 6px; 
+            font-size: 2.2rem; 
+            color: #ffffff; 
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 0 0 15px var(--purple), 0 0 5px #fff;
+            flex-shrink: 0;
+        }
+        
+        .pool-grid { 
+            display: grid; 
+            grid-template-columns: repeat(6, 1fr); 
+            gap: 10px; 
+            align-content: start; 
+            flex-grow: 1; 
+        }
+
+        .mc-card { 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid #333; 
+            padding: 4px; 
+            text-align: center; 
+        }
+
+        .mc-card img { 
+            width: 100%; 
+            aspect-ratio: 1/1; 
+            object-fit: cover; 
+            border: 1px solid var(--purple); 
+        }
+
+        .mc-card p { 
+            margin: 6px 0 2px 0; 
+            font-size: 0.85rem; 
+            font-weight: 700; 
+            color: var(--cyan); 
+            text-transform: uppercase; 
+            text-shadow: 1px 1px 2px #000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="teams-column">
+            <div id="team-1" class="team-box"></div>
+            <div id="team-2" class="team-box"></div>
+            <div id="team-3" class="team-box"></div>
+            <div id="team-4" class="team-box"></div>
+        </div>
+        
+        <div class="pool-area">
+            <h1 class="main-title">DRAFT COALIZÃO 016</h1>
+            <div id="pool" class="pool-grid"></div>
+        </div>
+        
+        <div class="teams-column">
+            <div id="team-5" class="team-box"></div>
+            <div id="team-6" class="team-box"></div>
+            <div id="team-7" class="team-box"></div>
+            <div id="team-8" class="team-box"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="draft.js"></script>
+</body>
+</html>

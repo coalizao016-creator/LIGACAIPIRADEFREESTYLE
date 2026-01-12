@@ -20,7 +20,6 @@
     .explicacao h2 { margin-top: 0; color: #ff8c00; }
     .explicacao p { color: #ccc; line-height: 1.6; font-size: 1.1em; }
     
-    /* Container Flex para Rankings */
     .rankings-row {
         display: flex;
         flex-wrap: wrap; 
@@ -30,18 +29,13 @@
     }
 
     @media (min-width: 850px) {
-        .ranking-table-container {
-            flex: 1 1 100%; 
-            max-width: 900px; 
-        }
+        .ranking-table-container { flex: 1 1 100%; max-width: 900px; }
     }
     @media (max-width: 849px) {
-        .ranking-table-container {
-            width: 100%; 
-        }
+        .ranking-table-container { width: 100%; }
     }
     
-    /* Estilos do Regulamento */
+    /* Regulamento */
     .regulamento-container { background-color: #282828; border-radius: 10px; padding: 20px; text-align: left; }
     .regulamento-container details { border: 1px solid #444; border-radius: 5px; padding: 15px; }
     .regulamento-container summary { font-weight: bold; color: #ff8c00; font-size: 1.2em; cursor: pointer; outline: none; }
@@ -50,262 +44,42 @@
     .regulamento-container .regulamento-content table { width: 100%; border-collapse: collapse; margin: 20px 0; }
     .regulamento-container .regulamento-content th { background-color: #1a1a1a; color: #ff8c00; }
 
-    /* Estilos da Tabela de Ranking */
-    .ranking-table-container { 
-        background-color: #282828; 
-        padding: 20px; 
-        border-radius: 10px; 
-        transition: all 0.5s ease-in-out; 
-    }
-    .ranking-table-container h2 { margin-top: 0; color: #fff; }
+    /* Tabela */
+    .ranking-table-container { background-color: #282828; padding: 20px; border-radius: 10px; transition: all 0.5s ease-in-out; }
     .ranking-table-container table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    .ranking-table-container thead { background-color: #1a1a1a; }
     .ranking-table-container th { padding: 15px; color: #ff8c00; text-align: left; }
     .ranking-table-container td { padding: 12px 15px; color: #e0e0e0; text-align: left; border-top: 1px solid #333; }
-    .ranking-table-container tbody tr:nth-child(even) { background-color: #222; }
+    .ranking-table-container tbody tr:hover { background-color: #383838; cursor: pointer; }
 
-    /* --- DESTAQUE VISUAL REQUERIDO --- */
+    .ranking-table-container .posicao { font-weight: 900; font-size: 1.8em; text-align: center; width: 60px; color: gold; }
+    .ranking-table-container .mc-card-link { display: flex; align-items: center; gap: 20px; }
+    .ranking-mc-img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 4px solid #ff8c00; }
+    .ranking-table-container .mc-nome { font-weight: 900; color: #fff; font-size: 1.5em; }
+    .ranking-table-container .mc-pontos { font-weight: 900; font-size: 1.4em; color: #ff8c00; }
     
-    .ranking-table-container tbody tr:hover { 
-        background-color: #383838; 
-        box-shadow: 0 0 15px rgba(255, 140, 0, 0.4); 
-        cursor: pointer; 
-    }
+    /* Fullscreen */
+    .fullscreen-mode .hide-on-fullscreen { display: none !important; }
+    .ranking-container:fullscreen { background-color: #111; width: 100%; overflow-y: auto !important; padding: 40px 0; }
+    .ranking-container:fullscreen .ranking-table-container { max-width: 95% !important; margin: 0 auto; }
 
-    .ranking-table-container .posicao { 
-        font-weight: 900; 
-        font-size: 1.8em; 
-        text-align: center; 
-        width: 60px; 
-        color: gold; 
-    }
+    .fullscreen-control-bar { text-align: right; margin-bottom: 15px; max-width: 900px; margin: 0 auto 15px auto; }
+    .fullscreen-control-bar button { background-color: #ff8c00; color: #1a1a1a; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; }
 
-    .ranking-table-container td.mc-info { 
-        text-align: left !important;
-    }
-    .ranking-table-container .mc-card-link {
-        display: flex;
-        align-items: center; 
-        gap: 20px; 
-        cursor: pointer;
-    }
-    
-    .ranking-mc-img {
-        width: 70px; 
-        height: 70px; 
-        border-radius: 50%; 
-        object-fit: cover;
-        border: 4px solid #ff8c00; 
-    }
-    .ranking-table-container .mc-nome {
-        font-weight: 900; 
-        color: #fff;
-        font-size: 1.5em; 
-        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    }
-    
-    .ranking-table-container .mc-pontos {
-        font-weight: 900;
-        font-size: 1.4em; 
-        color: #ff8c00;
-    }
-    
-    /* ------------------------------------- */
-    /* --- ESTILOS DE TELA CHEIA (Fullscreen) --- */
-    /* ------------------------------------- */
-    
-    /* Oculta tudo que não for o ranking-container, exceto quando estiver dentro do modo fullscreen */
-    .fullscreen-mode .hide-on-fullscreen {
-        display: none !important;
-    }
-    
-    /* Estilos do RankingContainer QUANDO em modo Fullscreen */
-    /* *** GARANTIA DE SCROLL NO CONTAINER PRINCIPAL *** */
-    .ranking-container:fullscreen, 
-    .ranking-container:-webkit-full-screen, 
-    .ranking-container:-ms-fullscreen {
-        max-width: 100vw !important;
-        margin: 0 !important;
-        padding: 0 !important;
-        background-color: #111; 
-        min-height: 100vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        overflow-y: auto !important; 
-    }
-
-    /* Ajustes da Tabela no Modo Fullscreen: Força o container a ocupar a altura total */
-    .ranking-container:fullscreen .ranking-table-container {
-        max-width: 100% !important;
-        width: 100% !important;
-        margin: 0 auto;
-        padding: 40px 20px;
-        border-radius: 0;
-        box-shadow: none;
-        
-        flex-grow: 1; 
-        display: flex;
-        flex-direction: column; 
-        padding-bottom: 20px; 
-    }
-
-    /* Estilos da Tabela no Modo Fullscreen */
-    .ranking-container:fullscreen #geral-ranking-table {
-        /* CORREÇÃO AQUI: Garante que a largura das colunas seja fixa */
-        table-layout: fixed; 
-        width: 100%; /* Garante que ocupe a largura total */
-        display: table; /* Volta para o display de tabela para alinhamento de colunas */
-        margin-top: 10px;
-    }
-
-    .ranking-container:fullscreen #geral-ranking-table thead {
-        display: table; /* Volta para comportamento de tabela */
-        width: 100%;
-        position: sticky; 
-        top: 0;
-        z-index: 10;
-        background-color: #1a1a1a;
-    }
-
-    .ranking-container:fullscreen #geral-ranking-table tbody {
-        overflow-y: scroll; /* Scroll interno apenas no corpo da tabela */
-        /* Altura da viewport - altura do cabeçalho fixo (thead) - altura do botão de controle */
-        max-height: calc(100vh - 200px); 
-        display: block; /* Essencial para o max-height e overflow funcionar no tbody */
-        width: 100%;
-    }
-
-    .ranking-container:fullscreen #geral-ranking-table tbody tr {
-        display: table; /* Faz com que as linhas se comportem como blocos para preencher */
-        width: 100%;
-        box-sizing: border-box; /* Garante que o padding não estoure o 100% */
-    }
-
-    /* 💥 CORREÇÃO DE ALINHAMENTO: Define larguras fixas e consistentes para as colunas */
-    /* (Soma total deve ser 100%) */
-    .ranking-container:fullscreen #geral-ranking-table th:nth-child(1),
-    .ranking-container:fullscreen #geral-ranking-table td:nth-child(1) {
-        width: 8%; /* Coluna # */
-    }
-
-    .ranking-container:fullscreen #geral-ranking-table th:nth-child(2),
-    .ranking-container:fullscreen #geral-ranking-table td:nth-child(2) {
-        width: 50%; /* Coluna MC */
-    }
-
-    .ranking-container:fullscreen #geral-ranking-table th:nth-child(3),
-    .ranking-container:fullscreen #geral-ranking-table td:nth-child(3) {
-        width: 14%; /* Coluna Pontos */
-    }
-
-    .ranking-container:fullscreen #geral-ranking-table th:nth-child(4),
-    .ranking-container:fullscreen #geral-ranking-table td:nth-child(4) {
-        width: 14%; /* Coluna Twolala */
-    }
-
-    .ranking-container:fullscreen #geral-ranking-table th:nth-child(5),
-    .ranking-container:fullscreen #geral-ranking-table td:nth-child(5) {
-        width: 14%; /* Coluna Viagem */
-    }
-
-
-    /* Botão de Controle de Tela Cheia */
-    .fullscreen-control-bar {
-        text-align: right;
-        margin-bottom: 15px;
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .ranking-container:fullscreen .fullscreen-control-bar {
-        text-align: center;
-        width: 100%;
-        padding: 20px;
-        max-width: none;
-        background-color: #1a1a1a;
-        margin-bottom: 0;
-    }
-    .fullscreen-control-bar button {
-        background-color: #ff8c00;
-        color: #1a1a1a;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-        transition: background-color 0.3s;
-    }
-    .fullscreen-control-bar button:hover {
-        background-color: #e67300;
-    }
-
-
-    /* 5. Responsividade (Oculta bônus em mobile) */
-    @media (max-width: 650px) {
-        .ranking-table-container th:nth-child(4),
-        .ranking-table-container td:nth-child(4),
-        .ranking-table-container th:nth-child(5),
-        .ranking-table-container td:nth-child(5) {
-            display: none;
-        }
-        .ranking-mc-img {
-            width: 50px; 
-            height: 50px; 
-        }
-        .ranking-table-container .mc-nome {
-            font-size: 1.2em; 
-        }
-    }
-    
-    /* Estilos da Modal (Mantido) */
-    .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); padding-top: 60px; }
-    .modal-content { background-color: #282828; margin: 5% auto; padding: 30px; border: 1px solid #444; width: 80%; max-width: 600px; border-radius: 10px; position: relative; animation-name: animatetop; animation-duration: 0.4s; text-align: center;}
-    .modal-content h3 { color: #ff8c00; font-size: 2.2em; margin-top: 0; margin-bottom: 10px; }
-    .modal-content p { color: #e0e0e0; text-align: center; margin-bottom: 10px; font-size: 1.1em; }
-    .modal-content .mc-modal-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-    .modal-content .mc-modal-links a { padding: 8px 15px; background-color: #ff8c00; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background-color 0.3s; }
-    .modal-content .mc-modal-links a:hover { background-color: #e67300; }
-    .close-btn { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; font-weight: bold; cursor: pointer; transition: color 0.3s; }
-    .close-btn:hover { color: #fff; }
-    @keyframes animatetop { from {top:-300px; opacity:0} to {top:0; opacity:1} }
-    .modal-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #ff8c00; margin-bottom: 20px; }
-    .modal-stats-container { text-align: left; margin-top: 15px; }
-    .stats-group { margin: 10px 0; }
-    .stats-title { font-weight: bold; color: #ff8c00; font-size: 1.1em; margin: 0 0 8px 0; }
-    .stats-item { color: #ccc; margin: 4px 0 4px 15px; }
-    .stats-separator { border: 0; height: 1px; background-color: #444; margin: 15px 0; }
-    .modal-stats-footer { color: #aaa; font-style: italic; margin-top: 20px; text-align: center; font-size: 0.9em; }
-</style>
+    /* Modal */
+    .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); }
+    .modal-content { background-color: #282828; margin: 5% auto; padding: 30px; width: 80%; max-width: 600px; border-radius: 10px; text-align: center; position: relative; }
+    .modal-img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ff8c00; margin-bottom: 20px; }
+    .close-btn { color: #aaa; position: absolute; top: 10px; right: 20px; font-size: 28px; cursor: pointer; }
+    </style>
 </head>
 <body id="page-body">
     
-    <header class="hide-on-fullscreen">
-    </header>
-
     <nav class="hide-on-fullscreen">
-        <div class="hamburger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
         <div class="nav-links">
             <a href='/'>Início</a>
             <a href='/batalhas'>Batalhas</a>
             <a href='/mcs'>MC's</a>
-            <a href='/mapaindex'>Mapa</a>
             <a href='/ranking'><strong>Ranking</strong></a>
-            <div class="dropdown">
-                <a href="#" class="dropdown-label">Nossas Redes</a>
-                <div class="dropdown-content">
-                    <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a>
-                    <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a>
-                    <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a>
-                    <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a>
-                </div>
-            </div>
         </div>
     </nav>
     
@@ -314,9 +88,7 @@
         
         <div class="explicacao hide-on-fullscreen">
             <h2>A Liga Começou!</h2>
-            <p>
-                A Liga Caipira de Freestyle está no ar! A partir de agora, esta página será atualizada regularmente com a pontuação e as estatísticas de todos os MCs, com a precisão do <strong>TwolalaScore</strong>. Fique de olho para acompanhar a nova fase do Freestyle do interior!
-            </p>
+            <p>Acompanhe a pontuação atualizada com a precisão do <strong>TwolalaScore</strong>.</p>
         </div>
 
         <div class="fullscreen-control-bar">
@@ -324,124 +96,70 @@
         </div>
 
         <div class="rankings-row">
-            
             <div class="ranking-table-container" id="geral-ranking-container">
-                <h2 class="hide-on-fullscreen">Ranking Geral (Temporada)</h2>
-                <p class="hide-on-fullscreen" style="color: #ff8c00; font-weight: bold; margin-bottom: 20px; font-size: 0.9em; margin-top: -10px;">Total de pontos conquistados entre 01/10 a 15/12.</p>
+                <h2 class="hide-on-fullscreen">Ranking Geral</h2>
                 <table id="geral-ranking-table">
                     <thead>
                         <tr>
                             <th class="posicao">#</th>
-                            <th class="mc-info">MC</th> 
-                            <th class="mc-pontos" style="text-align: right;">Pontos</th>
-                            <th style="text-align: right;">Bônus Twolala</th>
-                            <th style="text-align: right;">Bônus Viagem</th>
+                            <th>MC</th> 
+                            <th style="text-align: right;">Pontos</th>
+                            <th style="text-align: right;">Twolala</th>
+                            <th style="text-align: right;">Viagem</th>
                         </tr>
                     </thead>
-                    <tbody id="geral-ranking-body">
-                        </tbody>
+                    <tbody id="geral-ranking-body"></tbody>
                 </table>
             </div>
         </div>
         
         <div class="regulamento-container hide-on-fullscreen">
             <details>
-                <summary>Clique para ver o Regulamento Completo (v1.2)</summary>
+                <summary>Regulamento Completo (v1.2)</summary>
                 <div class="regulamento-content">
-                    <h3>1) Objetivo</h3>
-                    <p>Criar um sistema de ranking contínuo e justo para os MCs do interior paulista, que gere um calendário competitivo, integre batalhas parceiras, equilibre a disputa entre cidades e garanta total transparência. O sistema busca consolidar a Liga Caipira como referência regional em freestyle.</p>
-                    
-                    <h3>11) Transparência & Comunicação</h3>
-                    <p>Serão divulgados dois rankings: o **Ranking da Janela** (desempenho quinzenal) e o **Ranking Geral** (acumulado da temporada). As batalhas parceiras devem informar a realização de suas etapas até a sexta-feira anterior à semana do evento.</p>
+                    <p>Conteúdo do regulamento aqui...</p>
                 </div>
             </details>
         </div>
-        </div>
+    </div>
     
-    <footer class="hide-on-fullscreen">
-        © 2025 Coalizão 016 - Todos os direitos reservados.
-    </footer>
-
     <div id="mc-modal" class="modal">
         <div class="modal-content">
-            <span class="close-btn">×</span>
-            <div id="modal-body-mc">
-                </div>
+            <span class="close-btn">&times;</span>
+            <div id="modal-body-mc"></div>
         </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
     <script src="mcs.js"></script>
-
     <script src="ranking.js"></script>
 
     <script>
+        // Lógica de Tela Cheia
         document.addEventListener('DOMContentLoaded', () => {
             const body = document.getElementById('page-body');
             const rankingContainer = document.querySelector('.ranking-container'); 
             const fullscreenBtn = document.getElementById('fullscreen-toggle-btn');
-            const toggleText = "Visualizar em Tela Cheia";
-            const exitText = "Sair da Tela Cheia (ESC)";
-
-            fullscreenBtn.textContent = toggleText;
-
-            // Função para entrar no modo tela cheia
-            function enterFullscreen() {
-                if (rankingContainer.requestFullscreen) {
-                    rankingContainer.requestFullscreen();
-                } else if (rankingContainer.webkitRequestFullscreen) { /* Safari */
-                    rankingContainer.webkitRequestFullscreen();
-                } else if (rankingContainer.msRequestFullscreen) { /* IE11 */
-                    rankingContainer.msRequestFullscreen();
-                }
-            }
-
-            // Função para sair do modo tela cheia
-            function exitFullscreen() {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) { /* Safari */
-                    document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) { /* IE11 */
-                    document.msExitFullscreen();
-                }
-            }
 
             fullscreenBtn.addEventListener('click', () => {
-                // Checa se já estamos em fullscreen
-                if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
-                    exitFullscreen();
+                if (!document.fullscreenElement) {
+                    rankingContainer.requestFullscreen().catch(err => console.log(err));
+                    body.classList.add('fullscreen-mode');
+                    fullscreenBtn.textContent = "Sair da Tela Cheia (ESC)";
                 } else {
-                    enterFullscreen();
+                    document.exitFullscreen();
+                    body.classList.remove('fullscreen-mode');
+                    fullscreenBtn.textContent = "Visualizar em Tela Cheia";
                 }
             });
 
-            // Event listener nativo do navegador para detectar mudança de modo
-            document.addEventListener('fullscreenchange', handleFullscreenChange);
-            document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-            document.addEventListener('msfullscreenchange', handleFullscreenChange);
-
-            function handleFullscreenChange() {
-                // Se o navegador está em modo Fullscreen, adiciona a classe CSS
-                if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement) {
-                    body.classList.add('fullscreen-mode');
-                    fullscreenBtn.textContent = exitText;
-                } else {
-                    // Se saiu do modo Fullscreen, remove a classe CSS
+            document.addEventListener('fullscreenchange', () => {
+                if (!document.fullscreenElement) {
                     body.classList.remove('fullscreen-mode');
-                    fullscreenBtn.textContent = toggleText;
+                    fullscreenBtn.textContent = "Visualizar em Tela Cheia";
                 }
-            }
-            
-            // Lógica Hamburger Menu (mantida)
-            const hamburger = document.querySelector(".hamburger");
-            const navLinks = document.querySelector(".nav-links");
-            if (hamburger && navLinks) {
-                hamburger.addEventListener("click", () => navLinks.classList.toggle("active"));
-            }
+            });
         });
     </script>
-
 </body>
 </html>
