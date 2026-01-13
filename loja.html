@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Oficial - Coalizão 016</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <style>
+        :root { --primary: #ffcc00; --dark: #121212; --card: #1e1e1e; --white: #ffffff; }
+        body { background-color: var(--dark); color: var(--white); font-family: 'Segoe UI', sans-serif; margin: 0; padding-bottom: 50px; }
+        
+        header { text-align: center; padding: 40px 20px; }
+        #tag-afiliado { color: var(--primary); font-weight: bold; text-transform: uppercase; margin-bottom: 10px; }
+
+        /* ÍCONE DO CARRINHO FLUTUANTE */
+        #cart-button {
+            position: fixed; top: 20px; right: 20px; background: var(--primary);
+            color: #000; padding: 15px 20px; border-radius: 50px; cursor: pointer;
+            font-weight: bold; z-index: 900; box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            display: flex; align-items: center; gap: 10px;
+        }
+
+        .grid-produtos { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; padding: 20px; max-width: 1200px; margin: 0 auto; 
+        }
+
+        .card-produto { background: var(--card); border: 1px solid #333; padding: 20px; border-radius: 20px; text-align: center; }
+        
+        .img-box { width: 100%; height: 250px; margin-bottom: 15px; position: relative; }
+        .img-box img { 
+            width: 100%; height: 100%; object-fit: contain; border-radius: 10px;
+            transition: 0.5s; cursor: zoom-in; position: relative; z-index: 1;
+        }
+        .img-box img:hover { transform: scale(2.2); z-index: 100; box-shadow: 0 10px 30px #000; background: var(--card); }
+
+        .preco { font-size: 1.5em; font-weight: bold; color: var(--primary); margin: 10px 0; }
+        
+        .btn-add-cart { 
+            background: var(--primary); color: #000; border: none; padding: 12px; 
+            cursor: pointer; border-radius: 8px; font-weight: bold; width: 100%; text-transform: uppercase;
+        }
+
+        /* MODAL DO CARRINHO / CHECKOUT */
+        .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; }
+        #modal-cart { 
+            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 95%; max-width: 500px; background: #fff; color: #333; padding: 25px; 
+            border-radius: 20px; z-index: 1001; max-height: 90vh; overflow-y: auto;
+        }
+
+        .item-carrinho { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; padding: 10px 0; }
+        .btn-remover { color: red; cursor: pointer; font-size: 0.8em; border: 1px solid red; padding: 2px 5px; border-radius: 4px; }
+
+        #area-tamanhos-cart { margin: 15px 0; padding: 10px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid var(--primary); }
+        .grid-tamanhos { display: flex; gap: 5px; margin-top: 5px; }
+        .tamanho-btn { border: 1px solid #ccc; padding: 5px; border-radius: 5px; cursor: pointer; font-size: 0.8em; flex: 1; text-align: center; }
+        .tamanho-btn.selected { background: var(--primary); border-color: var(--primary); font-weight: bold; }
+
+        .btn-finalizar { background: #25d366; color: white; border: none; width: 100%; padding: 15px; font-weight: bold; cursor: pointer; border-radius: 10px; margin-top: 15px; }
+        input, select, textarea { width: 100%; margin: 8px 0; padding: 12px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+
+    <div id="cart-button" onclick="abrirCarrinho()">
+        🛒 <span id="cart-count">0</span> ITENS
+    </div>
+
+    <header>
+        <h1>Coalizão 016</h1>
+        <div id="tag-afiliado"></div>
+    </header>
+
+    <div id="lista-produtos" class="grid-produtos"></div>
+
+    <div class="overlay" id="overlay" onclick="fecharModal()"></div>
+
+    <section id="modal-cart">
+        <h2 style="margin-top:0">Seu Carrinho</h2>
+        <div id="itens-carrinho">
+            </div>
+        
+        <div id="total-cart" style="font-size: 1.3em; font-weight: bold; text-align: right; margin: 20px 0;">
+            Total: R$ 0,00
+        </div>
+
+        <div id="form-checkout" style="display:none;">
+            <hr>
+            <h3>Dados de Entrega</h3>
+            <form id="form-venda">
+                <input type="text" id="nome" placeholder="Nome Completo" required>
+                <input type="text" id="whatsapp-cli" placeholder="WhatsApp (DDD + Número)" required>
+                <textarea id="endereco" placeholder="Endereço Completo" rows="2" required></textarea>
+                <select id="pagamento">
+                    <option value="Pix">Pix</option>
+                    <option value="Cartão">Cartão de Crédito</option>
+                </select>
+                <button type="submit" class="btn-finalizar">FINALIZAR E ENVIAR WHATSAPP</button>
+            </form>
+        </div>
+
+        <button id="btn-ir-checkout" class="btn-finalizar" style="background: var(--primary); color: #000;" onclick="mostrarFormulario()">FECHAR PEDIDO</button>
+        <button class="btn-finalizar" style="background: #ccc; color: #333; margin-top: 5px;" onclick="fecharModal()">CONTINUAR COMPRANDO</button>
+    </section>
+
+    <script src="loja.js"></script>
+</body>
+</html>
