@@ -2,16 +2,10 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DRAFT - COALIZÃO 016</title>
+    <title>DRAFT - COALIZÃO 016 (COMPACTO)</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --purple: #8a2be2; 
-            --dark: #0b0214; 
-            --pink: #ff0055; 
-            --cyan: #00ffff; 
-        }
+        :root { --purple: #8a2be2; --dark: #0b0214; --pink: #ff0055; --cyan: #00ffff; }
         
         body, html { 
             margin: 0; padding: 0; width: 100vw; height: 100vh; 
@@ -21,126 +15,72 @@
 
         .container { 
             display: grid; 
-            grid-template-columns: 320px 1fr 320px; 
-            gap: 10px; 
+            grid-template-columns: 210px 1fr 380px; /* Coluna capitães mais estreita */
+            gap: 5px; 
             height: 100vh; 
-            padding: 10px; 
+            padding: 5px; 
             box-sizing: border-box; 
         }
 
+        /* Coluna dos 8 Capitães - Ajuste fino de altura */
         .teams-column { 
-            display: flex; 
-            flex-direction: column; 
-            height: 100%; 
-            gap: 8px;
-            justify-content: space-between;
+            display: grid;
+            grid-template-rows: repeat(8, 11.8vh); 
+            gap: 3px;
         }
 
         .team-box { 
             background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(138, 43, 226, 0.3); 
-            border-left: 4px solid var(--purple); 
-            padding: 6px; 
-            height: calc(25% - 6px); 
+            border: 1px solid rgba(138, 43, 226, 0.2); 
+            border-left: 3px solid var(--purple); 
+            padding: 2px 4px;
             display: flex; 
             flex-direction: column; 
-            box-sizing: border-box;
+            justify-content: center;
             overflow: hidden;
         }
 
         .cap-header { 
-            display: flex; 
-            align-items: center; 
-            gap: 10px; 
+            display: flex; align-items: center; gap: 5px; 
             border-bottom: 1px solid rgba(255,255,255,0.1); 
-            margin-bottom: 4px; 
-            padding-bottom: 4px;
-            flex-shrink: 0;
+            margin-bottom: 1px;
         }
 
-        .cap-header img { 
-            width: 42px; 
-            height: 42px; 
-            border-radius: 50%; 
-            border: 2px solid var(--pink); 
-            object-fit: cover; 
-            box-shadow: 0 0 10px var(--pink); /* Brilho na foto também */
-        }
+        .cap-header img { width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--pink); }
+        .cap-header h3 { margin: 0; font-size: 0.7rem; color: #fff; text-transform: uppercase; }
 
-        /* EFEITO NEON ROSA NOS CAPITÃES */
-        .cap-header h3 { 
-            margin: 0; 
-            font-size: 1.3rem; 
-            color: #fff; /* Base branca para o neon brilhar mais */
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            text-shadow: 
-                0 0 5px #fff,
-                0 0 10px var(--pink),
-                0 0 20px var(--pink),
-                0 0 40px var(--pink);
-        }
+        .picks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+        .mini-card-pick img { width: 100%; aspect-ratio: 1/1; border: 1px solid var(--cyan); border-radius: 1px; }
 
-        .picks-grid { 
-            display: grid; 
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 6px; 
-            flex-grow: 1;
-            align-items: start;
-        }
-
-        .mini-card-pick { text-align: center; }
-        .mini-card-pick img { 
-            width: 100%; 
-            aspect-ratio: 1/1; 
-            object-fit: cover; 
-            border: 1px solid var(--cyan); 
-            border-radius: 2px;
-        }
-        .mini-card-pick p { 
-            margin: 2px 0 0 0; 
-            font-size: 0.65rem; 
-            color: var(--cyan); 
-            text-transform: uppercase; 
-            font-weight: bold;
-            line-height: 1;
-        }
-
+        /* Centro - Grid de 6 Colunas para os 24 MCs */
         .pool-area { 
             background: rgba(0, 0, 0, 0.2); 
-            border: 2px solid var(--purple); 
-            border-radius: 8px; 
-            padding: 15px; 
+            border: 1px solid var(--purple); 
+            border-radius: 6px; 
+            padding: 5px; 
             display: flex; 
             flex-direction: column; 
             height: 100%;
             box-sizing: border-box;
+            overflow: hidden;
         }
 
         .main-title { 
-            text-align: center; 
-            margin: 0 0 15px 0; 
-            letter-spacing: 6px; 
-            font-size: 2.2rem; 
-            color: #ffffff; 
-            text-transform: uppercase;
-            font-weight: 700;
-            text-shadow: 0 0 15px var(--purple), 0 0 5px #fff;
-            flex-shrink: 0;
+            text-align: center; margin: 0 0 4px 0; font-size: 1rem; color: #fff; 
+            text-transform: uppercase; letter-spacing: 1px;
         }
         
         .pool-grid { 
             display: grid; 
-            grid-template-columns: repeat(6, 1fr); 
-            gap: 10px; 
-            align-content: start; 
-            flex-grow: 1; 
+            grid-template-columns: repeat(6, 1fr); /* 6 MCs por linha */
+            gap: 4px; 
+            align-content: start;
         }
 
         .mc-card { 
             background: rgba(255,255,255,0.05); 
             border: 1px solid #333; 
-            padding: 4px; 
+            padding: 2px; 
             text-align: center; 
         }
 
@@ -152,23 +92,33 @@
         }
 
         .mc-card p { 
-            margin: 6px 0 2px 0; 
-            font-size: 0.85rem; 
-            font-weight: 700; 
+            margin: 1px 0 0 0; 
+            font-size: 0.55rem; 
             color: var(--cyan); 
             text-transform: uppercase; 
-            text-shadow: 1px 1px 2px #000;
+            font-weight: bold; 
+            white-space: nowrap; 
+            overflow: hidden;
+        }
+
+        .obs-spacer {
+            border: 1px dashed rgba(255,255,255,0.1);
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.1); text-transform: uppercase; font-size: 0.6rem;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
         <div class="teams-column">
             <div id="team-1" class="team-box"></div>
             <div id="team-2" class="team-box"></div>
             <div id="team-3" class="team-box"></div>
             <div id="team-4" class="team-box"></div>
+            <div id="team-5" class="team-box"></div>
+            <div id="team-6" class="team-box"></div>
+            <div id="team-7" class="team-box"></div>
+            <div id="team-8" class="team-box"></div>
         </div>
         
         <div class="pool-area">
@@ -176,14 +126,8 @@
             <div id="pool" class="pool-grid"></div>
         </div>
         
-        <div class="teams-column">
-            <div id="team-5" class="team-box"></div>
-            <div id="team-6" class="team-box"></div>
-            <div id="team-7" class="team-box"></div>
-            <div id="team-8" class="team-box"></div>
-        </div>
+        <div class="obs-spacer">CÂMERAS OBS</div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="draft.js"></script>
 </body>
