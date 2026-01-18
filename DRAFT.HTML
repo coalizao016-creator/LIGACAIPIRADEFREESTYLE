@@ -2,10 +2,12 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>DRAFT - COALIZÃO 016 (COMPACTO)</title>
+    <title>DRAFT - COALIZÃO 016</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --purple: #8a2be2; --dark: #0b0214; --pink: #ff0055; --cyan: #00ffff; }
+        :root { 
+            --purple: #8a2be2; --dark: #0b0214; --pink: #ff0055; --cyan: #00ffff; 
+        }
         
         body, html { 
             margin: 0; padding: 0; width: 100vw; height: 100vh; 
@@ -15,96 +17,83 @@
 
         .container { 
             display: grid; 
-            grid-template-columns: 210px 1fr 380px; /* Coluna capitães mais estreita */
-            gap: 5px; 
+            grid-template-columns: 300px 1fr 300px; 
+            gap: 12px; 
             height: 100vh; 
-            padding: 5px; 
+            padding: 12px; 
             box-sizing: border-box; 
         }
 
-        /* Coluna dos 8 Capitães - Ajuste fino de altura */
+        /* Colunas Laterais (4 de cada lado) */
         .teams-column { 
-            display: grid;
-            grid-template-rows: repeat(8, 11.8vh); 
-            gap: 3px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: 10px;
         }
 
         .team-box { 
             background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(138, 43, 226, 0.2); 
-            border-left: 3px solid var(--purple); 
-            padding: 2px 4px;
+            border: 1px solid rgba(138, 43, 226, 0.3); 
+            border-left: 4px solid var(--purple); 
+            padding: 8px;
+            flex: 1; 
             display: flex; 
             flex-direction: column; 
             justify-content: center;
             overflow: hidden;
+            min-height: 0;
         }
 
         .cap-header { 
-            display: flex; align-items: center; gap: 5px; 
+            display: flex; align-items: center; gap: 10px; 
             border-bottom: 1px solid rgba(255,255,255,0.1); 
-            margin-bottom: 1px;
+            margin-bottom: 5px; padding-bottom: 5px;
         }
 
-        .cap-header img { width: 20px; height: 20px; border-radius: 50%; border: 1px solid var(--pink); }
-        .cap-header h3 { margin: 0; font-size: 0.7rem; color: #fff; text-transform: uppercase; }
+        .cap-header img { 
+            width: 40px; height: 40px; border-radius: 50%; 
+            border: 2px solid var(--pink); box-shadow: 0 0 10px var(--pink);
+        }
 
-        .picks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-        .mini-card-pick img { width: 100%; aspect-ratio: 1/1; border: 1px solid var(--cyan); border-radius: 1px; }
+        .cap-header h3 { 
+            margin: 0; font-size: 1.2rem; color: #fff; text-transform: uppercase; 
+            text-shadow: 0 0 10px var(--pink);
+        }
 
-        /* Centro - Grid de 6 Colunas para os 24 MCs */
+        .picks-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+        .mini-card-pick img { width: 100%; aspect-ratio: 1/1; border: 1px solid var(--cyan); border-radius: 2px; }
+
+        /* Centro (Pool de 24 MCs) */
         .pool-area { 
             background: rgba(0, 0, 0, 0.2); 
-            border: 1px solid var(--purple); 
-            border-radius: 6px; 
-            padding: 5px; 
+            border: 2px solid var(--purple); 
+            border-radius: 12px; 
+            padding: 15px; 
             display: flex; 
             flex-direction: column; 
             height: 100%;
             box-sizing: border-box;
-            overflow: hidden;
         }
 
         .main-title { 
-            text-align: center; margin: 0 0 4px 0; font-size: 1rem; color: #fff; 
-            text-transform: uppercase; letter-spacing: 1px;
+            text-align: center; margin: 0 0 15px 0; font-size: 2rem; color: #fff; 
+            text-transform: uppercase; text-shadow: 0 0 15px var(--purple), 0 0 5px #fff;
+            letter-spacing: 4px;
         }
         
         .pool-grid { 
             display: grid; 
-            grid-template-columns: repeat(6, 1fr); /* 6 MCs por linha */
-            gap: 4px; 
+            grid-template-columns: repeat(6, 1fr); /* 6 MCs por linha = 4 linhas totais */
+            gap: 10px; 
             align-content: start;
         }
 
-        .mc-card { 
-            background: rgba(255,255,255,0.05); 
-            border: 1px solid #333; 
-            padding: 2px; 
-            text-align: center; 
-        }
-
-        .mc-card img { 
-            width: 100%; 
-            aspect-ratio: 1/1; 
-            object-fit: cover; 
-            border: 1px solid var(--purple); 
-        }
-
+        .mc-card { background: rgba(255,255,255,0.05); border: 1px solid #333; padding: 4px; text-align: center; }
+        .mc-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid var(--purple); }
         .mc-card p { 
-            margin: 1px 0 0 0; 
-            font-size: 0.55rem; 
-            color: var(--cyan); 
-            text-transform: uppercase; 
-            font-weight: bold; 
-            white-space: nowrap; 
-            overflow: hidden;
-        }
-
-        .obs-spacer {
-            border: 1px dashed rgba(255,255,255,0.1);
-            display: flex; align-items: center; justify-content: center;
-            color: rgba(255,255,255,0.1); text-transform: uppercase; font-size: 0.6rem;
+            margin: 5px 0 0 0; font-size: 0.8rem; color: var(--cyan); 
+            text-transform: uppercase; font-weight: bold; text-shadow: 1px 1px 2px #000;
         }
     </style>
 </head>
@@ -115,10 +104,6 @@
             <div id="team-2" class="team-box"></div>
             <div id="team-3" class="team-box"></div>
             <div id="team-4" class="team-box"></div>
-            <div id="team-5" class="team-box"></div>
-            <div id="team-6" class="team-box"></div>
-            <div id="team-7" class="team-box"></div>
-            <div id="team-8" class="team-box"></div>
         </div>
         
         <div class="pool-area">
@@ -126,7 +111,12 @@
             <div id="pool" class="pool-grid"></div>
         </div>
         
-        <div class="obs-spacer">CÂMERAS OBS</div>
+        <div class="teams-column">
+            <div id="team-5" class="team-box"></div>
+            <div id="team-6" class="team-box"></div>
+            <div id="team-7" class="team-box"></div>
+            <div id="team-8" class="team-box"></div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="draft.js"></script>
