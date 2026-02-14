@@ -23,7 +23,7 @@ const eventos = [
     diaSemana: "Quinta-feira",
     horario: "00:00",
     nomeBatalha: "FINAL DA ETAPA DE SELETIVAS",
-    cidade: "Ribeirão Preto - SP",
+    cidade: "Interior todoP",
     status: "Encerramento do período de seletivas regionais.",
     linkInstagram: "https://instagram.com/coalizao016"
   },
