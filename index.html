@@ -10,6 +10,7 @@
             --cor-primaria: #f39c12;
             --cor-secundaria: #e74c3c;
             --bg-dark: #0a0a0a;
+            --bg-card: #151515;
             --text-light: #ffffff;
         }
 
@@ -45,7 +46,7 @@
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('img/capa.jpg');
             background-size: cover;
             background-position: center;
-            padding: 60px 20px;
+            padding: 100px 20px;
             text-align: center;
             border-bottom: 5px solid var(--cor-primaria);
         }
@@ -60,61 +61,86 @@
             margin-bottom: 15px;
         }
 
-        .hero-inscricoes h1 { font-size: clamp(1.8rem, 6vw, 3rem); margin: 0 0 10px 0; color: #fff; }
+        .hero-inscricoes h1 { font-size: clamp(2.2rem, 8vw, 4rem); margin: 0 0 10px 0; color: #fff; line-height: 1.1; }
         
         .cta-button {
             display: inline-block;
             background-color: var(--cor-secundaria);
             color: white;
-            padding: 15px 30px;
-            font-size: 1.1rem;
+            padding: 18px 35px;
+            font-size: 1.2rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 5px;
-            margin: 15px 0;
+            margin: 20px 0;
             transition: 0.3s;
             box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+        .cta-button:hover { transform: scale(1.05); background-color: #ff4d4d; }
+
+        /* Seções de Conteúdo Extra (Aumentando o site) */
+        .container-info {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
         }
 
-        /* Seção de Agenda (Agora no topo) */
-        .agenda-section { padding: 50px 20px; max-width: 900px; margin: 0 auto; }
-        .titulo-secao { text-align: center; font-size: 2rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px; }
-        .agenda-lista { margin-top: 30px; }
+        .grid-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .card-texto {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 10px;
+            border-top: 3px solid var(--cor-primaria);
+        }
+
+        .card-texto h2 { color: var(--cor-primaria); margin-top: 0; text-transform: uppercase; }
+
+        /* Seção de Agenda */
+        .agenda-section { background: #0f0f0f; padding: 80px 20px; }
+        .agenda-max { max-width: 900px; margin: 0 auto; }
+        .titulo-secao { text-align: center; font-size: 2.5rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
+        
         .evento-item {
-            background: #151515;
-            margin-bottom: 12px;
-            padding: 20px;
-            border-left: 4px solid var(--cor-primaria);
+            background: var(--bg-card);
+            margin-bottom: 15px;
+            padding: 25px;
+            border-left: 5px solid var(--cor-primaria);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-radius: 0 5px 5px 0;
+            border-radius: 0 8px 8px 0;
+            transition: 0.3s;
         }
-        .evento-info h3 { margin: 0; color: var(--cor-primaria); font-size: 1.3rem; }
-        .evento-data { font-weight: bold; color: #888; text-transform: uppercase; font-size: 0.8rem; }
+        .evento-item:hover { background: #202020; }
+        .evento-info h3 { margin: 0; color: var(--cor-primaria); font-size: 1.5rem; }
+        .evento-data { font-weight: bold; color: #888; text-transform: uppercase; font-size: 0.9rem; }
 
         /* Seção das Peitas (Suporte à Liga) */
-        .loja-container {
-            padding: 60px 20px;
-            background: #000;
-            text-align: center;
-        }
-        .loja-content { max-width: 800px; margin: 0 auto; }
-        .loja-grid { display: flex; justify-content: center; margin-top: 30px; }
+        .loja-container { padding: 80px 20px; background: #000; text-align: center; }
+        .loja-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 40px; }
         .produto-card {
-            background: #111;
-            padding: 25px;
-            border-radius: 12px;
-            width: 320px;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 15px;
+            width: 350px;
             border: 1px solid #222;
         }
-        .produto-card img { width: 100%; border-radius: 8px; margin-bottom: 20px; }
-        .texto-apoio { color: #aaa; font-style: italic; margin-bottom: 25px; font-size: 1rem; }
+        .produto-card img { width: 100%; border-radius: 10px; margin-bottom: 20px; transition: 0.5s; }
+        .produto-card img:hover { transform: scale(1.02); }
         
         .btn-nuvemshop { 
             background: transparent; 
             color: var(--cor-primaria); 
-            padding: 12px 20px; 
+            padding: 15px 25px; 
             text-decoration: none; 
             display: block; 
             border-radius: 5px; 
@@ -124,8 +150,9 @@
         }
         .btn-nuvemshop:hover { background: var(--cor-primaria); color: #000; }
 
-        @media (max-width: 600px) {
-            .evento-item { flex-direction: column; text-align: center; gap: 15px; }
+        @media (max-width: 768px) {
+            .evento-item { flex-direction: column; text-align: center; gap: 20px; }
+            .hero-inscricoes { padding: 60px 20px; }
         }
     </style>
 </head>
@@ -144,39 +171,60 @@
     </nav>
 
     <header class="hero-inscricoes">
-        <div class="badge-inscricoes">Vagas para Seletivas</div>
-        <h1>2ª TEMPORADA - 2026</h1>
-        <p>Inscreva sua batalha para fazer parte do circuito oficial.</p>
+        <div class="badge-inscricoes">Inscrições Seletivas 2026</div>
+        <h1>LIGA CAIPIRA DE FREESTYLE</h1>
+        <p style="max-width: 700px; margin: 0 auto 20px; font-size: 1.2rem;">O interior paulista em um só ritmo. Inscreva seu coletivo para ser uma das etapas oficiais da 2ª Temporada.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScRWZ2Ec15gY70v8DjfQ0WR7fDZJTb4fYozySjqRBDK-uGG5g/viewform?usp=header" 
-           target="_blank" class="cta-button">QUERO MINHA BATALHA COMO ETAPA DA LIGA</a>
+           target="_blank" class="cta-button">QUERO MINHA BATALHA NA LIGA</a>
+        <p style="color: var(--cor-primaria); font-weight: bold; margin-top: 15px; text-transform: uppercase;">Prazo: Até 23 de Fevereiro</p>
     </header>
 
-    <section class="agenda-section">
-        <h2 class="titulo-secao">PRÓXIMAS ETAPAS</h2>
-        <div id="lista-eventos" class="agenda-lista">
+    <section class="container-info">
+        <h2 class="titulo-secao">O QUE É A COALIZÃO 016?</h2>
+        <div class="grid-info">
+            <div class="card-texto">
+                <h2>A Missão</h2>
+                <p>Nascida para unir o interior paulista, a Coalizão 016 organiza a Liga Caipira de Freestyle, criando um circuito profissional para MCs e coletivos que muitas vezes ficam fora do radar dos grandes centros.</p>
             </div>
+            <div class="card-texto">
+                <h2>Como Funciona</h2>
+                <p>Batalhas de diversas cidades se tornam <strong>Etapas Seletivas</strong>. Os campeões de cada etapa garantem vaga na Grande Final da temporada, disputando o título de Rei do Interior e premiações exclusivas.</p>
+            </div>
+            <div class="card-texto">
+                <h2>História</h2>
+                <p>Em nossa 1ª temporada, passamos por mais de 10 cidades, revelando talentos e fortalecendo a cultura Hip Hop local. Em 2026, o objetivo é dobrar o alcance e profissionalizar ainda mais o corre.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="agenda-section">
+        <div class="agenda-max">
+            <h2 class="titulo-secao">PRÓXIMAS ETAPAS</h2>
+            <div id="lista-eventos" class="agenda-lista">
+                </div>
+        </div>
     </section>
 
     <section class="loja-container">
         <div class="loja-content">
             <h2 class="titulo-secao">MANTENHA A LIGA VIVA</h2>
-            <p class="texto-apoio">
-                Mais do que um estilo chave, vestir a coalipeita é fortalecer o movimento caipira. 
-                O lucro é revertido para a premiação e logística da Liga Caipira de Freestyle.
+            <p style="max-width: 800px; margin: 0 auto 30px; font-size: 1.1rem; color: #ccc;">
+                A Coalizão é feita de fã para fã. Vestir a <strong>coalipeita</strong> é carregar o peso do interior no peito e garantir que a premiação dos MCs e a logística da Liga continuem acontecendo com independência.
             </p>
             <div class="loja-grid">
                 <div class="produto-card">
                     <img src="img/coalipeita.png" alt="Peita Oficial Coalizão 016">
                     <h3>Peita Oficial Coalizão</h3>
-                    <p>O peso do interior no peito.</p>
-                    <a href="https://coalizao016.lojavirtualnuvem.com.br/" target="_blank" class="btn-nuvemshop">FORTALECER A LIGA</a>
+                    <p>Estilo chave e resistência cultural.</p>
+                    <a href="https://coalizao016.lojavirtualnuvem.com.br/" target="_blank" class="btn-nuvemshop">FORTALECER NO SITE</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 40px; color: #444; border-top: 1px solid #111; font-size: 0.8rem;">
-        <p>&copy; 2026 Coalizão 016 - A Voz do Interior Paulista</p>
+    <footer style="text-align: center; padding: 60px 20px; color: #444; border-top: 1px solid #111;">
+        <p style="margin-bottom: 10px;">&copy; 2026 Coalizão 016 - A Voz do Interior Paulista</p>
+        <div style="font-size: 0.7rem; letter-spacing: 1px;">COALIZÃO 016 | LIGA CAIPIRA DE FREESTYLE</div>
     </footer>
 
     <script src="agenda.js"></script>
@@ -190,16 +238,16 @@
                         <div class="evento-info">
                             <span class="evento-data">${evento.data} | ${evento.diaSemana}</span>
                             <h3>${evento.nomeBatalha}</h3>
-                            <p style="margin: 5px 0; font-size: 0.9rem; color: #ccc;">${evento.status}</p>
+                            <p style="margin: 5px 0; color: #ccc;">${evento.status}</p>
                         </div>
                         <div style="text-align: right;">
-                            <p style="margin: 0; font-weight: bold;">📍 ${evento.cidade}</p>
-                            <a href="${evento.linkInstagram}" target="_blank" style="color: var(--cor-primaria); font-size: 0.75rem; text-decoration: none;">INFO NO INSTA</a>
+                            <p style="margin: 0; font-weight: bold; font-size: 1.1rem;">📍 ${evento.cidade}</p>
+                            <a href="${evento.linkInstagram}" target="_blank" style="color: var(--cor-primaria); font-size: 0.8rem; text-decoration: none; font-weight: bold; border: 1px solid var(--cor-primaria); padding: 5px 10px; border-radius: 4px; display: inline-block; margin-top: 10px;">INFO NO INSTA</a>
                         </div>
                     </div>
                 `).join('');
             } else {
-                container.innerHTML = '<p style="text-align:center;">Nenhuma etapa programada.</p>';
+                container.innerHTML = '<p style="text-align:center; padding: 40px; background: #151515; border-radius: 8px;">Nenhuma etapa programada para esta semana. Fique ligado!</p>';
             }
         }
 
