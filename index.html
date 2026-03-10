@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coalizão 016 | Liga Caipira de Freestyle</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --cor-primaria: #f39c12;
+            --cor-secundaria: #e74c3c;
+            --bg-dark: #0a0a0a;
+            --bg-card: #151515;
+            --text-light: #ffffff;
+        }
+
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background: var(--bg-dark); 
+            color: var(--text-light); 
+            line-height: 1.6;
+        }
+
+        /* Navegação */
+        nav { 
+            background: #000; 
+            padding: 20px; 
+            text-align: center; 
+            border-bottom: 1px solid #222; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--cor-primaria); }
+
+        /* Banner de Hype */
+        .hero-inscricoes {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('img/capa.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--cor-primaria);
+        }
+
+        .badge-temporada {
+            background-color: var(--cor-primaria);
+            color: #000;
+            padding: 5px 15px;
+            font-weight: 900;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* TÍTULO EM DESTAQUE - SLOGAN AGORA AQUI */
+        .hero-inscricoes h1 { 
+            font-size: clamp(1.8rem, 7vw, 3.8rem); 
+            margin: 0 0 15px 0; 
+            color: #fff; 
+            line-height: 1.1; 
+            font-style: italic; 
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cor-primaria);
+            color: #000;
+            padding: 18px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        .cta-button:hover { transform: scale(1.05); background-color: #fff; }
+
+        /* A Jornada do MC */
+        .jornada-container {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .jornada-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .jornada-card {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        /* EFEITO DE BRILHO NA ETAPA BASE */
+        .jornada-card.foco-atual {
+            border-color: var(--cor-primaria);
+            animation: glowPulsante 2s infinite alternate;
+        }
+
+        @keyframes glowPulsante {
+            0% { box-shadow: 0 0 5px rgba(243, 156, 18, 0.2); border-color: rgba(243, 156, 18, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(243, 156, 18, 0.6); border-color: var(--cor-primaria); }
+        }
+
+        .jornada-card span {
+            color: var(--cor-primaria);
+            font-size: 2.5rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 10px;
+            opacity: 0.3;
+        }
+        
+        .jornada-card.foco-atual span { opacity: 0.8; text-shadow: 0 0 10px var(--cor-primaria); }
+        .jornada-card h3 { margin: 0 0 10px 0; text-transform: uppercase; color: #fff; }
+
+        /* Seção de Agenda */
+        .agenda-section { background: #0a0a0a; padding: 80px 20px; }
+        .agenda-max { max-width: 950px; margin: 0 auto; }
+        .titulo-secao { text-align: center; font-size: 2.2rem; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 2px; }
+        
+        .evento-item {
+            background: var(--bg-card);
+            margin-bottom: 15px;
+            padding: 25px;
+            border-left: 5px solid var(--cor-primaria);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0 8px 8px 0;
+            transition: 0.3s;
+        }
+        .evento-item:hover { transform: translateX(10px); }
+
+        /* Peitas / Loja */
+        .loja-container { padding: 80px 20px; background: #000; text-align: center; }
+        .produto-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 400px;
+            margin: 40px auto 0;
+            border: 1px solid #222;
+        }
+        .produto-card img { width: 100%; border-radius: 10px; margin-bottom: 25px; }
+
+        .btn-nuvemshop { 
+            background: transparent; color: var(--cor-primaria); padding: 15px 25px; 
+            text-decoration: none; display: block; border-radius: 5px; font-weight: bold; 
+            border: 2px solid var(--cor-primaria); transition: 0.3s; text-transform: uppercase;
+        }
+        .btn-nuvemshop:hover { background: var(--cor-primaria); color: #000; }
+
+        @media (max-width: 768px) {
+            .evento-item { flex-direction: column; text-align: center; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">INÍCIO</a>
+        <a href="mapaindex.html">MAPA DA LIGA</a>
+        <a href="mcs.html">MCS</a>
+        <a href="batalhas.html">BATALHAS</a>
+    </nav>
+
+    <header class="hero-inscricoes">
+        <div class="badge-temporada">Temporada 2026 em Curso</div>
+        <h1>REALIZE SEUS SONHOS<br>OU MORRA TENTANDO</h1>
+        <p style="max-width: 750px; margin: 0 auto 25px; font-size: 1.2rem; color: #ccc; font-weight: 300; letter-spacing: 1px;">
+            A Coalizão 016 apresenta a Liga Caipira de Freestyle. Onde o talento do interior paulista encontra seu palco principal.
+        </p>
+        <div class="botoes-hero">
+            <a href="mapaindex.html" class="cta-button">EXPLORAR O MAPA</a>
+            <a href="#proximas-etapas" class="cta-button" style="background: transparent; border: 2px solid #fff; color: #fff;">VER AGENDA</a>
+        </div>
+    </header>
+
+    <section class="jornada-container">
+        <h2 class="titulo-secao">A CAMINHADA DO MC</h2>
+        <div class="jornada-grid">
+            <div class="jornada-card foco-atual">
+                <span>01</span>
+                <h3>Etapas Base</h3>
+                <p>O começo de tudo. Batalhas espalhadas pelas cidades que servem como porta de entrada.</p>
+                <p style="font-weight: bold; color: var(--cor-primaria); font-size: 0.8rem; margin-top: 10px; text-transform: uppercase;">Em andamento</p>
+            </div>
+            <div class="jornada-card">
+                <span>02</span>
+                <h3>Seletivas Regionais</h3>
+                <p>Os vencedores das bases se enfrentam em grandes confrontos regionais por uma vaga na final.</p>
+            </div>
+            <div class="jornada-card">
+                <span>03</span>
+                <h3>A Grande Final</h3>
+                <p>O momento decisivo. Onde apenas um MC será coroado o Rei do Interior Paulista.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="proximas-etapas" class="agenda-section">
+        <div class="agenda-max">
+            <h2 class="titulo-secao">PRÓXIMAS ETAPAS</h2>
+            <div id="lista-eventos" class="agenda-lista">
+                </div>
+        </div>
+    </section>
+
+    <section class="loja-container">
+        <div class="loja-content">
+            <h2 class="titulo-secao">FORTALEÇA O MOVIMENTO</h2>
+            <p style="max-width: 800px; margin: 0 auto; color: #888;">
+                Adquira a coalipeita e ajude a manter a chama do freestyle acesa no interior. Todo lucro é para a Liga.
+            </p>
+            <div class="produto-card">
+                <img src="img/coalipeita.png" alt="Peita Oficial Coalizão 016">
+                <h3 style="color: var(--cor-primaria);">PEITA OFICIAL 2026</h3>
+                <p style="margin-bottom: 25px;">Peso, tradição e cultura.</p>
+                <a href="https://coalizao016.lojavirtualnuvem.com.br/" target="_blank" class="btn-nuvemshop">COMPRAR AGORA</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 60px 20px; color: #444; border-top: 1px solid #111;">
+        <p>&copy; 2026 Coalizão 016 - A Voz do Interior Paulista</p>
+    </footer>
+
+    <script src="agenda.js"></script>
+    <script>
+        const container = document.getElementById('lista-eventos');
+        function renderizarAgenda() {
+            if (typeof eventos !== 'undefined' && eventos.length > 0) {
+                container.innerHTML = eventos.map(evento => `
+                    <div class="evento-item">
+                        <div class="evento-info">
+                            <span class="evento-data">${evento.data} | ${evento.diaSemana}</span>
+                            <h3>${evento.nomeBatalha}</h3>
+                            <p style="margin: 5px 0; color: #888;">${evento.status}</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <p style="margin: 0; font-weight: bold; font-size: 1.1rem; color: #fff;">📍 ${evento.cidade}</p>
+                            <a href="${evento.linkInstagram}" target="_blank" style="color: var(--cor-primaria); font-size: 0.8rem; text-decoration: none; font-weight: bold; border: 1px solid var(--cor-primaria); padding: 8px 15px; border-radius: 4px; display: inline-block; margin-top: 10px;">INFO NO INSTA</a>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                container.innerHTML = '<p style="text-align:center;">Novas datas em breve.</p>';
+            }
+        }
+        window.onload = renderizarAgenda;
+    </script>
+</body>
+</html>

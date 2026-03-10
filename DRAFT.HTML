@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>COALIZÃO 016 - QUARTETOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --purple: #8a2be2; --dark: #0b0214; --pink: #ff0055; --cyan: #00ffff; }
+        
+        body, html { 
+            margin: 0; padding: 0; width: 100vw; height: 100vh; 
+            overflow: hidden; background: var(--dark); font-family: 'Oswald', sans-serif;
+            background: radial-gradient(circle, #1a0235 0%, #0b0214 100%);
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .main-title { 
+            text-align: center; margin: 0 0 20px 0; font-size: 2.5rem; color: #fff; 
+            text-transform: uppercase; text-shadow: 0 0 20px var(--purple);
+            letter-spacing: 8px; font-weight: 700;
+        }
+
+        /* Grid 4x2 ocupando todo o espaço */
+        .teams-grid { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px; 
+            flex-grow: 1;
+        }
+
+        .team-box { 
+            background: rgba(255, 255, 255, 0.03); 
+            border: 2px solid rgba(138, 43, 226, 0.4); 
+            border-top: 5px solid var(--purple); 
+            padding: 15px;
+            display: flex; 
+            flex-direction: column; 
+            border-radius: 12px;
+            justify-content: center;
+        }
+
+        .cap-header { 
+            display: flex; flex-direction: column; align-items: center; 
+            gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); 
+            margin-bottom: 15px; padding-bottom: 10px;
+        }
+
+        .cap-header img { 
+            width: 60px; height: 60px; border-radius: 50%; 
+            border: 3px solid var(--pink); box-shadow: 0 0 15px var(--pink);
+        }
+
+        .cap-header h3 { 
+            margin: 0; font-size: 1.4rem; color: #fff; text-transform: uppercase; 
+            text-shadow: 0 0 10px var(--pink);
+        }
+
+        /* Os 3 escolhidos de cada capitão */
+        .picks-grid { 
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; 
+        }
+
+        .mini-card-pick { text-align: center; }
+        
+        .mini-card-pick img { 
+            width: 100%; aspect-ratio: 1/1; object-fit: cover;
+            border: 2px solid var(--cyan); border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+        }
+
+        .mini-card-pick p {
+            margin: 6px 0 0 0; font-size: 0.8rem; color: var(--cyan);
+            text-transform: uppercase; font-weight: bold;
+        }
+
+        /* Remove qualquer rastro da pool central */
+        #pool, .pool-area { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <h1 class="main-title">QUARTETOS FORMADOS</h1>
+        <div class="teams-grid">
+            <div id="team-1" class="team-box"></div>
+            <div id="team-2" class="team-box"></div>
+            <div id="team-3" class="team-box"></div>
+            <div id="team-4" class="team-box"></div>
+            <div id="team-5" class="team-box"></div>
+            <div id="team-6" class="team-box"></div>
+            <div id="team-7" class="team-box"></div>
+            <div id="team-8" class="team-box"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="draft.js"></script>
+</body>
+</html>

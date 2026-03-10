@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "t0i3kd02k6");
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJDQYDNW2T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-EJDQYDNW2T');
+    </script>
+
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mapa Caipira de Freestyle - Coalimapa</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    
+    <style>
+        /* ESTILOS GERAIS */
+        body { margin: 0; font-family: Arial, sans-serif; background: #1a1a1a; color: #e0e0e0; text-align: center; }
+        header {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            background-color: #000;
+            background-image: url('images/batalha.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+        h1, h2 { text-align: center; margin: 40px 0 20px; color: #ff8c00; }
+        footer { background: #000; padding: 15px; color: #aaa; text-align: center; margin-top: 30px; }
+        
+        /* MENU RESPONSIVO */
+        nav { background: #222; padding: 10px; display: flex; justify-content: center; align-items: center; position: relative; }
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: bold; padding: 5px 0; }
+        .nav-links a:hover { color: #ff7f00; }
+        .hamburger { display: none; cursor: pointer; padding: 10px; position: absolute; right: 15px; }
+        .hamburger .bar { display: block; width: 25px; height: 3px; margin: 5px auto; background-color: #fff; transition: all 0.3s ease-in-out; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content { display: none; position: absolute; background-color: #222; min-width: 160px; box-shadow: 0 8px 16px rgba(0,0,0,0.4); z-index: 10; border-radius: 5px; padding: 12px; left: 50%; transform: translateX(-50%); }
+        .dropdown-content a { color: white; padding: 8px 16px; text-decoration: none; display: block; text-align: left; }
+        .dropdown-content a:hover { background-color: #333; border-radius: 3px; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .dropdown-label { cursor: pointer; }
+
+        /* Estilos específicos da página do Mapa */
+        .map-container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        #map { height: 65vh; width: 100%; border-radius: 10px; }
+        #filtros { padding: 15px; background: #282828; border-radius: 10px; display: inline-block; margin: 20px 0; }
+        #filtros select { padding: 10px; border-radius: 5px; border: 1px solid #444; background-color: #333; color: #e0e0e0; font-size: 1em; cursor: pointer; }
+        #filtros label { font-weight: bold; color: #ff8c00; }
+        
+        /* Popup do Mapa */
+        .leaflet-popup-content-wrapper { background: #282828; color: #e0e0e0; border-radius: 10px; width: 200px; }
+        .leaflet-popup-content { margin: 15px !important; width: auto !important; }
+        .leaflet-popup-tip { background: #282828; }
+        .map-popup-content { text-align: center; font-family: Arial, sans-serif; }
+        .map-popup-content img.popup-logo { width: 80px; height: 80px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; border: 2px solid #ff8c00; }
+        .map-popup-content h3 { margin: 5px 0; font-size: 1.4em; color: #ff8c00; }
+        .map-popup-content p { margin: 5px 0; font-size: 1em; }
+        .map-popup-content a { color: #ffaf5f; text-decoration: none; font-weight: bold; }
+        
+        @media (max-width: 850px) {
+            nav { justify-content: flex-end; }
+            .hamburger { display: block; }
+            .nav-links { display: none; flex-direction: column; width: 100%; background-color: #222; position: absolute; top: 60px; left: 0; padding: 20px 0; z-index: 100; }
+            .nav-links.active { display: flex; }
+            .nav-links a, .dropdown { width: 100%; text-align: center; margin: 10px 0; }
+            .dropdown-content { position: static; display: none; box-shadow: none; background-color: #333; }
+            header {
+                background-image: url('images/batalha-mobile.jpg');
+                height: 40vh;
+                min-height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        </header>
+
+    <nav>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Início</a>
+            <a href="batalhas.html">Batalhas</a>
+            <a href="mcs.html">MC's</a>
+            <a href="mapaindex.html"><strong>Mapa</strong></a>
+            <a href="ranking.html">Ranking</a>
+            <div class="dropdown">
+                <a href="#" class="dropdown-label">Nossas Redes</a>
+                <div class="dropdown-content">
+                    <a href="https://www.instagram.com/coalizao016/" target="_blank">Instagram</a>
+                    <a href="https://www.tiktok.com/@coalizao016?lang=pt-BR" target="_blank">TikTok</a>
+                    <a href="https://www.youtube.com/@Coaliz%C3%A3o016" target="_blank">YouTube</a>
+                    <a href="https://linktr.ee/coalizao016" target="_blank">Fotos</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="map-container">
+        <h1>Mapa Caipira de Freestyle</h1>
+        <div id="filtros">
+            <label for="filtroDia">Dia:</label>
+            <select id="filtroDia">
+                <option value="">Todos</option>
+                <option value="Domingo">Domingo</option>
+                <option value="Segunda-feira">Segunda-feira</option>
+                <option value="Terça-feira">Terça-feira</option>
+                <option value="Quarta-feira">Quarta-feira</option>
+                <option value="Quinta-feira">Quinta-feira</option>
+                <option value="Sexta-feira">Sexta-feira</option>
+                <option value="Sábado">Sábado</option>
+            </select>
+            <label for="filtroCidade" style="margin-left:20px;">Cidade:</label>
+            <select id="filtroCidade">
+                <option value="">Todas</option>
+            </select>
+        </div>
+        <div id="map"></div>
+    </div>
+    
+    <footer>
+        © 2025 Coalizão 016 - Todos os direitos reservados.
+    </footer>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="batalhas.js"></script>
+    <script>
+        // Script do Mapa (sem alteração na lógica)
+        const map = L.map("map").setView([-21.17, -47.81], 9);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "© OpenStreetMap contributors"
+        }).addTo(map);
+        let markers = [];
+        function renderMarkers(filtroDia = "", filtroCidade = "") {
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+            batalhas.forEach(b => {
+                if ((filtroDia === "" || b.dia === filtroDia) && (filtroCidade === "" || b.cidade === filtroCidade)) {
+                    const marker = L.marker(b.coords).addTo(map);
+                    markers.push(marker);
+                    const logoPath = `images/${b.codigo}.png`;
+                    const popupContent = `
+                        <div class="map-popup-content">
+                            <img src="${logoPath}" class="popup-logo" alt="Logo ${b.nome}" onerror="this.onerror=null; this.src='images/placeholder.png';">
+                            <h3>${b.nome}</h3>
+                            <p><b>Cidade:</b> ${b.cidade}</p>
+                            <p><b>Dia:</b> ${b.dia}</p>
+                            <p><a href="${b.rede}" target="_blank">Ver no Instagram</a></p>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent);
+                }
+            });
+            if (markers.length > 0) {
+                const bounds = L.latLngBounds(markers.map(m => m.getLatLng()));
+                map.fitBounds(bounds.pad(0.2));
+            } else if (filtroDia || filtroCidade) {
+                map.setView([-21.17, -47.81], 9);
+            }
+        }
+        const filtroCidade = document.getElementById("filtroCidade");
+        const cidadesUnicas = [...new Set(batalhas.map(b => b.cidade))].sort();
+        cidadesUnicas.forEach(cidade => {
+            const opt = document.createElement("option");
+            opt.value = cidade;
+            opt.textContent = cidade;
+            filtroCidade.appendChild(opt);
+        });
+        document.getElementById("filtroDia").addEventListener("change", e => {
+            renderMarkers(e.target.value, filtroCidade.value);
+        });
+        filtroCidade.addEventListener("change", e => {
+            renderMarkers(document.getElementById("filtroDia").value, e.target.value);
+        });
+        renderMarkers();
+
+        // Lógica do Menu Hambúrguer
+        const hamburger = document.querySelector(".hamburger");
+        const navLinks = document.querySelector(".nav-links");
+        const dropdownLabel = document.querySelector(".dropdown-label");
+        const dropdownContent = document.querySelector(".dropdown-content");
+
+        if (hamburger && navLinks) {
+            hamburger.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        }
+        if (window.innerWidth <= 850 && dropdownLabel && dropdownContent) {
+            dropdownLabel.addEventListener("click", (e) => {
+                e.preventDefault();
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCs | Coalizão 016</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para a grade de MCs */
+        .mcs-container {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .mc-card {
+            background: #151515;
+            border: 1px solid #222;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .mc-card:hover {
+            border-color: var(--cor-primaria);
+            transform: translateY(-5px);
+        }
+
+        .mc-foto {
+            width: 100px;
+            height: 100px;
+            background: #333;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--cor-primaria);
+            overflow: hidden;
+        }
+
+        .mc-foto img { width: 100%; height: 100%; object-fit: cover; }
+
+        .mc-nome {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--cor-primaria);
+            text-transform: uppercase;
+        }
+
+        .mc-cidade {
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slogan-topo">
+        "REALIZE SEUS SONHOS OU MORRA TENTANDO"
+    </div>
+
+    <nav>
+        <a href="index.html">INÍCIO</a>
+        <a href="mapaindex.html">MAPA</a>
+        <a href="mcs.html">MCS</a>
+        <a href="batalhas.html">BATALHAS</a>
+        <a href="ranking.html">RANKING</a>
+    </nav>
+
+    <header style="text-align: center; padding: 40px 20px;">
+        <h1 class="titulo-secao">BRAÇOS FORTES DO INTERIOR</h1>
+        <p style="color: #aaa;">Conheça os MCs que fazem parte da história da Coalizão 016.</p>
+    </header>
+
+    <main id="lista-mcs" class="mcs-container">
+        </main>
+
+    <footer style="text-align: center; padding: 40px; color: #444; border-top: 1px solid #111; font-size: 0.8rem;">
+        <p>&copy; 2026 Coalizão 016 - A Voz do Interior Paulista</p>
+    </footer>
+
+    <script src="mcs.js"></script>
+    <script>
+        const containerMcs = document.getElementById('lista-mcs');
+
+        function renderizarMcs() {
+            // Verifica se a variável 'mcs' (do arquivo mcs.js) existe
+            if (typeof mcs !== 'undefined' && mcs.length > 0) {
+                containerMcs.innerHTML = mcs.map(mc => `
+                    <div class="mc-card">
+                        <div class="mc-foto">
+                            ${mc.foto ? `<img src="${mc.foto}" alt="${mc.nome}">` : mc.nome.charAt(0)}
+                        </div>
+                        <div class="mc-nome">${mc.nome}</div>
+                        <div class="mc-cidade">${mc.cidade}</div>
+                    </div>
+                `).join('');
+            } else {
+                containerMcs.innerHTML = '<p style="text-align:center; grid-column: 1/-1;">Nenhum MC cadastrado ainda.</p>';
+            }
+        }
+
+        window.onload = renderizarMcs;
+    </script>
+</body>
+</html>
